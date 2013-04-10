@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jbi xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+     version="1.0">
+   <service-assembly>
+      <connections>
+         <connection>
+            <consumer endpoint-name="TestInterfacePort"
+                      service-name="ti:SequenceTestInterfaceService"/>
+            <provider endpoint-name="testInterfaceRole_myRole" service-name="composite:MyRoleLink"/>
+         </connection>
+      </connections>
+   </service-assembly>
+</jbi>

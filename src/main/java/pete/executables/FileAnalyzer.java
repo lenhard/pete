@@ -2,10 +2,10 @@ package pete.executables;
 
 import java.nio.file.Path;
 
-import pete.reporting.Report;
+import pete.reporting.ReportEntry;
 
 public interface FileAnalyzer {
 
-	Report analyzeFile(Path filePath);
+	ReportEntry analyzeFile(Path filePath);
 
 }

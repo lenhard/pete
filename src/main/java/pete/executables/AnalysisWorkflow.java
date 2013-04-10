@@ -33,7 +33,8 @@ public class AnalysisWorkflow {
 	}
 
 	private void parseFile(Path file) {
-		report = fileAnalyzer.analyzeFile(file);
+		report = new Report();
+		report.addEntry(fileAnalyzer.analyzeFile(file));
 	}
 
 	private void parseDirectory(Path root) {

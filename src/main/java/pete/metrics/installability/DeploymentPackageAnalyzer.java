@@ -3,6 +3,7 @@ package pete.metrics.installability;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -22,10 +23,11 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 import pete.executables.FileAnalyzer;
-import pete.reporting.Report;
 import pete.reporting.ReportEntry;
 
 public class DeploymentPackageAnalyzer implements FileAnalyzer {
@@ -45,24 +47,34 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 	}
 
 	@Override
-	public Report analyzeFile(Path filePath) {
-		Report report = new Report();
+	public ReportEntry analyzeFile(Path filePath) {
+		ReportEntry entry = new ReportEntry(filePath.toString());
 
-		if (isArchive(filePath)) {
-			inspectArchive(filePath, report);
+		try {
+			FileUtils.deleteDirectory(new File(tempDir + "/"
+					+ filePath.getFileName()));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
-		return report;
+		if (isArchive(filePath)) {
+			inspectArchive(filePath);
+		}
+
+		entry.addVariable("packageComplexity", packageComplexity);
+		return entry;
 	}
 
 	private boolean isArchive(Path filePath) {
 		String fileName = filePath.toString();
 		boolean isZip = fileName.endsWith(".zip");
 		boolean isBpr = fileName.endsWith(".bpr");
-		return isZip || isBpr;
+		boolean isJar = fileName.endsWith(".jar");
+		return isZip || isBpr || isJar;
 	}
 
-	private void inspectArchive(Path filePath, Report report) {
+	private void inspectArchive(Path filePath) {
 		try {
 			unzipFileToTempDir(filePath);
 			// COUNT: Archive Building, cost: 1
@@ -72,17 +84,11 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 					+ filePath.toAbsolutePath() + " Ignoring file. Error: "
 					+ e.getMessage());
 			return;
-		} catch (IOException e) {
-			System.err.println("Could not delete temp dir: " + e.getMessage()
-					+ " Ignoring file " + filePath.toAbsolutePath());
-			return;
 		}
 
 		try {
-			processArchiveDirectory(Paths.get(tempDir));
-			ReportEntry entry = new ReportEntry(filePath.toString());
-			entry.addVariable("packageComplexity", packageComplexity);
-			report.addEntry(entry);
+			processArchiveDirectory(Paths.get(tempDir + "/"
+					+ filePath.getFileName()));
 		} catch (IOException e) {
 			System.err.println("Error while analyzing archive "
 					+ filePath.toAbsolutePath() + ": " + e.getMessage()
@@ -91,11 +97,9 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
 	}
 
-	private void unzipFileToTempDir(Path zipFile) throws ZipException,
-			IOException {
-		FileUtils.deleteDirectory(new File(tempDir));
+	private void unzipFileToTempDir(Path zipFile) throws ZipException {
 		ZipFile zip = new ZipFile(zipFile.toString());
-		zip.extractAll(tempDir);
+		zip.extractAll(tempDir + "/" + zipFile.getFileName());
 	}
 
 	private void processArchiveDirectory(Path dirPath) throws IOException {
@@ -144,12 +148,29 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 		DocumentBuilder db;
 		try {
 			db = dbf.newDocumentBuilder();
+			db.setErrorHandler(new ErrorHandler() {
+
+				@Override
+				public void error(SAXParseException arg0) throws SAXException {
+					throw arg0;
+				}
+
+				@Override
+				public void fatalError(SAXParseException arg0)
+						throws SAXException {
+					throw arg0;
+				}
+
+				@Override
+				public void warning(SAXParseException arg0) throws SAXException {
+
+				}
+			});
 			Document dom = db.parse(new FileInputStream(pathInZip
 					.toAbsolutePath().toFile()));
 			// COUNT: root node of the document
 			return countElementsAndAttributes(dom.getChildNodes());
 		} catch (ParserConfigurationException | SAXException | IOException e) {
-			// On error: no xml, just quit
 			return -1;
 		}
 	}
@@ -179,7 +200,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 		return sum;
 	}
 
-	private int checkTextFile(Path pathInZip) {
+	private int checkTextFileAlt(Path pathInZip) {
 		int sum = 0;
 		try (Scanner scanner = new Scanner(pathInZip)) {
 			while (scanner.hasNextLine()) {
@@ -193,6 +214,24 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			// On error: not readable, just quit
 			return -1;
 		}
+		return sum;
+	}
+
+	private int checkTextFile(Path pathInZip) {
+		int sum = 0;
+		try {
+			for (String line : Files.readAllLines(pathInZip,
+					Charset.defaultCharset())) {
+				if (line.trim().length() > 0) {
+					// Count non-empty line, cost: 1
+					sum++;
+				}
+			}
+		} catch (IOException e) {
+			// On error: not readable, just quit
+			return -1;
+		}
+
 		return sum;
 	}
 }

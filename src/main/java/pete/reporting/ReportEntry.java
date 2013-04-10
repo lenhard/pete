@@ -21,6 +21,15 @@ public class ReportEntry {
 		return fileName;
 	}
 
+	public int getVariableValue(String name) {
+		Integer result = variables.get(name);
+		if (result == null) {
+			return 0;
+		} else {
+			return result;
+		}
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder(fileName + "\t");

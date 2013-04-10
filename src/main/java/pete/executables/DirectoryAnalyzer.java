@@ -21,7 +21,7 @@ public class DirectoryAnalyzer {
 		try (DirectoryStream<Path> stream = Files.newDirectoryStream(directory)) {
 			for (Path path : stream) {
 				if (Files.isRegularFile(path)) {
-					report.append(fileAnalyzer.analyzeFile(path));
+					report.addEntry(fileAnalyzer.analyzeFile(path));
 				} else if (Files.isDirectory(path)) {
 					analyzeDirectory(path);
 				}
