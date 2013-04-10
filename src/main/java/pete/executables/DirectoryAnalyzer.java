@@ -5,7 +5,7 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import pete.report.Report;
+import pete.reporting.Report;
 
 public class DirectoryAnalyzer {
 
