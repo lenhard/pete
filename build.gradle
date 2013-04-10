@@ -32,6 +32,10 @@ task wrapper(type: Wrapper) {
 	gradleVersion = '1.5'
 }
 
+task deleteTmpDir(type: Delete){
+	delete ('tmp')
+}
+
 run {
 	if(project.hasProperty('args')){
 		args project.args.split('\\s+')
