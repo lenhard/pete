@@ -50,6 +50,20 @@ public class DeploymentPackageTester {
 		assertEquals(20, getPackageComplexity(result));
 	}
 
+	@Test
+	public void testArchiveWithXmlAndTextAndIgnores() {
+		ReportEntry result = sut.analyzeFile(Paths.get(resourcePaths
+				+ "xmlAndTextAndIgnores.zip"));
+		assertEquals(20, getPackageComplexity(result));
+	}
+
+	@Test
+	public void testNestedArchives() {
+		ReportEntry result = sut.analyzeFile(Paths.get(resourcePaths
+				+ "nestedArchives.zip"));
+		assertEquals(40, getPackageComplexity(result));
+	}
+
 	private int getPackageComplexity(ReportEntry entry) {
 		return entry.getVariableValue("packageComplexity");
 	}

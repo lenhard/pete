@@ -9,7 +9,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashSet;
-import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -24,6 +23,7 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.ErrorHandler;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
@@ -43,7 +43,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 		ignores.add(".wsdl");
 		ignores.add(".bpel");
 		packageComplexity = 0;
-		tempDir = "tmp";
+		tempDir = "tmp" + File.separator + System.currentTimeMillis();
 	}
 
 	@Override
@@ -54,14 +54,21 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			FileUtils.deleteDirectory(new File(tempDir + "/"
 					+ filePath.getFileName()));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.err.println("Error while deleting file for analysis of "
+					+ filePath.getFileName());
 			e.printStackTrace();
 		}
 
 		if (isArchive(filePath)) {
 			inspectArchive(filePath);
 		}
-
+		try {
+			FileUtils.deleteDirectory(new File(tempDir));
+		} catch (IOException e) {
+			System.err.println("Error while deleting file for analysis of "
+					+ filePath.getFileName());
+			e.printStackTrace();
+		}
 		entry.addVariable("packageComplexity", packageComplexity);
 		return entry;
 	}
@@ -120,6 +127,8 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 	private void processRegularFile(Path pathInZip) {
 		if (isIgnored(pathInZip)) {
 			return;
+		} else if (isArchive(pathInZip)) {
+			inspectArchive(pathInZip);
 		} else {
 			// COUNT: Construct file. Cost: 1
 			packageComplexity++;
@@ -146,7 +155,8 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 	private int checkXmlFile(Path pathInZip) {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		DocumentBuilder db;
-		try {
+
+		try (FileInputStream fis = new FileInputStream(pathInZip.toFile())) {
 			db = dbf.newDocumentBuilder();
 			db.setErrorHandler(new ErrorHandler() {
 
@@ -163,14 +173,14 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
 				@Override
 				public void warning(SAXParseException arg0) throws SAXException {
-
 				}
 			});
-			Document dom = db.parse(new FileInputStream(pathInZip
-					.toAbsolutePath().toFile()));
+
+			Document dom = db.parse(new InputSource(fis));
 			// COUNT: root node of the document
 			return countElementsAndAttributes(dom.getChildNodes());
 		} catch (ParserConfigurationException | SAXException | IOException e) {
+			// Error is here. dom is not closed
 			return -1;
 		}
 	}
@@ -196,23 +206,6 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 					}
 				}
 			}
-		}
-		return sum;
-	}
-
-	private int checkTextFileAlt(Path pathInZip) {
-		int sum = 0;
-		try (Scanner scanner = new Scanner(pathInZip)) {
-			while (scanner.hasNextLine()) {
-				String line = scanner.nextLine();
-				if (line.trim().length() > 0) {
-					// Count non-empty line, cost: 1
-					sum++;
-				}
-			}
-		} catch (IOException e) {
-			// On error: not readable, just quit
-			return -1;
 		}
 		return sum;
 	}
