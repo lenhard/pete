@@ -23,7 +23,6 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.ErrorHandler;
-import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
@@ -70,6 +69,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			e.printStackTrace();
 		}
 		entry.addVariable("packageComplexity", packageComplexity);
+		packageComplexity = 0;
 		return entry;
 	}
 
@@ -176,7 +176,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 				}
 			});
 
-			Document dom = db.parse(new InputSource(fis));
+			Document dom = db.parse(fis);
 			// COUNT: root node of the document
 			return countElementsAndAttributes(dom.getChildNodes());
 		} catch (ParserConfigurationException | SAXException | IOException e) {

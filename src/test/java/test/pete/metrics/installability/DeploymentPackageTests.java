@@ -10,7 +10,7 @@ import org.junit.Test;
 import pete.metrics.installability.DeploymentPackageAnalyzer;
 import pete.reporting.ReportEntry;
 
-public class DeploymentPackageTester {
+public class DeploymentPackageTests {
 
 	private DeploymentPackageAnalyzer sut;
 

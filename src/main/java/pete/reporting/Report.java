@@ -30,4 +30,12 @@ public class Report implements Iterable<ReportEntry> {
 		return Collections.unmodifiableList(entries).iterator();
 	}
 
+	public int getSummedVariable(String name) {
+		int sum = 0;
+		for (ReportEntry entry : entries) {
+			sum += entry.getVariableValue(name);
+		}
+		return sum;
+	}
+
 }
