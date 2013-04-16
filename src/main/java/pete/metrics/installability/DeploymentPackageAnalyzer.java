@@ -31,16 +31,25 @@ import pete.reporting.ReportEntry;
 
 public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
-	private HashSet<String> ignores;
+	private HashSet<String> whiteList;
 
 	private int packageComplexity;
 
 	private String tempDir;
 
 	public DeploymentPackageAnalyzer() {
-		ignores = new HashSet<String>();
-		ignores.add(".wsdl");
-		ignores.add(".bpel");
+		whiteList = new HashSet<String>();
+		whiteList.add(".componentType");
+		whiteList.add("composite.xml");
+		whiteList.add("catalog.xml");
+		whiteList.add("composite.xml");
+		whiteList.add(".pdd");
+		whiteList.add(".MF");
+		whiteList.add("deploy.xml");
+		whiteList.add("jbi.xml");
+		whiteList.add(".jar");
+		whiteList.add(".zip");
+
 		packageComplexity = 0;
 		tempDir = "tmp" + File.separator + System.currentTimeMillis();
 	}
@@ -60,17 +69,20 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
 		if (isArchive(filePath)) {
 			inspectArchive(filePath);
+			try {
+				FileUtils.deleteDirectory(new File(tempDir));
+			} catch (IOException e) {
+				System.err.println("Error while deleting file for analysis of "
+						+ filePath.getFileName());
+				e.printStackTrace();
+			}
+			entry.addVariable("packageComplexity", packageComplexity);
+			packageComplexity = 0;
+			return entry;
+		} else {
+			return null;
 		}
-		try {
-			FileUtils.deleteDirectory(new File(tempDir));
-		} catch (IOException e) {
-			System.err.println("Error while deleting file for analysis of "
-					+ filePath.getFileName());
-			e.printStackTrace();
-		}
-		entry.addVariable("packageComplexity", packageComplexity);
-		packageComplexity = 0;
-		return entry;
+
 	}
 
 	private boolean isArchive(Path filePath) {
@@ -82,6 +94,9 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 	}
 
 	private void inspectArchive(Path filePath) {
+		System.out.println("Analyzing " + filePath.toAbsolutePath().toString()
+				+ " for package complexity");
+
 		try {
 			unzipFileToTempDir(filePath);
 			// COUNT: Archive Building, cost: 1
@@ -113,7 +128,8 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 		try (DirectoryStream<Path> dirStream = Files
 				.newDirectoryStream(dirPath)) {
 			for (Path pathInZip : dirStream) {
-				if (Files.isDirectory(pathInZip)) {
+				if (!isRelevant(pathInZip)) {
+				} else if (Files.isDirectory(pathInZip)) {
 					processArchiveDirectory(pathInZip);
 					// COUNT: Constructing directory. Cost: 1
 					packageComplexity++;
@@ -125,9 +141,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 	}
 
 	private void processRegularFile(Path pathInZip) {
-		if (isIgnored(pathInZip)) {
-			return;
-		} else if (isArchive(pathInZip)) {
+		if (isArchive(pathInZip)) {
 			inspectArchive(pathInZip);
 		} else {
 			// COUNT: Construct file. Cost: 1
@@ -143,9 +157,9 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 		}
 	}
 
-	private boolean isIgnored(Path path) {
-		for (String ignore : ignores) {
-			if (path.toString().endsWith(ignore)) {
+	private boolean isRelevant(Path path) {
+		for (String item : whiteList) {
+			if (path.toString().endsWith(item)) {
 				return true;
 			}
 		}
@@ -215,8 +229,10 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 		try {
 			for (String line : Files.readAllLines(pathInZip,
 					Charset.defaultCharset())) {
-				if (line.trim().length() > 0) {
-					// Count non-empty line, cost: 1
+				boolean isEmptyLine = line.trim().length() == 0;
+				boolean isCommentLine = line.startsWith("#");
+				if (!isEmptyLine && !isCommentLine) {
+					// Count non-empty, non-comment line, cost: 1
 					sum++;
 				}
 			}
