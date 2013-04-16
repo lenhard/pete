@@ -24,7 +24,7 @@ public class DirectoryAnalyzerTests {
 	public void testResourcesDirectory() {
 		Report report = sut.analyzeDirectory(Paths
 				.get("src/test/resources/installability"));
-		assertEquals(101, report.getSummedVariable("packageComplexity"));
+		assertEquals(248, report.getSummedVariable("packageComplexity"));
 	}
 
 }

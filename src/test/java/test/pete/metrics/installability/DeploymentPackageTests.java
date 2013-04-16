@@ -64,6 +64,21 @@ public class DeploymentPackageTests {
 		assertEquals(40, getPackageComplexity(result));
 	}
 
+	@Test
+	public void testComplexArchive() {
+		ReportEntry result = sut.analyzeFile(Paths.get(resourcePaths
+				+ "Sequence.jar"));
+		assertEquals(27, getPackageComplexity(result));
+
+		result = sut.analyzeFile(Paths.get(resourcePaths
+				+ "sun-http-binding.jar"));
+		assertEquals(25, getPackageComplexity(result));
+
+		result = sut.analyzeFile(Paths.get(resourcePaths
+				+ "SequenceApplication.zip"));
+		assertEquals(95, getPackageComplexity(result));
+	}
+
 	private int getPackageComplexity(ReportEntry entry) {
 		if (entry != null) {
 			return entry.getVariableValue("packageComplexity");
