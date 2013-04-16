@@ -65,7 +65,11 @@ public class DeploymentPackageTests {
 	}
 
 	private int getPackageComplexity(ReportEntry entry) {
-		return entry.getVariableValue("packageComplexity");
+		if (entry != null) {
+			return entry.getVariableValue("packageComplexity");
+		} else {
+			return 0;
+		}
 	}
 
 }

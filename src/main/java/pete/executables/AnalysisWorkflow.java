@@ -5,7 +5,7 @@ import java.nio.file.Path;
 
 import pete.metrics.installability.DeploymentPackageAnalyzer;
 import pete.reporting.Report;
-import pete.reporting.ReportEntry;
+import pete.reporting.ReportWriter;
 
 public class AnalysisWorkflow {
 
@@ -42,9 +42,7 @@ public class AnalysisWorkflow {
 	}
 
 	private void writeResults() {
-		for (ReportEntry entry : report) {
-			System.out.println(entry);
-		}
+		new ReportWriter(report, "results.csv").writeOut();
 	}
 
 }

@@ -38,4 +38,12 @@ public class ReportEntry {
 		}
 		return builder.toString();
 	}
+
+	public String toStringWithSeparator(String separator) {
+		StringBuilder builder = new StringBuilder(fileName + separator);
+		for (String variable : variables.keySet()) {
+			builder.append(separator + variables.get(variable));
+		}
+		return builder.toString();
+	}
 }

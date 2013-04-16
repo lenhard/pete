@@ -6,22 +6,28 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import pete.reporting.Report;
+import pete.reporting.ReportEntry;
 
 public class DirectoryAnalyzer {
 
 	private FileAnalyzer fileAnalyzer;
 
+	private Report report;
+
 	public DirectoryAnalyzer(FileAnalyzer fileAnalyzer) {
 		this.fileAnalyzer = fileAnalyzer;
+		report = new Report();
 	}
 
 	public Report analyzeDirectory(Path directory) {
-		Report report = new Report();
 
 		try (DirectoryStream<Path> stream = Files.newDirectoryStream(directory)) {
 			for (Path path : stream) {
 				if (Files.isRegularFile(path)) {
-					report.addEntry(fileAnalyzer.analyzeFile(path));
+					ReportEntry entry = fileAnalyzer.analyzeFile(path);
+					if (entry != null) {
+						report.addEntry(entry);
+					}
 				} else if (Files.isDirectory(path)) {
 					analyzeDirectory(path);
 				}
@@ -29,6 +35,7 @@ public class DirectoryAnalyzer {
 		} catch (IOException e) {
 			throw new AnalysisException(e);
 		}
+
 		return report;
 	}
 
