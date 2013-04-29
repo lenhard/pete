@@ -33,7 +33,9 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
 	private HashSet<String> whiteList;
 
-	private int packageComplexity;
+	private int effortOfPackageConstruction;
+
+	private int descriptorComplexity;
 
 	private String tempDir;
 
@@ -50,7 +52,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 		whiteList.add(".jar");
 		whiteList.add(".zip");
 
-		packageComplexity = 0;
+		reset();
 		tempDir = "tmp" + File.separator + System.currentTimeMillis();
 	}
 
@@ -76,8 +78,11 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 						+ filePath.getFileName());
 				e.printStackTrace();
 			}
-			entry.addVariable("packageComplexity", packageComplexity);
-			packageComplexity = 0;
+			entry.addVariable("packageComplexity", effortOfPackageConstruction
+					+ descriptorComplexity);
+			entry.addVariable("EPC", effortOfPackageConstruction);
+			entry.addVariable("DDC", descriptorComplexity);
+			reset();
 			return entry;
 		} else {
 			return null;
@@ -90,7 +95,9 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 		boolean isZip = fileName.endsWith(".zip");
 		boolean isBpr = fileName.endsWith(".bpr");
 		boolean isJar = fileName.endsWith(".jar");
-		return isZip || isBpr || isJar;
+		boolean isWar = fileName.endsWith(".war");
+		boolean isEar = fileName.endsWith(".ear");
+		return isZip || isBpr || isJar || isWar || isEar;
 	}
 
 	private void inspectArchive(Path filePath) {
@@ -100,7 +107,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 		try {
 			unzipFileToTempDir(filePath);
 			// COUNT: Archive Building, cost: 1
-			packageComplexity++;
+			effortOfPackageConstruction++;
 		} catch (ZipException e) {
 			System.err.println("Could not extract archive: "
 					+ filePath.toAbsolutePath() + " Ignoring file. Error: "
@@ -131,7 +138,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 				if (Files.isDirectory(pathInZip)) {
 					processArchiveDirectory(pathInZip);
 					// COUNT: Constructing directory. Cost: 1
-					packageComplexity++;
+					effortOfPackageConstruction++;
 				} else if (Files.isRegularFile(pathInZip)
 						&& isRelevant(pathInZip)) {
 					processRegularFile(pathInZip);
@@ -145,14 +152,14 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			inspectArchive(pathInZip);
 		} else {
 			// COUNT: Construct file. Cost: 1
-			packageComplexity++;
+			effortOfPackageConstruction++;
 			int cost = checkXmlFile(pathInZip);
 			if (cost == -1) {
 				cost = checkTextFile(pathInZip);
 			}
 
 			if (cost > 0) {
-				packageComplexity += cost;
+				descriptorComplexity += cost;
 			}
 		}
 	}
@@ -194,7 +201,6 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			// COUNT: root node of the document
 			return countElementsAndAttributes(dom.getChildNodes());
 		} catch (ParserConfigurationException | SAXException | IOException e) {
-			// Error is here. dom is not closed
 			return -1;
 		}
 	}
@@ -242,5 +248,10 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 		}
 
 		return sum;
+	}
+
+	private void reset() {
+		effortOfPackageConstruction = 0;
+		descriptorComplexity = 0;
 	}
 }

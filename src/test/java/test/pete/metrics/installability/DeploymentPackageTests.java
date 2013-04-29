@@ -27,6 +27,8 @@ public class DeploymentPackageTests {
 		ReportEntry result = sut
 				.analyzeFile(Paths.get(resourcePaths + "empty"));
 		assertEquals(0, getPackageComplexity(result));
+		assertEquals(0, getEffortOfPackageConstruction(result));
+		assertEquals(0, getDescriptorComplexity(result));
 	}
 
 	@Test
@@ -34,6 +36,8 @@ public class DeploymentPackageTests {
 		ReportEntry result = sut.analyzeFile(Paths.get(resourcePaths
 				+ "onlyXmlDescriptor.zip"));
 		assertEquals(14, getPackageComplexity(result));
+		assertEquals(2, getEffortOfPackageConstruction(result));
+		assertEquals(12, getDescriptorComplexity(result));
 	}
 
 	@Test
@@ -41,6 +45,8 @@ public class DeploymentPackageTests {
 		ReportEntry result = sut.analyzeFile(Paths.get(resourcePaths
 				+ "onlyManifest.zip"));
 		assertEquals(7, getPackageComplexity(result));
+		assertEquals(2, getEffortOfPackageConstruction(result));
+		assertEquals(5, getDescriptorComplexity(result));
 	}
 
 	@Test
@@ -48,6 +54,8 @@ public class DeploymentPackageTests {
 		ReportEntry result = sut.analyzeFile(Paths.get(resourcePaths
 				+ "xmlAndText.zip"));
 		assertEquals(20, getPackageComplexity(result));
+		assertEquals(3, getEffortOfPackageConstruction(result));
+		assertEquals(17, getDescriptorComplexity(result));
 	}
 
 	@Test
@@ -55,6 +63,8 @@ public class DeploymentPackageTests {
 		ReportEntry result = sut.analyzeFile(Paths.get(resourcePaths
 				+ "xmlAndTextAndIgnores.zip"));
 		assertEquals(20, getPackageComplexity(result));
+		assertEquals(3, getEffortOfPackageConstruction(result));
+		assertEquals(17, getDescriptorComplexity(result));
 	}
 
 	@Test
@@ -62,6 +72,8 @@ public class DeploymentPackageTests {
 		ReportEntry result = sut.analyzeFile(Paths.get(resourcePaths
 				+ "nestedArchives.zip"));
 		assertEquals(40, getPackageComplexity(result));
+		assertEquals(6, getEffortOfPackageConstruction(result));
+		assertEquals(34, getDescriptorComplexity(result));
 	}
 
 	@Test
@@ -69,19 +81,41 @@ public class DeploymentPackageTests {
 		ReportEntry result = sut.analyzeFile(Paths.get(resourcePaths
 				+ "Sequence.jar"));
 		assertEquals(27, getPackageComplexity(result));
+		assertEquals(5, getEffortOfPackageConstruction(result));
+		assertEquals(22, getDescriptorComplexity(result));
 
 		result = sut.analyzeFile(Paths.get(resourcePaths
 				+ "sun-http-binding.jar"));
 		assertEquals(25, getPackageComplexity(result));
+		assertEquals(6, getEffortOfPackageConstruction(result));
+		assertEquals(19, getDescriptorComplexity(result));
 
 		result = sut.analyzeFile(Paths.get(resourcePaths
 				+ "SequenceApplication.zip"));
 		assertEquals(95, getPackageComplexity(result));
+		assertEquals(15, getEffortOfPackageConstruction(result));
+		assertEquals(80, getDescriptorComplexity(result));
 	}
 
 	private int getPackageComplexity(ReportEntry entry) {
 		if (entry != null) {
 			return entry.getVariableValue("packageComplexity");
+		} else {
+			return 0;
+		}
+	}
+
+	private int getEffortOfPackageConstruction(ReportEntry entry) {
+		if (entry != null) {
+			return entry.getVariableValue("EPC");
+		} else {
+			return 0;
+		}
+	}
+
+	private int getDescriptorComplexity(ReportEntry entry) {
+		if (entry != null) {
+			return entry.getVariableValue("DDC");
 		} else {
 			return 0;
 		}
