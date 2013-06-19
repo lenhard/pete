@@ -28,13 +28,26 @@ public class ReportWriter {
 
 	private void printToFile() {
 		try (PrintWriter writer = new PrintWriter(new FileWriter(outputFile))) {
-			for (ReportEntry entry : report) {
-				writer.println(entry.toStringWithSeparator(";"));
-			}
+			printHeader(writer);
+			printBody(writer);
 		} catch (IOException e) {
 			System.err.println("Could no write to file " + outputFile + ": "
 					+ e.getMessage());
 			e.printStackTrace();
+		}
+	}
+
+	private void printHeader(PrintWriter writer) {
+		writer.print("filename;");
+		for (String varName : report.getEntries().get(0).getVariableNames()) {
+			writer.print(varName + ";");
+		}
+		writer.println();
+	}
+
+	private void printBody(PrintWriter writer) {
+		for (ReportEntry entry : report) {
+			writer.println(entry.toStringWithSeparator(";"));
 		}
 	}
 }

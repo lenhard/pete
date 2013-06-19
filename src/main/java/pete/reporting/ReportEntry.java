@@ -1,6 +1,7 @@
 package pete.reporting;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class ReportEntry {
 
@@ -40,10 +41,14 @@ public class ReportEntry {
 	}
 
 	public String toStringWithSeparator(String separator) {
-		StringBuilder builder = new StringBuilder(fileName + separator);
+		StringBuilder builder = new StringBuilder(fileName);
 		for (String variable : variables.keySet()) {
 			builder.append(separator + variables.get(variable));
 		}
 		return builder.toString();
+	}
+
+	public Set<String> getVariableNames() {
+		return variables.keySet();
 	}
 }
