@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import pete.executables.DirectoryAnalyzer;
-import pete.metrics.installability.DeploymentPackageAnalyzer;
+import pete.metrics.installability.application.DeploymentPackageAnalyzer;
 import pete.reporting.Report;
 
 public class DirectoryAnalyzerTests {

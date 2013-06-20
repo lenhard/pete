@@ -1,5 +1,6 @@
 package pete;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,6 +10,11 @@ import java.util.Scanner;
 public class InstallationTimeCalculator {
 
 	public static void main(String[] args) throws IOException {
+		new InstallationTimeCalculator().scanLog(args);
+	}
+
+	private void scanLog(String[] args) throws IOException,
+			FileNotFoundException {
 		Scanner scanner = new Scanner(Paths.get(args[0]));
 		PrintWriter writer = new PrintWriter(new FileOutputStream("out.csv"));
 		writer.println("engine;time;" + addAverages());
@@ -31,13 +37,13 @@ public class InstallationTimeCalculator {
 		scanner.close();
 	}
 
-	private static String addAverages() {
-		String ode = "=MITTELWERT(B2:B152)";
-		String bpelg = "=MITTELWERT(B153:B303)";
-		String orchestra = "=MITTELWERT(B304:B454)";
-		String openesb23 = "=MITTELWERT(B455:B605)";
-		String petals = "=MITTELWERT(B606:B756)";
-		String active = "=MITTELWERT(B757:B907)";
+	private String addAverages() {
+		String ode = "=MITTELWERT(B2:B153)";
+		String bpelg = "=MITTELWERT(B154:B305)";
+		String orchestra = "=MITTELWERT(B306:B457)";
+		String openesb23 = "=MITTELWERT(B458:B609)";
+		String petals = "=MITTELWERT(B610:B756)";
+		String active = "=MITTELWERT(B780:B931)";
 		String delimiter = ";";
 		return ode + delimiter + bpelg + delimiter + orchestra + delimiter
 				+ openesb23 + delimiter + petals + delimiter + active;

@@ -6,3 +6,6 @@ bin/
 .settings/
 tmp/
 results.csv
+out.csv
+test.zip
+/test

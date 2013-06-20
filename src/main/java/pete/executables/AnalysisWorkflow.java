@@ -3,7 +3,7 @@ package pete.executables;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import pete.metrics.installability.DeploymentPackageAnalyzer;
+import pete.metrics.installability.application.DeploymentPackageAnalyzer;
 import pete.reporting.Report;
 import pete.reporting.ReportWriter;
 

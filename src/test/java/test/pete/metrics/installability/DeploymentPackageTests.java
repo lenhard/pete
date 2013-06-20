@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
 
-import pete.metrics.installability.DeploymentPackageAnalyzer;
+import pete.metrics.installability.application.DeploymentPackageAnalyzer;
 import pete.reporting.ReportEntry;
 
 public class DeploymentPackageTests {
