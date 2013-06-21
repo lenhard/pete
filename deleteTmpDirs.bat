@@ -1,0 +1,1 @@
+FOR /D /R %X IN (tmp) DO RD /S /Q "%X"
