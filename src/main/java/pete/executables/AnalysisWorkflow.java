@@ -42,7 +42,8 @@ public class AnalysisWorkflow {
 	}
 
 	private void writeResults() {
-		new ReportWriter(report, "results.csv").writeOut();
+		ReportWriter writer = new ReportWriter(report);
+		writer.writeToExcelFile("results.csv");
+		writer.writeToRFile("r-results.csv");
 	}
-
 }

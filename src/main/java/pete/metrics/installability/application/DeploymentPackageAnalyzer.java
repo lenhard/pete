@@ -58,8 +58,48 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
 	@Override
 	public ReportEntry analyzeFile(Path filePath) {
+
 		ReportEntry entry = new ReportEntry(filePath.toString());
 
+		cleanUpTempFile(filePath);
+
+		if (isArchive(filePath)) {
+			inspectArchive(filePath);
+			cleanUpTempDir(filePath);
+
+			entry.addVariable("group", getEngineName(filePath.toString()));
+			entry.addVariable("packageComplexity",
+					(effortOfPackageConstruction + descriptorComplexity) + "");
+			entry.addVariable("EPC", effortOfPackageConstruction + "");
+			entry.addVariable("DDC", descriptorComplexity + "");
+
+			reset();
+			return entry;
+		} else {
+			return null;
+		}
+
+	}
+
+	private String getEngineName(String pathName) {
+		if (pathName.contains("active-bpel")) {
+			return "active";
+		} else if (pathName.contains("bpelg")) {
+			return "bpelg";
+		} else if (pathName.contains("ode")) {
+			return "ode";
+		} else if (pathName.contains("openesb23")) {
+			return "openesb";
+		} else if (pathName.contains("orchestra")) {
+			return "orchestra";
+		} else if (pathName.contains("petalsesb41")) {
+			return "petals";
+		} else {
+			return "";
+		}
+	}
+
+	private void cleanUpTempFile(Path filePath) {
 		try {
 			FileUtils.deleteDirectory(new File(tempDir + "/"
 					+ filePath.getFileName()));
@@ -68,26 +108,16 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 					+ filePath.getFileName());
 			e.printStackTrace();
 		}
+	}
 
-		if (isArchive(filePath)) {
-			inspectArchive(filePath);
-			try {
-				FileUtils.deleteDirectory(new File(tempDir));
-			} catch (IOException e) {
-				System.err.println("Error while deleting file for analysis of "
-						+ filePath.getFileName());
-				e.printStackTrace();
-			}
-			entry.addVariable("packageComplexity", effortOfPackageConstruction
-					+ descriptorComplexity);
-			entry.addVariable("EPC", effortOfPackageConstruction);
-			entry.addVariable("DDC", descriptorComplexity);
-			reset();
-			return entry;
-		} else {
-			return null;
+	private void cleanUpTempDir(Path filePath) {
+		try {
+			FileUtils.deleteDirectory(new File(tempDir));
+		} catch (IOException e) {
+			System.err.println("Error while deleting file for analysis of "
+					+ filePath.getFileName());
+			e.printStackTrace();
 		}
-
 	}
 
 	private boolean isArchive(Path filePath) {

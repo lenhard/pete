@@ -8,28 +8,28 @@ public class ReportWriter {
 
 	private Report report;
 
-	private String outputFile;
+	private final String excelDelimiter = ";";
 
-	public ReportWriter(Report report, String filePath) {
+	private final String rDelimiter = ",";
+
+	public ReportWriter(Report report) {
 		this.report = report;
-		this.outputFile = filePath;
 	}
 
-	public void writeOut() {
-		printToConsole();
-		printToFile();
-	}
-
-	private void printToConsole() {
+	public void printToConsole() {
 		for (ReportEntry entry : report) {
 			System.out.println(entry);
 		}
 	}
 
-	private void printToFile() {
+	public void writeToExcelFile(String outputFile) {
+		writeToFile(outputFile, excelDelimiter);
+	}
+
+	private void writeToFile(String outputFile, String delimiter) {
 		try (PrintWriter writer = new PrintWriter(new FileWriter(outputFile))) {
-			printHeader(writer);
-			printBody(writer);
+			printHeader(writer, delimiter);
+			printBody(writer, delimiter);
 		} catch (IOException e) {
 			System.err.println("Could no write to file " + outputFile + ": "
 					+ e.getMessage());
@@ -37,17 +37,21 @@ public class ReportWriter {
 		}
 	}
 
-	private void printHeader(PrintWriter writer) {
-		writer.print("filename;");
+	private void printHeader(PrintWriter writer, String delimiter) {
+		writer.print("filename" + delimiter);
 		for (String varName : report.getEntries().get(0).getVariableNames()) {
-			writer.print(varName + ";");
+			writer.print(varName + delimiter);
 		}
 		writer.println();
 	}
 
-	private void printBody(PrintWriter writer) {
+	private void printBody(PrintWriter writer, String delimiter) {
 		for (ReportEntry entry : report) {
-			writer.println(entry.toStringWithSeparator(";"));
+			writer.println(entry.toStringWithSeparator(delimiter));
 		}
+	}
+
+	public void writeToRFile(String outputFile) {
+		writeToFile(outputFile, rDelimiter);
 	}
 }

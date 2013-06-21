@@ -33,7 +33,7 @@ public class Report implements Iterable<ReportEntry> {
 	public int getSummedVariable(String name) {
 		int sum = 0;
 		for (ReportEntry entry : entries) {
-			sum += entry.getVariableValue(name);
+			sum += Integer.parseInt(entry.getVariableValue(name));
 		}
 		return sum;
 	}

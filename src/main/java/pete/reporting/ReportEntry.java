@@ -7,14 +7,14 @@ public class ReportEntry {
 
 	private final String fileName;
 
-	private HashMap<String, Integer> variables;
+	private HashMap<String, String> variables;
 
 	public ReportEntry(String fileName) {
 		this.fileName = fileName;
-		variables = new HashMap<String, Integer>();
+		variables = new HashMap<>();
 	}
 
-	public void addVariable(String name, Integer value) {
+	public void addVariable(String name, String value) {
 		variables.put(name, value);
 	}
 
@@ -22,10 +22,10 @@ public class ReportEntry {
 		return fileName;
 	}
 
-	public int getVariableValue(String name) {
-		Integer result = variables.get(name);
+	public String getVariableValue(String name) {
+		String result = variables.get(name);
 		if (result == null) {
-			return 0;
+			return "";
 		} else {
 			return result;
 		}

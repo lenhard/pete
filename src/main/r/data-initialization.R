@@ -1,0 +1,7 @@
+ds = read.csv("c:/workspaces/git/pete/r-results.csv")
+active <- subset(ds, group == "active")
+ode <- subset(ds, group == "ode")
+bpelg <- subset(ds, group == "bpelg")
+openesb <- subset(ds, group == "openesb")
+orchestra <- subset(ds, group == "orchestra")
+petals <- subset(ds, group == "petals")

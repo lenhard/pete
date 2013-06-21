@@ -99,7 +99,8 @@ public class DeploymentPackageTests {
 
 	private int getPackageComplexity(ReportEntry entry) {
 		if (entry != null) {
-			return entry.getVariableValue("packageComplexity");
+			return Integer
+					.parseInt(entry.getVariableValue("packageComplexity"));
 		} else {
 			return 0;
 		}
@@ -107,7 +108,7 @@ public class DeploymentPackageTests {
 
 	private int getEffortOfPackageConstruction(ReportEntry entry) {
 		if (entry != null) {
-			return entry.getVariableValue("EPC");
+			return Integer.parseInt(entry.getVariableValue("EPC"));
 		} else {
 			return 0;
 		}
@@ -115,7 +116,7 @@ public class DeploymentPackageTests {
 
 	private int getDescriptorComplexity(ReportEntry entry) {
 		if (entry != null) {
-			return entry.getVariableValue("DDC");
+			return Integer.parseInt(entry.getVariableValue("DDC"));
 		} else {
 			return 0;
 		}
