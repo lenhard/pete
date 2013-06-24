@@ -27,6 +27,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 import pete.executables.FileAnalyzer;
+import pete.metrics.installability.util.GroupReader;
 import pete.reporting.ReportEntry;
 
 public class DeploymentPackageAnalyzer implements FileAnalyzer {
@@ -67,7 +68,8 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			inspectArchive(filePath);
 			cleanUpTempDir(filePath);
 
-			entry.addVariable("group", getEngineName(filePath.toString()));
+			entry.addVariable("group",
+					GroupReader.readGroupFromPath(filePath.toString()));
 			entry.addVariable("packageComplexity",
 					(effortOfPackageConstruction + descriptorComplexity) + "");
 			entry.addVariable("EPC", effortOfPackageConstruction + "");
@@ -79,24 +81,6 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			return null;
 		}
 
-	}
-
-	private String getEngineName(String pathName) {
-		if (pathName.contains("active-bpel")) {
-			return "active";
-		} else if (pathName.contains("bpelg")) {
-			return "bpelg";
-		} else if (pathName.contains("ode")) {
-			return "ode";
-		} else if (pathName.contains("openesb23")) {
-			return "openesb";
-		} else if (pathName.contains("orchestra")) {
-			return "orchestra";
-		} else if (pathName.contains("petalsesb41")) {
-			return "petals";
-		} else {
-			return "";
-		}
 	}
 
 	private void cleanUpTempFile(Path filePath) {
