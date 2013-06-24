@@ -71,7 +71,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			entry.addVariable("packageComplexity",
 					(effortOfPackageConstruction + descriptorComplexity) + "");
 			entry.addVariable("EPC", effortOfPackageConstruction + "");
-			entry.addVariable("DDC", descriptorComplexity + "");
+			entry.addVariable("DDS", descriptorComplexity + "");
 
 			reset();
 			return entry;
