@@ -7,7 +7,7 @@ public class GroupReader {
 	public static String readGroupFromPath(String pathName) {
 		if (pathName.contains("active-bpel") || pathName.contains("ActiveBPEL")) {
 			return "active";
-		} else if (pathName.contains("bpelg")) {
+		} else if (pathName.contains("bpelg") || pathName.contains("bpel-g")) {
 			return "bpelg";
 		} else if (pathName.contains("ode") || pathName.contains("ODE")) {
 			return "ode";
