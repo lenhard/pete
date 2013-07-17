@@ -36,7 +36,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
 	private int effortOfPackageConstruction;
 
-	private int descriptorComplexity;
+	private int descriptorSize;
 
 	private String tempDir;
 
@@ -71,9 +71,9 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			entry.addVariable("group",
 					GroupReader.readGroupFromPath(filePath.toString()));
 			entry.addVariable("packageComplexity",
-					(effortOfPackageConstruction + descriptorComplexity) + "");
+					(effortOfPackageConstruction + descriptorSize) + "");
 			entry.addVariable("EPC", effortOfPackageConstruction + "");
-			entry.addVariable("DDS", descriptorComplexity + "");
+			entry.addVariable("DDS", descriptorSize + "");
 
 			reset();
 			return entry;
@@ -173,7 +173,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			}
 
 			if (cost > 0) {
-				descriptorComplexity += cost;
+				descriptorSize += cost;
 			}
 		}
 	}
@@ -266,6 +266,6 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
 	private void reset() {
 		effortOfPackageConstruction = 0;
-		descriptorComplexity = 0;
+		descriptorSize = 0;
 	}
 }
