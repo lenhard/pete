@@ -70,7 +70,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
 			entry.addVariable("group",
 					GroupReader.readGroupFromPath(filePath.toString()));
-			entry.addVariable("packageComplexity",
+			entry.addVariable("deploymentEffort",
 					(effortOfPackageConstruction + descriptorSize) + "");
 			entry.addVariable("EPC", effortOfPackageConstruction + "");
 			entry.addVariable("DDS", descriptorSize + "");

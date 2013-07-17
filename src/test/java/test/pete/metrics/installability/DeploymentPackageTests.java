@@ -77,6 +77,15 @@ public class DeploymentPackageTests {
 	}
 
 	@Test
+	public void testOdeSample() {
+		ReportEntry result = sut.analyzeFile(Paths.get(resourcePaths
+				+ "TestAlarm.zip"));
+		assertEquals(17, getPackageComplexity(result));
+		assertEquals(2, getEffortOfPackageConstruction(result));
+		assertEquals(15, getDescriptorComplexity(result));
+	}
+
+	@Test
 	public void testComplexArchive() {
 		ReportEntry result = sut.analyzeFile(Paths.get(resourcePaths
 				+ "Sequence.jar"));
@@ -99,8 +108,7 @@ public class DeploymentPackageTests {
 
 	private int getPackageComplexity(ReportEntry entry) {
 		if (entry != null) {
-			return Integer
-					.parseInt(entry.getVariableValue("packageComplexity"));
+			return Integer.parseInt(entry.getVariableValue("deploymentEffort"));
 		} else {
 			return 0;
 		}
