@@ -116,7 +116,7 @@ public class DeploymentPackageTests {
 
 	private int getDescriptorComplexity(ReportEntry entry) {
 		if (entry != null) {
-			return Integer.parseInt(entry.getVariableValue("DDC"));
+			return Integer.parseInt(entry.getVariableValue("DDS"));
 		} else {
 			return 0;
 		}
