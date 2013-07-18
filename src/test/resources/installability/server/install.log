@@ -1,0 +1,1976 @@
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.36 min / 22 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.06 min / 4 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.10 min / 6 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.10 min / 6 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.06 min / 4 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.11 min / 7 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.08 min / 5 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.06 min / 4 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.06 min / 4 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.06 min / 4 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.08 min / 5 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.06 min / 4 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.08 min / 5 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.06 min / 4 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.06 min / 4 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.08 min / 5 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.06 min / 4 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.06 min / 4 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.08 min / 5 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.05 min / 3 sec)
+     [echo] test/bpelg/install
+
+bpelg:
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip
+   [delete] Deleting directory C:\betsy_master\server\bpelg
+    [mkdir] Created dir: C:\betsy_master\server\bpelg
+    [unzip] Expanding: C:\betsy_master\downloads\apache-tomcat-7.0.26-windows-x64.zip into C:\betsy_master\server\bpelg
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\bpel-g-5.3.war
+    [unzip] Expanding: C:\betsy_master\downloads\bpel-g-5.3.war into C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\webapps\bpel-g\WEB-INF
+      [get] Destination already exists (skipping): C:\betsy_master\downloads\h2-1.2.122.jar
+     [copy] Copying 1 file to C:\betsy_master\server\bpelg\apache-tomcat-7.0.26\lib
+     [echo] test/bpelg/install (0.03 min / 2 sec)

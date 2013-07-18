@@ -4,10 +4,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -33,6 +34,8 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 
 	private HashMap<String, AtomicInteger> failures;
 
+	private String fileName;
+
 	public AverageInstallationTimeCalculator() {
 		entries = new HashMap<>();
 		entries.put(ODE_NAME, new ArrayList<Integer>(153));
@@ -42,12 +45,18 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 		entries.put(ORCHESTRA_NAME, new ArrayList<Integer>(153));
 		entries.put(ACTIVE_BPEL_NAME, new ArrayList<Integer>(153));
 		failures = new HashMap<>();
+		failures.put(ODE_NAME, new AtomicInteger(0));
+		failures.put(BPELG_NAME, new AtomicInteger(0));
+		failures.put(OPENESB_NAME, new AtomicInteger(0));
 		failures.put(PETALS_NAME, new AtomicInteger(0));
+		failures.put(ORCHESTRA_NAME, new AtomicInteger(0));
+		failures.put(ACTIVE_BPEL_NAME, new AtomicInteger(0));
 	}
 
-	public void scanLog(String[] args) throws IOException,
+	private void scanLog(Path filePath) throws IOException,
 			FileNotFoundException {
-		Scanner scanner = new Scanner(Paths.get(args[0]));
+		Scanner scanner = new Scanner(filePath);
+		fileName = filePath.toString();
 		PrintWriter writer = new PrintWriter(new FileOutputStream("out.csv"));
 
 		writer.println("engine;time;" + addAverages());
@@ -72,7 +81,6 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 			}
 		}
 		writer.println(buildAveragesString());
-		writer.println(getESR());
 		writer.close();
 		scanner.close();
 	}
@@ -83,19 +91,19 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 
 		for (String engine : entries.keySet()) {
 			title.append(engine + ";");
-			double avg = getAverage(engine);
-			body.append(String.format("%1$,2f", avg) + ";");
+			body.append(getAverage(engine) + ";");
 		}
 		title.append("\n" + body);
 		return title.toString();
 	}
 
-	private double getAverage(String engineName) {
+	private String getAverage(String engineName) {
 		int sum = 0;
 		for (Integer entry : entries.get(engineName)) {
 			sum += entry;
 		}
-		return (double) sum / (double) entries.get(engineName).size();
+		double avg = (double) sum / (double) entries.get(engineName).size();
+		return String.format("%1$,2f", avg);
 	}
 
 	private String addAverages() {
@@ -110,18 +118,41 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 				+ openesb23 + delimiter + petals + delimiter + active;
 	}
 
-	private String getESR() {
-		int numOfPetalsFailures = failures.get(PETALS_NAME).get();
-		int totalPetalsAttempts = entries.get(PETALS_NAME).size()
-				+ numOfPetalsFailures;
-		double petalsESR = ((double) totalPetalsAttempts)
-				/ ((double) (numOfPetalsFailures + totalPetalsAttempts));
-		return "ESR;" + String.format("%1$,2f", petalsESR);
+	private String getESR(String engineName) {
+		int numOfFailures = failures.get(engineName).get();
+		int totalSuccesses = entries.get(engineName).size() + numOfFailures;
+		double petalsESR = ((double) totalSuccesses)
+				/ ((double) (numOfFailures + totalSuccesses));
+		return String.format("%1$,2f", petalsESR);
 	}
 
 	@Override
 	public List<ReportEntry> analyzeFile(Path filePath) {
-		// TODO Auto-generated method stub
-		return null;
+		if (Files.isRegularFile(filePath) && Files.isReadable(filePath)) {
+			try {
+				scanLog(filePath);
+			} catch (IOException e) {
+				return new ArrayList<ReportEntry>(0);
+			}
+
+			return buildResults();
+
+		} else {
+			return new ArrayList<ReportEntry>(0);
+		}
+	}
+
+	private List<ReportEntry> buildResults() {
+		List<ReportEntry> results = new LinkedList<>();
+		for (String engine : entries.keySet()) {
+			if (entries.get(engine).size() > 0) {
+				ReportEntry entry = new ReportEntry(fileName);
+				entry.addVariable("engine", engine);
+				entry.addVariable("ESR", getESR(engine));
+				entry.addVariable("AIT", getAverage(engine));
+				results.add(entry);
+			}
+		}
+		return results;
 	}
 }
