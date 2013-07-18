@@ -8,7 +8,9 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -58,7 +60,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 	}
 
 	@Override
-	public ReportEntry analyzeFile(Path filePath) {
+	public List<ReportEntry> analyzeFile(Path filePath) {
 
 		ReportEntry entry = new ReportEntry(filePath.toString());
 
@@ -76,9 +78,12 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			entry.addVariable("DDS", descriptorSize + "");
 
 			reset();
-			return entry;
+
+			List<ReportEntry> entryList = new ArrayList<>(1);
+			entryList.add(entry);
+			return entryList;
 		} else {
-			return null;
+			return new ArrayList<>(0);
 		}
 
 	}
@@ -116,7 +121,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
 	private void inspectArchive(Path filePath) {
 		System.out.println("Analyzing " + filePath.toAbsolutePath().toString()
-				+ " for package complexity");
+				+ " for deployment effort");
 
 		try {
 			unzipFileToTempDir(filePath);

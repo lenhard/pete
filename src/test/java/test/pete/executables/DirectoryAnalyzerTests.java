@@ -17,14 +17,14 @@ public class DirectoryAnalyzerTests {
 
 	@Before
 	public void setUp() {
-		sut = new DirectoryAnalyzer(new DeploymentPackageAnalyzer());
 	}
 
 	@Test
 	public void testResourcesDirectory() {
+		sut = new DirectoryAnalyzer(new DeploymentPackageAnalyzer());
 		Report report = sut.analyzeDirectory(Paths
-				.get("src/test/resources/installability"));
-		assertEquals(248, report.getSummedVariable("packageComplexity"));
+				.get("src/test/resources/installability/deployment"));
+		assertEquals(265, report.getSummedVariable("deploymentEffort"));
 	}
 
 }

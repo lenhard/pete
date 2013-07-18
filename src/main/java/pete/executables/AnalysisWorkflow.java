@@ -5,6 +5,7 @@ import java.nio.file.Path;
 
 import pete.metrics.installability.application.DeploymentPackageAnalyzer;
 import pete.reporting.Report;
+import pete.reporting.ReportEntry;
 import pete.reporting.ReportWriter;
 
 public class AnalysisWorkflow {
@@ -34,7 +35,9 @@ public class AnalysisWorkflow {
 
 	private void parseFile(Path file) {
 		report = new Report();
-		report.addEntry(fileAnalyzer.analyzeFile(file));
+		for (ReportEntry entry : fileAnalyzer.analyzeFile(file)) {
+			report.addEntry(entry);
+		}
 	}
 
 	private void parseDirectory(Path root) {

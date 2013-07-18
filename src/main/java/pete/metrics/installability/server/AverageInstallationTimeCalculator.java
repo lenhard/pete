@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +12,10 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class AverageInstallationTimeCalculator {
+import pete.executables.FileAnalyzer;
+import pete.reporting.ReportEntry;
+
+public class AverageInstallationTimeCalculator implements FileAnalyzer {
 
 	private static final String ACTIVE_BPEL_NAME = "active-bpel";
 
@@ -51,17 +55,6 @@ public class AverageInstallationTimeCalculator {
 			String line = scanner.nextLine();
 			if (line.contains("/install (")) {
 
-				// Deprecated min calculation
-				// String[] split = line.split("\\(");
-				// double min = Double.parseDouble(split[1].substring(0, 4));
-				//
-				// split = line.split("/");
-				// String engineName = split[1];
-				//
-
-				// writer.println(engineName + ";" + String.format("%1$,2f",
-				// min));
-
 				String[] split = line.split("/");
 				String engineName = split[1];
 
@@ -69,8 +62,7 @@ public class AverageInstallationTimeCalculator {
 						(split[3].length() - 5)));
 
 				entries.get(engineName).add(sec);
-				// writer.println(engineName + ";" + String.format("%1$,2f",
-				// sec));
+
 				writer.println(engineName + ";" + sec);
 
 			} else if (line
@@ -79,27 +71,31 @@ public class AverageInstallationTimeCalculator {
 				failures.get(PETALS_NAME).incrementAndGet();
 			}
 		}
-		writer.println(computeAverages());
+		writer.println(buildAveragesString());
 		writer.println(getESR());
 		writer.close();
 		scanner.close();
 	}
 
-	private String computeAverages() {
+	private String buildAveragesString() {
 		StringBuilder title = new StringBuilder();
 		StringBuilder body = new StringBuilder();
 
 		for (String engine : entries.keySet()) {
 			title.append(engine + ";");
-			int sum = 0;
-			for (Integer entry : entries.get(engine)) {
-				sum += entry;
-			}
-			double avg = (double) sum / (double) entries.get(engine).size();
+			double avg = getAverage(engine);
 			body.append(String.format("%1$,2f", avg) + ";");
 		}
 		title.append("\n" + body);
 		return title.toString();
+	}
+
+	private double getAverage(String engineName) {
+		int sum = 0;
+		for (Integer entry : entries.get(engineName)) {
+			sum += entry;
+		}
+		return (double) sum / (double) entries.get(engineName).size();
 	}
 
 	private String addAverages() {
@@ -121,5 +117,11 @@ public class AverageInstallationTimeCalculator {
 		double petalsESR = ((double) totalPetalsAttempts)
 				/ ((double) (numOfPetalsFailures + totalPetalsAttempts));
 		return "ESR;" + String.format("%1$,2f", petalsESR);
+	}
+
+	@Override
+	public List<ReportEntry> analyzeFile(Path filePath) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

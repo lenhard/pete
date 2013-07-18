@@ -9,7 +9,7 @@ public class Pete {
 
 	public static void main(String[] args) {
 		System.out.println("Hello, I'm Pete");
-		validateAndSetArgs(args);
+		validateArgs(args);
 
 		Path root = Paths.get(args[0]);
 
@@ -18,11 +18,13 @@ public class Pete {
 		workflow.start();
 	}
 
-	private static void validateAndSetArgs(String[] args) {
-		if (args.length != 1) {
+	private static void validateArgs(String[] args) {
+		if (args.length != 2) {
 			System.out.println("Error: Wrong arguments!");
 			System.out.println("Arguments must be:");
-			System.out.println("[1]: Path to file or directory");
+			System.out
+					.println("[1]: Selection of analysis type. Use -d for deployment anlysis, -i for installability analysis");
+			System.out.println("[2]: Path to file or directory");
 			System.exit(1);
 		}
 	}
