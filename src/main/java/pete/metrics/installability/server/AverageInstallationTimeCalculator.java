@@ -1,11 +1,12 @@
 package pete.metrics.installability.server;
 
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -38,6 +39,8 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 
 	private String fileName;
 
+	List<String> fullLog;
+
 	public AverageInstallationTimeCalculator() {
 		reset();
 		installationSteps = new HashMap<>();
@@ -47,6 +50,8 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 		installationSteps.put(OPENESB_NAME, new Integer(7));
 		installationSteps.put(BPELG_NAME, new Integer(6));
 		installationSteps.put(ODE_NAME, new Integer(7));
+		fullLog = new LinkedList<>();
+		fullLog.add("engine;time;failed");
 	}
 
 	private void reset() {
@@ -73,9 +78,7 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 				+ " for installability");
 		Scanner scanner = new Scanner(filePath);
 		fileName = filePath.toString();
-		PrintWriter writer = new PrintWriter(new FileOutputStream("out.csv"));
 
-		writer.println("engine;time;");
 		while (scanner.hasNextLine()) {
 			String line = scanner.nextLine();
 			if (line.contains("/install (")) {
@@ -88,29 +91,14 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 
 				entries.get(engineName).add(sec);
 
-				writer.println(engineName + ";" + sec);
+				fullLog.add(engineName + ";" + sec);
 
 			} else if (line
 					.contains("SOAP BC Installation failed - shutdown, reinstall and start petalsesb again")) {
-				writer.println("petals;;" + 1);
 				failures.get(PETALS_NAME).incrementAndGet();
 			}
 		}
-		writer.println(buildAveragesString());
-		writer.close();
 		scanner.close();
-	}
-
-	private String buildAveragesString() {
-		StringBuilder title = new StringBuilder();
-		StringBuilder body = new StringBuilder();
-
-		for (String engine : entries.keySet()) {
-			title.append(engine + ";");
-			body.append(getAverage(engine) + ";");
-		}
-		title.append("\n" + body);
-		return title.toString();
 	}
 
 	private double getAverage(String engineName) {
@@ -169,6 +157,13 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 				entry.addVariable("N", entries.get(engine).size() + "");
 				results.add(entry);
 			}
+		}
+		try {
+			Files.write(Paths.get("out.csv"), fullLog,
+					Charset.defaultCharset(),
+					StandardOpenOption.TRUNCATE_EXISTING);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		return results;
 	}

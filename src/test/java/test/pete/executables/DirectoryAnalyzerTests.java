@@ -33,10 +33,8 @@ public class DirectoryAnalyzerTests {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
 		Report report = sut.analyzeDirectory(Paths
 				.get("src/test/resources/installability/server/"));
-		assertEquals("2,875000",
-				report.getEntries().get(0).getVariableValue("AIT"));
-		assertEquals("1,000000",
-				report.getEntries().get(0).getVariableValue("ESR"));
+		assertEquals("2,88", report.getEntries().get(0).getVariableValue("AIT"));
+		assertEquals("1,00", report.getEntries().get(0).getVariableValue("ESR"));
 	}
 
 }
