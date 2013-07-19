@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import pete.metrics.installability.application.DeploymentPackageAnalyzer;
+import pete.metrics.installability.server.AverageInstallationTimeCalculator;
 import pete.reporting.Report;
 import pete.reporting.ReportEntry;
 import pete.reporting.ReportWriter;
@@ -18,9 +19,13 @@ public class AnalysisWorkflow {
 
 	private Report report;
 
-	public AnalysisWorkflow(Path root) {
+	public AnalysisWorkflow(Path root, AnalysisType type) {
 		this.root = root;
-		fileAnalyzer = new DeploymentPackageAnalyzer();
+		if (type.equals(AnalysisType.DEPLOYABILITY)) {
+			fileAnalyzer = new DeploymentPackageAnalyzer();
+		} else {
+			fileAnalyzer = new AverageInstallationTimeCalculator();
+		}
 		dirAnalyzer = new DirectoryAnalyzer(fileAnalyzer);
 	}
 

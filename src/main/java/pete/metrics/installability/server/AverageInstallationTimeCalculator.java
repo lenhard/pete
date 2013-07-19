@@ -37,6 +37,10 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 	private String fileName;
 
 	public AverageInstallationTimeCalculator() {
+		reset();
+	}
+
+	private void reset() {
 		entries = new HashMap<>();
 		entries.put(ODE_NAME, new ArrayList<Integer>(153));
 		entries.put(BPELG_NAME, new ArrayList<Integer>(153));
@@ -51,10 +55,13 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 		failures.put(PETALS_NAME, new AtomicInteger(0));
 		failures.put(ORCHESTRA_NAME, new AtomicInteger(0));
 		failures.put(ACTIVE_BPEL_NAME, new AtomicInteger(0));
+		fileName = "";
 	}
 
 	private void scanLog(Path filePath) throws IOException,
 			FileNotFoundException {
+		System.out.println("Analysing file " + filePath.toString()
+				+ " for installability");
 		Scanner scanner = new Scanner(filePath);
 		fileName = filePath.toString();
 		PrintWriter writer = new PrintWriter(new FileOutputStream("out.csv"));
@@ -128,18 +135,22 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 
 	@Override
 	public List<ReportEntry> analyzeFile(Path filePath) {
+		List<ReportEntry> result = null;
 		if (Files.isRegularFile(filePath) && Files.isReadable(filePath)) {
 			try {
 				scanLog(filePath);
 			} catch (IOException e) {
-				return new ArrayList<ReportEntry>(0);
+				result = new ArrayList<ReportEntry>(0);
 			}
 
-			return buildResults();
+			result = buildResults();
 
 		} else {
-			return new ArrayList<ReportEntry>(0);
+			result = new ArrayList<ReportEntry>(0);
 		}
+
+		reset();
+		return result;
 	}
 
 	private List<ReportEntry> buildResults() {
@@ -150,9 +161,11 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 				entry.addVariable("engine", engine);
 				entry.addVariable("ESR", getESR(engine));
 				entry.addVariable("AIT", getAverage(engine));
+				entry.addVariable("N", entries.get(engine).size() + "");
 				results.add(entry);
 			}
 		}
 		return results;
 	}
+
 }
