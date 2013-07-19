@@ -34,10 +34,19 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 
 	private HashMap<String, AtomicInteger> failures;
 
+	private HashMap<String, Integer> installationSteps;
+
 	private String fileName;
 
 	public AverageInstallationTimeCalculator() {
 		reset();
+		installationSteps = new HashMap<>();
+		installationSteps.put(ACTIVE_BPEL_NAME, new Integer(6));
+		installationSteps.put(ORCHESTRA_NAME, new Integer(9));
+		installationSteps.put(PETALS_NAME, new Integer(5));
+		installationSteps.put(OPENESB_NAME, new Integer(7));
+		installationSteps.put(BPELG_NAME, new Integer(6));
+		installationSteps.put(ODE_NAME, new Integer(7));
 	}
 
 	private void reset() {
@@ -66,7 +75,7 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 		fileName = filePath.toString();
 		PrintWriter writer = new PrintWriter(new FileOutputStream("out.csv"));
 
-		writer.println("engine;time;" + addAverages());
+		writer.println("engine;time;");
 		while (scanner.hasNextLine()) {
 			String line = scanner.nextLine();
 			if (line.contains("/install (")) {
@@ -104,25 +113,13 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 		return title.toString();
 	}
 
-	private String getAverage(String engineName) {
+	private double getAverage(String engineName) {
 		int sum = 0;
 		for (Integer entry : entries.get(engineName)) {
 			sum += entry;
 		}
 		double avg = (double) sum / (double) entries.get(engineName).size();
-		return String.format("%1$,2f", avg);
-	}
-
-	private String addAverages() {
-		String ode = "=MITTELWERT(B2:B153)";
-		String bpelg = "=MITTELWERT(B154:B305)";
-		String orchestra = "=MITTELWERT(B306:B457)";
-		String openesb23 = "=MITTELWERT(B458:B609)";
-		String petals = "=MITTELWERT(B610:B756)";
-		String active = "=MITTELWERT(B780:B931)";
-		String delimiter = ";";
-		return ode + delimiter + bpelg + delimiter + orchestra + delimiter
-				+ openesb23 + delimiter + petals + delimiter + active;
+		return avg;
 	}
 
 	private String getESR(String engineName) {
@@ -130,7 +127,11 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 		int totalSuccesses = entries.get(engineName).size() + numOfFailures;
 		double petalsESR = ((double) totalSuccesses)
 				/ ((double) (numOfFailures + totalSuccesses));
-		return String.format("%1$,2f", petalsESR);
+		return String.format("%1$.2f", petalsESR);
+	}
+
+	private double getIE(String engineName) {
+		return getAverage(engineName) / installationSteps.get(engineName);
 	}
 
 	@Override
@@ -155,17 +156,20 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 
 	private List<ReportEntry> buildResults() {
 		List<ReportEntry> results = new LinkedList<>();
+		String formatString = "%1$,.2f";
 		for (String engine : entries.keySet()) {
 			if (entries.get(engine).size() > 0) {
 				ReportEntry entry = new ReportEntry(fileName);
 				entry.addVariable("engine", engine);
 				entry.addVariable("ESR", getESR(engine));
-				entry.addVariable("AIT", getAverage(engine));
+				entry.addVariable("AIT",
+						String.format(formatString, getAverage(engine)));
+				entry.addVariable("IE",
+						String.format(formatString, getIE(engine)));
 				entry.addVariable("N", entries.get(engine).size() + "");
 				results.add(entry);
 			}
 		}
 		return results;
 	}
-
 }
