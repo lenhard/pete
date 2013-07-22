@@ -28,7 +28,7 @@ public class Pete {
 					.println("[1]: Selection of analysis type. Use -d for deployment anlysis, -i for installability analysis");
 			System.out.println("[2]: Path to file or directory");
 			System.exit(1);
-		} else if (!args[0].equals("-i") && args[0].equals("-d")) {
+		} else if (!args[0].equals("-i") && !args[0].equals("-d")) {
 			System.out.println("Unknown option: " + args[0]);
 			System.out.println("Available options: -i | -d");
 			System.exit(1);
