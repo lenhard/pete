@@ -12,11 +12,11 @@ public class GroupReader {
 		} else if (pathName.contains("ode") || pathName.contains("ODE")) {
 			return "ode";
 		} else if (pathName.contains("openesb23")
-				|| pathName.contains("OpenESB")) {
+				|| pathName.toLowerCase().contains("openesb")) {
 			return "openesb";
 		} else if (pathName.contains("orchestra")) {
 			return "orchestra";
-		} else if (pathName.contains("petalsesb41")) {
+		} else if (pathName.contains("petals")) {
 			return "petals";
 		} else {
 			return "";
