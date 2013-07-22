@@ -51,7 +51,7 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 		installationSteps.put(BPELG_NAME, new Integer(6));
 		installationSteps.put(ODE_NAME, new Integer(7));
 		fullLog = new LinkedList<>();
-		fullLog.add("engine;time;failed");
+		fullLog.add("engine,time,failed");
 	}
 
 	private void reset() {
@@ -91,7 +91,7 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 
 				entries.get(engineName).add(sec);
 
-				fullLog.add(engineName + ";" + sec);
+				fullLog.add(engineName + "," + sec);
 
 			} else if (line
 					.contains("SOAP BC Installation failed - shutdown, reinstall and start petalsesb again")) {
