@@ -239,7 +239,9 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 				NamedNodeMap attributes = node.getAttributes();
 				for (int j = 0; j < attributes.getLength(); j++) {
 					Node attribute = attributes.item(j);
-					if (!attribute.getNodeValue().equals("")) {
+					boolean isEmpty = attribute.getNodeValue().equals("");
+					boolean isNamespace = isNamespaceDeclaration(attribute);
+					if (!isEmpty && !isNamespace) {
 						// COUNT: An attribute that contains something, cost:1
 						sum++;
 					}
@@ -247,6 +249,10 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			}
 		}
 		return sum;
+	}
+
+	private boolean isNamespaceDeclaration(Node attribute) {
+		return attribute.toString().startsWith("xmlns");
 	}
 
 	private int checkTextFile(Path pathInZip) {
