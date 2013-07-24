@@ -1,4 +1,4 @@
-package pete.metrics.installability.application;
+package pete.metrics.installability.deployability;
 
 import java.io.File;
 import java.io.FileInputStream;

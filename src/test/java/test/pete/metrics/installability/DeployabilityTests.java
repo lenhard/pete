@@ -8,7 +8,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import pete.metrics.installability.application.DeploymentPackageAnalyzer;
+import pete.metrics.installability.deployability.DeploymentPackageAnalyzer;
 import pete.reporting.ReportEntry;
 
 public class DeployabilityTests {

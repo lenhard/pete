@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import pete.executables.DirectoryAnalyzer;
-import pete.metrics.installability.application.DeploymentPackageAnalyzer;
+import pete.metrics.installability.deployability.DeploymentPackageAnalyzer;
 import pete.metrics.installability.server.AverageInstallationTimeCalculator;
 import pete.reporting.Report;
 
