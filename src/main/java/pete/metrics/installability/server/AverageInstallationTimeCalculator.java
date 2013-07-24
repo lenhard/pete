@@ -19,6 +19,8 @@ import pete.reporting.ReportEntry;
 
 public class AverageInstallationTimeCalculator implements FileAnalyzer {
 
+	private static final String RAW_FILE = "raw.csv";
+
 	private static final String ACTIVE_BPEL_NAME = "active-bpel";
 
 	private static final String ORCHESTRA_NAME = "orchestra";
@@ -159,8 +161,7 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 			}
 		}
 		try {
-			Files.write(Paths.get("out.csv"), fullLog,
-					Charset.defaultCharset(),
+			Files.write(Paths.get(RAW_FILE), fullLog, Charset.defaultCharset(),
 					StandardOpenOption.TRUNCATE_EXISTING);
 		} catch (IOException e) {
 			e.printStackTrace();
