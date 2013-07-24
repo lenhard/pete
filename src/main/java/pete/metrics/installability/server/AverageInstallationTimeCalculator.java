@@ -162,7 +162,7 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 		}
 		try {
 			Files.write(Paths.get(RAW_FILE), fullLog, Charset.defaultCharset(),
-					StandardOpenOption.TRUNCATE_EXISTING);
+					StandardOpenOption.CREATE);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

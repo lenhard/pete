@@ -6,7 +6,7 @@ bin/
 .settings/
 tmp/
 results.csv
-out.csv
+raw.csv
 test.zip
 /test
 r-results.csv
