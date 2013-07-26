@@ -21,6 +21,12 @@ public class AnalysisWorkflow {
 
 	public AnalysisWorkflow(Path root, AnalysisType type) {
 		this.root = root;
+
+		if (!Files.exists(root)) {
+			throw new IllegalArgumentException("path " + root.toString()
+					+ " does not exist");
+		}
+
 		if (type.equals(AnalysisType.DEPLOYABILITY)) {
 			fileAnalyzer = new DeploymentPackageAnalyzer();
 		} else {
