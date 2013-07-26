@@ -94,14 +94,14 @@ public class DeployabilityTests {
 
 		result = sut.analyzeFile(
 				Paths.get(resourcePaths + "sun-http-binding.jar")).get(0);
-		assertEquals(17, getDeploymentEffort(result));
-		assertEquals(6, getEffortOfPackageConstruction(result));
+		assertEquals(16, getDeploymentEffort(result));
+		assertEquals(5, getEffortOfPackageConstruction(result));
 		assertEquals(11, getDescriptorComplexity(result));
 
 		result = sut.analyzeFile(
 				Paths.get(resourcePaths + "SequenceApplication.zip")).get(0);
-		assertEquals(73, getDeploymentEffort(result));
-		assertEquals(15, getEffortOfPackageConstruction(result));
+		assertEquals(72, getDeploymentEffort(result));
+		assertEquals(14, getEffortOfPackageConstruction(result));
 		assertEquals(58, getDescriptorComplexity(result));
 	}
 

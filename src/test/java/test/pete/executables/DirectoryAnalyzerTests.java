@@ -25,7 +25,7 @@ public class DirectoryAnalyzerTests {
 		sut = new DirectoryAnalyzer(new DeploymentPackageAnalyzer());
 		Report report = sut.analyzeDirectory(Paths
 				.get("src/test/resources/installability/deployment"));
-		assertEquals(216, report.getSummedVariable("DE"));
+		assertEquals(214, report.getSummedVariable("DE"));
 	}
 
 	@Test
