@@ -177,8 +177,6 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			for (Path pathInZip : dirStream) {
 				if (Files.isDirectory(pathInZip)) {
 					processArchiveDirectory(pathInZip);
-					// COUNT: Constructing directory. Cost: 1
-					// effortOfPackageConstruction++;
 				} else if (Files.isRegularFile(pathInZip)
 						&& isRelevant(pathInZip)) {
 					processRegularFile(pathInZip);
