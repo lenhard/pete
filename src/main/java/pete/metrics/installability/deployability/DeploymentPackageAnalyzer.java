@@ -43,6 +43,8 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
 	private int descriptorSize;
 
+	private int numberOfServices;
+
 	private String tempDir;
 
 	private List<Path> descriptorPaths;
@@ -67,31 +69,36 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 	@Override
 	public List<ReportEntry> analyzeFile(Path filePath) {
 
-		ReportEntry entry = new ReportEntry(filePath.toString());
-
 		cleanUpTempFile(filePath);
 
 		if (isArchive(filePath)) {
+
 			inspectArchive(filePath);
+
 			addDirectoryNumber();
+
 			cleanUpTempDir(filePath);
 
-			entry.addVariable("group",
-					GroupReader.readGroupFromPath(filePath.toString()));
-			entry.addVariable("DE",
-					(effortOfPackageConstruction + descriptorSize) + "");
-			entry.addVariable("EPC", effortOfPackageConstruction + "");
-			entry.addVariable("DDS", descriptorSize + "");
-
-			reset();
-
-			List<ReportEntry> entryList = new ArrayList<>(1);
-			entryList.add(entry);
-			return entryList;
+			return buildResult(filePath);
 		} else {
 			return new ArrayList<>(0);
 		}
 
+	}
+
+	private List<ReportEntry> buildResult(Path filePath) {
+		List<ReportEntry> entryList = new ArrayList<>(1);
+		ReportEntry entry = new ReportEntry(filePath.toString());
+		entry.addVariable("group",
+				GroupReader.readGroupFromPath(filePath.toString()));
+		entry.addVariable("DE", (effortOfPackageConstruction + descriptorSize)
+				+ "");
+		entry.addVariable("EPC", effortOfPackageConstruction + "");
+		entry.addVariable("DDS", descriptorSize + "");
+		entry.addVariable("NServ", numberOfServices + "");
+		entryList.add(entry);
+		reset();
+		return entryList;
 	}
 
 	private void addDirectoryNumber() {
@@ -177,12 +184,18 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			for (Path pathInZip : dirStream) {
 				if (Files.isDirectory(pathInZip)) {
 					processArchiveDirectory(pathInZip);
+				} else if (isWsdl(pathInZip)) {
+					numberOfServices++;
 				} else if (Files.isRegularFile(pathInZip)
 						&& isRelevant(pathInZip)) {
 					processRegularFile(pathInZip);
 				}
 			}
 		}
+	}
+
+	private boolean isWsdl(Path path) {
+		return path.toString().endsWith(".wsdl");
 	}
 
 	private void processRegularFile(Path pathInZip) {
@@ -298,6 +311,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 	private void reset() {
 		effortOfPackageConstruction = 0;
 		descriptorSize = 0;
+		numberOfServices = 0;
 		descriptorPaths = new LinkedList<Path>();
 	}
 }
