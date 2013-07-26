@@ -10,7 +10,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -42,6 +45,8 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
 	private String tempDir;
 
+	private List<Path> descriptorPaths;
+
 	public DeploymentPackageAnalyzer() {
 		whiteList = new HashSet<String>();
 		whiteList.add(".componentType");
@@ -68,6 +73,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 
 		if (isArchive(filePath)) {
 			inspectArchive(filePath);
+			addDirectoryNumber();
 			cleanUpTempDir(filePath);
 
 			entry.addVariable("group",
@@ -86,6 +92,21 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 			return new ArrayList<>(0);
 		}
 
+	}
+
+	private void addDirectoryNumber() {
+		Set<Path> uniquePaths = new LinkedHashSet<>();
+		for (Path path : descriptorPaths) {
+			Path current = path.getParent();
+			boolean isTopLevel = current.getNameCount() <= 3;
+			while (!isTopLevel) {
+				uniquePaths.add(current);
+				current = current.getParent();
+				isTopLevel = current.getNameCount() <= 3;
+			}
+		}
+		// Count each dir that needs to be constructed for a descriptor
+		effortOfPackageConstruction += uniquePaths.size();
 	}
 
 	private void cleanUpTempFile(Path filePath) {
@@ -157,7 +178,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 				if (Files.isDirectory(pathInZip)) {
 					processArchiveDirectory(pathInZip);
 					// COUNT: Constructing directory. Cost: 1
-					effortOfPackageConstruction++;
+					// effortOfPackageConstruction++;
 				} else if (Files.isRegularFile(pathInZip)
 						&& isRelevant(pathInZip)) {
 					processRegularFile(pathInZip);
@@ -172,6 +193,7 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 		} else {
 			// COUNT: Construct file. Cost: 1
 			effortOfPackageConstruction++;
+			descriptorPaths.add(pathInZip);
 			int cost = checkXmlFile(pathInZip);
 			if (cost == -1) {
 				cost = checkTextFile(pathInZip);
@@ -278,5 +300,6 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 	private void reset() {
 		effortOfPackageConstruction = 0;
 		descriptorSize = 0;
+		descriptorPaths = new LinkedList<Path>();
 	}
 }
