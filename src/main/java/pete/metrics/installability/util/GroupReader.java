@@ -5,7 +5,8 @@ import java.nio.file.Path;
 public class GroupReader {
 
 	public static String readGroupFromPath(String pathName) {
-		if (pathName.contains("active-bpel") || pathName.contains("ActiveBPEL")) {
+		if (pathName.contains("active-bpel")
+				|| pathName.toLowerCase().contains("activebpel")) {
 			return "active";
 		} else if (pathName.contains("bpelg") || pathName.contains("bpel-g")) {
 			return "bpelg";
