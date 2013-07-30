@@ -1,7 +1,11 @@
 package pete.executables;
 
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+
+import org.apache.commons.io.FileUtils;
 
 import pete.metrics.installability.deployability.DeploymentPackageAnalyzer;
 import pete.metrics.installability.server.AverageInstallationTimeCalculator;
@@ -41,12 +45,16 @@ public class AnalysisWorkflow {
 	}
 
 	public void start() {
+
 		if (!Files.isDirectory(root)) {
 			parseFile(root);
 		} else {
 			parseDirectory(root);
 		}
+
 		writeResults();
+
+		purgeTempDir();
 	}
 
 	private void parseFile(Path file) {
@@ -64,5 +72,13 @@ public class AnalysisWorkflow {
 		ReportWriter writer = new ReportWriter(report);
 		writer.writeToExcelFile("results.csv");
 		writer.writeToRFile("r-results.csv");
+	}
+
+	private void purgeTempDir() {
+		try {
+			FileUtils.deleteDirectory(new File("tmp"));
+		} catch (IOException e) {
+			// Not critical -> ignore
+		}
 	}
 }
