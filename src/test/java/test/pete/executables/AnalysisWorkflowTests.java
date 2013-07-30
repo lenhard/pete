@@ -11,6 +11,7 @@ public class AnalysisWorkflowTests {
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testNonExistingDirectory() {
+		@SuppressWarnings("unused")
 		AnalysisWorkflow sut = new AnalysisWorkflow(Paths.get("foobar"),
 				AnalysisType.DEPLOYABILITY);
 	}
