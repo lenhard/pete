@@ -1,5 +1,5 @@
 package pete.executables;
 
 public enum AnalysisType {
-	INSTALLABILITY, DEPLOYABILITY
+	INSTALLABILITY, DEPLOYABILITY, PORTABILITY, UNKNOWN
 }

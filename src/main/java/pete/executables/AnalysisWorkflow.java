@@ -5,6 +5,7 @@ import java.nio.file.Path;
 
 import pete.metrics.installability.deployability.DeploymentPackageAnalyzer;
 import pete.metrics.installability.server.AverageInstallationTimeCalculator;
+import pete.metrics.portability.PortabilityAnalyzer;
 import pete.reporting.Report;
 import pete.reporting.ReportEntry;
 import pete.reporting.ReportWriter;
@@ -27,10 +28,14 @@ public class AnalysisWorkflow {
 					+ " does not exist");
 		}
 
-		if (type.equals(AnalysisType.DEPLOYABILITY)) {
+		if (AnalysisType.DEPLOYABILITY.equals(type)) {
 			fileAnalyzer = new DeploymentPackageAnalyzer();
-		} else {
+		} else if (AnalysisType.INSTALLABILITY.equals(type)) {
 			fileAnalyzer = new AverageInstallationTimeCalculator();
+		} else if (AnalysisType.PORTABILITY.equals(type)) {
+			fileAnalyzer = new PortabilityAnalyzer();
+		} else if (AnalysisType.UNKNOWN.equals(type)) {
+			throw new AnalysisException("no valid AnalysisType found");
 		}
 		dirAnalyzer = new DirectoryAnalyzer(fileAnalyzer);
 	}

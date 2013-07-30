@@ -9,7 +9,8 @@ import pete.executables.AnalysisWorkflow;
 public class Pete {
 
 	public static void main(String[] args) {
-		System.out.println("Hello, I'm Pete");
+		printGreeting();
+
 		validateArgs(args);
 
 		Path root = Paths.get(args[1]);
@@ -20,17 +21,23 @@ public class Pete {
 		workflow.start();
 	}
 
+	private static void printGreeting() {
+		System.out.println("Hello, I'm Pete");
+		System.out.println("I analyse code and compute portability metrics");
+	}
+
 	private static void validateArgs(String[] args) {
 		if (args.length != 2) {
 			System.out.println("Error: Wrong arguments!");
 			System.out.println("Arguments must be:");
 			System.out
-					.println("[1]: Selection of analysis type. Use -d for deployment anlysis, -i for installability analysis");
+					.println("[1]: Selection of analysis type. Use -p for analysing direct portability, -d for deployment analysis, -i for installability analysis");
 			System.out.println("[2]: Path to file or directory");
 			System.exit(1);
-		} else if (!args[0].equals("-i") && !args[0].equals("-d")) {
+		} else if (!args[0].equals("-i") && !args[0].equals("-d")
+				&& !args[0].equals("-p")) {
 			System.out.println("Unknown option: " + args[0]);
-			System.out.println("Available options: -i | -d");
+			System.out.println("Available options: -i | -d | -p");
 			System.exit(1);
 		}
 	}
@@ -38,8 +45,12 @@ public class Pete {
 	private static AnalysisType getAnalysisType(String option) {
 		if ("-i".equals(option)) {
 			return AnalysisType.INSTALLABILITY;
-		} else {
+		} else if ("-d".equals(option)) {
 			return AnalysisType.DEPLOYABILITY;
+		} else if ("-p".equals(option)) {
+			return AnalysisType.PORTABILITY;
+		} else {
+			return AnalysisType.UNKNOWN;
 		}
 	}
 }
