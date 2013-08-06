@@ -153,6 +153,7 @@ public class PortabilityAnalyzer implements FileAnalyzer {
 	public List<ReportEntry> analyzeFile(Path filePath) {
 		reset(filePath);
 
+		System.out.println("Analyzing " + filePath + " for portability");
 		ReportEntry entry = populateEntry();
 
 		List<ReportEntry> report = new ArrayList<ReportEntry>();
