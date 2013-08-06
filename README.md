@@ -16,7 +16,7 @@ Pete uses the gradle wrapper, so anything besides Java will be downloaded and in
   - `PATH` should include `JAVA_HOME/bin`
   
 ## Licensing
-(MIT license)[http://opensource.org/licenses/MIT]
+[MIT license](http://opensource.org/licenses/MIT)
 
 ## Usage
 Pete can be built, but also executed using gradle.
