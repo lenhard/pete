@@ -16,7 +16,7 @@ Pete uses the gradle wrapper, so anything besides Java will be downloaded and in
   - `PATH` should include `JAVA_HOME/bin`
   
 ## Licensing
-MIT license: http://opensource.org/licenses/MIT
+(MIT license)[http://opensource.org/licenses/MIT]
 
 ## Usage
 Pete can be built, but also executed using gradle.
@@ -28,9 +28,9 @@ $ gradlew run -Pargs="<ARGS>"
 `<path-to-files>`: Pete parses single files or recursively traverses directory structures, looking for relevant files. Everything that is analyzed in an execution run is aggregated to a result set and written to CSV files, ready to be consumed by MS Excel or R. Pete is forgiving: It tries to analyzes as many files as possible, sometimes depending on the type, but if the analysis for a file fails or nothing relevant is found, that file is just ignored.
 
 `<metric-option>`: Pete allows for the computation of various types of metrics and the files to be analyzed depend on that type. For that reason, the type of metrics to be computed must be stated on execution. Following options are implemented so far:
-* p: pete computes direct portability metrics, such as weighted elements portability or activity portability, for process files
-* d: pete computes deployability metrics, such as deployment descriptor size or effort of package construction, for deployment archives
-* i: pete computes installability metrics for process engines, such as average installation time or installation effort
+* `p`: pete computes direct portability metrics, such as weighted elements portability or activity portability, for process files
+* `d`: pete computes deployability metrics, such as deployment descriptor size or effort of package construction, for deployment archives
+* `i`: pete computes installability metrics for process engines, such as average installation time or installation effort
 
 ```bash
 # Examples
