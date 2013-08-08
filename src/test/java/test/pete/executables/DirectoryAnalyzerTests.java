@@ -21,7 +21,7 @@ public class DirectoryAnalyzerTests {
 	public void testDeployability() {
 		sut = new DirectoryAnalyzer(new DeploymentPackageAnalyzer());
 		Report report = sut.analyzeDirectory(Paths.get(userDir
-				+ "/src/test/resources/installability/deployment"));
+				+ "/src/test/resources/installability/deployment/"));
 		int de = report.getSummedVariable("DE");
 		assertEquals("DE should be 214, but was " + de, 214, de);
 	}
@@ -30,7 +30,7 @@ public class DirectoryAnalyzerTests {
 	public void testAITComputation() {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
 		Report report = sut.analyzeDirectory(Paths.get(userDir
-				+ "/src/test/resources/installability/server/simple"));
+				+ "/src/test/resources/installability/server/simple/"));
 
 		String ait = report.getEntries().get(0).getVariableValue("AIT");
 		assertEquals("AIT should be 22,00, but was ", "22,00", ait);
@@ -40,7 +40,7 @@ public class DirectoryAnalyzerTests {
 	public void testESRComputation() {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
 		Report report = sut.analyzeDirectory(Paths.get(userDir
-				+ "/src/test/resources/installability/server/simple"));
+				+ "/src/test/resources/installability/server/simple/"));
 
 		String esr = report.getEntries().get(0).getVariableValue("ESR");
 		assertEquals("ESR should be 1,00, but was " + esr, "1,00", esr);
@@ -50,7 +50,7 @@ public class DirectoryAnalyzerTests {
 	public void testOnlyRelevantFilesAreListed() {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
 		Report report = sut.analyzeDirectory(Paths.get(userDir
-				+ "/src/test/resources/installability/server/advanced"));
+				+ "/src/test/resources/installability/server/advanced/"));
 
 		int numberOfEntries = report.getEntries().size();
 		assertEquals("Should only list one file, but was " + numberOfEntries,
@@ -61,7 +61,7 @@ public class DirectoryAnalyzerTests {
 	public void testEmptyDir() {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
 		Report report = sut.analyzeDirectory(Paths.get(userDir
-				+ "/src/test/resources/installability/server/empty"));
+				+ "/src/test/resources/installability/server/empty/"));
 
 		int numberOfEntries = report.getEntries().size();
 		assertEquals("There should be no result, but was " + numberOfEntries,
