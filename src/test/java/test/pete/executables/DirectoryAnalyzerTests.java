@@ -37,4 +37,15 @@ public class DirectoryAnalyzerTests {
 		assertEquals("ESR should be 1,00, but was " + esr, "1,00", esr);
 	}
 
+	@Test
+	public void testOnlyRelevantFilesAreListed() {
+		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
+		Report report = sut.analyzeDirectory(Paths
+				.get("src/test/resources/installability/server/"));
+
+		int numberOfEntries = report.getEntries().size();
+		assertEquals("Should only list one file, but was " + numberOfEntries,
+				1, numberOfEntries);
+	}
+
 }
