@@ -25,13 +25,20 @@ public class DirectoryAnalyzerTests {
 	}
 
 	@Test
-	public void testServerInstallability() {
+	public void testAITComputation() {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
 		Report report = sut.analyzeDirectory(Paths
 				.get("src/test/resources/installability/server/"));
 
 		String ait = report.getEntries().get(0).getVariableValue("AIT");
 		assertEquals("AIT should be 2,88, but was ", "2,88", ait);
+	}
+
+	@Test
+	public void testESRComputation() {
+		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
+		Report report = sut.analyzeDirectory(Paths
+				.get("src/test/resources/installability/server/"));
 
 		String esr = report.getEntries().get(0).getVariableValue("ESR");
 		assertEquals("ESR should be 1,00, but was " + esr, "1,00", esr);
