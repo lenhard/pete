@@ -3,6 +3,9 @@ package test.pete.executables;
 import static org.junit.Assert.assertEquals;
 
 import java.nio.file.Paths;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
 
 import org.junit.Test;
 
@@ -27,23 +30,29 @@ public class DirectoryAnalyzerTests {
 	}
 
 	@Test
-	public void testAITComputation() {
+	public void testAITComputation() throws ParseException {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
 		Report report = sut.analyzeDirectory(Paths.get(userDir
 				+ "/src/test/resources/installability/server/simple/"));
 
 		String ait = report.getEntries().get(0).getVariableValue("AIT");
-		assertEquals("AIT should be 22,00, but was ", "22,00", ait);
+		NumberFormat format = NumberFormat.getInstance(Locale.FRANCE);
+		Number number = format.parse(ait);
+		double d = number.doubleValue();
+		assertEquals("AIT should be 22,00, but was " + d, 22, d, 0.1);
 	}
 
 	@Test
-	public void testESRComputation() {
+	public void testESRComputation() throws ParseException {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
 		Report report = sut.analyzeDirectory(Paths.get(userDir
 				+ "/src/test/resources/installability/server/simple/"));
 
 		String esr = report.getEntries().get(0).getVariableValue("ESR");
-		assertEquals("ESR should be 1,00, but was " + esr, "1,00", esr);
+		NumberFormat format = NumberFormat.getInstance(Locale.FRANCE);
+		Number number = format.parse(esr);
+		double d = number.doubleValue();
+		assertEquals("ESR should be 1,00, but was " + d, 1, d, 0.1);
 	}
 
 	@Test
