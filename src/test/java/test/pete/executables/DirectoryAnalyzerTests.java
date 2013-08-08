@@ -15,11 +15,13 @@ public class DirectoryAnalyzerTests {
 
 	private DirectoryAnalyzer sut;
 
+	private String userDir = System.getProperty("user.dir");
+
 	@Test
 	public void testDeployability() {
 		sut = new DirectoryAnalyzer(new DeploymentPackageAnalyzer());
-		Report report = sut.analyzeDirectory(Paths
-				.get("src/test/resources/installability/deployment"));
+		Report report = sut.analyzeDirectory(Paths.get(userDir
+				+ "/src/test/resources/installability/deployment"));
 		int de = report.getSummedVariable("DE");
 		assertEquals("DE should be 214, but was " + de, 214, de);
 	}
@@ -27,8 +29,8 @@ public class DirectoryAnalyzerTests {
 	@Test
 	public void testAITComputation() {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
-		Report report = sut.analyzeDirectory(Paths
-				.get("src/test/resources/installability/server/simple"));
+		Report report = sut.analyzeDirectory(Paths.get(userDir
+				+ "/src/test/resources/installability/server/simple"));
 
 		String ait = report.getEntries().get(0).getVariableValue("AIT");
 		assertEquals("AIT should be 22,00, but was ", "22,00", ait);
@@ -37,8 +39,8 @@ public class DirectoryAnalyzerTests {
 	@Test
 	public void testESRComputation() {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
-		Report report = sut.analyzeDirectory(Paths
-				.get("src/test/resources/installability/server/simple"));
+		Report report = sut.analyzeDirectory(Paths.get(userDir
+				+ "/src/test/resources/installability/server/simple"));
 
 		String esr = report.getEntries().get(0).getVariableValue("ESR");
 		assertEquals("ESR should be 1,00, but was " + esr, "1,00", esr);
@@ -47,8 +49,8 @@ public class DirectoryAnalyzerTests {
 	@Test
 	public void testOnlyRelevantFilesAreListed() {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
-		Report report = sut.analyzeDirectory(Paths
-				.get("src/test/resources/installability/server/advanced"));
+		Report report = sut.analyzeDirectory(Paths.get(userDir
+				+ "/src/test/resources/installability/server/advanced"));
 
 		int numberOfEntries = report.getEntries().size();
 		assertEquals("Should only list one file, but was " + numberOfEntries,
