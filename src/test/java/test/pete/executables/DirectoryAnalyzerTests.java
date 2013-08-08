@@ -28,17 +28,17 @@ public class DirectoryAnalyzerTests {
 	public void testAITComputation() {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
 		Report report = sut.analyzeDirectory(Paths
-				.get("src/test/resources/installability/server/"));
+				.get("src/test/resources/installability/server/simple"));
 
 		String ait = report.getEntries().get(0).getVariableValue("AIT");
-		assertEquals("AIT should be 2,88, but was ", "2,88", ait);
+		assertEquals("AIT should be 22,00, but was ", "22,00", ait);
 	}
 
 	@Test
 	public void testESRComputation() {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
 		Report report = sut.analyzeDirectory(Paths
-				.get("src/test/resources/installability/server/"));
+				.get("src/test/resources/installability/server/simple"));
 
 		String esr = report.getEntries().get(0).getVariableValue("ESR");
 		assertEquals("ESR should be 1,00, but was " + esr, "1,00", esr);
@@ -48,7 +48,7 @@ public class DirectoryAnalyzerTests {
 	public void testOnlyRelevantFilesAreListed() {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
 		Report report = sut.analyzeDirectory(Paths
-				.get("src/test/resources/installability/server/"));
+				.get("src/test/resources/installability/server/advanced"));
 
 		int numberOfEntries = report.getEntries().size();
 		assertEquals("Should only list one file, but was " + numberOfEntries,
