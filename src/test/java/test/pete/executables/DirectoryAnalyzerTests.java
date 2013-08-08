@@ -7,6 +7,7 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import pete.executables.DirectoryAnalyzer;
@@ -67,6 +68,7 @@ public class DirectoryAnalyzerTests {
 	}
 
 	@Test
+	@Ignore
 	public void testEmptyDir() {
 		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
 		Report report = sut.analyzeDirectory(Paths.get(userDir
