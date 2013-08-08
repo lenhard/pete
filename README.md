@@ -2,6 +2,8 @@
 
 pete is a tool for computing metrics that characterize the portability of executable service-oriented processes implemented in several process languages. 
 
+[![Build Status](https://travis-ci.org/lenhard/pete.png?branch=master)](https://travis-ci.org/lenhard/pete)
+
 ## Quality Characteristics
 Pete aims to support the computation of metrics for four quality characteristics which are aligned to the ISO/IEC Systems and software Quality Requirements and Evaluation (SQuaRE) method. These are:
 * Direct code portability (implemented)
