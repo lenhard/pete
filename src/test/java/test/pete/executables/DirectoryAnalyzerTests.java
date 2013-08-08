@@ -57,4 +57,15 @@ public class DirectoryAnalyzerTests {
 				1, numberOfEntries);
 	}
 
+	@Test
+	public void testEmptyDir() {
+		sut = new DirectoryAnalyzer(new AverageInstallationTimeCalculator());
+		Report report = sut.analyzeDirectory(Paths.get(userDir
+				+ "/src/test/resources/installability/server/empty"));
+
+		int numberOfEntries = report.getEntries().size();
+		assertEquals("There should be no result, but was " + numberOfEntries,
+				0, numberOfEntries);
+	}
+
 }
