@@ -2,6 +2,7 @@ ds = read.csv("c:/workspaces/git/pete/r-results.csv")
 one <- subset(ds, NServ == 1)
 two <- subset(ds, NServ == 2)
 five <- subset(ds, NServ == 5)
+library(Rcmdr)
 
 numSummary(one$DDS,statistics=c("mean","sd"))
 numSummary(one$EPC,statistics=c("mean","sd"))
