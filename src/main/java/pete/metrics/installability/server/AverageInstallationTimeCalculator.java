@@ -47,11 +47,11 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 		reset();
 		installationSteps = new HashMap<>();
 		installationSteps.put(ACTIVE_BPEL_NAME, new Integer(6));
-		installationSteps.put(ORCHESTRA_NAME, new Integer(9));
+		installationSteps.put(ORCHESTRA_NAME, new Integer(7));
 		installationSteps.put(PETALS_NAME, new Integer(5));
 		installationSteps.put(OPENESB_NAME, new Integer(7));
 		installationSteps.put(BPELG_NAME, new Integer(6));
-		installationSteps.put(ODE_NAME, new Integer(7));
+		installationSteps.put(ODE_NAME, new Integer(6));
 		fullLog = new LinkedList<>();
 		fullLog.add("engine,time,failed");
 	}
