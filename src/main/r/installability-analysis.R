@@ -1,4 +1,5 @@
 ds = read.csv("c:/workspaces/git/pete/raw.csv")
+library(Rcmdr)
 active <- subset(ds, engine == "active-bpel")
 ode <- subset(ds, engine == "ode")
 bpelg <- subset(ds, engine == "bpelg")
