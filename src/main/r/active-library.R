@@ -14,4 +14,4 @@ numSummary(two$DE,statistics=c("mean","sd"))
 
 numSummary(five$DDS,statistics=c("mean","sd"))
 numSummary(five$EPC,statistics=c("mean","sd"))
-numSummaryfive$DE,statistics=c("mean","sd"))
+numSummary(five$DE,statistics=c("mean","sd"))
