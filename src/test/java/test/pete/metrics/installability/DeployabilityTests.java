@@ -40,6 +40,15 @@ public class DeployabilityTests {
 	}
 
 	@Test
+	public void testArchiveWithXmlDescriptorWithText() {
+		ReportEntry result = sut.analyzeFile(
+				Paths.get(resourcePaths + "xmlDescriptorWithText.zip")).get(0);
+		assertEquals(14, getDeploymentEffort(result));
+		assertEquals(2, getEffortOfPackageConstruction(result));
+		assertEquals(12, getDescriptorComplexity(result));
+	}
+
+	@Test
 	public void testArchiveWithTextFile() {
 		ReportEntry result = sut.analyzeFile(
 				Paths.get(resourcePaths + "onlyManifest.zip")).get(0);
@@ -88,9 +97,9 @@ public class DeployabilityTests {
 	public void testComplexArchive() {
 		ReportEntry result = sut.analyzeFile(
 				Paths.get(resourcePaths + "Sequence.jar")).get(0);
-		assertEquals(19, getDeploymentEffort(result));
+		assertEquals(22, getDeploymentEffort(result));
 		assertEquals(5, getEffortOfPackageConstruction(result));
-		assertEquals(14, getDescriptorComplexity(result));
+		assertEquals(17, getDescriptorComplexity(result));
 
 		result = sut.analyzeFile(
 				Paths.get(resourcePaths + "sun-http-binding.jar")).get(0);
@@ -100,9 +109,9 @@ public class DeployabilityTests {
 
 		result = sut.analyzeFile(
 				Paths.get(resourcePaths + "SequenceApplication.zip")).get(0);
-		assertEquals(72, getDeploymentEffort(result));
+		assertEquals(85, getDeploymentEffort(result));
 		assertEquals(14, getEffortOfPackageConstruction(result));
-		assertEquals(58, getDescriptorComplexity(result));
+		assertEquals(71, getDescriptorComplexity(result));
 	}
 
 	private int getDeploymentEffort(ReportEntry entry) {

@@ -27,7 +27,7 @@ public class DirectoryAnalyzerTests {
 		Report report = sut.analyzeDirectory(Paths.get(userDir
 				+ "/src/test/resources/installability/deployment/"));
 		int de = report.getSummedVariable("DE");
-		assertEquals("DE should be 214, but was " + de, 214, de);
+		assertEquals("DE should be 244, but was " + de, 244, de);
 	}
 
 	@Test

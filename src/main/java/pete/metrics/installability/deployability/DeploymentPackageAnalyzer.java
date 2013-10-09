@@ -280,8 +280,21 @@ public class DeploymentPackageAnalyzer implements FileAnalyzer {
 					}
 				}
 			}
+
+			// COUNT: Non-empty text node
+			if (isNonEmptyTextNode(node)) {
+				sum++;
+			}
 		}
 		return sum;
+	}
+
+	private boolean isNonEmptyTextNode(Node node) {
+		boolean isTextNode = node.getNodeType() == Node.TEXT_NODE;
+		String nodeValue = node.getNodeValue();
+		boolean isNonEmpty = !(nodeValue == null)
+				&& !("".equals(nodeValue.trim()));
+		return isTextNode && isNonEmpty;
 	}
 
 	private boolean isNamespaceDeclaration(Node attribute) {
