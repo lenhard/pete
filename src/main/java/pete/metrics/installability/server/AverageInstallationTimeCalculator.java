@@ -6,7 +6,6 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -161,8 +160,7 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 			}
 		}
 		try {
-			Files.write(Paths.get(RAW_FILE), fullLog, Charset.defaultCharset(),
-					StandardOpenOption.CREATE);
+			Files.write(Paths.get(RAW_FILE), fullLog, Charset.defaultCharset());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
