@@ -13,3 +13,6 @@ r-results.csv
 results-Trainingsdata.csv
 results-betsy.csv
 r-results-betsy.csv
+*.iml
+*.ipr
+*.iws
