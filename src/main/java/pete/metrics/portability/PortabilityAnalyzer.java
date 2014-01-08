@@ -154,15 +154,17 @@ public class PortabilityAnalyzer implements FileAnalyzer {
 		reset(filePath);
 
 		System.out.println("Analyzing " + filePath + " for portability");
-		ReportEntry entry = populateEntry();
+		ReportEntry entry = populateEntry(filePath);
 
 		List<ReportEntry> report = new ArrayList<ReportEntry>();
 		report.add(entry);
 		return report;
 	}
 
-	private ReportEntry populateEntry() {
-		AnalysisResult analysisResult = analyze();
+	private ReportEntry populateEntry(Path filePath) {
+		bpp.executables.FileAnalyzer bppAnalyzer = new bpp.executables.FileAnalyzer(
+				filePath.toString());
+		bpp.domain.AnalysisResult analysisResult = bppAnalyzer.analyze();
 		ReportEntry entry = new ReportEntry(analysisResult.getBpelFile()
 				.toString());
 		entry.addVariable("class", analysisResult.getClassification()
