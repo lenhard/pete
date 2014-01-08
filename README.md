@@ -36,7 +36,7 @@ $ gradlew run -Pargs="<ARGS>"
 
 ```bash
 # Examples
-$ gradlew run -Pargs="-p src/test/resources/Invoke-Empty.bpel" # Compute portability metrics for a process from the test directory
+$ gradlew run -Pargs="-p src/test/resources/portability/Invoke-Empty.bpel" # Compute portability metrics for a process from the test directory
 $ gradlew run -Pargs="-i src/test/resources/installability/server" # Compute installability metrics from all files of a specific test directory 
 $ gradlew run -Pargs="-i src/test/resources/installability/deployment" # Compute deployability metrics from all files of a specific test directory 
 ```
