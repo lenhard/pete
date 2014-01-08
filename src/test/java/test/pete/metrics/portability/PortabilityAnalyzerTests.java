@@ -7,13 +7,13 @@ import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
 
-import pete.metrics.portability.ActivityPortabilityMetric;
-import pete.metrics.portability.BasicPortabilityMetric;
 import pete.metrics.portability.PortabilityAnalyzer;
-import pete.metrics.portability.ServiceCommunicationPortabilityMetric;
-import pete.metrics.portability.WeightedElementsPortabilityMetric;
-import pete.metrics.portability.assertions.PortabilityLevel;
 import pete.reporting.ReportEntry;
+import bpp.domain.PortabilityLevel;
+import bpp.domain.metrics.ActivityPortabilityMetric;
+import bpp.domain.metrics.BasicPortabilityMetric;
+import bpp.domain.metrics.ServiceCommunicationPortabilityMetric;
+import bpp.domain.metrics.WeightedElementsPortabilityMetric;
 
 public class PortabilityAnalyzerTests {
 
