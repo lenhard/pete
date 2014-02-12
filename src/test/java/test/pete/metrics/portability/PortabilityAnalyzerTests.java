@@ -33,9 +33,9 @@ public class PortabilityAnalyzerTests {
 		assertClassification(result, PortabilityLevel.LIMITED_PORTABILITY);
 		assertNumberOfElements(result, 17);
 		assertBasicPortability(result, 0.941);
-		assertWeightedPortability(result, 0.963);
-		assertActivityPortability(result, 0.875);
-		assertServicePortability(result, 0.791);
+		assertWeightedPortability(result, 0.967);
+		assertActivityPortability(result, 0.888);
+		assertServicePortability(result, 0.814);
 	}
 
 	private void assertNumberOfElements(ReportEntry entry, int numberOfElements) {
