@@ -45,31 +45,29 @@ public class PortabilityAnalyzerTests {
 
 	private void assertClassification(ReportEntry entry,
 			PortabilityLevel expected) {
-		assertEquals(entry.getVariableValue("class"), expected.toString());
+		assertEquals(expected.toString(), entry.getVariableValue("class"));
 	}
 
 	private void assertBasicPortability(ReportEntry entry, double expected) {
-		assertEquals(Double.parseDouble(entry
-				.getVariableValue(BasicPortabilityMetric.getLabel())),
-				expected, 0.001);
+		assertEquals(expected, Double.parseDouble(entry
+				.getVariableValue(BasicPortabilityMetric.getLabel())), 0.001);
 	}
 
 	private void assertWeightedPortability(ReportEntry entry, double expected) {
-		assertEquals(
+		assertEquals(expected,
 				Double.parseDouble(entry
 						.getVariableValue(WeightedElementsPortabilityMetric
-								.getLabel())), expected, 0.001);
+								.getLabel())), 0.001);
 	}
 
 	private void assertActivityPortability(ReportEntry entry, double expected) {
-		assertEquals(Double.parseDouble(entry
-				.getVariableValue(ActivityPortabilityMetric.getLabel())),
-				expected, 0.001);
+		assertEquals(expected, Double.parseDouble(entry
+				.getVariableValue(ActivityPortabilityMetric.getLabel())), 0.001);
 	}
 
 	private void assertServicePortability(ReportEntry entry, double expected) {
-		assertEquals(Double.parseDouble(entry
+		assertEquals(expected, Double.parseDouble(entry
 				.getVariableValue(ServiceCommunicationPortabilityMetric
-						.getLabel())), expected, 0.001);
+						.getLabel())), 0.001);
 	}
 }
