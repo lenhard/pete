@@ -22,7 +22,7 @@ public class PortabilityAnalyzer implements FileAnalyzer {
 
 	private ReportEntry populateEntry(Path filePath) {
 		bpp.executables.FileAnalyzer bppAnalyzer = new bpp.executables.FileAnalyzer(
-				filePath.toString());
+				filePath.toString(), false);
 		bpp.domain.AnalysisResult analysisResult = bppAnalyzer.analyze();
 		ReportEntry entry = new ReportEntry(analysisResult.getBpelFile()
 				.toString());
