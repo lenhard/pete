@@ -31,13 +31,13 @@ public class Pete {
 			System.out.println("Error: Wrong arguments!");
 			System.out.println("Arguments must be:");
 			System.out
-					.println("[1]: Selection of analysis type. Use -p for analysing direct portability, -d for deployment analysis, -i for installability analysis");
+					.println("[1]: Selection of analysis type. Use -p for analysing direct portability, -d for deployment analysis, -i for installability analysis, -a for adaptability analysis");
 			System.out.println("[2]: Path to file or directory");
 			System.exit(1);
 		} else if (!args[0].equals("-i") && !args[0].equals("-d")
-				&& !args[0].equals("-p")) {
+				&& !args[0].equals("-p") && !args[0].equals("-a")) {
 			System.out.println("Unknown option: " + args[0]);
-			System.out.println("Available options: -i | -d | -p");
+			System.out.println("Available options: -i | -d | -p | -a");
 			System.exit(1);
 		}
 	}
@@ -49,6 +49,8 @@ public class Pete {
 			return AnalysisType.DEPLOYABILITY;
 		} else if ("-p".equals(option)) {
 			return AnalysisType.PORTABILITY;
+		} else if ("-a".equals(option)) {
+			return AnalysisType.ADAPTABILITY;
 		} else {
 			return AnalysisType.UNKNOWN;
 		}

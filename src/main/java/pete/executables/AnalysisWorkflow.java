@@ -7,6 +7,7 @@ import java.nio.file.Path;
 
 import org.apache.commons.io.FileUtils;
 
+import pete.metrics.adaptability.AdaptabilityAnalyzer;
 import pete.metrics.installability.deployability.DeploymentPackageAnalyzer;
 import pete.metrics.installability.server.AverageInstallationTimeCalculator;
 import pete.metrics.portability.PortabilityAnalyzer;
@@ -38,6 +39,8 @@ public class AnalysisWorkflow {
 			fileAnalyzer = new AverageInstallationTimeCalculator();
 		} else if (AnalysisType.PORTABILITY.equals(type)) {
 			fileAnalyzer = new PortabilityAnalyzer();
+		} else if (AnalysisType.ADAPTABILITY.equals(type)) {
+			fileAnalyzer = new AdaptabilityAnalyzer();
 		} else if (AnalysisType.UNKNOWN.equals(type)) {
 			throw new AnalysisException("no valid AnalysisType found");
 		}
