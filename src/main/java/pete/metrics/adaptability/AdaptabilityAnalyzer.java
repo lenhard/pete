@@ -96,7 +96,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		}
 		for (int i = 0; i < nodes.getLength(); i++) {
 			Node node = nodes.item(i);
-			if (node.getNodeName().contains("process")) {
+			if ("process".equals(node.getLocalName())) {
 				return node;
 			}
 		}
@@ -124,7 +124,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 		for (int j = 0; j < attributes.getLength(); j++) {
 			Node attribute = attributes.item(j);
-			if ("isExecutable".equals(attribute.getNodeName())
+			if ("isExecutable".equals(attribute.getLocalName())
 					&& "true".equals(attribute.getNodeValue())) {
 				return "true";
 			}
@@ -143,7 +143,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		for (int i = 0; i < nodes.getLength(); i++) {
 			Node node = nodes.item(i);
 			System.out.println(node.getNodeName());
-			if (node.getNodeName().contains("definitions")) {
+			if ("definitions".equals(node.getLocalName())) {
 				return node.getChildNodes();
 			}
 		}
