@@ -55,4 +55,13 @@ public class ProcessClassificationTests {
 		assertEquals("false", result.getVariableValue("isExecutable"));
 	}
 
+	@Test
+	public void detectsNumberOfElements() {
+		ReportEntry result = sut
+				.analyzeFile(
+						Paths.get("src/test/resources/adaptability/ExecutableProcess.bpmn"))
+				.get(0);
+		assertEquals("28", result.getVariableValue("elements"));
+	}
+
 }

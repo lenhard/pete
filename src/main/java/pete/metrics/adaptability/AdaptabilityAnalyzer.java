@@ -20,6 +20,7 @@ import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
+import pete.executables.AnalysisException;
 import pete.executables.FileAnalyzer;
 import pete.reporting.ReportEntry;
 
@@ -30,7 +31,12 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		System.out.println("Analyzing " + filePath + " for adaptability");
 
 		ReportEntry entry = new ReportEntry(filePath.toString());
-		populateReportEntry(entry);
+		try {
+			populateReportEntry(entry);
+		} catch (AnalysisException e) {
+			System.err.println(e.getMessage());
+			return new ArrayList<>(0);
+		}
 		List<ReportEntry> entries = new ArrayList<>(1);
 		entries.add(entry);
 
@@ -42,7 +48,9 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		Document dom = getDom(entry.getFileName());
 
 		entry.addVariable("isCorrectNamespace", isCorrectNamespace(dom));
-		entry.addVariable("isExecutable", isExecutable(dom));
+		Node process = getProcess(dom);
+		entry.addVariable("isExecutable", isExecutable(process));
+		entry.addVariable("elements", getNumberOfChildren(process) + "");
 
 	}
 
@@ -80,6 +88,22 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		return dom;
 	}
 
+	private Node getProcess(Document dom) throws AnalysisException {
+		NodeList nodes = getChildrenOfDefinitions(dom);
+		if (nodes == null) {
+			throw new AnalysisException(
+					"File cannot be analyzed: definitions element is empty");
+		}
+		for (int i = 0; i < nodes.getLength(); i++) {
+			Node node = nodes.item(i);
+			if (node.getNodeName().contains("process")) {
+				return node;
+			}
+		}
+		throw new AnalysisException(
+				"File cannot be analyzed: no process element found");
+	}
+
 	private String isCorrectNamespace(Document dom) {
 		Element root = null;
 		try {
@@ -95,24 +119,17 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		}
 	}
 
-	private String isExecutable(Document dom) {
-		NodeList nodes = getChildrenOfDefinitions(dom);
-		if (nodes == null) {
-			return "false";
-		}
-		for (int i = 0; i < nodes.getLength(); i++) {
-			Node node = nodes.item(i);
-			if (node.getNodeName().contains("process")) {
-				NamedNodeMap attributes = node.getAttributes();
-				for (int j = 0; j < attributes.getLength(); j++) {
-					Node attribute = attributes.item(j);
-					if ("isExecutable".equals(attribute.getNodeName())
-							&& "true".equals(attribute.getNodeValue())) {
-						return "true";
-					}
-				}
+	private String isExecutable(Node process) {
+		NamedNodeMap attributes = process.getAttributes();
+
+		for (int j = 0; j < attributes.getLength(); j++) {
+			Node attribute = attributes.item(j);
+			if ("isExecutable".equals(attribute.getNodeName())
+					&& "true".equals(attribute.getNodeValue())) {
+				return "true";
 			}
 		}
+
 		return "false";
 	}
 
@@ -131,5 +148,20 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 			}
 		}
 		return null;
+	}
+
+	private int getNumberOfChildren(Node node) {
+		NodeList children = node.getChildNodes();
+		int result = 0;
+
+		if (children == null) {
+			// do noting, result is zero
+		} else {
+			result += children.getLength();
+			for (int i = 0; i < children.getLength(); i++) {
+				result += getNumberOfChildren(children.item(i));
+			}
+		}
+		return result;
 	}
 }
