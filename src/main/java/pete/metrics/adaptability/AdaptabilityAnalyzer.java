@@ -48,6 +48,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	private Document getDom(String file) {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		dbf.setNamespaceAware(true);
 		DocumentBuilder db;
 		Document dom = null;
 
@@ -95,15 +96,13 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 	}
 
 	private String isExecutable(Document dom) {
-		NodeList nodes = null;
-		try {
-			nodes = dom.getChildNodes();
-		} catch (NullPointerException e) {
+		NodeList nodes = getChildrenOfDefinitions(dom);
+		if (nodes == null) {
 			return "false";
 		}
 		for (int i = 0; i < nodes.getLength(); i++) {
 			Node node = nodes.item(i);
-			if ("process".equals(node.getNodeName())) {
+			if (node.getNodeName().contains("process")) {
 				NamedNodeMap attributes = node.getAttributes();
 				for (int j = 0; j < attributes.getLength(); j++) {
 					Node attribute = attributes.item(j);
@@ -115,5 +114,22 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 			}
 		}
 		return "false";
+	}
+
+	private NodeList getChildrenOfDefinitions(Document dom) {
+		NodeList nodes = null;
+		try {
+			nodes = dom.getChildNodes();
+		} catch (NullPointerException e) {
+			return null;
+		}
+		for (int i = 0; i < nodes.getLength(); i++) {
+			Node node = nodes.item(i);
+			System.out.println(node.getNodeName());
+			if (node.getNodeName().contains("definitions")) {
+				return node.getChildNodes();
+			}
+		}
+		return null;
 	}
 }
