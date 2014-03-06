@@ -6,6 +6,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.w3c.dom.Node;
@@ -15,11 +16,14 @@ public class ElementCounter {
 
 	private HashMap<String, AtomicInteger> elements;
 
-	private boolean elementsOnly;
+	private boolean isStrict;
 
-	public ElementCounter(boolean elementsOnly) {
+	private List<String> relevantConstructs;
+
+	public ElementCounter(boolean isStrict) {
 		elements = new HashMap<String, AtomicInteger>();
-		this.elementsOnly = elementsOnly;
+		this.isStrict = isStrict;
+		relevantConstructs = new RelevantConstructs().getRelevantConstructs();
 	}
 
 	public void addToCounts(Node node) {
@@ -34,11 +38,11 @@ public class ElementCounter {
 	}
 
 	private void addToMap(Node node) {
-		if (elementsOnly && node.getNodeType() != Node.ELEMENT_NODE) {
+		String nodeName = node.getLocalName();
+		if (isStrict && !relevantConstructs.contains(nodeName)) {
 			return;
 		}
 
-		String nodeName = node.getLocalName();
 		if (elements.containsKey(nodeName)) {
 			AtomicInteger count = elements.get(nodeName);
 			count.incrementAndGet();
