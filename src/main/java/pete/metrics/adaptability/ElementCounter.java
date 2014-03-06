@@ -18,7 +18,7 @@ class ElementCounter {
 
 	private boolean isStrict;
 
-	private List<String> relevantConstructs;
+	private List<String> relevantElements;
 
 	public ElementCounter() {
 		setUp(true);
@@ -31,7 +31,7 @@ class ElementCounter {
 	private void setUp(boolean isStrict) {
 		elements = new HashMap<String, AtomicInteger>();
 		this.isStrict = isStrict;
-		relevantConstructs = new RelevantElements().getRelevantConstructs();
+		relevantElements = new RelevantElements().getRelevantElements();
 	}
 
 	public void addToCounts(Node node) {
@@ -56,7 +56,7 @@ class ElementCounter {
 
 	private void addToMap(Node node) {
 		String nodeName = node.getLocalName();
-		if (isStrict && !relevantConstructs.contains(nodeName)) {
+		if (isStrict && !relevantElements.contains(nodeName)) {
 			return;
 		}
 

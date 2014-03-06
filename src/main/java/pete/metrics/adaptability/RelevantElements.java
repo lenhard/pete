@@ -1,83 +1,86 @@
 package pete.metrics.adaptability;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 class RelevantElements {
 
-	private List<String> constructNames;
+	private List<AdaptableElement> elements;
 
 	public RelevantElements() {
-		constructNames = new ArrayList<>();
-		constructNames.add("activity");
-		constructNames.add("adHocSubProcess");
-		constructNames.add("boundaryEvent");
-		constructNames.add("businessRuleTask");
-		constructNames.add("callActivity");
-		constructNames.add("cancelEventDefinition");
-		constructNames.add("catchEvent");
-		constructNames.add("compensateEventDefinition");
-		constructNames.add("complexGateway");
-		constructNames.add("conditionalEventDefinition");
-		constructNames.add("dataAssociation");
-		constructNames.add("dataInput");
-		constructNames.add("dataInputAssociation");
-		constructNames.add("dataObject");
-		constructNames.add("dataOutput");
-		constructNames.add("dataOutputAssociation");
-		constructNames.add("dataStore");
-		constructNames.add("endEvent");
-		constructNames.add("error");
-		constructNames.add("errorEventDefinition");
-		constructNames.add("escalation");
-		constructNames.add("escalationEventDefinition");
-		constructNames.add("event");
-		constructNames.add("eventBasedGateway");
-		constructNames.add("extension");
-		constructNames.add("extensionElements");
-		constructNames.add("formalExpression");
-		constructNames.add("gateway");
-		constructNames.add("globalBusinessRuleTask");
-		constructNames.add("globalManualTask");
-		constructNames.add("globalScriptTask");
-		constructNames.add("globalUserTask");
-		constructNames.add("globalTask");
-		constructNames.add("implicitThrowEvent");
-		constructNames.add("inclusiveGateway");
-		constructNames.add("inputSet");
-		constructNames.add("intermediateCatchEvent");
-		constructNames.add("intermediateThrowEvent");
-		constructNames.add("lane");
-		constructNames.add("manualTask");
-		constructNames.add("message");
-		constructNames.add("messageEventDefinition");
-		constructNames.add("messageFlow");
-		constructNames.add("messageFlowAssociation");
-		constructNames.add("loopCharacteristics");
-		constructNames.add("multiInstanceLoopCharacteristics");
-		constructNames.add("process");
-		constructNames.add("receiveTask");
-		constructNames.add("scriptTask");
-		constructNames.add("script");
-		constructNames.add("sendTask");
-		constructNames.add("sequenceFlow");
-		constructNames.add("serviceTask");
-		constructNames.add("signal");
-		constructNames.add("signalEventDefinition");
-		constructNames.add("standardLoopCharacteristics");
-		constructNames.add("startEvent");
-		constructNames.add("subProcess");
-		constructNames.add("task");
-		constructNames.add("terminateEventDefinition");
-		constructNames.add("throwEvent");
-		constructNames.add("timerEventDefinition");
-		constructNames.add("transaction");
-		constructNames.add("userTask");
+		elements = new ArrayList<>();
+		elements.add(new AdaptableElement("activity"));
+		elements.add(new AdaptableElement("adHocSubProcess"));
+		elements.add(new AdaptableElement("boundaryEvent"));
+		elements.add(new AdaptableElement("businessRuleTask"));
+		elements.add(new AdaptableElement("callActivity"));
+		elements.add(new AdaptableElement("cancelEventDefinition"));
+		elements.add(new AdaptableElement("catchEvent"));
+		elements.add(new AdaptableElement("compensateEventDefinition"));
+		elements.add(new AdaptableElement("complexGateway"));
+		elements.add(new AdaptableElement("conditionalEventDefinition"));
+		elements.add(new AdaptableElement("dataAssociation"));
+		elements.add(new AdaptableElement("dataInput"));
+		elements.add(new AdaptableElement("dataInputAssociation"));
+		elements.add(new AdaptableElement("dataObject"));
+		elements.add(new AdaptableElement("dataOutput"));
+		elements.add(new AdaptableElement("dataOutputAssociation"));
+		elements.add(new AdaptableElement("dataStore"));
+		elements.add(new AdaptableElement("endEvent"));
+		elements.add(new AdaptableElement("error"));
+		elements.add(new AdaptableElement("errorEventDefinition"));
+		elements.add(new AdaptableElement("escalation"));
+		elements.add(new AdaptableElement("escalationEventDefinition"));
+		elements.add(new AdaptableElement("event"));
+		elements.add(new AdaptableElement("eventBasedGateway"));
+		elements.add(new AdaptableElement("extension"));
+		elements.add(new AdaptableElement("extensionElements"));
+		elements.add(new AdaptableElement("formalExpression"));
+		elements.add(new AdaptableElement("gateway"));
+		elements.add(new AdaptableElement("globalBusinessRuleTask"));
+		elements.add(new AdaptableElement("globalManualTask"));
+		elements.add(new AdaptableElement("globalScriptTask"));
+		elements.add(new AdaptableElement("globalUserTask"));
+		elements.add(new AdaptableElement("globalTask"));
+		elements.add(new AdaptableElement("implicitThrowEvent"));
+		elements.add(new AdaptableElement("inclusiveGateway"));
+		elements.add(new AdaptableElement("inputSet"));
+		elements.add(new AdaptableElement("intermediateCatchEvent"));
+		elements.add(new AdaptableElement("intermediateThrowEvent"));
+		elements.add(new AdaptableElement("lane"));
+		elements.add(new AdaptableElement("manualTask"));
+		elements.add(new AdaptableElement("message"));
+		elements.add(new AdaptableElement("messageEventDefinition"));
+		elements.add(new AdaptableElement("messageFlow"));
+		elements.add(new AdaptableElement("messageFlowAssociation"));
+		elements.add(new AdaptableElement("loopCharacteristics"));
+		elements.add(new AdaptableElement("multiInstanceLoopCharacteristics"));
+		elements.add(new AdaptableElement("process"));
+		elements.add(new AdaptableElement("receiveTask"));
+		elements.add(new AdaptableElement("scriptTask"));
+		elements.add(new AdaptableElement("script"));
+		elements.add(new AdaptableElement("sendTask"));
+		elements.add(new AdaptableElement("sequenceFlow"));
+		elements.add(new AdaptableElement("serviceTask"));
+		elements.add(new AdaptableElement("signal"));
+		elements.add(new AdaptableElement("signalEventDefinition"));
+		elements.add(new AdaptableElement("standardLoopCharacteristics"));
+		elements.add(new AdaptableElement("startEvent"));
+		elements.add(new AdaptableElement("subProcess"));
+		elements.add(new AdaptableElement("task"));
+		elements.add(new AdaptableElement("terminateEventDefinition"));
+		elements.add(new AdaptableElement("throwEvent"));
+		elements.add(new AdaptableElement("timerEventDefinition"));
+		elements.add(new AdaptableElement("transaction"));
+		elements.add(new AdaptableElement("userTask"));
 	}
 
-	public List<String> getRelevantConstructs() {
-		return Collections.unmodifiableList(constructNames);
+	public List<String> getRelevantElements() {
+		List<String> result = new ArrayList<>(elements.size());
+		for (AdaptableElement element : elements) {
+			result.add(element.getName());
+		}
+		return result;
 	}
 
 }
