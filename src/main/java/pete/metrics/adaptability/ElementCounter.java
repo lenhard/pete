@@ -27,6 +27,11 @@ class ElementCounter {
 	}
 
 	public void addToCounts(Node node) {
+		// ignore text nodes
+		if (isTextNode(node)) {
+			return;
+		}
+
 		addToMap(node);
 
 		NodeList children = node.getChildNodes();
@@ -35,6 +40,10 @@ class ElementCounter {
 				addToCounts(children.item(i));
 			}
 		}
+	}
+
+	private boolean isTextNode(Node node) {
+		return node.getNodeType() == Node.TEXT_NODE;
 	}
 
 	private void addToMap(Node node) {

@@ -31,7 +31,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	public AdaptabilityAnalyzer() {
 		// Currently always do strict parsing
-		elementCounter = new ElementCounter(true);
+		elementCounter = new ElementCounter(false);
 	}
 
 	@Override
@@ -153,7 +153,6 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		}
 		for (int i = 0; i < nodes.getLength(); i++) {
 			Node node = nodes.item(i);
-			System.out.println(node.getNodeName());
 			if ("definitions".equals(node.getLocalName())) {
 				return node.getChildNodes();
 			}
