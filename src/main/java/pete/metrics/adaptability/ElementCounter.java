@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class ElementCounter {
+class ElementCounter {
 
 	private HashMap<String, AtomicInteger> elements;
 
