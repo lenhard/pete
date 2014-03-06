@@ -31,7 +31,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	public AdaptabilityAnalyzer() {
 		// Currently always do strict parsing
-		elementCounter = new ElementCounter(false);
+		elementCounter = new ElementCounter();
 	}
 
 	@Override

@@ -20,7 +20,15 @@ class ElementCounter {
 
 	private List<String> relevantConstructs;
 
+	public ElementCounter() {
+		setUp(true);
+	}
+
 	public ElementCounter(boolean isStrict) {
+		setUp(isStrict);
+	}
+
+	private void setUp(boolean isStrict) {
 		elements = new HashMap<String, AtomicInteger>();
 		this.isStrict = isStrict;
 		relevantConstructs = new RelevantConstructs().getRelevantConstructs();
