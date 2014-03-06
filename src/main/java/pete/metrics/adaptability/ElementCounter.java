@@ -5,8 +5,10 @@ import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.w3c.dom.Node;
@@ -83,5 +85,9 @@ class ElementCounter {
 		} catch (IOException e) {
 			System.err.println(e.getMessage());
 		}
+	}
+
+	public Map<String, AtomicInteger> getElementNumbers() {
+		return Collections.unmodifiableMap(elements);
 	}
 }
