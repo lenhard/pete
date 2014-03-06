@@ -102,7 +102,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		NodeList nodes = getChildrenOfDefinitions(dom);
 		if (nodes == null) {
 			throw new AnalysisException(
-					"File cannot be analyzed: definitions element is empty");
+					"File cannot be analyzed: no definitions element or definitions element is empty");
 		}
 		for (int i = 0; i < nodes.getLength(); i++) {
 			Node node = nodes.item(i);
