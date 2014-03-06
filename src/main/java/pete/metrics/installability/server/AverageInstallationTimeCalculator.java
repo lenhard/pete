@@ -159,11 +159,16 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 				results.add(entry);
 			}
 		}
+
+		return results;
+	}
+
+	@Override
+	public void traversalCompleted() {
 		try {
 			Files.write(Paths.get(RAW_FILE), fullLog, Charset.defaultCharset());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return results;
 	}
 }

@@ -38,4 +38,9 @@ public class PortabilityAnalyzer implements FileAnalyzer {
 		return entry;
 	}
 
+	@Override
+	public void traversalCompleted() {
+		// Not needed here
+	}
+
 }

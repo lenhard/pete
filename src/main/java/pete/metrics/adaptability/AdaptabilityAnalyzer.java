@@ -48,8 +48,6 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		List<ReportEntry> entries = new ArrayList<>(1);
 		entries.add(entry);
 
-		elementCounter.writeToCsv(Paths.get("raw.csv"));
-
 		return entries;
 	}
 
@@ -173,5 +171,10 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 			}
 		}
 		return result;
+	}
+
+	@Override
+	public void traversalCompleted() {
+		elementCounter.writeToCsv(Paths.get("raw.csv"));
 	}
 }

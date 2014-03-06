@@ -72,6 +72,7 @@ public class AnalysisWorkflow {
 	}
 
 	private void writeResults() {
+		fileAnalyzer.traversalCompleted();
 		ReportWriter writer = new ReportWriter(report);
 		writer.writeToExcelFile("results.csv");
 		writer.writeToRFile("r-results.csv");
