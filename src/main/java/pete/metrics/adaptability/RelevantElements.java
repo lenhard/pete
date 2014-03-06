@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class RelevantConstructs {
+class RelevantElements {
 
 	private List<String> constructNames;
 
-	public RelevantConstructs() {
+	public RelevantElements() {
 		constructNames = new ArrayList<>();
 		constructNames.add("activity");
 		constructNames.add("adHocSubProcess");
