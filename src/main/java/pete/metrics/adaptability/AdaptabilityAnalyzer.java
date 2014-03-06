@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +27,12 @@ import pete.reporting.ReportEntry;
 
 public class AdaptabilityAnalyzer implements FileAnalyzer {
 
+	private ElementCounter elementCounter;
+
+	public AdaptabilityAnalyzer() {
+		elementCounter = new ElementCounter(true);
+	}
+
 	@Override
 	public List<ReportEntry> analyzeFile(Path filePath) {
 		System.out.println("Analyzing " + filePath + " for adaptability");
@@ -40,6 +47,8 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		List<ReportEntry> entries = new ArrayList<>(1);
 		entries.add(entry);
 
+		elementCounter.writeToCsv(Paths.get("raw.csv"));
+
 		return entries;
 	}
 
@@ -52,6 +61,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		entry.addVariable("isExecutable", isExecutable(process));
 		entry.addVariable("elements", getNumberOfChildren(process) + "");
 
+		elementCounter.addToCounts(process);
 	}
 
 	private Document getDom(String file) {
