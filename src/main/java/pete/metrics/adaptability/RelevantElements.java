@@ -1,7 +1,9 @@
 package pete.metrics.adaptability;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 class RelevantElements {
 
@@ -148,4 +150,11 @@ class RelevantElements {
 		return result;
 	}
 
+	public Map<String, AdaptableElement> getElementsByName() {
+		HashMap<String, AdaptableElement> result = new HashMap<>();
+		for (AdaptableElement element : elements) {
+			result.put(element.getName(), element);
+		}
+		return result;
+	}
 }

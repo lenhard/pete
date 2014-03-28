@@ -28,10 +28,13 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	private BpmnInspector inspector;
 
+	private AdaptabilityMetric metric;
+
 	public AdaptabilityAnalyzer() {
 		// Currently always do strict parsing
 		elementCounter = new ElementCounter();
 		inspector = new BpmnInspector();
+		metric = new AdaptabilityMetric();
 	}
 
 	@Override
@@ -63,6 +66,9 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 				+ "");
 
 		elementCounter.addToCounts(process);
+		entry.addVariable("AD",
+				metric.computeAdaptability(elementCounter.getElementNumbers())
+						+ "");
 	}
 
 	private Document getDom(String file) {
