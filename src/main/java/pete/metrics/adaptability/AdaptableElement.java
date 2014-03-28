@@ -31,4 +31,8 @@ public final class AdaptableElement {
 		return name;
 	}
 
+	public int getAdaptabilityScore() {
+		return adaptions.size();
+	}
+
 }

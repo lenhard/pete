@@ -26,8 +26,14 @@ class RelevantElements {
 		elements.add(new AdaptableElement("dataOutput"));
 		elements.add(new AdaptableElement("dataOutputAssociation"));
 		elements.add(new AdaptableElement("dataStore"));
+
+		buildNoneEndEvent();
+
 		elements.add(new AdaptableElement("endEvent"));
 		elements.add(new AdaptableElement("error"));
+
+		buildErrorBoundaryEvent();
+
 		elements.add(new AdaptableElement("errorEventDefinition"));
 		elements.add(new AdaptableElement("escalation"));
 		elements.add(new AdaptableElement("escalationEventDefinition"));
@@ -65,14 +71,73 @@ class RelevantElements {
 		elements.add(new AdaptableElement("signal"));
 		elements.add(new AdaptableElement("signalEventDefinition"));
 		elements.add(new AdaptableElement("standardLoopCharacteristics"));
-		elements.add(new AdaptableElement("startEvent"));
+
+		buildLoopMarker();
+		buildNoneStartEvent();
+
 		elements.add(new AdaptableElement("subProcess"));
+
+		buildTask();
+
 		elements.add(new AdaptableElement("task"));
 		elements.add(new AdaptableElement("terminateEventDefinition"));
 		elements.add(new AdaptableElement("throwEvent"));
 		elements.add(new AdaptableElement("timerEventDefinition"));
 		elements.add(new AdaptableElement("transaction"));
 		elements.add(new AdaptableElement("userTask"));
+	}
+
+	private void buildLoopMarker() {
+		AdaptableElement standardLoopCharacteristiscs = new AdaptableElement(
+				"standardLoopCharacteristics");
+		standardLoopCharacteristiscs
+				.addAdaption("exclusiveGatewaysAndSequenceFlows");
+		standardLoopCharacteristiscs.addAdaption("loopSubProcess");
+		standardLoopCharacteristiscs.addAdaption("adHocSubProcess");
+		standardLoopCharacteristiscs.addAdaption("eventSubProcess");
+		elements.add(standardLoopCharacteristiscs);
+	}
+
+	private void buildErrorBoundaryEvent() {
+		AdaptableElement errorBoundaryEvent = new AdaptableElement(
+				"errorBoundaryEvent");
+		errorBoundaryEvent.addAdaption("messageBoundaryEvent");
+		errorBoundaryEvent.addAdaption("escalationBoundaryEvent");
+		errorBoundaryEvent.addAdaption("conditionalBoundaryEvent");
+		errorBoundaryEvent.addAdaption("signalBoundaryEvent");
+		errorBoundaryEvent.addAdaption("multipleBoundaryEvent");
+		errorBoundaryEvent.addAdaption("multipleParallelBoundaryEvent");
+		elements.add(errorBoundaryEvent);
+	}
+
+	private void buildTask() {
+		AdaptableElement task = new AdaptableElement("task");
+		task.addAdaption("sendTask");
+		task.addAdaption("serviceTask");
+		task.addAdaption("manualTask");
+		task.addAdaption("businessRuleTask");
+		task.addAdaption("userTask");
+		task.addAdaption("scriptTask");
+		elements.add(task);
+	}
+
+	private void buildNoneEndEvent() {
+		AdaptableElement noneEndEvent = new AdaptableElement("endEvent");
+		noneEndEvent.addAdaption("messageEndEvent");
+		noneEndEvent.addAdaption("signalEndEvent");
+		noneEndEvent.addAdaption("terminateEndEvent");
+		noneEndEvent.addAdaption("multipleEndEvent");
+		elements.add(noneEndEvent);
+	}
+
+	private void buildNoneStartEvent() {
+		AdaptableElement noneStartEvent = new AdaptableElement("startEvent");
+		noneStartEvent.addAdaption("messageStartEvent");
+		noneStartEvent.addAdaption("conditionalStartEvent");
+		noneStartEvent.addAdaption("signalStartEvent");
+		noneStartEvent.addAdaption("multipleStartEvent");
+		noneStartEvent.addAdaption("parallelMultipleStartEvent");
+		elements.add(noneStartEvent);
 	}
 
 	public List<String> getRelevantElements() {
