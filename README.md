@@ -13,7 +13,7 @@ Pete aims to support the computation of metrics for four quality characteristics
 
 ## Software Requirements
 Pete uses the gradle wrapper, so anything besides Java will be downloaded and installed automatically.
-- JDK 1.7.X
+- JDK 1.8.X
   - `JAVA_HOME` should point to the jdk directory
   - `PATH` should include `JAVA_HOME/bin`
   
