@@ -10,6 +10,8 @@ public final class AdaptableElement {
 
 	private final List<String> adaptions;
 
+	private String locatorExpression = "//*[local-name() = 'definitions']/*[local-name() = 'process']";
+
 	public AdaptableElement(String name) {
 		this.name = name;
 		adaptions = new ArrayList<>();
@@ -33,6 +35,14 @@ public final class AdaptableElement {
 
 	public int getAdaptabilityScore() {
 		return adaptions.size();
+	}
+
+	public String getLocatorExpression() {
+		return locatorExpression;
+	}
+
+	public void setLocatorExpression(String locatorExpression) {
+		this.locatorExpression += locatorExpression;
 	}
 
 }

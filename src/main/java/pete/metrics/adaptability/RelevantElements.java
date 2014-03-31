@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class RelevantElements {
+public class RelevantElements {
 
 	private List<AdaptableElement> elements;
 
@@ -133,7 +133,9 @@ class RelevantElements {
 	}
 
 	private void buildNoneStartEvent() {
-		AdaptableElement noneStartEvent = new AdaptableElement("startEvent");
+		AdaptableElement noneStartEvent = new AdaptableElement("noneStartEvent");
+		noneStartEvent
+				.setLocatorExpression("/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')]]");
 		noneStartEvent.addAdaption("messageStartEvent");
 		noneStartEvent.addAdaption("conditionalStartEvent");
 		noneStartEvent.addAdaption("signalStartEvent");
