@@ -1,4 +1,4 @@
-package pete.metrics.adaptability;
+package pete.metrics.adaptability.nodecounters;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,6 +14,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import pete.metrics.adaptability.RelevantElements;
+
 /**
  * Counts occurences of XML elements in a BPMN process, sorted by the name of
  * the element. The list of relevant elements is determined by the class
@@ -21,7 +23,7 @@ import org.w3c.dom.NodeList;
  * are determined by an XPath expression and not their name.
  * 
  */
-class SimpleNodeCounter {
+public class SimpleNodeCounter {
 
 	private HashMap<String, AtomicInteger> elements;
 
@@ -75,10 +77,6 @@ class SimpleNodeCounter {
 		} else {
 			elements.put(nodeName, new AtomicInteger(1));
 		}
-	}
-
-	public void clear() {
-		elements = new HashMap<String, AtomicInteger>();
 	}
 
 	public void writeToCsv(Path file) {
