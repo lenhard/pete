@@ -91,7 +91,7 @@ public class RelevantElements {
 
 	private void buildLoopTask() {
 		AdaptableElement loopTask = new AdaptableElement("loopTask");
-		loopTask.setLocatorExpression("/*[(local-name() = 'sendTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask') and (child::*[local-name() = 'standardLoopCharacteristics'])]");
+		loopTask.setLocatorExpression("/*[(local-name() = 'sendTask' or local-name() = 'receiveTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask') and (child::*[local-name() = 'standardLoopCharacteristics'])]");
 		loopTask.addAdaption("exclusiveGatewaysAndSequenceFlows");
 		loopTask.addAdaption("loopSubProcess");
 		loopTask.addAdaption("adHocSubProcess");
