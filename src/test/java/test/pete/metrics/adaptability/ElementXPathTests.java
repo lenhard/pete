@@ -47,6 +47,15 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void errorBoundaryEvent() {
+		AdaptableElement noneStartEvent = elements.get("errorBoundaryEvent");
+		assertFalse(isContained(noneStartEvent,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
+		assertTrue(isContained(noneStartEvent,
+				"src/test/resources/adaptability/ErrorBoundaryEvent.bpmn"));
+	}
+
+	@Test
 	public void noneEndEvent() {
 		AdaptableElement noneStartEvent = elements.get("noneEndEvent");
 		assertFalse(isContained(noneStartEvent,
