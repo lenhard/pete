@@ -124,7 +124,9 @@ public class RelevantElements {
 	}
 
 	private void buildNoneEndEvent() {
-		AdaptableElement noneEndEvent = new AdaptableElement("endEvent");
+		AdaptableElement noneEndEvent = new AdaptableElement("noneEndEvent");
+		noneEndEvent
+				.setLocatorExpression("/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
 		noneEndEvent.addAdaption("messageEndEvent");
 		noneEndEvent.addAdaption("signalEndEvent");
 		noneEndEvent.addAdaption("terminateEndEvent");

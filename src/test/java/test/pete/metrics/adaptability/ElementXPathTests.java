@@ -1,5 +1,6 @@
 package test.pete.metrics.adaptability;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
@@ -43,6 +44,15 @@ public class ElementXPathTests {
 		AdaptableElement noneStartEvent = elements.get("noneStartEvent");
 		assertTrue(isContained(noneStartEvent,
 				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
+	}
+
+	@Test
+	public void noneEndEvent() {
+		AdaptableElement noneStartEvent = elements.get("noneEndEvent");
+		assertFalse(isContained(noneStartEvent,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
+		assertTrue(isContained(noneStartEvent,
+				"src/test/resources/adaptability/NoneEndEvent.bpmn"));
 	}
 
 	private boolean isContained(AdaptableElement element, String fileLocation) {
