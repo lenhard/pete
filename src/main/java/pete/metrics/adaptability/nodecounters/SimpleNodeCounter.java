@@ -23,7 +23,7 @@ import pete.metrics.adaptability.RelevantElements;
  * are determined by an XPath expression and not their name.
  * 
  */
-public class SimpleNodeCounter {
+public class SimpleNodeCounter implements NodeCounter {
 
 	private HashMap<String, AtomicInteger> elements;
 
@@ -45,6 +45,7 @@ public class SimpleNodeCounter {
 		relevantElements = new RelevantElements().getRelevantElements();
 	}
 
+	@Override
 	public void addToCounts(Node node) {
 		// ignore text nodes
 		if (isTextNode(node)) {
@@ -79,6 +80,7 @@ public class SimpleNodeCounter {
 		}
 	}
 
+	@Override
 	public void writeToCsv(Path file) {
 		try (PrintWriter writer = new PrintWriter(Files.newBufferedWriter(file,
 				Charset.defaultCharset()))) {
@@ -92,6 +94,7 @@ public class SimpleNodeCounter {
 		}
 	}
 
+	@Override
 	public Map<String, AtomicInteger> getElementNumbers() {
 		return Collections.unmodifiableMap(elements);
 	}

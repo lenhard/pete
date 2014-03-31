@@ -20,11 +20,13 @@ import org.xml.sax.SAXParseException;
 
 import pete.executables.AnalysisException;
 import pete.executables.FileAnalyzer;
+import pete.metrics.adaptability.nodecounters.NodeCounter;
+import pete.metrics.adaptability.nodecounters.SimpleNodeCounter;
 import pete.reporting.ReportEntry;
 
 public class AdaptabilityAnalyzer implements FileAnalyzer {
 
-	private ElementCounter elementCounter;
+	private NodeCounter elementCounter;
 
 	private BpmnInspector inspector;
 
@@ -32,7 +34,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	public AdaptabilityAnalyzer() {
 		// Currently always do strict parsing
-		elementCounter = new ElementCounter();
+		elementCounter = new SimpleNodeCounter();
 		inspector = new BpmnInspector();
 		metric = new AdaptabilityMetric();
 	}
