@@ -4,11 +4,11 @@ import java.nio.file.Path;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.w3c.dom.Node;
+import org.w3c.dom.Document;
 
 public interface NodeCounter {
 
-	void addToCounts(Node node);
+	void addToCounts(Document document);
 
 	void writeToCsv(Path file);
 

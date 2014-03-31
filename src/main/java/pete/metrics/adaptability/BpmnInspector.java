@@ -8,7 +8,7 @@ import org.w3c.dom.NodeList;
 
 import pete.executables.AnalysisException;
 
-class BpmnInspector {
+public class BpmnInspector {
 
 	private static final String BPMN_NAMESPACE = "http://www.omg.org/spec/BPMN/20100524/MODEL";
 
@@ -55,7 +55,7 @@ class BpmnInspector {
 		return result;
 	}
 
-	Node getProcess(Document dom) throws AnalysisException {
+	public Node getProcess(Document dom) throws AnalysisException {
 		NodeList nodes = getChildrenOfDefinitions(dom);
 		if (nodes == null) {
 			throw new AnalysisException(

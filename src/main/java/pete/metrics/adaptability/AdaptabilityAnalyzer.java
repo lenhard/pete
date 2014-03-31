@@ -67,7 +67,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		entry.addVariable("elements", inspector.getNumberOfChildren(process)
 				+ "");
 
-		elementCounter.addToCounts(process);
+		elementCounter.addToCounts(dom);
 		entry.addVariable("AD",
 				metric.computeAdaptability(elementCounter.getElementNumbers())
 						+ "");

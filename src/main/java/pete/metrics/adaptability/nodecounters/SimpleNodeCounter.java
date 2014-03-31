@@ -11,9 +11,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import pete.metrics.adaptability.BpmnInspector;
 import pete.metrics.adaptability.RelevantElements;
 
 /**
@@ -42,11 +44,16 @@ public class SimpleNodeCounter implements NodeCounter {
 	private void setUp(boolean isStrict) {
 		elements = new HashMap<String, AtomicInteger>();
 		this.isStrict = isStrict;
-		relevantElements = new RelevantElements().getRelevantElements();
+		relevantElements = new RelevantElements().getElementNames();
 	}
 
 	@Override
-	public void addToCounts(Node node) {
+	public void addToCounts(Document dom) {
+		Node process = new BpmnInspector().getProcess(dom);
+		addNodeToCounts(process);
+	}
+
+	private void addNodeToCounts(Node node) {
 		// ignore text nodes
 		if (isTextNode(node)) {
 			return;
@@ -57,7 +64,7 @@ public class SimpleNodeCounter implements NodeCounter {
 		NodeList children = node.getChildNodes();
 		if (children != null) {
 			for (int i = 0; i < children.getLength(); i++) {
-				addToCounts(children.item(i));
+				addNodeToCounts(children.item(i));
 			}
 		}
 	}

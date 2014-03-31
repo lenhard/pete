@@ -147,10 +147,18 @@ public class RelevantElements {
 		elements.add(noneStartEvent);
 	}
 
-	public List<String> getRelevantElements() {
+	public List<String> getElementNames() {
 		List<String> result = new ArrayList<>(elements.size());
 		for (AdaptableElement element : elements) {
 			result.add(element.getName());
+		}
+		return result;
+	}
+
+	public List<AdaptableElement> getElements() {
+		List<AdaptableElement> result = new ArrayList<>(elements.size());
+		for (AdaptableElement element : elements) {
+			result.add(element);
 		}
 		return result;
 	}
