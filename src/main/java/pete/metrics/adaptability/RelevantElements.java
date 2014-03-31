@@ -74,7 +74,7 @@ public class RelevantElements {
 		elements.add(new AdaptableElement("signalEventDefinition"));
 		elements.add(new AdaptableElement("standardLoopCharacteristics"));
 
-		buildLoopMarker();
+		buildLoopTask();
 		buildNoneStartEvent();
 
 		elements.add(new AdaptableElement("subProcess"));
@@ -89,15 +89,14 @@ public class RelevantElements {
 		elements.add(new AdaptableElement("userTask"));
 	}
 
-	private void buildLoopMarker() {
-		AdaptableElement standardLoopCharacteristiscs = new AdaptableElement(
-				"standardLoopCharacteristics");
-		standardLoopCharacteristiscs
-				.addAdaption("exclusiveGatewaysAndSequenceFlows");
-		standardLoopCharacteristiscs.addAdaption("loopSubProcess");
-		standardLoopCharacteristiscs.addAdaption("adHocSubProcess");
-		standardLoopCharacteristiscs.addAdaption("eventSubProcess");
-		elements.add(standardLoopCharacteristiscs);
+	private void buildLoopTask() {
+		AdaptableElement loopTask = new AdaptableElement("loopTask");
+		loopTask.setLocatorExpression("/*[(local-name() = 'sendTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask') and (child::*[local-name() = 'standardLoopCharacteristics'])]");
+		loopTask.addAdaption("exclusiveGatewaysAndSequenceFlows");
+		loopTask.addAdaption("loopSubProcess");
+		loopTask.addAdaption("adHocSubProcess");
+		loopTask.addAdaption("eventSubProcess");
+		elements.add(loopTask);
 	}
 
 	private void buildErrorBoundaryEvent() {
