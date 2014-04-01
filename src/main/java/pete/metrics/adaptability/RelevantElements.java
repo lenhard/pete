@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class RelevantElements {
+public final class RelevantElements {
 
-	private List<AdaptableElement> elements;
+	private final List<AdaptableElement> elements;
 
 	public RelevantElements() {
 		elements = new ArrayList<>();
@@ -103,7 +103,7 @@ public class RelevantElements {
 		AdaptableElement errorBoundaryEvent = new AdaptableElement(
 				"errorBoundaryEvent");
 		errorBoundaryEvent
-				.setLocatorExpression("/*[local-name() = 'boundaryEvent' and (child::*[local-name() = 'errorEventDefinition'])]");
+		.setLocatorExpression("/*[local-name() = 'boundaryEvent' and (child::*[local-name() = 'errorEventDefinition'])]");
 		errorBoundaryEvent.addAdaption("messageBoundaryEvent");
 		errorBoundaryEvent.addAdaption("escalationBoundaryEvent");
 		errorBoundaryEvent.addAdaption("conditionalBoundaryEvent");
@@ -127,7 +127,7 @@ public class RelevantElements {
 	private void buildNoneEndEvent() {
 		AdaptableElement noneEndEvent = new AdaptableElement("noneEndEvent");
 		noneEndEvent
-				.setLocatorExpression("/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
+		.setLocatorExpression("/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
 		noneEndEvent.addAdaption("messageEndEvent");
 		noneEndEvent.addAdaption("signalEndEvent");
 		noneEndEvent.addAdaption("terminateEndEvent");
@@ -138,7 +138,7 @@ public class RelevantElements {
 	private void buildNoneStartEvent() {
 		AdaptableElement noneStartEvent = new AdaptableElement("noneStartEvent");
 		noneStartEvent
-				.setLocatorExpression("/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')])]");
+		.setLocatorExpression("/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')])]");
 		noneStartEvent.addAdaption("messageStartEvent");
 		noneStartEvent.addAdaption("conditionalStartEvent");
 		noneStartEvent.addAdaption("signalStartEvent");
@@ -149,25 +149,19 @@ public class RelevantElements {
 
 	public List<String> getElementNames() {
 		List<String> result = new ArrayList<>(elements.size());
-		for (AdaptableElement element : elements) {
-			result.add(element.getName());
-		}
+		elements.forEach(element -> result.add(element.getName()));
 		return result;
 	}
 
 	public List<AdaptableElement> getElements() {
 		List<AdaptableElement> result = new ArrayList<>(elements.size());
-		for (AdaptableElement element : elements) {
-			result.add(element);
-		}
+		elements.forEach(element -> result.add(element));
 		return result;
 	}
 
 	public Map<String, AdaptableElement> getElementsByName() {
 		HashMap<String, AdaptableElement> result = new HashMap<>();
-		for (AdaptableElement element : elements) {
-			result.put(element.getName(), element);
-		}
+		elements.forEach(element -> result.put(element.getName(), element));
 		return result;
 	}
 }

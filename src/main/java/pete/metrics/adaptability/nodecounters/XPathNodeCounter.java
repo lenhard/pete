@@ -6,9 +6,9 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.xml.xpath.XPathConstants;
@@ -30,14 +30,14 @@ import bpp.domain.BpelNamespaceContext;
 
 public class XPathNodeCounter implements NodeCounter {
 
-	private HashMap<String, AtomicInteger> elementNumbers;
+	private ConcurrentHashMap<String, AtomicInteger> elementNumbers;
 
 	private List<AdaptableElement> elements;
 
 	private XPathEvaluator xpath;
 
 	public XPathNodeCounter() {
-		elementNumbers = new HashMap<>();
+		elementNumbers = new ConcurrentHashMap<>();
 		elements = new RelevantElements().getElements();
 		try {
 			createXPathEvaluator();
@@ -57,9 +57,7 @@ public class XPathNodeCounter implements NodeCounter {
 
 	@Override
 	public void addToCounts(Document document) {
-		for (AdaptableElement element : elements) {
-			checkForElement(element, document);
-		}
+		elements.forEach(element -> checkForElement(element, document));
 	}
 
 	private void checkForElement(AdaptableElement element, Document document) {

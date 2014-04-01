@@ -74,7 +74,7 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 	}
 
 	private void scanLog(Path filePath) throws IOException,
-			FileNotFoundException {
+	FileNotFoundException {
 		System.out.println("Analysing file " + filePath.toString()
 				+ " for installability");
 		Scanner scanner = new Scanner(filePath);
@@ -103,11 +103,9 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 	}
 
 	private double getAverage(String engineName) {
-		int sum = 0;
-		for (Integer entry : entries.get(engineName)) {
-			sum += entry;
-		}
-		double avg = (double) sum / (double) entries.get(engineName).size();
+		AtomicInteger sum = new AtomicInteger(0);
+		entries.get(engineName).forEach(entry -> sum.addAndGet(entry));
+		double avg = sum.doubleValue() / entries.get(engineName).size();
 		return avg;
 	}
 

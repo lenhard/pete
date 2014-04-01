@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 import javax.xml.namespace.NamespaceContext;
 
-public class BpmnNamespaceContext implements NamespaceContext {
+public final class BpmnNamespaceContext implements NamespaceContext {
 
 	public static final String BPMN_NAMESPACE = "http://www.omg.org/spec/BPMN/20100524/MODEL";
 

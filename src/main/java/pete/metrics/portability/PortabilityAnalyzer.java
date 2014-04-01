@@ -7,7 +7,7 @@ import java.util.List;
 import pete.executables.FileAnalyzer;
 import pete.reporting.ReportEntry;
 
-public class PortabilityAnalyzer implements FileAnalyzer {
+public final class PortabilityAnalyzer implements FileAnalyzer {
 
 	@Override
 	public List<ReportEntry> analyzeFile(Path filePath) {

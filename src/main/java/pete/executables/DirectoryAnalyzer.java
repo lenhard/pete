@@ -8,11 +8,11 @@ import java.nio.file.Path;
 import pete.reporting.Report;
 import pete.reporting.ReportEntry;
 
-public class DirectoryAnalyzer {
+public final class DirectoryAnalyzer {
 
-	private FileAnalyzer fileAnalyzer;
+	private final FileAnalyzer fileAnalyzer;
 
-	private Report report;
+	private final Report report;
 
 	public DirectoryAnalyzer(FileAnalyzer fileAnalyzer) {
 		this.fileAnalyzer = fileAnalyzer;

@@ -1,17 +1,17 @@
 package pete.reporting;
 
-import java.util.HashMap;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
-public class ReportEntry {
+public final class ReportEntry {
 
 	private final String fileName;
 
-	private HashMap<String, String> variables;
+	private final ConcurrentHashMap<String, String> variables;
 
 	public ReportEntry(String fileName) {
 		this.fileName = fileName;
-		variables = new HashMap<>();
+		variables = new ConcurrentHashMap<>();
 	}
 
 	public void addVariable(String name, String value) {

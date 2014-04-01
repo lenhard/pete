@@ -8,7 +8,7 @@ import org.w3c.dom.NodeList;
 
 import pete.executables.AnalysisException;
 
-public class BpmnInspector {
+public final class BpmnInspector {
 
 	private static final String BPMN_NAMESPACE = "http://www.omg.org/spec/BPMN/20100524/MODEL";
 

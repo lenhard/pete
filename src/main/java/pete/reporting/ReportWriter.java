@@ -4,9 +4,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class ReportWriter {
+public final class ReportWriter {
 
-	private Report report;
+	private final Report report;
 
 	private final String excelDelimiter = ";";
 

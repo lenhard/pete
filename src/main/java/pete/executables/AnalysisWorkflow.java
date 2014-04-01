@@ -12,14 +12,13 @@ import pete.metrics.installability.deployability.DeploymentPackageAnalyzer;
 import pete.metrics.installability.server.AverageInstallationTimeCalculator;
 import pete.metrics.portability.PortabilityAnalyzer;
 import pete.reporting.Report;
-import pete.reporting.ReportEntry;
 import pete.reporting.ReportWriter;
 
-public class AnalysisWorkflow {
+public final class AnalysisWorkflow {
 
-	private Path root;
+	private final Path root;
 
-	private DirectoryAnalyzer dirAnalyzer;
+	private final DirectoryAnalyzer dirAnalyzer;
 
 	private FileAnalyzer fileAnalyzer;
 
@@ -62,9 +61,8 @@ public class AnalysisWorkflow {
 
 	private void parseFile(Path file) {
 		report = new Report();
-		for (ReportEntry entry : fileAnalyzer.analyzeFile(file)) {
-			report.addEntry(entry);
-		}
+		fileAnalyzer.analyzeFile(file).forEach(
+				reportEntry -> report.addEntry(reportEntry));
 	}
 
 	private void parseDirectory(Path root) {

@@ -5,12 +5,12 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Report implements Iterable<ReportEntry> {
+public final class Report implements Iterable<ReportEntry> {
 
-	private List<ReportEntry> entries;
+	private final List<ReportEntry> entries;
 
 	public Report() {
-		entries = new LinkedList<>();
+		entries = Collections.synchronizedList(new LinkedList<>());
 	}
 
 	public void addEntry(ReportEntry entry) {
