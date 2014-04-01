@@ -86,7 +86,19 @@ public final class RelevantElements {
 		elements.add(new AdaptableElement("throwEvent"));
 		elements.add(new AdaptableElement("timerEventDefinition"));
 		elements.add(new AdaptableElement("transaction"));
-		elements.add(new AdaptableElement("userTask"));
+		buildUserTask();
+	}
+
+	private void buildUserTask() {
+		AdaptableElement userTask = new AdaptableElement("userTask");
+		userTask.setLocatorExpression("/*[local-name() = 'userTask']");
+		// the tasks below can in principle be programmed to ask for user input,
+		// an hence are an adaption for userTask
+		userTask.addAdaption("manualTask");
+		userTask.addAdaption("scriptTask");
+		userTask.addAdaption("serviceTask");
+		userTask.addAdaption("sendTask");
+		elements.add(userTask);
 	}
 
 	private void buildLoopTask() {
@@ -121,6 +133,7 @@ public final class RelevantElements {
 		task.addAdaption("businessRuleTask");
 		task.addAdaption("userTask");
 		task.addAdaption("scriptTask");
+		task.addAdaption("receiveTask");
 		elements.add(task);
 	}
 
