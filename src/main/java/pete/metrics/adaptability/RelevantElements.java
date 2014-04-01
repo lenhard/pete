@@ -69,7 +69,7 @@ public final class RelevantElements {
 		elements.add(new AdaptableElement("script"));
 		elements.add(new AdaptableElement("sendTask"));
 		elements.add(new AdaptableElement("sequenceFlow"));
-		elements.add(new AdaptableElement("serviceTask"));
+		buildServiceTask();
 		elements.add(new AdaptableElement("signal"));
 		elements.add(new AdaptableElement("signalEventDefinition"));
 		elements.add(new AdaptableElement("standardLoopCharacteristics"));
@@ -81,12 +81,25 @@ public final class RelevantElements {
 
 		buildTask();
 
-		elements.add(new AdaptableElement("task"));
 		elements.add(new AdaptableElement("terminateEventDefinition"));
 		elements.add(new AdaptableElement("throwEvent"));
 		elements.add(new AdaptableElement("timerEventDefinition"));
 		elements.add(new AdaptableElement("transaction"));
 		buildUserTask();
+	}
+
+	private void buildServiceTask() {
+		AdaptableElement serviceTask = new AdaptableElement("serviceTask");
+		serviceTask.setLocatorExpression("//*[local-name() = 'serviceTask']");
+		// all tasks below can in principle be used to trigger service
+		// execution. A receiveTask is not suitable as it is passively waiting
+		// and a businessRuleTask is too specialistic
+		serviceTask.addAdaption("scriptTask");
+		serviceTask.addAdaption("manualTask");
+		serviceTask.addAdaption("userTask");
+		serviceTask.addAdaption("sendTask");
+
+		elements.add(serviceTask);
 	}
 
 	private void buildUserTask() {
