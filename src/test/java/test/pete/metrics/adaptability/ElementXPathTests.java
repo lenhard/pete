@@ -25,7 +25,7 @@ import org.xml.sax.InputSource;
 
 import pete.metrics.adaptability.AdaptableElement;
 import pete.metrics.adaptability.BpmnNamespaceContext;
-import pete.metrics.adaptability.RelevantElements;
+import pete.metrics.adaptability.AdaptableElements;
 
 public class ElementXPathTests {
 
@@ -36,7 +36,7 @@ public class ElementXPathTests {
 		System.setProperty("javax.xml.xpath.XPathFactory:"
 				+ NamespaceConstant.OBJECT_MODEL_SAXON,
 				"net.sf.saxon.xpath.XPathFactoryImpl");
-		elements = new RelevantElements().getElementsByName();
+		elements = new AdaptableElements().getElementsByName();
 	}
 
 	@Test

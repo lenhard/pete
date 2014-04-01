@@ -25,7 +25,7 @@ import org.w3c.dom.Document;
 
 import pete.executables.AnalysisException;
 import pete.metrics.adaptability.AdaptableElement;
-import pete.metrics.adaptability.RelevantElements;
+import pete.metrics.adaptability.AdaptableElements;
 import bpp.domain.BpelNamespaceContext;
 
 public class XPathNodeCounter implements NodeCounter {
@@ -38,7 +38,7 @@ public class XPathNodeCounter implements NodeCounter {
 
 	public XPathNodeCounter() {
 		elementNumbers = new ConcurrentHashMap<>();
-		elements = new RelevantElements().getElements();
+		elements = new AdaptableElements().getElements();
 		try {
 			createXPathEvaluator();
 		} catch (XPathFactoryConfigurationException e) {

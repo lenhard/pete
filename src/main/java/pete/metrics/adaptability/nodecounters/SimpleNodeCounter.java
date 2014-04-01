@@ -16,7 +16,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import pete.metrics.adaptability.BpmnInspector;
-import pete.metrics.adaptability.RelevantElements;
+import pete.metrics.adaptability.AdaptableElements;
 
 /**
  * Counts occurences of XML elements in a BPMN process, sorted by the name of
@@ -44,7 +44,7 @@ public class SimpleNodeCounter implements NodeCounter {
 	private void setUp(boolean isStrict) {
 		elements = new HashMap<String, AtomicInteger>();
 		this.isStrict = isStrict;
-		relevantElements = new RelevantElements().getElementNames();
+		relevantElements = new AdaptableElements().getElementNames();
 	}
 
 	@Override

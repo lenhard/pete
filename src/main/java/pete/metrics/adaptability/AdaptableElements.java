@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public final class RelevantElements {
+public final class AdaptableElements {
 
 	private final List<AdaptableElement> elements;
 
-	public RelevantElements() {
+	public AdaptableElements() {
 		elements = new ArrayList<>();
 		elements.add(new AdaptableElement("activity"));
 		elements.add(new AdaptableElement("adHocSubProcess"));

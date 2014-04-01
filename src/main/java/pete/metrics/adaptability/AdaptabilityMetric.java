@@ -14,7 +14,7 @@ class AdaptabilityMetric {
 	private AtomicInteger maxDegree;
 
 	public AdaptabilityMetric() {
-		elements = new RelevantElements().getElementsByName();
+		elements = new AdaptableElements().getElementsByName();
 	}
 
 	public double computeAdaptability(Map<String, AtomicInteger> processElements) {
