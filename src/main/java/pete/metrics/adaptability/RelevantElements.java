@@ -60,7 +60,7 @@ public final class RelevantElements {
 		elements.add(new AdaptableElement("loopCharacteristics"));
 		elements.add(new AdaptableElement("multiInstanceLoopCharacteristics"));
 		elements.add(new AdaptableElement("process"));
-		elements.add(new AdaptableElement("receiveTask"));
+		buildReceiveTask();
 		buildScriptTask();
 		elements.add(new AdaptableElement("script"));
 		buildSendTask();
@@ -78,6 +78,21 @@ public final class RelevantElements {
 		elements.add(new AdaptableElement("timerEventDefinition"));
 		elements.add(new AdaptableElement("transaction"));
 		buildUserTask();
+	}
+
+	private void buildReceiveTask() {
+		AdaptableElement receiveTask = new AdaptableElement("receiveTask");
+		receiveTask.setLocatorExpression("//*[local-name() = 'receiveTask']");
+		// all tasks below can in principle be used to wait for a message
+		// (programmatically or manually)
+		receiveTask.addAdaption("serviceTask");
+		receiveTask.addAdaption("userTask");
+		receiveTask.addAdaption("manualTask");
+		receiveTask.addAdaption("scriptTask");
+
+		receiveTask.addAdaption("messageEvent");
+
+		elements.add(receiveTask);
 	}
 
 	private void buildScriptTask() {
