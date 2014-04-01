@@ -28,14 +28,10 @@ public final class RelevantElements {
 		elements.add(new AdaptableElement("dataOutput"));
 		elements.add(new AdaptableElement("dataOutputAssociation"));
 		elements.add(new AdaptableElement("dataStore"));
-
 		buildNoneEndEvent();
-
 		elements.add(new AdaptableElement("endEvent"));
 		elements.add(new AdaptableElement("error"));
-
 		buildErrorBoundaryEvent();
-
 		elements.add(new AdaptableElement("errorEventDefinition"));
 		elements.add(new AdaptableElement("escalation"));
 		elements.add(new AdaptableElement("escalationEventDefinition"));
@@ -67,25 +63,35 @@ public final class RelevantElements {
 		elements.add(new AdaptableElement("receiveTask"));
 		elements.add(new AdaptableElement("scriptTask"));
 		elements.add(new AdaptableElement("script"));
-		elements.add(new AdaptableElement("sendTask"));
+		buildSendTask();
 		elements.add(new AdaptableElement("sequenceFlow"));
 		buildServiceTask();
 		elements.add(new AdaptableElement("signal"));
 		elements.add(new AdaptableElement("signalEventDefinition"));
 		elements.add(new AdaptableElement("standardLoopCharacteristics"));
-
 		buildLoopTask();
 		buildNoneStartEvent();
-
 		elements.add(new AdaptableElement("subProcess"));
-
 		buildTask();
-
 		elements.add(new AdaptableElement("terminateEventDefinition"));
 		elements.add(new AdaptableElement("throwEvent"));
 		elements.add(new AdaptableElement("timerEventDefinition"));
 		elements.add(new AdaptableElement("transaction"));
 		buildUserTask();
+	}
+
+	private void buildSendTask() {
+		AdaptableElement sendTask = new AdaptableElement("sendTask");
+		sendTask.setLocatorExpression("//*[local-name() = 'sendTask']");
+		// all tasks below can in principle be used to trigger the sending of a
+		// message. A receiveTask is not suitable as it is passively waiting
+		// and a businessRuleTask is too specialistic
+		sendTask.addAdaption("serviceTask");
+		sendTask.addAdaption("scriptTask");
+		sendTask.addAdaption("userTask");
+		sendTask.addAdaption("manualTask");
+
+		elements.add(sendTask);
 	}
 
 	private void buildServiceTask() {
@@ -128,7 +134,7 @@ public final class RelevantElements {
 		AdaptableElement errorBoundaryEvent = new AdaptableElement(
 				"errorBoundaryEvent");
 		errorBoundaryEvent
-				.setLocatorExpression("//*[local-name() = 'boundaryEvent' and (child::*[local-name() = 'errorEventDefinition'])]");
+		.setLocatorExpression("//*[local-name() = 'boundaryEvent' and (child::*[local-name() = 'errorEventDefinition'])]");
 		errorBoundaryEvent.addAdaption("messageBoundaryEvent");
 		errorBoundaryEvent.addAdaption("escalationBoundaryEvent");
 		errorBoundaryEvent.addAdaption("conditionalBoundaryEvent");
@@ -154,7 +160,7 @@ public final class RelevantElements {
 	private void buildNoneEndEvent() {
 		AdaptableElement noneEndEvent = new AdaptableElement("noneEndEvent");
 		noneEndEvent
-				.setLocatorExpression("/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
+		.setLocatorExpression("/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
 		noneEndEvent.addAdaption("messageEndEvent");
 		noneEndEvent.addAdaption("signalEndEvent");
 		noneEndEvent.addAdaption("terminateEndEvent");
@@ -165,7 +171,7 @@ public final class RelevantElements {
 	private void buildNoneStartEvent() {
 		AdaptableElement noneStartEvent = new AdaptableElement("noneStartEvent");
 		noneStartEvent
-				.setLocatorExpression("/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')])]");
+		.setLocatorExpression("/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')])]");
 		noneStartEvent.addAdaption("messageStartEvent");
 		noneStartEvent.addAdaption("conditionalStartEvent");
 		noneStartEvent.addAdaption("signalStartEvent");
