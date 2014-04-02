@@ -49,7 +49,7 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("message"));
 		elements.add(new AdaptableElement("messageFlow"));
 		elements.add(new AdaptableElement("messageFlowAssociation"));
-		elements.add(new AdaptableElement("multiInstanceLoopCharacteristics"));
+		buildSequentialMultiInstanceTask();
 		buildReceiveTask();
 		buildScriptTask();
 		buildSendTask();
@@ -261,12 +261,34 @@ public final class AdaptableElements {
 
 	private void buildLoopTask() {
 		AdaptableElement loopTask = new AdaptableElement("loopTask");
-		loopTask.setLocatorExpression("//*[(local-name() = 'sendTask' or local-name() = 'receiveTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask' or local-name() = 'globalUserTask' or local-name() = 'globalManualTask' or local-name() = ' globalScriptTask' or local-name() = 'globalBusinessRuleTask') and (child::*[local-name() = 'standardLoopCharacteristics'])]");
+		loopTask.setLocatorExpression("//*[(local-name() = 'receiveTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' "
+				+ "or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask'"
+				+ "or local-name() = 'scriptTask'  or local-name() = 'globalUserTask' or local-name() = 'globalManualTask' "
+				+ "or local-name() = ' globalScriptTask' or local-name() = 'globalBusinessRuleTask') "
+				+ "and (child::*[local-name() = 'standardLoopCharacteristics'])]");
 		loopTask.addAdaption("exclusiveGatewaysAndSequenceFlows");
+		loopTask.addAdaption("complexGatewaysAndSequenceFlows");
 		loopTask.addAdaption("loopSubProcess");
 		loopTask.addAdaption("adHocSubProcess");
 		loopTask.addAdaption("eventSubProcess");
 		elements.add(loopTask);
+	}
+
+	private void buildSequentialMultiInstanceTask() {
+		AdaptableElement multiInstanceTask = new AdaptableElement(
+				"sequentialMultiInstanceTask");
+		multiInstanceTask
+		.setLocatorExpression("//*[(local-name() = 'receiveTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask' or local-name() = 'scriptTask'  or local-name() = 'globalUserTask' or local-name() = 'globalManualTask' or local-name() = ' globalScriptTask' or local-name() = 'globalBusinessRuleTask') and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='true'])]");
+		// A sequential multiInstance activity can always be adapted to an
+		// ordinary sequential loop
+		multiInstanceTask.addAdaption("exclusiveGatewaysAndSequenceFlows");
+		multiInstanceTask.addAdaption("complexGatewaysAndSequenceFlows");
+		multiInstanceTask.addAdaption("loopTask");
+		multiInstanceTask.addAdaption("loopSubProcess");
+		multiInstanceTask.addAdaption("multiInstanceSubProcess");
+		multiInstanceTask.addAdaption("adHocSubProcess");
+		multiInstanceTask.addAdaption("eventSubProcess");
+		elements.add(multiInstanceTask);
 	}
 
 	private void buildErrorBoundaryEvent() {
