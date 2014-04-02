@@ -10,15 +10,24 @@ public final class AdaptableElement {
 
 	private final List<String> adaptions;
 
+	private String documentation;
+
 	private String locatorExpression = "//*[local-name() = 'definitions']";
 
 	public AdaptableElement(String name) {
+		if (name == null) {
+			throw new IllegalArgumentException("name must not be null");
+		}
+
 		this.name = name;
 		adaptions = new ArrayList<>();
+		documentation = "";
 	}
 
 	public void addAdaption(String adaption) {
-		adaptions.add(adaption);
+		if (adaption != null) {
+			adaptions.add(adaption);
+		}
 	}
 
 	public List<String> getAdaptions() {
@@ -42,7 +51,21 @@ public final class AdaptableElement {
 	}
 
 	public void setLocatorExpression(String locatorExpression) {
-		this.locatorExpression += locatorExpression;
+		if (!(locatorExpression == null)) {
+			this.locatorExpression += locatorExpression;
+		}
+	}
+
+	public String getDocumentation() {
+		return documentation;
+	}
+
+	public void setDocumentation(String documentation) {
+		if (documentation == null) {
+			this.documentation = "";
+		} else {
+			this.documentation = documentation;
+		}
 	}
 
 }
