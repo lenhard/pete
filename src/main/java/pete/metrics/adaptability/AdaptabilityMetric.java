@@ -23,8 +23,11 @@ class AdaptabilityMetric {
 		processElements.keySet().forEach(
 				elementName -> addElementAdaptability(processElements,
 						elementName));
-		double result = sum.doubleValue() / maxDegree.doubleValue();
-		return result;
+		if (maxDegree.get() == 0) {
+			return 0;
+		} else {
+			return sum.doubleValue() / maxDegree.doubleValue();
+		}
 	}
 
 	private void addElementAdaptability(

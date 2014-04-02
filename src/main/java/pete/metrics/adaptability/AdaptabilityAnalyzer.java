@@ -73,9 +73,17 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 		simpleCounter.addToCounts(dom);
 		xpathCounter.addToCounts(dom);
-		entry.addVariable("AD",
-				metric.computeAdaptability(xpathCounter.getElementNumbers())
-						+ "");
+		addAdaptability(entry);
+	}
+
+	private void addAdaptability(ReportEntry entry) {
+		double adaptabilityDegree = metric.computeAdaptability(xpathCounter
+				.getElementNumbers());
+		if (adaptabilityDegree == 0) {
+			entry.addVariable("AD", "NoElementsFound");
+		} else {
+			entry.addVariable("AD", adaptabilityDegree + "");
+		}
 	}
 
 	protected Document getDom(String file) {
