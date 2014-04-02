@@ -20,9 +20,7 @@ import pete.metrics.adaptability.BpmnInspector;
 
 /**
  * Counts occurences of XML elements in a BPMN process, sorted by the name of
- * the element. The list of relevant elements is determined by the class
- * <code>RelevantElements</code>. The class will become obsolete once elements
- * are determined by an XPath expression and not their name.
+ * the element. The list of relevant elements is determined internally
  *
  */
 public class SimpleNodeCounter implements NodeCounter {
