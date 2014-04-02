@@ -62,6 +62,16 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void parallelMultiInstanceTask() {
+		AdaptableElement parallelMultiInstanceTask = elements
+				.get("parallelMultiInstanceTask");
+		assertNoFalsePositives(parallelMultiInstanceTask,
+				"src/test/resources/adaptability/SequentialMultiInstanceTask.bpmn");
+		assertDetection(parallelMultiInstanceTask,
+				"src/test/resources/adaptability/ParallelMultiInstanceTask.bpmn");
+	}
+
+	@Test
 	public void userTask() {
 		AdaptableElement userTask = elements.get("userTask");
 		assertNoFalsePositives(userTask,

@@ -50,6 +50,7 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("messageFlow"));
 		elements.add(new AdaptableElement("messageFlowAssociation"));
 		buildSequentialMultiInstanceTask();
+		buildParallelMultiInstanceTask();
 		buildReceiveTask();
 		buildScriptTask();
 		buildSendTask();
@@ -291,6 +292,21 @@ public final class AdaptableElements {
 		multiInstanceTask.addAdaption("multiInstanceSubProcess");
 		multiInstanceTask.addAdaption("adHocSubProcess");
 		multiInstanceTask.addAdaption("eventSubProcess");
+		elements.add(multiInstanceTask);
+	}
+
+	private void buildParallelMultiInstanceTask() {
+		AdaptableElement multiInstanceTask = new AdaptableElement(
+				"parallelMultiInstanceTask");
+		multiInstanceTask
+				.setLocatorExpression("//*[(local-name() = 'receiveTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask' or local-name() = 'scriptTask'  or local-name() = 'globalUserTask' or local-name() = 'globalManualTask' or local-name() = ' globalScriptTask' or local-name() = 'globalBusinessRuleTask') and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='false'])]");
+
+		multiInstanceTask
+				.setDocumentation("A parallel multiInstance activity can be be adapted through another construct that supports parallel execution");
+		multiInstanceTask.addAdaption("inclusiveGatewaysAndSequenceFlows");
+		multiInstanceTask.addAdaption("complexGatewaysAndSequenceFlows");
+		multiInstanceTask.addAdaption("multiInstanceSubProcess");
+		multiInstanceTask.addAdaption("adHocSubProcess");
 		elements.add(multiInstanceTask);
 	}
 
