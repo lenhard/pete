@@ -16,11 +16,8 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("boundaryEvent"));
 		elements.add(new AdaptableElement("businessRuleTask"));
 		elements.add(new AdaptableElement("callActivity"));
-		elements.add(new AdaptableElement("cancelEventDefinition"));
 		elements.add(new AdaptableElement("catchEvent"));
-		elements.add(new AdaptableElement("compensateEventDefinition"));
 		elements.add(new AdaptableElement("complexGateway"));
-		elements.add(new AdaptableElement("conditionalEventDefinition"));
 		elements.add(new AdaptableElement("dataAssociation"));
 		elements.add(new AdaptableElement("dataInput"));
 		elements.add(new AdaptableElement("dataInputAssociation"));
@@ -32,9 +29,7 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("endEvent"));
 		elements.add(new AdaptableElement("error"));
 		buildErrorBoundaryEvent();
-		elements.add(new AdaptableElement("errorEventDefinition"));
 		elements.add(new AdaptableElement("escalation"));
-		elements.add(new AdaptableElement("escalationEventDefinition"));
 		elements.add(new AdaptableElement("event"));
 		elements.add(new AdaptableElement("eventBasedGateway"));
 		elements.add(new AdaptableElement("extension"));
@@ -51,24 +46,16 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("inputSet"));
 		elements.add(new AdaptableElement("intermediateCatchEvent"));
 		elements.add(new AdaptableElement("intermediateThrowEvent"));
-		elements.add(new AdaptableElement("lane"));
 		elements.add(new AdaptableElement("manualTask"));
 		elements.add(new AdaptableElement("message"));
-		elements.add(new AdaptableElement("messageEventDefinition"));
 		elements.add(new AdaptableElement("messageFlow"));
 		elements.add(new AdaptableElement("messageFlowAssociation"));
-		elements.add(new AdaptableElement("loopCharacteristics"));
 		elements.add(new AdaptableElement("multiInstanceLoopCharacteristics"));
-		elements.add(new AdaptableElement("process"));
 		buildReceiveTask();
 		buildScriptTask();
-		elements.add(new AdaptableElement("script"));
 		buildSendTask();
-		elements.add(new AdaptableElement("sequenceFlow"));
 		buildServiceTask();
 		elements.add(new AdaptableElement("signal"));
-		elements.add(new AdaptableElement("signalEventDefinition"));
-		elements.add(new AdaptableElement("standardLoopCharacteristics"));
 		buildLoopTask();
 		buildNoneStartEvent();
 		elements.add(new AdaptableElement("subProcess"));
@@ -100,7 +87,7 @@ public final class AdaptableElements {
 	private void buildScriptTask() {
 		AdaptableElement scriptTask = new AdaptableElement("scriptTask");
 		scriptTask
-		.setLocatorExpression("//*[local-name() = 'scriptTask' or local-name() = 'globalScriptTask']");
+				.setLocatorExpression("//*[local-name() = 'scriptTask' or local-name() = 'globalScriptTask']");
 		// all tasks below can in principle be used to trigger the sending of a
 		// message. A receiveTask is not suitable as it is passively waiting
 		// and a businessRuleTask is too specific
@@ -176,7 +163,7 @@ public final class AdaptableElements {
 		AdaptableElement errorBoundaryEvent = new AdaptableElement(
 				"errorBoundaryEvent");
 		errorBoundaryEvent
-		.setLocatorExpression("//*[local-name() = 'boundaryEvent' and (child::*[local-name() = 'errorEventDefinition'])]");
+				.setLocatorExpression("//*[local-name() = 'boundaryEvent' and (child::*[local-name() = 'errorEventDefinition'])]");
 		errorBoundaryEvent.addAdaption("messageBoundaryEvent");
 		errorBoundaryEvent.addAdaption("escalationBoundaryEvent");
 		errorBoundaryEvent.addAdaption("conditionalBoundaryEvent");
@@ -206,7 +193,7 @@ public final class AdaptableElements {
 	private void buildNoneEndEvent() {
 		AdaptableElement noneEndEvent = new AdaptableElement("noneEndEvent");
 		noneEndEvent
-		.setLocatorExpression("/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
+				.setLocatorExpression("/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
 		noneEndEvent.addAdaption("messageEndEvent");
 		noneEndEvent.addAdaption("signalEndEvent");
 		noneEndEvent.addAdaption("terminateEndEvent");
@@ -217,7 +204,7 @@ public final class AdaptableElements {
 	private void buildNoneStartEvent() {
 		AdaptableElement noneStartEvent = new AdaptableElement("noneStartEvent");
 		noneStartEvent
-		.setLocatorExpression("/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')])]");
+				.setLocatorExpression("/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')])]");
 		noneStartEvent.addAdaption("messageStartEvent");
 		noneStartEvent.addAdaption("conditionalStartEvent");
 		noneStartEvent.addAdaption("signalStartEvent");
