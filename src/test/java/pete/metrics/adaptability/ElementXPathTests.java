@@ -79,6 +79,16 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void globalBusinessRuleTask() {
+		AdaptableElement globalBusinessRuleTask = elements
+				.get("globalBusinessRuleTask");
+		assertDetection(globalBusinessRuleTask,
+				"src/test/resources/adaptability/GlobalBusinessRuleTask.bpmn");
+		assertNoFalsePositives(globalBusinessRuleTask,
+				"src/test/resources/adaptability/GlobalUserTask.bpmn");
+	}
+
+	@Test
 	public void manualTask() {
 		AdaptableElement userTask = elements.get("manualTask");
 		assertNoFalsePositives(userTask,

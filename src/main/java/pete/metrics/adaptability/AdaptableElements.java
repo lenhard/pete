@@ -36,7 +36,7 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("extensionElements"));
 		elements.add(new AdaptableElement("formalExpression"));
 		elements.add(new AdaptableElement("gateway"));
-		elements.add(new AdaptableElement("globalBusinessRuleTask"));
+		buildGlobalBusinessRuleTask();
 		buildGlobalManualTask();
 		buildGlobalScriptTask();
 		buildGlobalUserTask();
@@ -66,6 +66,27 @@ public final class AdaptableElements {
 		buildUserTask();
 	}
 
+	private void buildGlobalBusinessRuleTask() {
+		AdaptableElement businessRuleTask = new AdaptableElement(
+				"globalBusinessRuleTask");
+		// the tasks below can in principle be used to trigger (programmatically
+		// or manually) the execution of a business rule through another program
+		// and return the result
+		businessRuleTask
+		.setLocatorExpression("//*[local-name() = 'globalBusinessRuleTask']");
+		businessRuleTask.addAdaption("serviceTask");
+		businessRuleTask.addAdaption("userTask");
+		businessRuleTask.addAdaption("scriptTask");
+		businessRuleTask.addAdaption("manualTask");
+		businessRuleTask.addAdaption("businessRuleTask");
+		businessRuleTask.addAdaption("sendAndReceiveTask");
+		businessRuleTask.addAdaption("globalScriptTask");
+		businessRuleTask.addAdaption("globalUserTask");
+		businessRuleTask.addAdaption("globalManualTask");
+
+		elements.add(businessRuleTask);
+	}
+
 	private void buildBusinessRuleTask() {
 		AdaptableElement businessRuleTask = new AdaptableElement(
 				"businessRuleTask");
@@ -82,6 +103,7 @@ public final class AdaptableElements {
 		businessRuleTask.addAdaption("globalScriptTask");
 		businessRuleTask.addAdaption("globalUserTask");
 		businessRuleTask.addAdaption("globalManualTask");
+		businessRuleTask.addAdaption("globalBusinessRuleTask");
 
 		elements.add(businessRuleTask);
 	}
