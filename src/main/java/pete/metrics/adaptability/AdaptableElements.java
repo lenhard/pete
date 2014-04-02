@@ -14,7 +14,7 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("activity"));
 		elements.add(new AdaptableElement("adHocSubProcess"));
 		elements.add(new AdaptableElement("boundaryEvent"));
-		elements.add(new AdaptableElement("businessRuleTask"));
+		buildBusinessRuleTask();
 		elements.add(new AdaptableElement("callActivity"));
 		elements.add(new AdaptableElement("catchEvent"));
 		elements.add(new AdaptableElement("complexGateway"));
@@ -64,6 +64,26 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("timerEventDefinition"));
 		elements.add(new AdaptableElement("transaction"));
 		buildUserTask();
+	}
+
+	private void buildBusinessRuleTask() {
+		AdaptableElement businessRuleTask = new AdaptableElement(
+				"businessRuleTask");
+		// the tasks below can in principle be used to trigger (programmatically
+		// or manually) the execution of a business rule through another program
+		// and return the result
+		businessRuleTask
+		.setLocatorExpression("//*[local-name() = 'businessRuleTask']");
+		businessRuleTask.addAdaption("serviceTask");
+		businessRuleTask.addAdaption("userTask");
+		businessRuleTask.addAdaption("scriptTask");
+		businessRuleTask.addAdaption("manualTask");
+		businessRuleTask.addAdaption("sendAndReceiveTask");
+		businessRuleTask.addAdaption("globalScriptTask");
+		businessRuleTask.addAdaption("globalUserTask");
+		businessRuleTask.addAdaption("globalManualTask");
+
+		elements.add(businessRuleTask);
 	}
 
 	private void buildGlobalManualTask() {

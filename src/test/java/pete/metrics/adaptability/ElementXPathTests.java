@@ -88,6 +88,15 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void businessRuleTask() {
+		AdaptableElement userTask = elements.get("businessRuleTask");
+		assertNoFalsePositives(userTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(userTask,
+				"src/test/resources/adaptability/BusinessRuleTask.bpmn");
+	}
+
+	@Test
 	public void serviceTask() {
 		AdaptableElement serviceTask = elements.get("serviceTask");
 		assertDetection(serviceTask,
