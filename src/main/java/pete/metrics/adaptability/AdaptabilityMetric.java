@@ -7,7 +7,7 @@ class AdaptabilityMetric {
 
 	private Map<String, AdaptableElement> elements;
 
-	private final static int REFERENCE_SCORE = 6;
+	private int referenceScore;
 
 	private AtomicInteger sum;
 
@@ -15,6 +15,9 @@ class AdaptabilityMetric {
 
 	public AdaptabilityMetric() {
 		elements = new AdaptableElements().getElementsByName();
+		referenceScore = elements.values().parallelStream()
+				.mapToInt(element -> element.getAdaptabilityScore()).max()
+				.getAsInt();
 	}
 
 	public double computeAdaptability(Map<String, AtomicInteger> processElements) {
@@ -35,6 +38,6 @@ class AdaptabilityMetric {
 		int number = processElements.get(elementName).get();
 		int elementScore = elements.get(elementName).getAdaptabilityScore();
 		sum.addAndGet(number * elementScore);
-		maxDegree.addAndGet(number * REFERENCE_SCORE);
+		maxDegree.addAndGet(number * referenceScore);
 	}
 }
