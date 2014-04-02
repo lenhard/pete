@@ -10,7 +10,7 @@ public final class AdaptableElement {
 
 	private final List<String> adaptions;
 
-	private String locatorExpression = "//*[local-name() = 'definitions']/*[local-name() = 'process']";
+	private String locatorExpression = "//*[local-name() = 'definitions']";
 
 	public AdaptableElement(String name) {
 		this.name = name;

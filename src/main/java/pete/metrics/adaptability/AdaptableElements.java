@@ -38,7 +38,7 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("gateway"));
 		elements.add(new AdaptableElement("globalBusinessRuleTask"));
 		elements.add(new AdaptableElement("globalManualTask"));
-		elements.add(new AdaptableElement("globalScriptTask"));
+		buildGlobalScriptTask();
 		buildGlobalUserTask();
 		elements.add(new AdaptableElement("implicitThrowEvent"));
 		elements.add(new AdaptableElement("inclusiveGateway"));
@@ -101,19 +101,38 @@ public final class AdaptableElements {
 
 	private void buildScriptTask() {
 		AdaptableElement scriptTask = new AdaptableElement("scriptTask");
-		scriptTask
-		.setLocatorExpression("//*[local-name() = 'scriptTask' or local-name() = 'globalScriptTask']");
-		// all tasks below can in principle be used to trigger the sending of a
-		// message. A receiveTask is not suitable as it is passively waiting
-		// and a businessRuleTask is too specific
+		scriptTask.setLocatorExpression("//*[local-name() = 'scriptTask']");
+		// all tasks below can in principle be used to trigger the execution of
+		// a script at some entity. A receiveTask is not suitable as it is
+		// passively waiting and a businessRuleTask is too specific
 		scriptTask.addAdaption("serviceTask");
 		scriptTask.addAdaption("sendTask");
 		scriptTask.addAdaption("userTask");
 		scriptTask.addAdaption("manualTask");
+		scriptTask.addAdaption("scriptTask");
 		scriptTask.addAdaption("globalManualTask");
 		scriptTask.addAdaption("globalUserTask");
 
 		elements.add(scriptTask);
+	}
+
+	private void buildGlobalScriptTask() {
+		AdaptableElement globalScriptTask = new AdaptableElement(
+				"globalScriptTask");
+		globalScriptTask
+		.setLocatorExpression("//*[local-name() = 'globalScriptTask']");
+
+		// all tasks below can in principle be used to trigger the execution of
+		// a script at some entity. A receiveTask is not suitable as it is
+		// passively waiting and a businessRuleTask is too specific
+		globalScriptTask.addAdaption("serviceTask");
+		globalScriptTask.addAdaption("sendTask");
+		globalScriptTask.addAdaption("userTask");
+		globalScriptTask.addAdaption("manualTask");
+		globalScriptTask.addAdaption("globalScriptTask");
+		globalScriptTask.addAdaption("globalManualTask");
+		globalScriptTask.addAdaption("globalUserTask");
+		elements.add(globalScriptTask);
 	}
 
 	private void buildSendTask() {
@@ -169,7 +188,7 @@ public final class AdaptableElements {
 		AdaptableElement globalUserTask = new AdaptableElement("globalUserTask");
 
 		globalUserTask
-				.setLocatorExpression("//*[local-name() = 'globalUserTask']");
+		.setLocatorExpression("/*[local-name() = 'globalUserTask']");
 		// the tasks below can in principle be programmed to ask for user input,
 		// an hence are an adaption for userTask
 		globalUserTask.addAdaption("manualTask");
@@ -226,7 +245,7 @@ public final class AdaptableElements {
 	private void buildNoneEndEvent() {
 		AdaptableElement noneEndEvent = new AdaptableElement("noneEndEvent");
 		noneEndEvent
-		.setLocatorExpression("/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
+		.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
 		noneEndEvent.addAdaption("messageEndEvent");
 		noneEndEvent.addAdaption("signalEndEvent");
 		noneEndEvent.addAdaption("terminateEndEvent");
@@ -237,7 +256,7 @@ public final class AdaptableElements {
 	private void buildNoneStartEvent() {
 		AdaptableElement noneStartEvent = new AdaptableElement("noneStartEvent");
 		noneStartEvent
-		.setLocatorExpression("/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')])]");
+		.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')])]");
 		noneStartEvent.addAdaption("messageStartEvent");
 		noneStartEvent.addAdaption("conditionalStartEvent");
 		noneStartEvent.addAdaption("signalStartEvent");

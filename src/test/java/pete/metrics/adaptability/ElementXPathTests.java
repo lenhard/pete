@@ -62,10 +62,19 @@ public class ElementXPathTests {
 
 	@Test
 	public void globalUserTask() {
-		AdaptableElement userTask = elements.get("globalUserTask");
-		assertFalse(isContained(userTask,
+		AdaptableElement globalUserTask = elements.get("globalUserTask");
+		assertTrue(isContained(globalUserTask,
+				"src/test/resources/adaptability/GlobalUserTask.bpmn"));
+		assertFalse(isContained(globalUserTask,
 				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
-		assertTrue(isContained(userTask,
+	}
+
+	@Test
+	public void globalScriptTask() {
+		AdaptableElement globalScriptTask = elements.get("globalScriptTask");
+		assertTrue(isContained(globalScriptTask,
+				"src/test/resources/adaptability/GlobalScriptTask.bpmn"));
+		assertFalse(isContained(globalScriptTask,
 				"src/test/resources/adaptability/GlobalUserTask.bpmn"));
 	}
 
