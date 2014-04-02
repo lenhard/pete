@@ -38,107 +38,118 @@ public class ElementXPathTests {
 	@Test
 	public void noneStartEvent() {
 		AdaptableElement noneStartEvent = elements.get("noneStartEvent");
-		assertTrue(isContained(noneStartEvent,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
+		assertDetection(noneStartEvent,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
 	}
 
 	@Test
 	public void loopTask() {
 		AdaptableElement loopTask = elements.get("loopTask");
-		assertFalse(isContained(loopTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
-		assertTrue(isContained(loopTask,
-				"src/test/resources/adaptability/LoopTask.bpmn"));
+		assertNoFalsePositives(loopTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(loopTask,
+				"src/test/resources/adaptability/LoopTask.bpmn");
 	}
 
 	@Test
 	public void userTask() {
 		AdaptableElement userTask = elements.get("userTask");
-		assertFalse(isContained(userTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
-		assertTrue(isContained(userTask,
-				"src/test/resources/adaptability/UserTask.bpmn"));
+		assertNoFalsePositives(userTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(userTask,
+				"src/test/resources/adaptability/UserTask.bpmn");
 	}
 
 	@Test
 	public void globalUserTask() {
 		AdaptableElement globalUserTask = elements.get("globalUserTask");
-		assertTrue(isContained(globalUserTask,
-				"src/test/resources/adaptability/GlobalUserTask.bpmn"));
-		assertFalse(isContained(globalUserTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
+		assertDetection(globalUserTask,
+				"src/test/resources/adaptability/GlobalUserTask.bpmn");
+		assertNoFalsePositives(globalUserTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
 	}
 
 	@Test
 	public void globalScriptTask() {
 		AdaptableElement globalScriptTask = elements.get("globalScriptTask");
-		assertTrue(isContained(globalScriptTask,
-				"src/test/resources/adaptability/GlobalScriptTask.bpmn"));
-		assertFalse(isContained(globalScriptTask,
-				"src/test/resources/adaptability/GlobalUserTask.bpmn"));
+		assertDetection(globalScriptTask,
+				"src/test/resources/adaptability/GlobalScriptTask.bpmn");
+		assertNoFalsePositives(globalScriptTask,
+				"src/test/resources/adaptability/GlobalUserTask.bpmn");
 	}
 
 	@Test
 	public void manualTask() {
 		AdaptableElement userTask = elements.get("manualTask");
-		assertFalse(isContained(userTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
-		assertTrue(isContained(userTask,
-				"src/test/resources/adaptability/ManualTask.bpmn"));
+		assertNoFalsePositives(userTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(userTask,
+				"src/test/resources/adaptability/ManualTask.bpmn");
 	}
 
 	@Test
 	public void serviceTask() {
 		AdaptableElement serviceTask = elements.get("serviceTask");
-		assertTrue(isContained(serviceTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
-		assertFalse(isContained(serviceTask,
-				"src/test/resources/adaptability/UserTask.bpmn"));
+		assertDetection(serviceTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertNoFalsePositives(serviceTask,
+				"src/test/resources/adaptability/UserTask.bpmn");
 	}
 
 	@Test
 	public void sendTask() {
 		AdaptableElement sendTask = elements.get("sendTask");
-		assertFalse(isContained(sendTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
-		assertTrue(isContained(sendTask,
-				"src/test/resources/adaptability/SendTask.bpmn"));
+		assertNoFalsePositives(sendTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(sendTask,
+				"src/test/resources/adaptability/SendTask.bpmn");
 	}
 
 	@Test
 	public void scriptTask() {
 		AdaptableElement scriptTask = elements.get("scriptTask");
-		assertFalse(isContained(scriptTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
-		assertTrue(isContained(scriptTask,
-				"src/test/resources/adaptability/ScriptTask.bpmn"));
+		assertNoFalsePositives(scriptTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(scriptTask,
+				"src/test/resources/adaptability/ScriptTask.bpmn");
 	}
 
 	@Test
 	public void receiveTask() {
 		AdaptableElement receiveTask = elements.get("receiveTask");
-		assertFalse(isContained(receiveTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
-		assertTrue(isContained(receiveTask,
-				"src/test/resources/adaptability/ReceiveTask.bpmn"));
+		assertNoFalsePositives(receiveTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(receiveTask,
+				"src/test/resources/adaptability/ReceiveTask.bpmn");
 	}
 
 	@Test
 	public void errorBoundaryEvent() {
 		AdaptableElement noneStartEvent = elements.get("errorBoundaryEvent");
-		assertFalse(isContained(noneStartEvent,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
-		assertTrue(isContained(noneStartEvent,
-				"src/test/resources/adaptability/ErrorBoundaryEvent.bpmn"));
+		assertNoFalsePositives(noneStartEvent,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(noneStartEvent,
+				"src/test/resources/adaptability/ErrorBoundaryEvent.bpmn");
 	}
 
 	@Test
 	public void noneEndEvent() {
 		AdaptableElement noneStartEvent = elements.get("noneEndEvent");
-		assertFalse(isContained(noneStartEvent,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
-		assertTrue(isContained(noneStartEvent,
-				"src/test/resources/adaptability/NoneEndEvent.bpmn"));
+		assertNoFalsePositives(noneStartEvent,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(noneStartEvent,
+				"src/test/resources/adaptability/NoneEndEvent.bpmn");
+	}
+
+	private void assertDetection(AdaptableElement element, String fileLocation) {
+		assertTrue("Element " + element.getName() + " was not found in "
+				+ fileLocation, isContained(element, fileLocation));
+	}
+
+	private void assertNoFalsePositives(AdaptableElement element,
+			String fileLocation) {
+		assertFalse("Element " + element.getName() + " was found in "
+				+ fileLocation, isContained(element, fileLocation));
 	}
 
 	private boolean isContained(AdaptableElement element, String fileLocation) {
