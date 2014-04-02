@@ -54,6 +54,8 @@ public final class AnalysisWorkflow {
 			parseDirectory(root);
 		}
 
+		System.out.println("=======================================");
+		System.out.println("Analysis finished; writing results");
 		writeResults();
 
 		purgeTempDir();
