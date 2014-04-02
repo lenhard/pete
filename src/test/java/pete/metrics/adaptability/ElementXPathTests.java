@@ -23,10 +23,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.xml.sax.InputSource;
 
-import pete.metrics.adaptability.AdaptableElement;
-import pete.metrics.adaptability.BpmnNamespaceContext;
-import pete.metrics.adaptability.AdaptableElements;
-
 public class ElementXPathTests {
 
 	private static Map<String, AdaptableElement> elements;
@@ -62,6 +58,15 @@ public class ElementXPathTests {
 				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
 		assertTrue(isContained(userTask,
 				"src/test/resources/adaptability/UserTask.bpmn"));
+	}
+
+	@Test
+	public void manualTask() {
+		AdaptableElement userTask = elements.get("manualTask");
+		assertFalse(isContained(userTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn"));
+		assertTrue(isContained(userTask,
+				"src/test/resources/adaptability/ManualTask.bpmn"));
 	}
 
 	@Test

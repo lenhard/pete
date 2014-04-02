@@ -46,7 +46,7 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("inputSet"));
 		elements.add(new AdaptableElement("intermediateCatchEvent"));
 		elements.add(new AdaptableElement("intermediateThrowEvent"));
-		elements.add(new AdaptableElement("manualTask"));
+		buildManualTask();
 		elements.add(new AdaptableElement("message"));
 		elements.add(new AdaptableElement("messageFlow"));
 		elements.add(new AdaptableElement("messageFlowAssociation"));
@@ -65,6 +65,22 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("timerEventDefinition"));
 		elements.add(new AdaptableElement("transaction"));
 		buildUserTask();
+	}
+
+	private void buildManualTask() {
+		AdaptableElement manualTask = new AdaptableElement("manualTask");
+		manualTask.setLocatorExpression("//*[local-name() = 'manualTask']");
+		// the tasks below can in principle be programmed to control a user
+		// action
+
+		manualTask.addAdaption("serviceTask");
+		manualTask.addAdaption("userTask");
+		manualTask.addAdaption("scriptTask");
+		manualTask.addAdaption("globalScriptTask");
+		manualTask.addAdaption("globalManualTask");
+		manualTask.addAdaption("globalUserTask");
+		manualTask.addAdaption("sendTask");
+		elements.add(manualTask);
 	}
 
 	private void buildReceiveTask() {
