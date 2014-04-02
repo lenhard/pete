@@ -67,34 +67,34 @@ public final class AdaptableElements {
 	}
 
 	private void buildGlobalBusinessRuleTask() {
-		AdaptableElement businessRuleTask = new AdaptableElement(
+		AdaptableElement globalBusinessRuleTask = new AdaptableElement(
 				"globalBusinessRuleTask");
-		// the tasks below can in principle be used to trigger (programmatically
-		// or manually) the execution of a business rule through another program
-		// and return the result
-		businessRuleTask
-		.setLocatorExpression("//*[local-name() = 'globalBusinessRuleTask']");
-		businessRuleTask.addAdaption("serviceTask");
-		businessRuleTask.addAdaption("userTask");
-		businessRuleTask.addAdaption("scriptTask");
-		businessRuleTask.addAdaption("manualTask");
-		businessRuleTask.addAdaption("businessRuleTask");
-		businessRuleTask.addAdaption("sendAndReceiveTask");
-		businessRuleTask.addAdaption("globalScriptTask");
-		businessRuleTask.addAdaption("globalUserTask");
-		businessRuleTask.addAdaption("globalManualTask");
 
-		elements.add(businessRuleTask);
+		globalBusinessRuleTask
+				.setLocatorExpression("//*[local-name() = 'globalBusinessRuleTask']");
+		globalBusinessRuleTask
+				.setDocumentation("the adaptions can in principle be used to trigger (programmatically or manually) the execution of a business rule through another program and return the result");
+		globalBusinessRuleTask.addAdaption("serviceTask");
+		globalBusinessRuleTask.addAdaption("userTask");
+		globalBusinessRuleTask.addAdaption("scriptTask");
+		globalBusinessRuleTask.addAdaption("manualTask");
+		globalBusinessRuleTask.addAdaption("businessRuleTask");
+		globalBusinessRuleTask.addAdaption("sendAndReceiveTask");
+		globalBusinessRuleTask.addAdaption("globalScriptTask");
+		globalBusinessRuleTask.addAdaption("globalUserTask");
+		globalBusinessRuleTask.addAdaption("globalManualTask");
+
+		elements.add(globalBusinessRuleTask);
 	}
 
 	private void buildBusinessRuleTask() {
 		AdaptableElement businessRuleTask = new AdaptableElement(
 				"businessRuleTask");
-		// the tasks below can in principle be used to trigger (programmatically
-		// or manually) the execution of a business rule through another program
-		// and return the result
+
 		businessRuleTask
-		.setLocatorExpression("//*[local-name() = 'businessRuleTask']");
+				.setDocumentation("the adaptions can in principle be used to trigger (programmatically or manually) the execution of a business rule through another program and return the result");
+		businessRuleTask
+				.setLocatorExpression("//*[local-name() = 'businessRuleTask']");
 		businessRuleTask.addAdaption("serviceTask");
 		businessRuleTask.addAdaption("userTask");
 		businessRuleTask.addAdaption("scriptTask");
@@ -112,8 +112,10 @@ public final class AdaptableElements {
 		AdaptableElement globalManualTask = new AdaptableElement(
 				"globalManualTask");
 		globalManualTask
-		.setLocatorExpression("//*[local-name() = 'globalManualTask']");
+				.setLocatorExpression("//*[local-name() = 'globalManualTask']");
 
+		globalManualTask
+		.setDocumentation("the adaptions can in principle be programmed to control a user action");
 		globalManualTask.addAdaption("serviceTask");
 		globalManualTask.addAdaption("userTask");
 		globalManualTask.addAdaption("scriptTask");
@@ -127,9 +129,9 @@ public final class AdaptableElements {
 	private void buildManualTask() {
 		AdaptableElement manualTask = new AdaptableElement("manualTask");
 		manualTask.setLocatorExpression("//*[local-name() = 'manualTask']");
-		// the tasks below can in principle be programmed to control a user
-		// action
 
+		manualTask
+		.setDocumentation("the adaptions can in principle be programmed to control a user action");
 		manualTask.addAdaption("serviceTask");
 		manualTask.addAdaption("userTask");
 		manualTask.addAdaption("scriptTask");
@@ -143,8 +145,9 @@ public final class AdaptableElements {
 	private void buildReceiveTask() {
 		AdaptableElement receiveTask = new AdaptableElement("receiveTask");
 		receiveTask.setLocatorExpression("//*[local-name() = 'receiveTask']");
-		// all tasks below can in principle be used to wait for a message
-		// (programmatically or manually)
+
+		receiveTask
+		.setDocumentation("the adaptions can in principle be used to wait for a message (programmatically or manually)");
 		receiveTask.addAdaption("serviceTask");
 		receiveTask.addAdaption("userTask");
 		receiveTask.addAdaption("manualTask");
@@ -160,9 +163,9 @@ public final class AdaptableElements {
 	private void buildScriptTask() {
 		AdaptableElement scriptTask = new AdaptableElement("scriptTask");
 		scriptTask.setLocatorExpression("//*[local-name() = 'scriptTask']");
-		// all tasks below can in principle be used to trigger the execution of
-		// a script at some entity. A receiveTask is not suitable as it is
-		// passively waiting and a businessRuleTask is too specific
+
+		scriptTask
+				.setDocumentation("the adaptions can in principle be used to trigger the execution of a script at some entity. A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
 		scriptTask.addAdaption("serviceTask");
 		scriptTask.addAdaption("sendTask");
 		scriptTask.addAdaption("userTask");
@@ -178,11 +181,10 @@ public final class AdaptableElements {
 		AdaptableElement globalScriptTask = new AdaptableElement(
 				"globalScriptTask");
 		globalScriptTask
-		.setLocatorExpression("//*[local-name() = 'globalScriptTask']");
+				.setLocatorExpression("//*[local-name() = 'globalScriptTask']");
 
-		// all tasks below can in principle be used to trigger the execution of
-		// a script at some entity. A receiveTask is not suitable as it is
-		// passively waiting and a businessRuleTask is too specific
+		globalScriptTask
+				.setDocumentation("the adaptions can in principle be used to trigger the execution of a script at some entity. A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
 		globalScriptTask.addAdaption("serviceTask");
 		globalScriptTask.addAdaption("sendTask");
 		globalScriptTask.addAdaption("userTask");
@@ -196,9 +198,8 @@ public final class AdaptableElements {
 	private void buildSendTask() {
 		AdaptableElement sendTask = new AdaptableElement("sendTask");
 		sendTask.setLocatorExpression("//*[local-name() = 'sendTask']");
-		// all tasks below can in principle be used to trigger the sending of a
-		// message. A receiveTask is not suitable as it is passively waiting
-		// and a businessRuleTask is too specific
+
+		sendTask.setDocumentation("the adaptions can in principle be used to trigger the sending of a message. A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
 		sendTask.addAdaption("serviceTask");
 		sendTask.addAdaption("scriptTask");
 		sendTask.addAdaption("userTask");
@@ -213,9 +214,9 @@ public final class AdaptableElements {
 	private void buildServiceTask() {
 		AdaptableElement serviceTask = new AdaptableElement("serviceTask");
 		serviceTask.setLocatorExpression("//*[local-name() = 'serviceTask']");
-		// all tasks below can in principle be used to trigger service
-		// execution. A receiveTask is not suitable as it is passively waiting
-		// and a businessRuleTask is too specific
+
+		serviceTask
+		.setDocumentation("the adaptions can in principle be used to trigger service execution. A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
 		serviceTask.addAdaption("scriptTask");
 		serviceTask.addAdaption("manualTask");
 		serviceTask.addAdaption("userTask");
@@ -230,8 +231,8 @@ public final class AdaptableElements {
 	private void buildUserTask() {
 		AdaptableElement userTask = new AdaptableElement("userTask");
 		userTask.setLocatorExpression("//*[local-name() = 'userTask']");
-		// the tasks below can in principle be programmed to ask for user input,
-		// an hence are an adaption for userTask
+
+		userTask.setDocumentation("the adaptions can in principle be programmed to ask for user input, and hence are an adaption for userTask");
 		userTask.addAdaption("manualTask");
 		userTask.addAdaption("scriptTask");
 		userTask.addAdaption("serviceTask");
@@ -246,9 +247,10 @@ public final class AdaptableElements {
 		AdaptableElement globalUserTask = new AdaptableElement("globalUserTask");
 
 		globalUserTask
-		.setLocatorExpression("/*[local-name() = 'globalUserTask']");
-		// the tasks below can in principle be programmed to ask for user input,
-		// an hence are an adaption for userTask
+				.setLocatorExpression("/*[local-name() = 'globalUserTask']");
+		globalUserTask
+		.setDocumentation("the adaptions can in principle be programmed to ask for user input, and hence are an adaption for userTask");
+
 		globalUserTask.addAdaption("manualTask");
 		globalUserTask.addAdaption("scriptTask");
 		globalUserTask.addAdaption("serviceTask");
@@ -278,9 +280,10 @@ public final class AdaptableElements {
 		AdaptableElement multiInstanceTask = new AdaptableElement(
 				"sequentialMultiInstanceTask");
 		multiInstanceTask
-		.setLocatorExpression("//*[(local-name() = 'receiveTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask' or local-name() = 'scriptTask'  or local-name() = 'globalUserTask' or local-name() = 'globalManualTask' or local-name() = ' globalScriptTask' or local-name() = 'globalBusinessRuleTask') and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='true'])]");
-		// A sequential multiInstance activity can always be adapted to an
-		// ordinary sequential loop
+				.setLocatorExpression("//*[(local-name() = 'receiveTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask' or local-name() = 'scriptTask'  or local-name() = 'globalUserTask' or local-name() = 'globalManualTask' or local-name() = ' globalScriptTask' or local-name() = 'globalBusinessRuleTask') and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='true'])]");
+
+		multiInstanceTask
+				.setDocumentation("A sequential multiInstance activity can always be adapted to an ordinary sequential loop");
 		multiInstanceTask.addAdaption("exclusiveGatewaysAndSequenceFlows");
 		multiInstanceTask.addAdaption("complexGatewaysAndSequenceFlows");
 		multiInstanceTask.addAdaption("loopTask");
@@ -295,7 +298,7 @@ public final class AdaptableElements {
 		AdaptableElement errorBoundaryEvent = new AdaptableElement(
 				"errorBoundaryEvent");
 		errorBoundaryEvent
-		.setLocatorExpression("//*[local-name() = 'boundaryEvent' and (child::*[local-name() = 'errorEventDefinition'])]");
+				.setLocatorExpression("//*[local-name() = 'boundaryEvent' and (child::*[local-name() = 'errorEventDefinition'])]");
 		errorBoundaryEvent.addAdaption("messageBoundaryEvent");
 		errorBoundaryEvent.addAdaption("escalationBoundaryEvent");
 		errorBoundaryEvent.addAdaption("conditionalBoundaryEvent");
@@ -325,7 +328,7 @@ public final class AdaptableElements {
 	private void buildNoneEndEvent() {
 		AdaptableElement noneEndEvent = new AdaptableElement("noneEndEvent");
 		noneEndEvent
-		.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
+				.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
 		noneEndEvent.addAdaption("messageEndEvent");
 		noneEndEvent.addAdaption("signalEndEvent");
 		noneEndEvent.addAdaption("terminateEndEvent");
@@ -336,7 +339,7 @@ public final class AdaptableElements {
 	private void buildNoneStartEvent() {
 		AdaptableElement noneStartEvent = new AdaptableElement("noneStartEvent");
 		noneStartEvent
-		.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')])]");
+				.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')])]");
 		noneStartEvent.addAdaption("messageStartEvent");
 		noneStartEvent.addAdaption("conditionalStartEvent");
 		noneStartEvent.addAdaption("signalStartEvent");
