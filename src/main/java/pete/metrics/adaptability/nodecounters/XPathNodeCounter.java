@@ -18,10 +18,10 @@ import javax.xml.xpath.XPathFactory;
 import javax.xml.xpath.XPathFactoryConfigurationException;
 
 import net.sf.saxon.lib.NamespaceConstant;
-import net.sf.saxon.om.NodeInfo;
 import net.sf.saxon.xpath.XPathEvaluator;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
 
 import pete.executables.AnalysisException;
 import pete.metrics.adaptability.AdaptableElement;
@@ -61,13 +61,18 @@ public class XPathNodeCounter implements NodeCounter {
 	}
 
 	private void checkForElement(AdaptableElement element, Document document) {
+		// FIXME: This is a hack that has to be removed once all
+		// AdaptableElements are implemented
+		if (element.getAdaptions().size() == 0) {
+			return;
+		}
+
 		try {
 			XPathExpression expr = xpath
 					.compile(element.getLocatorExpression());
-			@SuppressWarnings("unchecked")
-			List<NodeInfo> matchedLines = (List<NodeInfo>) expr.evaluate(
-					document, XPathConstants.NODESET);
-			addOccurences(element.getName(), matchedLines.size());
+			NodeList matchedLines = (NodeList) expr.evaluate(document,
+					XPathConstants.NODESET);
+			addOccurences(element.getName(), matchedLines.getLength());
 		} catch (XPathExpressionException e) {
 			throw new AnalysisException("Element " + element.getName() + ": ",
 					e);

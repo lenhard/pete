@@ -22,11 +22,14 @@ import pete.executables.AnalysisException;
 import pete.executables.FileAnalyzer;
 import pete.metrics.adaptability.nodecounters.NodeCounter;
 import pete.metrics.adaptability.nodecounters.SimpleNodeCounter;
+import pete.metrics.adaptability.nodecounters.XPathNodeCounter;
 import pete.reporting.ReportEntry;
 
 public class AdaptabilityAnalyzer implements FileAnalyzer {
 
-	private NodeCounter elementCounter;
+	private NodeCounter simpleCounter;
+
+	private NodeCounter xpathCounter;
 
 	private BpmnInspector inspector;
 
@@ -34,7 +37,8 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	public AdaptabilityAnalyzer() {
 		// Currently always do strict parsing
-		elementCounter = new SimpleNodeCounter();
+		simpleCounter = new SimpleNodeCounter();
+		xpathCounter = new XPathNodeCounter();
 		inspector = new BpmnInspector();
 		metric = new AdaptabilityMetric();
 	}
@@ -67,13 +71,14 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		entry.addVariable("elements", inspector.getNumberOfChildren(process)
 				+ "");
 
-		elementCounter.addToCounts(dom);
+		simpleCounter.addToCounts(dom);
+		xpathCounter.addToCounts(dom);
 		entry.addVariable("AD",
-				metric.computeAdaptability(elementCounter.getElementNumbers())
+				metric.computeAdaptability(xpathCounter.getElementNumbers())
 						+ "");
 	}
 
-	private Document getDom(String file) {
+	protected Document getDom(String file) {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		dbf.setNamespaceAware(true);
 		DocumentBuilder db;
@@ -109,6 +114,6 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	@Override
 	public void traversalCompleted() {
-		elementCounter.writeToCsv(Paths.get("raw.csv"));
+		simpleCounter.writeToCsv(Paths.get("raw.csv"));
 	}
 }
