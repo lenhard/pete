@@ -41,13 +41,16 @@ public final class BpmnInspector {
 	}
 
 	int getNumberOfChildren(Node node) {
+		if (node.getLocalName() == null) {
+			return 0;
+		}
+
 		NodeList children = node.getChildNodes();
-		int result = 0;
+		int result = 1;
 
 		if (children == null) {
 			// do noting, result is zero
 		} else {
-			result += children.getLength();
 			for (int i = 0; i < children.getLength(); i++) {
 				result += getNumberOfChildren(children.item(i));
 			}
