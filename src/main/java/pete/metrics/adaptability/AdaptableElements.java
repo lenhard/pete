@@ -37,7 +37,7 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("formalExpression"));
 		elements.add(new AdaptableElement("gateway"));
 		elements.add(new AdaptableElement("globalBusinessRuleTask"));
-		elements.add(new AdaptableElement("globalManualTask"));
+		buildGlobalManualTask();
 		buildGlobalScriptTask();
 		buildGlobalUserTask();
 		elements.add(new AdaptableElement("implicitThrowEvent"));
@@ -64,6 +64,22 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("timerEventDefinition"));
 		elements.add(new AdaptableElement("transaction"));
 		buildUserTask();
+	}
+
+	private void buildGlobalManualTask() {
+		AdaptableElement globalManualTask = new AdaptableElement(
+				"globalManualTask");
+		globalManualTask
+		.setLocatorExpression("//*[local-name() = 'globalManualTask']");
+
+		globalManualTask.addAdaption("serviceTask");
+		globalManualTask.addAdaption("userTask");
+		globalManualTask.addAdaption("scriptTask");
+		globalManualTask.addAdaption("globalScriptTask");
+		globalManualTask.addAdaption("manualTask");
+		globalManualTask.addAdaption("globalUserTask");
+		globalManualTask.addAdaption("sendTask");
+		elements.add(globalManualTask);
 	}
 
 	private void buildManualTask() {
