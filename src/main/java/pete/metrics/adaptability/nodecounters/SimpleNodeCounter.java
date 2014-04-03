@@ -108,6 +108,7 @@ public class SimpleNodeCounter implements NodeCounter {
 		relevantElements.add("timerEventDefinition");
 		relevantElements.add("transaction");
 		relevantElements.add("userTask");
+		relevantElements.add("isForCompensation");
 	}
 
 	@Override
