@@ -166,6 +166,15 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void callActivityTask() {
+		AdaptableElement callActivity = elements.get("callActivity");
+		assertDetection(callActivity,
+				"src/test/resources/adaptability/GlobalScriptTask.bpmn");
+		assertNoFalsePositives(callActivity,
+				"src/test/resources/adaptability/ParallelMultiInstanceSubProcess.bpmn");
+	}
+
+	@Test
 	public void globalBusinessRuleTask() {
 		AdaptableElement globalBusinessRuleTask = elements
 				.get("globalBusinessRuleTask");

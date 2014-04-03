@@ -14,7 +14,7 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("activity"));
 		elements.add(new AdaptableElement("boundaryEvent"));
 		buildBusinessRuleTask();
-		elements.add(new AdaptableElement("callActivity"));
+		buildCallActivity();
 		elements.add(new AdaptableElement("catchEvent"));
 		elements.add(new AdaptableElement("complexGateway"));
 		elements.add(new AdaptableElement("dataAssociation"));
@@ -70,6 +70,20 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("throwEvent"));
 		elements.add(new AdaptableElement("timerEventDefinition"));
 		buildUserTask();
+	}
+
+	private void buildCallActivity() {
+		AdaptableElement callActivity = new AdaptableElement("callActivity");
+		callActivity.setLocatorExpression("//*[local-name() = 'callActivity']");
+		callActivity
+				.setDocumentation("A callActivity can be adapted by replacing it with the called globalActivity or process");
+		callActivity.addAdaption("embedProcess");
+		callActivity.addAdaption("embedUserTask");
+		callActivity.addAdaption("embedManualTask");
+		callActivity.addAdaption("embedScriptTask");
+		callActivity.addAdaption("embedBusinessRuleTask");
+
+		elements.add(callActivity);
 	}
 
 	private void buildOrdinarySubProcess() {
