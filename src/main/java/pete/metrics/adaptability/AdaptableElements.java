@@ -62,6 +62,7 @@ public final class AdaptableElements {
 		buildLoopSubProcess();
 		buildSequentialMultInstanceSubProcess();
 		buildParallelMultInstanceSubProcess();
+		buildAdHocSubprocess();
 		buildTask();
 		elements.add(new AdaptableElement("terminateEventDefinition"));
 		elements.add(new AdaptableElement("throwEvent"));
@@ -70,18 +71,29 @@ public final class AdaptableElements {
 		buildUserTask();
 	}
 
+	private void buildAdHocSubprocess() {
+		AdaptableElement adHocSubProcess = new AdaptableElement(
+				"adHocSubProcess");
+		adHocSubProcess
+		.setLocatorExpression("//*[local-name() = 'adHocSubProcess']");
+		adHocSubProcess
+				.setDocumentation("Due to their unstructured nature, no general advice can be given on how to adapt an adHocSubProcess");
+
+		elements.add(adHocSubProcess);
+	}
+
 	private void buildSequentialMultInstanceSubProcess() {
 		AdaptableElement sequentialMultiInstanceSubProcess = new AdaptableElement(
 				"sequentialMultiInstanceSubProcess");
 		sequentialMultiInstanceSubProcess
-		.setLocatorExpression("//*[(local-name() = 'subProcess') "
-				+ "and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='true'])]");
+				.setLocatorExpression("//*[(local-name() = 'subProcess') "
+						+ "and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='true'])]");
 		sequentialMultiInstanceSubProcess
-				.setDocumentation("Sequential multi-instance subprocesses can be embedded in code and surrounded by ordinary looping mechanisms or adapted to different types of subprocesses");
+		.setDocumentation("Sequential multi-instance subprocesses can be embedded in code and surrounded by ordinary looping mechanisms or adapted to different types of subprocesses");
 		sequentialMultiInstanceSubProcess
-				.addAdaption("embeddedfragmentWithExclusiveGateways");
+		.addAdaption("embeddedfragmentWithExclusiveGateways");
 		sequentialMultiInstanceSubProcess
-				.addAdaption("embeddedfragmentWithComplexGateways");
+		.addAdaption("embeddedfragmentWithComplexGateways");
 		sequentialMultiInstanceSubProcess.addAdaption("eventSubProcess");
 		sequentialMultiInstanceSubProcess.addAdaption("adHocSubprocess");
 		sequentialMultiInstanceSubProcess.addAdaption("loopSubProcess");
@@ -93,14 +105,14 @@ public final class AdaptableElements {
 		AdaptableElement sequentialMultiInstanceSubProcess = new AdaptableElement(
 				"parallelMultiInstanceSubProcess");
 		sequentialMultiInstanceSubProcess
-		.setLocatorExpression("//*[(local-name() = 'subProcess') "
-				+ "and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='false'])]");
+				.setLocatorExpression("//*[(local-name() = 'subProcess') "
+						+ "and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='false'])]");
 		sequentialMultiInstanceSubProcess
-				.setDocumentation("Parallel multi-instance subprocesses can be embedded in code and surrounded by looping mechanisms along with parallelism or adapted to a different type of subprocess");
+		.setDocumentation("Parallel multi-instance subprocesses can be embedded in code and surrounded by looping mechanisms along with parallelism or adapted to a different type of subprocess");
 		sequentialMultiInstanceSubProcess
-				.addAdaption("embeddedfragmentWithExclusiveGateways");
+		.addAdaption("embeddedfragmentWithExclusiveGateways");
 		sequentialMultiInstanceSubProcess
-				.addAdaption("embeddedfragmentWithComplexGateways");
+		.addAdaption("embeddedfragmentWithComplexGateways");
 		sequentialMultiInstanceSubProcess.addAdaption("adHocSubprocess");
 
 		elements.add(sequentialMultiInstanceSubProcess);
@@ -109,10 +121,10 @@ public final class AdaptableElements {
 	private void buildLoopSubProcess() {
 		AdaptableElement loopSubProcess = new AdaptableElement("loopSubProcess");
 		loopSubProcess
-		.setLocatorExpression("//*[(local-name() = 'subProcess') "
-				+ "and (child::*[local-name() = 'standardLoopCharacteristics'])]");
+				.setLocatorExpression("//*[(local-name() = 'subProcess') "
+						+ "and (child::*[local-name() = 'standardLoopCharacteristics'])]");
 		loopSubProcess
-				.setDocumentation("Looping subprocesses can be embedded in code and surrounded by ordinary looping mechanisms or adapted to different types of subprocesses.");
+		.setDocumentation("Looping subprocesses can be embedded in code and surrounded by ordinary looping mechanisms or adapted to different types of subprocesses.");
 		loopSubProcess.addAdaption("embeddedfragmentWithExclusiveGateways");
 		loopSubProcess.addAdaption("embeddedfragmentWithComplexGateways");
 		loopSubProcess.addAdaption("eventSubProcess");
@@ -126,9 +138,9 @@ public final class AdaptableElements {
 				"globalBusinessRuleTask");
 
 		globalBusinessRuleTask
-		.setLocatorExpression("//*[local-name() = 'globalBusinessRuleTask']");
+				.setLocatorExpression("//*[local-name() = 'globalBusinessRuleTask']");
 		globalBusinessRuleTask
-		.setDocumentation("the adaptions can in principle be used to trigger (programmatically or manually) the execution of a business rule through another program and return the result");
+				.setDocumentation("the adaptions can in principle be used to trigger (programmatically or manually) the execution of a business rule through another program and return the result");
 		globalBusinessRuleTask.addAdaption("serviceTask");
 		globalBusinessRuleTask.addAdaption("userTask");
 		globalBusinessRuleTask.addAdaption("scriptTask");
@@ -147,9 +159,9 @@ public final class AdaptableElements {
 				"businessRuleTask");
 
 		businessRuleTask
-		.setDocumentation("the adaptions can in principle be used to trigger (programmatically or manually) the execution of a business rule through another program and return the result");
+				.setDocumentation("the adaptions can in principle be used to trigger (programmatically or manually) the execution of a business rule through another program and return the result");
 		businessRuleTask
-		.setLocatorExpression("//*[local-name() = 'businessRuleTask']");
+				.setLocatorExpression("//*[local-name() = 'businessRuleTask']");
 		businessRuleTask.addAdaption("serviceTask");
 		businessRuleTask.addAdaption("userTask");
 		businessRuleTask.addAdaption("scriptTask");
@@ -167,10 +179,10 @@ public final class AdaptableElements {
 		AdaptableElement globalManualTask = new AdaptableElement(
 				"globalManualTask");
 		globalManualTask
-		.setLocatorExpression("//*[local-name() = 'globalManualTask']");
+				.setLocatorExpression("//*[local-name() = 'globalManualTask']");
 
 		globalManualTask
-				.setDocumentation("the adaptions can in principle be programmed to control a user action");
+		.setDocumentation("the adaptions can in principle be programmed to control a user action");
 		globalManualTask.addAdaption("serviceTask");
 		globalManualTask.addAdaption("userTask");
 		globalManualTask.addAdaption("scriptTask");
@@ -186,7 +198,7 @@ public final class AdaptableElements {
 		manualTask.setLocatorExpression("//*[local-name() = 'manualTask']");
 
 		manualTask
-				.setDocumentation("the adaptions can in principle be programmed to control a user action");
+		.setDocumentation("the adaptions can in principle be programmed to control a user action");
 		manualTask.addAdaption("serviceTask");
 		manualTask.addAdaption("userTask");
 		manualTask.addAdaption("scriptTask");
@@ -202,7 +214,7 @@ public final class AdaptableElements {
 		receiveTask.setLocatorExpression("//*[local-name() = 'receiveTask']");
 
 		receiveTask
-				.setDocumentation("the adaptions can in principle be used to wait for a message (programmatically or manually)");
+		.setDocumentation("the adaptions can in principle be used to wait for a message (programmatically or manually)");
 		receiveTask.addAdaption("serviceTask");
 		receiveTask.addAdaption("userTask");
 		receiveTask.addAdaption("manualTask");
@@ -220,7 +232,7 @@ public final class AdaptableElements {
 		scriptTask.setLocatorExpression("//*[local-name() = 'scriptTask']");
 
 		scriptTask
-		.setDocumentation("the adaptions can in principle be used to trigger the execution of a script at some entity. A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
+				.setDocumentation("the adaptions can in principle be used to trigger the execution of a script at some entity. A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
 		scriptTask.addAdaption("serviceTask");
 		scriptTask.addAdaption("sendTask");
 		scriptTask.addAdaption("userTask");
@@ -236,10 +248,10 @@ public final class AdaptableElements {
 		AdaptableElement globalScriptTask = new AdaptableElement(
 				"globalScriptTask");
 		globalScriptTask
-		.setLocatorExpression("//*[local-name() = 'globalScriptTask']");
+				.setLocatorExpression("//*[local-name() = 'globalScriptTask']");
 
 		globalScriptTask
-		.setDocumentation("the adaptions can in principle be used to trigger the execution of a script at some entity. A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
+				.setDocumentation("the adaptions can in principle be used to trigger the execution of a script at some entity. A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
 		globalScriptTask.addAdaption("serviceTask");
 		globalScriptTask.addAdaption("sendTask");
 		globalScriptTask.addAdaption("userTask");
@@ -271,7 +283,7 @@ public final class AdaptableElements {
 		serviceTask.setLocatorExpression("//*[local-name() = 'serviceTask']");
 
 		serviceTask
-				.setDocumentation("the adaptions can in principle be used to trigger service execution. A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
+		.setDocumentation("the adaptions can in principle be used to trigger service execution. A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
 		serviceTask.addAdaption("scriptTask");
 		serviceTask.addAdaption("manualTask");
 		serviceTask.addAdaption("userTask");
@@ -302,9 +314,9 @@ public final class AdaptableElements {
 		AdaptableElement globalUserTask = new AdaptableElement("globalUserTask");
 
 		globalUserTask
-		.setLocatorExpression("/*[local-name() = 'globalUserTask']");
+				.setLocatorExpression("/*[local-name() = 'globalUserTask']");
 		globalUserTask
-				.setDocumentation("the adaptions can in principle be programmed to ask for user input, and hence are an adaption for userTask");
+		.setDocumentation("the adaptions can in principle be programmed to ask for user input, and hence are an adaption for userTask");
 
 		globalUserTask.addAdaption("manualTask");
 		globalUserTask.addAdaption("scriptTask");
@@ -335,10 +347,10 @@ public final class AdaptableElements {
 		AdaptableElement multiInstanceTask = new AdaptableElement(
 				"sequentialMultiInstanceTask");
 		multiInstanceTask
-		.setLocatorExpression("//*[(local-name() = 'receiveTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask' or local-name() = 'scriptTask'  or local-name() = 'globalUserTask' or local-name() = 'globalManualTask' or local-name() = ' globalScriptTask' or local-name() = 'globalBusinessRuleTask') and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='true'])]");
+				.setLocatorExpression("//*[(local-name() = 'receiveTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask' or local-name() = 'scriptTask'  or local-name() = 'globalUserTask' or local-name() = 'globalManualTask' or local-name() = ' globalScriptTask' or local-name() = 'globalBusinessRuleTask') and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='true'])]");
 
 		multiInstanceTask
-		.setDocumentation("A sequential multiInstance activity can always be adapted to an ordinary sequential loop");
+				.setDocumentation("A sequential multiInstance activity can always be adapted to an ordinary sequential loop");
 		multiInstanceTask.addAdaption("exclusiveGatewaysAndSequenceFlows");
 		multiInstanceTask.addAdaption("complexGatewaysAndSequenceFlows");
 		multiInstanceTask.addAdaption("loopTask");
@@ -353,10 +365,10 @@ public final class AdaptableElements {
 		AdaptableElement multiInstanceTask = new AdaptableElement(
 				"parallelMultiInstanceTask");
 		multiInstanceTask
-		.setLocatorExpression("//*[(local-name() = 'receiveTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask' or local-name() = 'scriptTask'  or local-name() = 'globalUserTask' or local-name() = 'globalManualTask' or local-name() = ' globalScriptTask' or local-name() = 'globalBusinessRuleTask') and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='false'])]");
+				.setLocatorExpression("//*[(local-name() = 'receiveTask' or local-name() = 'serviceTask' or local-name() = 'manualTask' or local-name() = 'businessRuleTask' or local-name() = 'userTask' or local-name() = 'sendTask' or local-name() = 'scriptTask'  or local-name() = 'globalUserTask' or local-name() = 'globalManualTask' or local-name() = ' globalScriptTask' or local-name() = 'globalBusinessRuleTask') and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='false'])]");
 
 		multiInstanceTask
-		.setDocumentation("A parallel multiInstance activity can be be adapted through another construct that supports parallel execution");
+				.setDocumentation("A parallel multiInstance activity can be be adapted through another construct that supports parallel execution");
 		multiInstanceTask.addAdaption("inclusiveGatewaysAndSequenceFlows");
 		multiInstanceTask.addAdaption("complexGatewaysAndSequenceFlows");
 		multiInstanceTask.addAdaption("multiInstanceSubProcess");
@@ -368,7 +380,7 @@ public final class AdaptableElements {
 		AdaptableElement errorBoundaryEvent = new AdaptableElement(
 				"errorBoundaryEvent");
 		errorBoundaryEvent
-		.setLocatorExpression("//*[local-name() = 'boundaryEvent' and (child::*[local-name() = 'errorEventDefinition'])]");
+				.setLocatorExpression("//*[local-name() = 'boundaryEvent' and (child::*[local-name() = 'errorEventDefinition'])]");
 		errorBoundaryEvent.addAdaption("messageBoundaryEvent");
 		errorBoundaryEvent.addAdaption("escalationBoundaryEvent");
 		errorBoundaryEvent.addAdaption("conditionalBoundaryEvent");
@@ -398,7 +410,7 @@ public final class AdaptableElements {
 	private void buildNoneEndEvent() {
 		AdaptableElement noneEndEvent = new AdaptableElement("noneEndEvent");
 		noneEndEvent
-		.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
+				.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'EventDefinition')])]");
 		noneEndEvent.addAdaption("messageEndEvent");
 		noneEndEvent.addAdaption("signalEndEvent");
 		noneEndEvent.addAdaption("terminateEndEvent");
@@ -409,7 +421,7 @@ public final class AdaptableElements {
 	private void buildNoneStartEvent() {
 		AdaptableElement noneStartEvent = new AdaptableElement("noneStartEvent");
 		noneStartEvent
-		.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')])]");
+				.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'EventDefinition')])]");
 		noneStartEvent.addAdaption("messageStartEvent");
 		noneStartEvent.addAdaption("conditionalStartEvent");
 		noneStartEvent.addAdaption("signalStartEvent");
