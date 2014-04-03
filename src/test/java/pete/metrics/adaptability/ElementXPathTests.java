@@ -91,6 +91,16 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void parallelMultiInstanceSubProcess() {
+		AdaptableElement parallelMultiInstanceSubProcess = elements
+				.get("parallelMultiInstanceSubProcess");
+		assertNoFalsePositives(parallelMultiInstanceSubProcess,
+				"src/test/resources/adaptability/SequentialMultiInstanceSubProcess.bpmn");
+		assertDetection(parallelMultiInstanceSubProcess,
+				"src/test/resources/adaptability/ParallelMultiInstanceSubProcess.bpmn");
+	}
+
+	@Test
 	public void userTask() {
 		AdaptableElement userTask = elements.get("userTask");
 		assertNoFalsePositives(userTask,

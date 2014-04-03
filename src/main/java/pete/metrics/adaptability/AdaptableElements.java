@@ -61,6 +61,7 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("subProcess"));
 		buildLoopSubProcess();
 		buildSequentialMultInstanceSubProcess();
+		buildParallelMultInstanceSubProcess();
 		buildTask();
 		elements.add(new AdaptableElement("terminateEventDefinition"));
 		elements.add(new AdaptableElement("throwEvent"));
@@ -76,7 +77,7 @@ public final class AdaptableElements {
 		.setLocatorExpression("//*[(local-name() = 'subProcess') "
 				+ "and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='true'])]");
 		sequentialMultiInstanceSubProcess
-				.setDocumentation("Sequential multi-instance subprocesses can be embedded in code and surrounded by ordinary looping mechanisms or adapted to different types of subprocesses.");
+				.setDocumentation("Sequential multi-instance subprocesses can be embedded in code and surrounded by ordinary looping mechanisms or adapted to different types of subprocesses");
 		sequentialMultiInstanceSubProcess
 				.addAdaption("embeddedfragmentWithExclusiveGateways");
 		sequentialMultiInstanceSubProcess
@@ -84,6 +85,23 @@ public final class AdaptableElements {
 		sequentialMultiInstanceSubProcess.addAdaption("eventSubProcess");
 		sequentialMultiInstanceSubProcess.addAdaption("adHocSubprocess");
 		sequentialMultiInstanceSubProcess.addAdaption("loopSubProcess");
+
+		elements.add(sequentialMultiInstanceSubProcess);
+	}
+
+	private void buildParallelMultInstanceSubProcess() {
+		AdaptableElement sequentialMultiInstanceSubProcess = new AdaptableElement(
+				"parallelMultiInstanceSubProcess");
+		sequentialMultiInstanceSubProcess
+		.setLocatorExpression("//*[(local-name() = 'subProcess') "
+				+ "and (child::*[local-name() = 'multiInstanceLoopCharacteristics' and @isSequential='false'])]");
+		sequentialMultiInstanceSubProcess
+				.setDocumentation("Parallel multi-instance subprocesses can be embedded in code and surrounded by looping mechanisms along with parallelism or adapted to a different type of subprocess");
+		sequentialMultiInstanceSubProcess
+				.addAdaption("embeddedfragmentWithExclusiveGateways");
+		sequentialMultiInstanceSubProcess
+				.addAdaption("embeddedfragmentWithComplexGateways");
+		sequentialMultiInstanceSubProcess.addAdaption("adHocSubprocess");
 
 		elements.add(sequentialMultiInstanceSubProcess);
 	}
