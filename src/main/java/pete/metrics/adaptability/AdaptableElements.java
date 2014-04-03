@@ -12,7 +12,6 @@ public final class AdaptableElements {
 	public AdaptableElements() {
 		elements = new ArrayList<>();
 		elements.add(new AdaptableElement("activity"));
-		elements.add(new AdaptableElement("adHocSubProcess"));
 		elements.add(new AdaptableElement("boundaryEvent"));
 		buildBusinessRuleTask();
 		elements.add(new AdaptableElement("callActivity"));
@@ -68,7 +67,6 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("terminateEventDefinition"));
 		elements.add(new AdaptableElement("throwEvent"));
 		elements.add(new AdaptableElement("timerEventDefinition"));
-		elements.add(new AdaptableElement("transaction"));
 		buildUserTask();
 	}
 
