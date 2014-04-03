@@ -59,12 +59,28 @@ public final class AdaptableElements {
 		buildLoopTask();
 		buildNoneStartEvent();
 		elements.add(new AdaptableElement("subProcess"));
+		buildLoopSubProcess();
 		buildTask();
 		elements.add(new AdaptableElement("terminateEventDefinition"));
 		elements.add(new AdaptableElement("throwEvent"));
 		elements.add(new AdaptableElement("timerEventDefinition"));
 		elements.add(new AdaptableElement("transaction"));
 		buildUserTask();
+	}
+
+	private void buildLoopSubProcess() {
+		AdaptableElement loopSubProcess = new AdaptableElement("loopSubProcess");
+		loopSubProcess
+				.setLocatorExpression("//*[(local-name() = 'subProcess') "
+						+ "and (child::*[local-name() = 'standardLoopCharacteristics'])]");
+		loopSubProcess
+		.setDocumentation("Looping subprocesses can be embedded in code and surrounded by ordinary looping mechanisms or adapted to different types of subprocesses.");
+		loopSubProcess.addAdaption("embeddedfragmentWithExclusiveGateways");
+		loopSubProcess.addAdaption("embeddedfragmentWithComplexGateways");
+		loopSubProcess.addAdaption("eventSubProcess");
+		loopSubProcess.addAdaption("adhochSubprocess");
+
+		elements.add(loopSubProcess);
 	}
 
 	private void buildGlobalBusinessRuleTask() {
