@@ -81,6 +81,16 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void sequentialMultiInstanceSubProcess() {
+		AdaptableElement sequentialMultiInstanceSubProcess = elements
+				.get("sequentialMultiInstanceSubProcess");
+		assertNoFalsePositives(sequentialMultiInstanceSubProcess,
+				"src/test/resources/adaptability/SequentialMultiInstanceTask.bpmn");
+		assertDetection(sequentialMultiInstanceSubProcess,
+				"src/test/resources/adaptability/SequentialMultiInstanceSubProcess.bpmn");
+	}
+
+	@Test
 	public void userTask() {
 		AdaptableElement userTask = elements.get("userTask");
 		assertNoFalsePositives(userTask,
