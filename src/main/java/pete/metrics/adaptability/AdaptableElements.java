@@ -63,12 +63,24 @@ public final class AdaptableElements {
 		buildSequentialMultInstanceSubProcess();
 		buildParallelMultInstanceSubProcess();
 		buildAdHocSubprocess();
+		buildTransactionSubProcess();
 		buildTask();
 		elements.add(new AdaptableElement("terminateEventDefinition"));
 		elements.add(new AdaptableElement("throwEvent"));
 		elements.add(new AdaptableElement("timerEventDefinition"));
 		elements.add(new AdaptableElement("transaction"));
 		buildUserTask();
+	}
+
+	private void buildTransactionSubProcess() {
+		AdaptableElement transactionSubProcess = new AdaptableElement(
+				"transactionSubProcess");
+		transactionSubProcess
+		.setLocatorExpression("//*[local-name() = 'transaction']");
+		transactionSubProcess
+				.setDocumentation("A transactional context cannot be emulated with any other element in BPMN");
+
+		elements.add(transactionSubProcess);
 	}
 
 	private void buildAdHocSubprocess() {

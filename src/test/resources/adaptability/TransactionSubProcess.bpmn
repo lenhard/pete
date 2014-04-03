@@ -5,11 +5,11 @@
       <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
       <bpmn2:messageEventDefinition id="MessageEventDefinition_2" />
     </bpmn2:endEvent>
-    <bpmn2:adHocSubProcess id="adHocSubProcess" name="adHocSubProcess">
+    <bpmn2:transaction id="transaction" name="transaction">
       <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
-    </bpmn2:adHocSubProcess>
-    <bpmn2:sequenceFlow id="SequenceFlow_7" name="" sourceRef="adHocSubProcess" targetRef="EndEvent_2"/>
+    </bpmn2:transaction>
+    <bpmn2:sequenceFlow id="SequenceFlow_7" name="" sourceRef="transaction" targetRef="EndEvent_2"/>
     <bpmn2:startEvent id="StartEvent_1" name="Start">
       <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
     </bpmn2:startEvent>
