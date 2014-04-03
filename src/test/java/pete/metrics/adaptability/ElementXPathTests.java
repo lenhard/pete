@@ -53,11 +53,20 @@ public class ElementXPathTests {
 
 	@Test
 	public void loopSubProcess() {
-		AdaptableElement loopTask = elements.get("loopSubProcess");
-		assertNoFalsePositives(loopTask,
+		AdaptableElement loopSubProcess = elements.get("loopSubProcess");
+		assertNoFalsePositives(loopSubProcess,
 				"src/test/resources/adaptability/LoopTask.bpmn");
-		assertDetection(loopTask,
+		assertDetection(loopSubProcess,
 				"src/test/resources/adaptability/LoopSubProcess.bpmn");
+	}
+
+	@Test
+	public void eventSubProcess() {
+		AdaptableElement eventSubProcess = elements.get("eventSubProcess");
+		assertNoFalsePositives(eventSubProcess,
+				"src/test/resources/adaptability/AdHocSubProcess.bpmn");
+		assertDetection(eventSubProcess,
+				"src/test/resources/adaptability/EventSubProcess.bpmn");
 	}
 
 	@Test
