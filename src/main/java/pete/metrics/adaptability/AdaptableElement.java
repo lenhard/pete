@@ -14,6 +14,8 @@ public final class AdaptableElement {
 
 	private String locatorExpression = "//*[local-name() = 'definitions']";
 
+	private volatile int hashCode;
+
 	public AdaptableElement(String name) {
 		if (name == null) {
 			throw new IllegalArgumentException("name must not be null");
@@ -66,6 +68,30 @@ public final class AdaptableElement {
 		} else {
 			this.documentation = documentation;
 		}
+	}
+
+	@Override
+	public boolean equals(Object o){
+		if(o == this){
+			return true;
+		} else if(o instanceof AdaptableElement){
+			AdaptableElement element = (AdaptableElement) o;
+			if(element.name.equals(this.name)){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public int hashCode(){
+		int result = hashCode;
+		if(result == 0){
+			result = 19;
+			result = 37 * result + name.hashCode();
+			hashCode = result;
+		}
+		return result;
 	}
 
 }
