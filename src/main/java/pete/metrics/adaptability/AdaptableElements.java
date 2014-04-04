@@ -1,16 +1,18 @@
 package pete.metrics.adaptability;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
 public final class AdaptableElements {
 
-	private final List<AdaptableElement> elements;
+	private final Collection<AdaptableElement> elements;
 
 	public AdaptableElements() {
-		elements = new ArrayList<>();
+		elements = new HashSet<>();
 
 		buildActivities();
 
