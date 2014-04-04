@@ -140,6 +140,10 @@ public class SimpleNodeCounter implements NodeCounter {
 
 	private void addToMap(Node node) {
 		String nodeName = node.getLocalName();
+		if (nodeName == null) {
+			return;
+		}
+
 		if (isStrict && !relevantElements.contains(nodeName)) {
 			return;
 		}
