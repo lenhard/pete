@@ -269,6 +269,15 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void conditionalStartEvent() {
+		AdaptableElement conditionalStartEvent = elements.get("conditionalStartEvent");
+		assertNoFalsePositives(conditionalStartEvent,
+				"src/test/resources/adaptability/MessageStartEvent.bpmn");
+		assertDetection(conditionalStartEvent,
+				"src/test/resources/adaptability/ConditionalStartEvent.bpmn");
+	}
+
+	@Test
 	public void messageStartEvent() {
 		AdaptableElement messageStartEvent = elements.get("messageStartEvent");
 		assertNoFalsePositives(messageStartEvent,

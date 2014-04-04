@@ -52,6 +52,7 @@ public final class AdaptableElements {
 		buildNoneStartEvent();
 		buildMessageStartEvent();
 		buildTimerStartEvent();
+		buildConditionalStartEvent();
 	}
 
 	private void buildActivities() {
@@ -519,6 +520,20 @@ public final class AdaptableElements {
 		timerStartEvent.addAdaption("multipleStartEvent");
 		timerStartEvent.addAdaption("parallelMultipleStartEvent");
 		addToSet(timerStartEvent);
+	}
+
+	private void buildConditionalStartEvent() {
+		AdaptableElement conditionalStartEvent = new AdaptableElement(
+				"conditionalStartEvent");
+		conditionalStartEvent
+		.setLocatorExpression(buildStartEventXPathExpression("conditional"));
+		conditionalStartEvent
+		.addAdaption("A conditionalStartEvent can be adapted to another startEvent that is triggered in some fashion");
+		conditionalStartEvent.addAdaption("messageStartEvent");
+		conditionalStartEvent.addAdaption("signalStartEvent");
+		conditionalStartEvent.addAdaption("multipleStartEvent");
+		conditionalStartEvent.addAdaption("parallelMultipleStartEvent");
+		addToSet(conditionalStartEvent);
 	}
 
 	private String buildStartEventXPathExpression(String eventType) {
