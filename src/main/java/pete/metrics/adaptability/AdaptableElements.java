@@ -51,6 +51,7 @@ public final class AdaptableElements {
 		buildErrorBoundaryEvent();
 		buildNoneStartEvent();
 		buildMessageStartEvent();
+		buildTimerStartEvent();
 	}
 
 	private void buildActivities() {
@@ -505,6 +506,21 @@ public final class AdaptableElements {
 		addToSet(messageStartEvent);
 	}
 
+	private void buildTimerStartEvent() {
+		AdaptableElement timerStartEvent = new AdaptableElement(
+				"timerStartEvent");
+		timerStartEvent
+		.setLocatorExpression(buildStartEventXPathExpression("timer"));
+		timerStartEvent
+		.addAdaption("A timerStartEvent can be adapted to another startEvent that is triggered in some fashion, as it is possible to calculate the expiration of the time and trigger the event when it does");
+		timerStartEvent.addAdaption("conditionalStartEvent");
+		timerStartEvent.addAdaption("messageStartEvent");
+		timerStartEvent.addAdaption("signalStartEvent");
+		timerStartEvent.addAdaption("multipleStartEvent");
+		timerStartEvent.addAdaption("parallelMultipleStartEvent");
+		addToSet(timerStartEvent);
+	}
+
 	private String buildStartEventXPathExpression(String eventType) {
 		return buildEventXPathExpression("start", eventType);
 	}
@@ -526,10 +542,11 @@ public final class AdaptableElements {
 				+ eventType + "EventDefinition']/@id])]";
 	}
 
-	private void addToSet(AdaptableElement element){
+	private void addToSet(AdaptableElement element) {
 		boolean success = elements.add(element);
-		if(!success){
-			throw new IllegalStateException(element.getName() + " was tried to be added twice");
+		if (!success) {
+			throw new IllegalStateException(element.getName()
+					+ " was tried to be added twice");
 		}
 	}
 

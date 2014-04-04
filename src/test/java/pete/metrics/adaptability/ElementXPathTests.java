@@ -259,6 +259,15 @@ public class ElementXPathTests {
 				"src/test/resources/adaptability/NoneEndEvent.bpmn");
 	}
 
+	@Test
+	public void timerStartEvent() {
+		AdaptableElement timerStartEvent = elements.get("timerStartEvent");
+		assertNoFalsePositives(timerStartEvent,
+				"src/test/resources/adaptability/MessageStartEvent.bpmn");
+		assertDetection(timerStartEvent,
+				"src/test/resources/adaptability/TimerStartEvent.bpmn");
+	}
+
 	private void assertDetection(AdaptableElement element, String fileLocation) {
 		assertTrue("Element " + element.getName() + " was not found in "
 				+ fileLocation, isContained(element, fileLocation));
