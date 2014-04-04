@@ -240,11 +240,14 @@ public class ElementXPathTests {
 
 	@Test
 	public void errorBoundaryEvent() {
-		AdaptableElement noneStartEvent = elements.get("errorBoundaryEvent");
-		assertNoFalsePositives(noneStartEvent,
+		AdaptableElement errorBoundaryEvent = elements
+				.get("errorBoundaryEvent");
+		assertNoFalsePositives(errorBoundaryEvent,
 				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(noneStartEvent,
+		assertDetection(errorBoundaryEvent,
 				"src/test/resources/adaptability/ErrorBoundaryEvent.bpmn");
+		assertDetection(errorBoundaryEvent,
+				"src/test/resources/adaptability/ErrorBoundaryEventEventDefinitionRef.bpmn");
 	}
 
 	@Test
