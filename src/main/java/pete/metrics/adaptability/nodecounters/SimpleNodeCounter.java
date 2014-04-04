@@ -33,7 +33,7 @@ public class SimpleNodeCounter implements NodeCounter {
 	private List<String> relevantElements;
 
 	public SimpleNodeCounter() {
-		setUp(true);
+		setUp(false);
 	}
 
 	public SimpleNodeCounter(boolean isStrict) {
