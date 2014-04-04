@@ -427,8 +427,7 @@ public final class AdaptableElements {
 		AdaptableElement errorBoundaryEvent = new AdaptableElement(
 				"errorBoundaryEvent");
 		errorBoundaryEvent
-				.setLocatorExpression("//*[local-name() = 'boundaryEvent' and (child::*[local-name() = 'errorEventDefinition']"
-						+ "or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = 'errorEventDefinition']/@id])]");
+		.setLocatorExpression(buildBoundaryEventXPathExpression("error"));
 		errorBoundaryEvent.addAdaption("messageBoundaryEvent");
 		errorBoundaryEvent.addAdaption("escalationBoundaryEvent");
 		errorBoundaryEvent.addAdaption("conditionalBoundaryEvent");
@@ -476,6 +475,27 @@ public final class AdaptableElements {
 		noneStartEvent.addAdaption("multipleStartEvent");
 		noneStartEvent.addAdaption("parallelMultipleStartEvent");
 		elements.add(noneStartEvent);
+	}
+
+	private String buildStartEventXPathExpression(String eventType) {
+		return buildEventXPathExpression("start", eventType);
+	}
+
+	private String buildEndEventXPathExpression(String eventType) {
+		return buildEventXPathExpression("end", eventType);
+	}
+
+	private String buildBoundaryEventXPathExpression(String eventType) {
+		return buildEventXPathExpression("boundary", eventType);
+	}
+
+	private String buildEventXPathExpression(String event, String eventType) {
+		return "//*[local-name() = '"
+				+ event
+				+ "Event' and (child::*[local-name() = '"
+				+ eventType
+				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
+				+ eventType + "EventDefinition']/@id])]";
 	}
 
 	public List<String> getElementNames() {
