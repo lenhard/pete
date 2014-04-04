@@ -50,6 +50,7 @@ public final class AdaptableElements {
 		elements.add(new AdaptableElement("signal"));
 		buildLoopTask();
 		buildNoneStartEvent();
+		buildMessageStartEvent();
 		elements.add(new AdaptableElement("subProcess"));
 		buildLoopSubProcess();
 		buildSequentialMultInstanceSubProcess();
@@ -475,6 +476,20 @@ public final class AdaptableElements {
 		noneStartEvent.addAdaption("multipleStartEvent");
 		noneStartEvent.addAdaption("parallelMultipleStartEvent");
 		elements.add(noneStartEvent);
+	}
+
+	private void buildMessageStartEvent() {
+		AdaptableElement messageStartEvent = new AdaptableElement(
+				"messageStartEvent");
+		messageStartEvent
+				.setLocatorExpression(buildStartEventXPathExpression("message"));
+		messageStartEvent
+		.addAdaption("A messageStartEvent can be adapted to another startEvent that is triggered in some fashion.");
+		messageStartEvent.addAdaption("conditionalStartEvent");
+		messageStartEvent.addAdaption("signalStartEvent");
+		messageStartEvent.addAdaption("multipleStartEvent");
+		messageStartEvent.addAdaption("parallelMultipleStartEvent");
+		elements.add(messageStartEvent);
 	}
 
 	private String buildStartEventXPathExpression(String eventType) {
