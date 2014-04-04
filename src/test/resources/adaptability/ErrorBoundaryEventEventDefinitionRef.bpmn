@@ -54,6 +54,8 @@
       <bpmn2:incoming>SequenceFlow_11</bpmn2:incoming>
     </bpmn2:endEvent>
   </bpmn2:process>
+     <bpmn2:errorEventDefinition id="ErrorEventDefinition_3" errorRef="applicationError"/>
   <bpmn2:errorEventDefinition id="ErrorEventDefinition_1" errorRef="applicationError"/>
+   <bpmn2:errorEventDefinition id="ErrorEventDefinition_2" errorRef="applicationError"/>
   <bpmn2:error id="applicationError" errorCode="processingNotPossible" name="processingNotPossible"/>
 </bpmn2:definitions>
