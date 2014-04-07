@@ -32,6 +32,7 @@ class EventElements {
 
 	private void buildEventSubProcessEvents() {
 		buildEventSubProcessNonInterruptingMessageStartEvent();
+		buildEventSubProcessInterruptingMessageStartEvent();
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
@@ -39,14 +40,30 @@ class EventElements {
 				"nonInterruptingMesssageStartEvent");
 		nonInterruptingMessageStartEvent
 		.setLocatorExpression(buildEventSubProcessNonInterruptingStartEventXPathExpression("message"));
-		System.out.println(buildEventSubProcessNonInterruptingStartEventXPathExpression("message"));
 		nonInterruptingMessageStartEvent
 		.setDocumentation("A non-interrupting message start event can be adapted to another non-interrupting start event that uses an active trigger");
 		nonInterruptingMessageStartEvent.addAdaption("escalationStartEvent");
 		nonInterruptingMessageStartEvent.addAdaption("signalStartEvent");
+		nonInterruptingMessageStartEvent.addAdaption("conditionalStartEvent");
 		nonInterruptingMessageStartEvent.addAdaption("multipleStartEvent");
 		nonInterruptingMessageStartEvent.addAdaption("multipleParallelStartEvent");
 		addToSet(nonInterruptingMessageStartEvent);
+	}
+
+	private void buildEventSubProcessInterruptingMessageStartEvent() {
+		AdaptableElement interruptingMessageStartEvent = new AdaptableElement(
+				"interruptingMesssageStartEvent");
+		interruptingMessageStartEvent
+		.setLocatorExpression(buildEventSubProcessInterruptingStartEventXPathExpression("message"));
+		interruptingMessageStartEvent
+		.setDocumentation("An interrupting message start event can be adapted to another interrupting start event that uses an active trigger");
+		interruptingMessageStartEvent.addAdaption("escalationStartEvent");
+		interruptingMessageStartEvent.addAdaption("errorStartEvent");
+		interruptingMessageStartEvent.addAdaption("signalStartEvent");
+		interruptingMessageStartEvent.addAdaption("conditionalStartEvent");
+		interruptingMessageStartEvent.addAdaption("multipleStartEvent");
+		interruptingMessageStartEvent.addAdaption("multipleParallelStartEvent");
+		addToSet(interruptingMessageStartEvent);
 	}
 
 	private void buildErrorBoundaryEvent() {

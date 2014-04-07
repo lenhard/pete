@@ -338,6 +338,16 @@ public class ElementXPathTests {
 				"src/test/resources/adaptability/EventSubProcessNonInterruptingMessageStartEvent.bpmn");
 	}
 
+	@Test
+	public void interruptingMessageStartEvent() {
+		AdaptableElement eventSubProcess = elements.get("interruptingMesssageStartEvent");
+		assertNoFalsePositives(eventSubProcess,
+				"src/test/resources/adaptability/EventSubProcessNonInterruptingMessageStartEvent.bpmn");
+		assertDetection(eventSubProcess,
+				"src/test/resources/adaptability/EventSubProcessInterruptingMessageStartEvent.bpmn");
+	}
+
+
 	private void assertDetection(AdaptableElement element, String fileLocation) {
 		assertTrue("Element " + element.getName() + " was not found in "
 				+ fileLocation, isContained(element, fileLocation));
