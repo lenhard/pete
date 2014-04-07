@@ -56,7 +56,9 @@ public final class AdaptableElements {
 		buildSignalStartEvent();
 		buildMultipleStartEvent();
 		buildMultipleParallelStartEvent();
+		buildSubProcessStartEvent();
 	}
+
 
 	private void buildActivities() {
 		buildOrdinarySubProcess();
@@ -577,6 +579,17 @@ public final class AdaptableElements {
 		multipleParallelStartEvent
 		.addAdaption("A multipleParallelStartEvent cannot be adapted since there is no other way to avoid the instantiation of a process unless multiple conditions are satisfied");
 		addToSet(multipleParallelStartEvent);
+	}
+
+
+	private void buildSubProcessStartEvent() {
+		AdaptableElement subProcessStartEvent = new AdaptableElement(
+				"subProcessStartEvent");
+		subProcessStartEvent
+		.setLocatorExpression("//*[local-name() = 'subProcess' and not(@triggeredByEvent = 'true')]/*[local-name() = 'startEvent']");
+		subProcessStartEvent
+		.addAdaption("A startEvent of an ordinary subProcess cannot be adapted since it is the only way of starting non-eventSubProcesses");
+		addToSet(subProcessStartEvent);
 	}
 
 	private String buildStartEventXPathExpression(String eventType) {
