@@ -31,12 +31,22 @@ class EventElements {
 	}
 
 	private void buildEventSubProcessEvents() {
-		buildEventSubProcessNonInterruptingMessageEvent();
+		buildEventSubProcessNonInterruptingMessageStartEvent();
 	}
 
-	private void buildEventSubProcessNonInterruptingMessageEvent() {
-		// TODO Auto-generated method stub
-
+	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
+		AdaptableElement nonInterruptingMessageStartEvent = new AdaptableElement(
+				"nonInterruptingMesssageStartEvent");
+		nonInterruptingMessageStartEvent
+		.setLocatorExpression(buildEventSubProcessNonInterruptingStartEventXPathExpression("message"));
+		System.out.println(buildEventSubProcessNonInterruptingStartEventXPathExpression("message"));
+		nonInterruptingMessageStartEvent
+		.setDocumentation("A non-interrupting message start event can be adapted to another non-interrupting start event that uses an active trigger");
+		nonInterruptingMessageStartEvent.addAdaption("escalationStartEvent");
+		nonInterruptingMessageStartEvent.addAdaption("signalStartEvent");
+		nonInterruptingMessageStartEvent.addAdaption("multipleStartEvent");
+		nonInterruptingMessageStartEvent.addAdaption("multipleParallelStartEvent");
+		addToSet(nonInterruptingMessageStartEvent);
 	}
 
 	private void buildErrorBoundaryEvent() {
@@ -192,7 +202,7 @@ class EventElements {
 
 	private String buildEventSubProcessNonInterruptingStartEventXPathExpression(
 			String eventType) {
-		return "//*[local-name() = 'subProcess' and @isTriggeredByEvent = 'true]/*[local-name() = 'startEvent' and (child::*[local-name() = '"
+		return "//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and (child::*[local-name() = '"
 				+ eventType
 				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
 				+ eventType
@@ -201,7 +211,7 @@ class EventElements {
 
 	private String buildEventSubProcessInterruptingStartEventXPathExpression(
 			String eventType) {
-		return "//*[local-name() = 'subProcess' and @isTriggeredByEvent = 'true]/*[local-name() = 'startEvent' and @isInterrupting = 'true' and (child::*[local-name() = '"
+		return "//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and @isInterrupting = 'true' and (child::*[local-name() = '"
 				+ eventType
 				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
 				+ eventType

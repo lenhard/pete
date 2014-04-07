@@ -329,6 +329,15 @@ public class ElementXPathTests {
 				"src/test/resources/adaptability/SubProcess.bpmn");
 	}
 
+	@Test
+	public void nonInterruptingMessageStartEvent() {
+		AdaptableElement eventSubProcess = elements.get("nonInterruptingMesssageStartEvent");
+		assertNoFalsePositives(eventSubProcess,
+				"src/test/resources/adaptability/EventSubProcess.bpmn");
+		assertDetection(eventSubProcess,
+				"src/test/resources/adaptability/EventSubProcessNonInterruptingMessageStartEvent.bpmn");
+	}
+
 	private void assertDetection(AdaptableElement element, String fileLocation) {
 		assertTrue("Element " + element.getName() + " was not found in "
 				+ fileLocation, isContained(element, fileLocation));
@@ -364,7 +373,7 @@ public class ElementXPathTests {
 			return false;
 		} catch (XPathFactoryConfigurationException | XPathExpressionException
 				| XPathException e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();
 			return false;
 		}
 	}
