@@ -54,6 +54,7 @@ public final class AdaptableElements {
 		buildTimerStartEvent();
 		buildConditionalStartEvent();
 		buildSignalStartEvent();
+		buildMultipleStartEvent();
 	}
 
 	private void buildActivities() {
@@ -549,6 +550,22 @@ public final class AdaptableElements {
 		signalStartEvent.addAdaption("multipleStartEvent");
 		signalStartEvent.addAdaption("parallelMultipleStartEvent");
 		addToSet(signalStartEvent);
+	}
+
+
+	private void buildMultipleStartEvent() {
+		AdaptableElement multipleStartEvent = new AdaptableElement(
+				"multipleStartEvent");
+		multipleStartEvent
+		.setLocatorExpression("//*[local-name() = 'startEvent' and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		multipleStartEvent
+		.addAdaption("A multipleStartEvent can be adapted to multiple alternative start events");
+		multipleStartEvent.addAdaption("messageStartEvent");
+		multipleStartEvent.addAdaption("conditionalStartEvent");
+		multipleStartEvent.addAdaption("signalStartEvent");
+		multipleStartEvent.addAdaption("timerStartEvent");
+		multipleStartEvent.addAdaption("noneStartEvent");
+		addToSet(multipleStartEvent);
 	}
 
 	private String buildStartEventXPathExpression(String eventType) {
