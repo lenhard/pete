@@ -47,6 +47,7 @@ public final class AnalysisWorkflow {
 	}
 
 	public void start() {
+		long startTime = System.currentTimeMillis();
 
 		if (!Files.isDirectory(root)) {
 			parseFile(root);
@@ -54,8 +55,10 @@ public final class AnalysisWorkflow {
 			parseDirectory(root);
 		}
 
+		long duration = System.currentTimeMillis() - startTime;
 		System.out.println("=======================================");
-		System.out.println("Analysis finished; writing results");
+		System.out.println("Analysis finished; Duration: " + duration
+				+ " millisec; writing results");
 		writeResults();
 
 		purgeTempDir();
