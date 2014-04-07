@@ -1,7 +1,6 @@
 package pete.metrics.adaptability;
 
 import java.nio.file.InvalidPathException;
-import java.util.List;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -58,15 +57,15 @@ public final class BpmnInspector {
 	}
 
 	String hasReferenceIssues(String path){
-		List<ValidationResult> results;
+		ValidationResult result;
 		try {
-			results = referenceValidator.validate(path);
+			result = referenceValidator.validateSingleFile(path);
 		} catch (ValidatorException | InvalidPathException | NullPointerException e) {
 			System.err.println(e.getMessage());
 			return "false";
 		}
 
-		if(results.size() > 0){
+		if(!result.isValid()){
 			return "false";
 		} else{
 			return "true";
