@@ -17,8 +17,6 @@ public final class AdaptableElements {
 		elements.addAll(new ActivityElements().getElements());
 
 		elements.addAll(new EventElements().getElements());
-
-
 	}
 
 	public List<String> getElementNames() {

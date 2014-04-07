@@ -20,7 +20,7 @@ public final class BpmnInspector {
 
 	private BPMNReferenceValidator referenceValidator;
 
-	public BpmnInspector(){
+	public BpmnInspector() {
 		try {
 			referenceValidator = new BPMNReferenceValidatorImpl();
 		} catch (ValidatorException e) {
@@ -56,19 +56,20 @@ public final class BpmnInspector {
 		return "false";
 	}
 
-	String hasReferenceIssues(String path){
+	String hasReferenceIssues(String path) {
 		ValidationResult result;
 		try {
 			result = referenceValidator.validateSingleFile(path);
-		} catch (ValidatorException | InvalidPathException | NullPointerException e) {
+		} catch (ValidatorException | InvalidPathException
+				| NullPointerException e) {
 			System.err.println(e.getMessage());
 			return "false";
 		}
 
-		if(!result.isValid()){
-			return "false";
-		} else{
+		if (!result.isValid()) {
 			return "true";
+		} else {
+			return "false";
 		}
 	}
 
@@ -88,6 +89,22 @@ public final class BpmnInspector {
 			}
 		}
 		return result;
+	}
+
+	String getImportTypes(Document document) {
+		NodeList nodes = getChildrenOfDefinitions(document);
+		StringBuffer result = new StringBuffer();
+		for (int i = 0; i < nodes.getLength(); i++) {
+			Node node = nodes.item(i);
+			if ("import".equals(node.getLocalName())) {
+				NamedNodeMap attributes = node.getAttributes();
+				Node importType = attributes.getNamedItem("importType");
+				if(importType != null){
+					result.append(importType.getNodeValue()+ " ");
+				}
+			}
+		}
+		return result.toString();
 	}
 
 	public Node getProcess(Document dom) throws AnalysisException {
