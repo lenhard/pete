@@ -586,7 +586,7 @@ public final class AdaptableElements {
 				+ "Event' and (child::*[local-name() = '"
 				+ eventType
 				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
-				+ eventType + "EventDefinition']/@id])]";
+				+ eventType + "EventDefinition']/@id]) and (count(child::*[contains(local-name(),'ventDefinition')]) = 1)]";
 	}
 
 	private void addToSet(AdaptableElement element) {
