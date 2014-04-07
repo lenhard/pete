@@ -38,7 +38,6 @@ class ActivityElements {
 		buildTask();
 	}
 
-
 	private void buildCallActivity() {
 		AdaptableElement callActivity = new AdaptableElement("callActivity");
 		callActivity.setLocatorExpression("//*[local-name() = 'callActivity']");
@@ -397,7 +396,6 @@ class ActivityElements {
 		addToSet(multiInstanceTask);
 	}
 
-
 	private void buildTask() {
 		AdaptableElement task = new AdaptableElement("task");
 		task.setLocatorExpression("//*[local-name() = 'task' or local-name() = 'globalTask']");
@@ -440,6 +438,5 @@ class ActivityElements {
 		elements.forEach(element -> result.put(element.getName(), element));
 		return result;
 	}
-
 
 }
