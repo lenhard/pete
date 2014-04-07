@@ -55,6 +55,7 @@ public final class AdaptableElements {
 		buildConditionalStartEvent();
 		buildSignalStartEvent();
 		buildMultipleStartEvent();
+		buildMultipleParallelStartEvent();
 	}
 
 	private void buildActivities() {
@@ -566,6 +567,16 @@ public final class AdaptableElements {
 		multipleStartEvent.addAdaption("timerStartEvent");
 		multipleStartEvent.addAdaption("noneStartEvent");
 		addToSet(multipleStartEvent);
+	}
+
+	private void buildMultipleParallelStartEvent() {
+		AdaptableElement multipleParallelStartEvent = new AdaptableElement(
+				"multipleParallelStartEvent");
+		multipleParallelStartEvent
+		.setLocatorExpression("//*[local-name() = 'startEvent' and @parallelMultiple = 'true' and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		multipleParallelStartEvent
+		.addAdaption("A multipleParallelStartEvent cannot be adapted since there is no other way to avoid the instantiation of a process unless multiple conditions are satisfied");
+		addToSet(multipleParallelStartEvent);
 	}
 
 	private String buildStartEventXPathExpression(String eventType) {

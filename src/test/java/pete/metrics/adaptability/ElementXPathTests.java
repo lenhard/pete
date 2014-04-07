@@ -290,11 +290,20 @@ public class ElementXPathTests {
 
 	@Test
 	public void multipleStartEvent() {
-		AdaptableElement signalStartEvent = elements.get("multipleStartEvent");
-		assertNoFalsePositives(signalStartEvent,
+		AdaptableElement multipleStartEvent = elements.get("multipleStartEvent");
+		assertNoFalsePositives(multipleStartEvent,
 				"src/test/resources/adaptability/SignalStartEvent.bpmn");
-		assertDetection(signalStartEvent,
+		assertDetection(multipleStartEvent,
 				"src/test/resources/adaptability/MultipleStartEvent.bpmn");
+	}
+
+	@Test
+	public void multipleParallelStartEvent() {
+		AdaptableElement multipleParallelStartEvent = elements.get("multipleParallelStartEvent");
+		assertNoFalsePositives(multipleParallelStartEvent,
+				"src/test/resources/adaptability/MultipleStartEvent.bpmn");
+		assertDetection(multipleParallelStartEvent,
+				"src/test/resources/adaptability/MultipleParallelStartEvent.bpmn");
 	}
 
 	@Test
