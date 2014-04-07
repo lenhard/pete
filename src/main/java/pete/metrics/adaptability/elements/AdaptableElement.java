@@ -1,4 +1,4 @@
-package pete.metrics.adaptability;
+package pete.metrics.adaptability.elements;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -3,6 +3,9 @@ package pete.metrics.adaptability;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import pete.metrics.adaptability.elements.AdaptableElement;
+import pete.metrics.adaptability.elements.AdaptableElements;
+
 class AdaptabilityMetric {
 
 	private Map<String, AdaptableElement> elements;

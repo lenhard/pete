@@ -23,6 +23,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.xml.sax.InputSource;
 
+import pete.metrics.adaptability.elements.AdaptableElement;
+import pete.metrics.adaptability.elements.AdaptableElements;
+
 public class ElementXPathTests {
 
 	private static Map<String, AdaptableElement> elements;

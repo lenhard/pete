@@ -24,8 +24,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
 import pete.executables.AnalysisException;
-import pete.metrics.adaptability.AdaptableElement;
-import pete.metrics.adaptability.AdaptableElements;
+import pete.metrics.adaptability.elements.AdaptableElement;
+import pete.metrics.adaptability.elements.AdaptableElements;
 import bpp.domain.BpelNamespaceContext;
 
 public class XPathNodeCounter implements NodeCounter {
