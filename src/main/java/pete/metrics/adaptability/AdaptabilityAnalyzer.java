@@ -70,6 +70,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		entry.addVariable("isExecutable", inspector.isExecutable(process));
 		entry.addVariable("elements", inspector.getNumberOfChildren(process)
 				+ "");
+		entry.addVariable("referencesIssuesFound", inspector.hasReferenceIssues(entry.getFileName()));
 
 		simpleCounter.addToCounts(dom);
 		xpathCounter.addToCounts(dom);

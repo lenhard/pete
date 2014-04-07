@@ -1,5 +1,8 @@
 package pete.metrics.adaptability;
 
+import java.nio.file.InvalidPathException;
+import java.util.List;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -7,10 +10,24 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import pete.executables.AnalysisException;
+import de.uniba.wiai.lspi.ws1213.ba.application.BPMNReferenceValidator;
+import de.uniba.wiai.lspi.ws1213.ba.application.BPMNReferenceValidatorImpl;
+import de.uniba.wiai.lspi.ws1213.ba.application.ValidationResult;
+import de.uniba.wiai.lspi.ws1213.ba.application.ValidatorException;
 
 public final class BpmnInspector {
 
 	private static final String BPMN_NAMESPACE = "http://www.omg.org/spec/BPMN/20100524/MODEL";
+
+	private BPMNReferenceValidator referenceValidator;
+
+	public BpmnInspector(){
+		try {
+			referenceValidator = new BPMNReferenceValidatorImpl();
+		} catch (ValidatorException e) {
+			throw new AnalysisException(e);
+		}
+	}
 
 	String isCorrectNamespace(Document dom) {
 		Element root = null;
@@ -38,6 +55,22 @@ public final class BpmnInspector {
 		}
 
 		return "false";
+	}
+
+	String hasReferenceIssues(String path){
+		List<ValidationResult> results;
+		try {
+			results = referenceValidator.validate(path);
+		} catch (ValidatorException | InvalidPathException | NullPointerException e) {
+			System.err.println(e.getMessage());
+			return "false";
+		}
+
+		if(results.size() > 0){
+			return "false";
+		} else{
+			return "true";
+		}
 	}
 
 	int getNumberOfChildren(Node node) {
