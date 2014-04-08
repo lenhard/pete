@@ -61,12 +61,6 @@ public class XPathNodeCounter implements NodeCounter {
 	}
 
 	private void checkForElement(AdaptableElement element, Document document) {
-		// FIXME: This is a hack that has to be removed once all
-		// AdaptableElements are implemented
-		if (element.getAdaptions().size() == 0) {
-			return;
-		}
-
 		try {
 			XPathExpression expr = xpath
 					.compile(element.getLocatorExpression());
