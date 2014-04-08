@@ -70,6 +70,14 @@ public class ElementXPathTests {
 		assertDetection(complexGateway, "src/test/resources/adaptability/ComplexGateway.bpmn");
 	}
 
+	@Test
+	public void eventBasedGateway() {
+		AdaptableElement complexGateway = elements.get("eventBasedGateway");
+		assertNoFalsePositives(complexGateway,
+				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
+		assertDetection(complexGateway, "src/test/resources/adaptability/EventBasedGateway.bpmn");
+	}
+
 
 	@Test
 	public void noneStartEvent() {

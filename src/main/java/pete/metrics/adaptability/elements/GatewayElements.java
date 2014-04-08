@@ -17,6 +17,18 @@ class GatewayElements {
 		buildInclusiveGateway();
 		buildParallelGateway();
 		buildComplexGateway();
+		buildEventBasedGateway();
+	}
+
+	private void buildEventBasedGateway() {
+		AdaptableElement eventBasedGateway = new AdaptableElement("eventBasedGateway");
+		eventBasedGateway.setDocumentation("An eventBasedGateway can be adapted to a solution where the events are processed through tasks before the gateway and set conditions to be evaluated by the gateway");
+		eventBasedGateway.setLocatorExpression("//*[local-name() = 'eventBasedGateway']");
+		eventBasedGateway.addAdaption("parallelEventBasedGateway");
+		eventBasedGateway.addAdaption("inclusiveGateway");
+		eventBasedGateway.addAdaption("complexGateway");
+		eventBasedGateway.addAdaption("exclusiveGateway");
+		addToSet(eventBasedGateway);
 	}
 
 	private void buildComplexGateway() {
