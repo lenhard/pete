@@ -16,6 +16,14 @@ class GatewayElements {
 		buildExclusiveGateway();
 		buildInclusiveGateway();
 		buildParallelGateway();
+		buildComplexGateway();
+	}
+
+	private void buildComplexGateway() {
+		AdaptableElement complexGateway = new AdaptableElement("complexGateway");
+		complexGateway.setLocatorExpression("//*[local-name() = 'complexGateway']");
+		complexGateway.addAdaption("parallelEventBasedGateway");
+		addToSet(complexGateway);
 	}
 
 	private void buildParallelGateway() {

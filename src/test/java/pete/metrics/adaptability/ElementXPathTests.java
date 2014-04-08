@@ -62,6 +62,14 @@ public class ElementXPathTests {
 		assertDetection(parallelGateway, "src/test/resources/adaptability/ParallelGateway.bpmn");
 	}
 
+	@Test
+	public void complexGateway() {
+		AdaptableElement complexGateway = elements.get("complexGateway");
+		assertNoFalsePositives(complexGateway,
+				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
+		assertDetection(complexGateway, "src/test/resources/adaptability/ComplexGateway.bpmn");
+	}
+
 
 	@Test
 	public void noneStartEvent() {
