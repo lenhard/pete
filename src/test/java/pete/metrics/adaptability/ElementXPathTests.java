@@ -39,6 +39,14 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void exclusiveGateway() {
+		AdaptableElement exclusiveGateway = elements.get("exclusiveGateway");
+		assertNoFalsePositives(exclusiveGateway,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(exclusiveGateway, "src/test/resources/adaptability/ExclusiveGateway.bpmn");
+	}
+
+	@Test
 	public void noneStartEvent() {
 		AdaptableElement noneStartEvent = elements.get("noneStartEvent");
 		assertDetection(noneStartEvent,

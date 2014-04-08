@@ -7,18 +7,30 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
-public final class AdaptableElements {
+class GatewayElements {
 
 	private final Collection<AdaptableElement> elements;
 
-	public AdaptableElements() {
+	public GatewayElements() {
 		elements = new HashSet<>();
+		buildExclusiveGateway();
+	}
 
-		elements.addAll(new ActivityElements().getElements());
+	private void buildExclusiveGateway() {
+		AdaptableElement exclusiveGateway = new AdaptableElement("exclusiveGateway");
+		exclusiveGateway.setLocatorExpression("//*[local-name() = 'exclusiveGateway']");
+		exclusiveGateway.addAdaption("eventBasedGateway");
+		exclusiveGateway.addAdaption("complexGateway");
+		exclusiveGateway.addAdaption("inclusiveGateway");
+		addToSet(exclusiveGateway);
+	}
 
-		elements.addAll(new EventElements().getElements());
-
-		elements.addAll(new GatewayElements().getElements());
+	private void addToSet(AdaptableElement element) {
+		boolean success = elements.add(element);
+		if (!success) {
+			throw new IllegalStateException(element.getName()
+					+ " was tried to be added twice");
+		}
 	}
 
 	public List<String> getElementNames() {
@@ -38,4 +50,7 @@ public final class AdaptableElements {
 		elements.forEach(element -> result.put(element.getName(), element));
 		return result;
 	}
+
+
+
 }
