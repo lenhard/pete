@@ -15,6 +15,16 @@ class GatewayElements {
 		elements = new HashSet<>();
 		buildExclusiveGateway();
 		buildInclusiveGateway();
+		buildParallelGateway();
+	}
+
+	private void buildParallelGateway() {
+		AdaptableElement parallelGateway = new AdaptableElement("parallelGateway");
+		parallelGateway.setLocatorExpression("//*[local-name() = 'parallelGateway']");
+		parallelGateway.addAdaption("parallelEventBasedGateway");
+		parallelGateway.addAdaption("inclusiveGateway");
+		parallelGateway.addAdaption("complexGateway");
+		addToSet(parallelGateway);
 	}
 
 	private void buildInclusiveGateway() {

@@ -54,6 +54,14 @@ public class ElementXPathTests {
 		assertDetection(inclusiveGateway, "src/test/resources/adaptability/InclusiveGateway.bpmn");
 	}
 
+	@Test
+	public void parallelGateway() {
+		AdaptableElement parallelGateway = elements.get("parallelGateway");
+		assertNoFalsePositives(parallelGateway,
+				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
+		assertDetection(parallelGateway, "src/test/resources/adaptability/ParallelGateway.bpmn");
+	}
+
 
 	@Test
 	public void noneStartEvent() {
