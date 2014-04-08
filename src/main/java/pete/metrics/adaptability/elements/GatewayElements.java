@@ -14,6 +14,15 @@ class GatewayElements {
 	public GatewayElements() {
 		elements = new HashSet<>();
 		buildExclusiveGateway();
+		buildInclusiveGateway();
+	}
+
+	private void buildInclusiveGateway() {
+		AdaptableElement inclusiveGateway = new AdaptableElement("inclusiveGateway");
+		inclusiveGateway.setLocatorExpression("//*[local-name() = 'inclusiveGateway']");
+		inclusiveGateway.addAdaption("parallelEventBasedGateway");
+		inclusiveGateway.addAdaption("complexGateway");
+		addToSet(inclusiveGateway);
 	}
 
 	private void buildExclusiveGateway() {

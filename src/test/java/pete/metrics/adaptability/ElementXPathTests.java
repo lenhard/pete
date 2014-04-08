@@ -47,6 +47,15 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void inclusiveGateway() {
+		AdaptableElement inclusiveGateway = elements.get("inclusiveGateway");
+		assertNoFalsePositives(inclusiveGateway,
+				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
+		assertDetection(inclusiveGateway, "src/test/resources/adaptability/InclusiveGateway.bpmn");
+	}
+
+
+	@Test
 	public void noneStartEvent() {
 		AdaptableElement noneStartEvent = elements.get("noneStartEvent");
 		assertDetection(noneStartEvent,
