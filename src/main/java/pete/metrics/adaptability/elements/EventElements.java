@@ -29,6 +29,7 @@ class EventElements extends ElementsCollection {
 		buildEventSubProcessInterruptingEscalationStartEvent();
 		buildEventSubProcessNonInterruptingEscalationStartEvent();
 		buildEventSubProcessErrorStartEvent();
+		buildEventSubProcessCompensationStartEvent();
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
@@ -73,6 +74,14 @@ class EventElements extends ElementsCollection {
 		errorStartEvent.addAdaption("conditionalStartEvent");
 		errorStartEvent.addAdaption("multipleStartEvent");
 		errorStartEvent.addAdaption("multipleParallelStartEvent");
+		add(errorStartEvent);
+	}
+
+	private void buildEventSubProcessCompensationStartEvent(){
+		AdaptableElement compensationStartEvent = new AdaptableElement("compensationStartEvent");
+		compensationStartEvent.setLocatorExpression(buildEventSubProcessInterruptingStartEventXPathExpression("compensation"));
+		compensationStartEvent.setDocumentation("A compensation start event cannot be adapted since there is no alternative mechanism to trigger the compensation of a process that has completed");
+		add(compensationStartEvent);
 	}
 
 	private void buildEventSubProcessNonInterruptingEscalationStartEvent() {
