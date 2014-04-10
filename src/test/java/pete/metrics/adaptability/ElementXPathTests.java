@@ -47,6 +47,12 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void sequenceFlow() {
+		AdaptableElement exclusiveGateway = elements.get("sequenceFlow");
+		assertDetection(exclusiveGateway, "src/test/resources/adaptability/ExecutableProcess.bpmn");
+	}
+
+	@Test
 	public void inclusiveGateway() {
 		AdaptableElement inclusiveGateway = elements.get("inclusiveGateway");
 		assertNoFalsePositives(inclusiveGateway,
