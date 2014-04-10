@@ -34,6 +34,8 @@ class EventElements extends ElementsCollection {
 		buildEventSubProcessInterruptingConditionalStartEvent();
 		buildEventSubProcessNonInterruptingSignalStartEvent();
 		buildEventSubProcessInterruptingSignalStartEvent();
+		buildEventSubProcessNonInterruptingMultipleStartEvent();
+		buildEventSubProcessInterruptingMultipleStartEvent();
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
@@ -218,6 +220,38 @@ class EventElements extends ElementsCollection {
 		add(timerStartEvent);
 	}
 
+	private void buildEventSubProcessInterruptingMultipleStartEvent() {
+		AdaptableElement multipleStartEvent = new AdaptableElement(
+				"interruptingMultipleStartEvent");
+		multipleStartEvent
+		.setLocatorExpression("//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		multipleStartEvent
+		.addAdaption("A interrupting multipleStartEvent can be reduced to one of the available alternative interrupting start events");
+		multipleStartEvent.addAdaption("messageStartEvent");
+		multipleStartEvent.addAdaption("conditionalStartEvent");
+		multipleStartEvent.addAdaption("signalStartEvent");
+		multipleStartEvent.addAdaption("timerStartEvent");
+		multipleStartEvent.addAdaption("errorStartEvent");
+		multipleStartEvent.addAdaption("escalationStartEvent");
+		add(multipleStartEvent);
+	}
+
+	private void buildEventSubProcessNonInterruptingMultipleStartEvent() {
+		AdaptableElement multipleStartEvent = new AdaptableElement(
+				"nonInterruptingMultipleStartEvent");
+		multipleStartEvent
+		.setLocatorExpression("//*[local-name() = 'subProcess' and not (@triggeredByEvent = 'true')]/*[local-name() = 'startEvent' and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		multipleStartEvent
+		.addAdaption("A non-interrupting multipleStartEvent can be reduced to one of the available alternative non-interrupting start events");
+		multipleStartEvent.addAdaption("messageStartEvent");
+		multipleStartEvent.addAdaption("conditionalStartEvent");
+		multipleStartEvent.addAdaption("signalStartEvent");
+		multipleStartEvent.addAdaption("timerStartEvent");
+		multipleStartEvent.addAdaption("escalationStartEvent");
+		add(multipleStartEvent);
+	}
+
+
 	private void buildErrorBoundaryEvent() {
 		AdaptableElement errorBoundaryEvent = new AdaptableElement(
 				"errorBoundaryEvent");
@@ -318,7 +352,7 @@ class EventElements extends ElementsCollection {
 		multipleStartEvent
 		.setLocatorExpression("//*[local-name() = 'startEvent' and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
 		multipleStartEvent
-		.addAdaption("A multipleStartEvent can be adapted to multiple alternative start events");
+		.addAdaption("A multipleStartEvent can be reduced to one of the available alternative start events");
 		multipleStartEvent.addAdaption("messageStartEvent");
 		multipleStartEvent.addAdaption("conditionalStartEvent");
 		multipleStartEvent.addAdaption("signalStartEvent");
