@@ -30,6 +30,8 @@ class EventElements extends ElementsCollection {
 		buildEventSubProcessNonInterruptingEscalationStartEvent();
 		buildEventSubProcessErrorStartEvent();
 		buildEventSubProcessCompensationStartEvent();
+		buildEventSubProcessNonInterruptingConditionalStartEvent();
+		buildEventSubProcessInterruptingConditionalStartEvent();
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
@@ -62,6 +64,38 @@ class EventElements extends ElementsCollection {
 		interruptingMessageStartEvent.addAdaption("multipleStartEvent");
 		interruptingMessageStartEvent.addAdaption("multipleParallelStartEvent");
 		add(interruptingMessageStartEvent);
+	}
+
+	private void buildEventSubProcessNonInterruptingConditionalStartEvent() {
+		AdaptableElement conditionalStartEvent = new AdaptableElement(
+				"nonInterruptingConditionalStartEvent");
+		conditionalStartEvent
+		.setLocatorExpression(buildEventSubProcessNonInterruptingStartEventXPathExpression("conditional"));
+		conditionalStartEvent
+		.setDocumentation("A non-interrupting conditional start event can be adapted to another non-interrupting start event that uses an active trigger");
+		conditionalStartEvent.addAdaption("escalationStartEvent");
+		conditionalStartEvent.addAdaption("signalStartEvent");
+		conditionalStartEvent.addAdaption("messageStartEvent");
+		conditionalStartEvent.addAdaption("multipleStartEvent");
+		conditionalStartEvent
+		.addAdaption("multipleParallelStartEvent");
+		add(conditionalStartEvent);
+	}
+
+	private void buildEventSubProcessInterruptingConditionalStartEvent() {
+		AdaptableElement conditionalStartEvent = new AdaptableElement(
+				"interruptingConditionalStartEvent");
+		conditionalStartEvent
+		.setLocatorExpression(buildEventSubProcessInterruptingStartEventXPathExpression("conditional"));
+		conditionalStartEvent
+		.setDocumentation("An interrupting conditional start event can be adapted to another interrupting start event that uses an active trigger");
+		conditionalStartEvent.addAdaption("escalationStartEvent");
+		conditionalStartEvent.addAdaption("errorStartEvent");
+		conditionalStartEvent.addAdaption("signalStartEvent");
+		conditionalStartEvent.addAdaption("messageStartEvent");
+		conditionalStartEvent.addAdaption("multipleStartEvent");
+		conditionalStartEvent.addAdaption("multipleParallelStartEvent");
+		add(conditionalStartEvent);
 	}
 
 	private void buildEventSubProcessErrorStartEvent(){
