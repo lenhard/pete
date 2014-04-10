@@ -32,6 +32,8 @@ class EventElements extends ElementsCollection {
 		buildEventSubProcessCompensationStartEvent();
 		buildEventSubProcessNonInterruptingConditionalStartEvent();
 		buildEventSubProcessInterruptingConditionalStartEvent();
+		buildEventSubProcessNonInterruptingSignalStartEvent();
+		buildEventSubProcessInterruptingSignalStartEvent();
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
@@ -64,6 +66,38 @@ class EventElements extends ElementsCollection {
 		interruptingMessageStartEvent.addAdaption("multipleStartEvent");
 		interruptingMessageStartEvent.addAdaption("multipleParallelStartEvent");
 		add(interruptingMessageStartEvent);
+	}
+
+	private void buildEventSubProcessNonInterruptingSignalStartEvent() {
+		AdaptableElement signalStartEvent = new AdaptableElement(
+				"nonInterruptingSignalStartEvent");
+		signalStartEvent
+		.setLocatorExpression(buildEventSubProcessNonInterruptingStartEventXPathExpression("signal"));
+		signalStartEvent
+		.setDocumentation("A non-interrupting signal start event can be adapted to another non-interrupting start event that uses an active trigger");
+		signalStartEvent.addAdaption("escalationStartEvent");
+		signalStartEvent.addAdaption("messageStartEvent");
+		signalStartEvent.addAdaption("conditionalStartEvent");
+		signalStartEvent.addAdaption("multipleStartEvent");
+		signalStartEvent
+		.addAdaption("multipleParallelStartEvent");
+		add(signalStartEvent);
+	}
+
+	private void buildEventSubProcessInterruptingSignalStartEvent() {
+		AdaptableElement signalStartEvent = new AdaptableElement(
+				"interruptingSignalStartEvent");
+		signalStartEvent
+		.setLocatorExpression(buildEventSubProcessInterruptingStartEventXPathExpression("signal"));
+		signalStartEvent
+		.setDocumentation("An interrupting signal start event can be adapted to another interrupting start event that uses an active trigger");
+		signalStartEvent.addAdaption("escalationStartEvent");
+		signalStartEvent.addAdaption("errorStartEvent");
+		signalStartEvent.addAdaption("messageStartEvent");
+		signalStartEvent.addAdaption("conditionalStartEvent");
+		signalStartEvent.addAdaption("multipleStartEvent");
+		signalStartEvent.addAdaption("multipleParallelStartEvent");
+		add(signalStartEvent);
 	}
 
 	private void buildEventSubProcessNonInterruptingConditionalStartEvent() {
