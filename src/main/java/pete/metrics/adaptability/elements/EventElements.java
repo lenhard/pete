@@ -28,6 +28,7 @@ class EventElements extends ElementsCollection {
 		buildEventSubProcessNonInterruptingTimerStartEvent();
 		buildEventSubProcessInterruptingEscalationStartEvent();
 		buildEventSubProcessNonInterruptingEscalationStartEvent();
+		buildEventSubProcessErrorStartEvent();
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
@@ -60,6 +61,18 @@ class EventElements extends ElementsCollection {
 		interruptingMessageStartEvent.addAdaption("multipleStartEvent");
 		interruptingMessageStartEvent.addAdaption("multipleParallelStartEvent");
 		add(interruptingMessageStartEvent);
+	}
+
+	private void buildEventSubProcessErrorStartEvent(){
+		AdaptableElement errorStartEvent = new AdaptableElement("interruptingErrorStartEvent");
+		errorStartEvent.setLocatorExpression(buildEventSubProcessInterruptingStartEventXPathExpression("error"));
+		errorStartEvent.setDocumentation("An interrupting error start event can be adapted to another interrupting start event that uses an active trigger");
+		errorStartEvent.addAdaption("escalationStartEvent");
+		errorStartEvent.addAdaption("messageStartEvent");
+		errorStartEvent.addAdaption("signalStartEvent");
+		errorStartEvent.addAdaption("conditionalStartEvent");
+		errorStartEvent.addAdaption("multipleStartEvent");
+		errorStartEvent.addAdaption("multipleParallelStartEvent");
 	}
 
 	private void buildEventSubProcessNonInterruptingEscalationStartEvent() {
