@@ -24,6 +24,8 @@ class EventElements extends ElementsCollection {
 	private void buildEventSubProcessEvents() {
 		buildEventSubProcessNonInterruptingMessageStartEvent();
 		buildEventSubProcessInterruptingMessageStartEvent();
+		buildEventSubProcessInterruptingTimerStartEvent();
+		buildEventSubProcessNonInterruptingTimerStartEvent();
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
@@ -56,6 +58,39 @@ class EventElements extends ElementsCollection {
 		interruptingMessageStartEvent.addAdaption("multipleStartEvent");
 		interruptingMessageStartEvent.addAdaption("multipleParallelStartEvent");
 		add(interruptingMessageStartEvent);
+	}
+
+	private void buildEventSubProcessNonInterruptingTimerStartEvent() {
+		AdaptableElement timerStartEvent = new AdaptableElement(
+				"nonInterruptingTimerStartEvent");
+		timerStartEvent
+		.setLocatorExpression(buildEventSubProcessNonInterruptingStartEventXPathExpression("timer"));
+		timerStartEvent
+		.addAdaption("A timerStartEvent can be adapted to another startEvent that is triggered in some fashion, as it is possible to calculate the expiration of the time and trigger the event when it does");
+		timerStartEvent.addAdaption("signalStartEvent");
+		timerStartEvent.addAdaption("excalationStartEvent");
+		timerStartEvent.addAdaption("messageStartEvent");
+		timerStartEvent.addAdaption("signalStartEvent");
+		timerStartEvent.addAdaption("multipleStartEvent");
+		timerStartEvent.addAdaption("parallelMultipleStartEvent");
+		add(timerStartEvent);
+	}
+
+	private void buildEventSubProcessInterruptingTimerStartEvent() {
+		AdaptableElement timerStartEvent = new AdaptableElement(
+				"interruptingTimerStartEvent");
+		timerStartEvent
+		.setLocatorExpression(buildEventSubProcessInterruptingStartEventXPathExpression("timer"));
+		timerStartEvent
+		.addAdaption("A timerStartEvent can be adapted to another startEvent that is triggered in some fashion, as it is possible to calculate the expiration of the time and trigger the event when it does");
+		timerStartEvent.addAdaption("messageStartEvent");
+		timerStartEvent.addAdaption("escalationStartEvent");
+		timerStartEvent.addAdaption("errorStartEvent");
+		timerStartEvent.addAdaption("signalStartEvent");
+		timerStartEvent.addAdaption("conditionalStartEvent");
+		timerStartEvent.addAdaption("multipleStartEvent");
+		timerStartEvent.addAdaption("multipleParallelStartEvent");
+		add(timerStartEvent);
 	}
 
 	private void buildErrorBoundaryEvent() {
