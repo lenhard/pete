@@ -26,6 +26,8 @@ class EventElements extends ElementsCollection {
 		buildEventSubProcessInterruptingMessageStartEvent();
 		buildEventSubProcessInterruptingTimerStartEvent();
 		buildEventSubProcessNonInterruptingTimerStartEvent();
+		buildEventSubProcessInterruptingEscalationStartEvent();
+		buildEventSubProcessNonInterruptingEscalationStartEvent();
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
@@ -59,6 +61,39 @@ class EventElements extends ElementsCollection {
 		interruptingMessageStartEvent.addAdaption("multipleParallelStartEvent");
 		add(interruptingMessageStartEvent);
 	}
+
+	private void buildEventSubProcessNonInterruptingEscalationStartEvent() {
+		AdaptableElement escalationStartEvent = new AdaptableElement(
+				"nonInterruptingEscalationStartEvent");
+		escalationStartEvent
+		.setLocatorExpression(buildEventSubProcessNonInterruptingStartEventXPathExpression("escalation"));
+		escalationStartEvent
+		.setDocumentation("A non-interrupting escalation start event can be adapted to another non-interrupting start event that uses an active trigger");
+		escalationStartEvent.addAdaption("messageStartEvent");
+		escalationStartEvent.addAdaption("signalStartEvent");
+		escalationStartEvent.addAdaption("conditionalStartEvent");
+		escalationStartEvent.addAdaption("multipleStartEvent");
+		escalationStartEvent
+		.addAdaption("multipleParallelStartEvent");
+		add(escalationStartEvent);
+	}
+
+	private void buildEventSubProcessInterruptingEscalationStartEvent() {
+		AdaptableElement interruptingEscalationStartEvent = new AdaptableElement(
+				"interruptingEscalationStartEvent");
+		interruptingEscalationStartEvent
+		.setLocatorExpression(buildEventSubProcessInterruptingStartEventXPathExpression("escalation"));
+		interruptingEscalationStartEvent
+		.setDocumentation("An interrupting escalation start event can be adapted to another interrupting start event that uses an active trigger");
+		interruptingEscalationStartEvent.addAdaption("messageStartEvent");
+		interruptingEscalationStartEvent.addAdaption("errorStartEvent");
+		interruptingEscalationStartEvent.addAdaption("signalStartEvent");
+		interruptingEscalationStartEvent.addAdaption("conditionalStartEvent");
+		interruptingEscalationStartEvent.addAdaption("multipleStartEvent");
+		interruptingEscalationStartEvent.addAdaption("multipleParallelStartEvent");
+		add(interruptingEscalationStartEvent);
+	}
+
 
 	private void buildEventSubProcessNonInterruptingTimerStartEvent() {
 		AdaptableElement timerStartEvent = new AdaptableElement(
