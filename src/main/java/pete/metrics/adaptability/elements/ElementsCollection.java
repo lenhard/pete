@@ -3,16 +3,16 @@ package pete.metrics.adaptability.elements;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentSkipListSet;
 
 abstract class ElementsCollection {
 
 	private final Collection<AdaptableElement> elements;
 
 	public ElementsCollection() {
-		elements = new ConcurrentSkipListSet<>();
+		elements = new HashSet<>();
 	}
 
 	void add(AdaptableElement element) {
