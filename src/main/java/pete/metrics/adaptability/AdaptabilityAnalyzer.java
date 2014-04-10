@@ -40,7 +40,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		simpleCounter = new SimpleNodeCounter();
 		xpathCounter = new XPathNodeCounter();
 		inspector = new BpmnInspector();
-		metric = new WeightedAdaptabilityMetric();
+		metric = new BinaryAdaptabilityMetric();
 	}
 
 	@Override
