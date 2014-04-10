@@ -1,14 +1,48 @@
 package pete.metrics.adaptability.elements;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentSkipListSet;
 
-interface ElementsCollection {
+abstract class ElementsCollection {
 
-	public List<String> getElementNames();
+	private final Collection<AdaptableElement> elements;
 
-	public List<AdaptableElement> getElements();
+	public ElementsCollection() {
+		elements = new ConcurrentSkipListSet<>();
+	}
 
-	public Map<String, AdaptableElement> getElementsByName();
+	void add(AdaptableElement element) {
+		boolean success = elements.add(element);
+		if (!success) {
+			throw new IllegalStateException(element.getName()
+					+ " was tried to be added twice");
+		}
+	}
+
+	void addAll(Collection<AdaptableElement> elements){
+		elements.forEach(element -> add(element));
+	}
+
+	public List<String> getElementNames() {
+		List<String> result = new ArrayList<>(elements.size());
+		elements.forEach(element -> result.add(element.getName()));
+		return result;
+	}
+
+	public List<AdaptableElement> getElements() {
+		List<AdaptableElement> result = new ArrayList<>(elements.size());
+		elements.forEach(element -> result.add(element));
+		return result;
+	}
+
+	public Map<String, AdaptableElement> getElementsByName() {
+		HashMap<String, AdaptableElement> result = new HashMap<>();
+		elements.forEach(element -> result.put(element.getName(), element));
+		return result;
+	}
 
 }

@@ -1,18 +1,9 @@
 package pete.metrics.adaptability.elements;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
 
-class GatewayElements implements ElementsCollection{
-
-	private final Collection<AdaptableElement> elements;
+class GatewayElements extends ElementsCollection{
 
 	public GatewayElements() {
-		elements = new HashSet<>();
 		buildExclusiveGateway();
 		buildInclusiveGateway();
 		buildParallelGateway();
@@ -27,7 +18,7 @@ class GatewayElements implements ElementsCollection{
 		eventBasedGateway.setLocatorExpression("//*[local-name() = 'eventBasedGateway' and (@eventGatewayType = 'parallel')]");
 		eventBasedGateway.addAdaption("inclusiveGateway");
 		eventBasedGateway.addAdaption("complexGateway");
-		addToSet(eventBasedGateway);
+		add(eventBasedGateway);
 	}
 
 	private void buildEventBasedGateway() {
@@ -38,14 +29,14 @@ class GatewayElements implements ElementsCollection{
 		eventBasedGateway.addAdaption("inclusiveGateway");
 		eventBasedGateway.addAdaption("complexGateway");
 		eventBasedGateway.addAdaption("exclusiveGateway");
-		addToSet(eventBasedGateway);
+		add(eventBasedGateway);
 	}
 
 	private void buildComplexGateway() {
 		AdaptableElement complexGateway = new AdaptableElement("complexGateway");
 		complexGateway.setLocatorExpression("//*[local-name() = 'complexGateway']");
 		complexGateway.addAdaption("parallelEventBasedGateway");
-		addToSet(complexGateway);
+		add(complexGateway);
 	}
 
 	private void buildParallelGateway() {
@@ -54,7 +45,7 @@ class GatewayElements implements ElementsCollection{
 		parallelGateway.addAdaption("parallelEventBasedGateway");
 		parallelGateway.addAdaption("inclusiveGateway");
 		parallelGateway.addAdaption("complexGateway");
-		addToSet(parallelGateway);
+		add(parallelGateway);
 	}
 
 	private void buildInclusiveGateway() {
@@ -62,7 +53,7 @@ class GatewayElements implements ElementsCollection{
 		inclusiveGateway.setLocatorExpression("//*[local-name() = 'inclusiveGateway']");
 		inclusiveGateway.addAdaption("parallelEventBasedGateway");
 		inclusiveGateway.addAdaption("complexGateway");
-		addToSet(inclusiveGateway);
+		add(inclusiveGateway);
 	}
 
 	private void buildExclusiveGateway() {
@@ -71,38 +62,7 @@ class GatewayElements implements ElementsCollection{
 		exclusiveGateway.addAdaption("eventBasedGateway");
 		exclusiveGateway.addAdaption("complexGateway");
 		exclusiveGateway.addAdaption("inclusiveGateway");
-		addToSet(exclusiveGateway);
+		add(exclusiveGateway);
 	}
-
-	private void addToSet(AdaptableElement element) {
-		boolean success = elements.add(element);
-		if (!success) {
-			throw new IllegalStateException(element.getName()
-					+ " was tried to be added twice");
-		}
-	}
-
-	@Override
-	public List<String> getElementNames() {
-		List<String> result = new ArrayList<>(elements.size());
-		elements.forEach(element -> result.add(element.getName()));
-		return result;
-	}
-
-	@Override
-	public List<AdaptableElement> getElements() {
-		List<AdaptableElement> result = new ArrayList<>(elements.size());
-		elements.forEach(element -> result.add(element));
-		return result;
-	}
-
-	@Override
-	public Map<String, AdaptableElement> getElementsByName() {
-		HashMap<String, AdaptableElement> result = new HashMap<>();
-		elements.forEach(element -> result.put(element.getName(), element));
-		return result;
-	}
-
-
 
 }

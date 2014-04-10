@@ -1,18 +1,9 @@
 package pete.metrics.adaptability.elements;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
 
-class EventElements implements ElementsCollection{
-
-	private final Collection<AdaptableElement> elements;
+class EventElements extends ElementsCollection {
 
 	public EventElements() {
-		elements = new HashSet<>();
 		buildTopLevelEvents();
 		buildEventSubProcessEvents();
 	}
@@ -46,8 +37,9 @@ class EventElements implements ElementsCollection{
 		nonInterruptingMessageStartEvent.addAdaption("signalStartEvent");
 		nonInterruptingMessageStartEvent.addAdaption("conditionalStartEvent");
 		nonInterruptingMessageStartEvent.addAdaption("multipleStartEvent");
-		nonInterruptingMessageStartEvent.addAdaption("multipleParallelStartEvent");
-		addToSet(nonInterruptingMessageStartEvent);
+		nonInterruptingMessageStartEvent
+		.addAdaption("multipleParallelStartEvent");
+		add(nonInterruptingMessageStartEvent);
 	}
 
 	private void buildEventSubProcessInterruptingMessageStartEvent() {
@@ -63,7 +55,7 @@ class EventElements implements ElementsCollection{
 		interruptingMessageStartEvent.addAdaption("conditionalStartEvent");
 		interruptingMessageStartEvent.addAdaption("multipleStartEvent");
 		interruptingMessageStartEvent.addAdaption("multipleParallelStartEvent");
-		addToSet(interruptingMessageStartEvent);
+		add(interruptingMessageStartEvent);
 	}
 
 	private void buildErrorBoundaryEvent() {
@@ -77,7 +69,7 @@ class EventElements implements ElementsCollection{
 		errorBoundaryEvent.addAdaption("signalBoundaryEvent");
 		errorBoundaryEvent.addAdaption("multipleBoundaryEvent");
 		errorBoundaryEvent.addAdaption("multipleParallelBoundaryEvent");
-		addToSet(errorBoundaryEvent);
+		add(errorBoundaryEvent);
 	}
 
 	private void buildNoneEndEvent() {
@@ -88,7 +80,7 @@ class EventElements implements ElementsCollection{
 		noneEndEvent.addAdaption("signalEndEvent");
 		noneEndEvent.addAdaption("terminateEndEvent");
 		noneEndEvent.addAdaption("multipleEndEvent");
-		addToSet(noneEndEvent);
+		add(noneEndEvent);
 	}
 
 	private void buildNoneStartEvent() {
@@ -100,7 +92,7 @@ class EventElements implements ElementsCollection{
 		noneStartEvent.addAdaption("signalStartEvent");
 		noneStartEvent.addAdaption("multipleStartEvent");
 		noneStartEvent.addAdaption("parallelMultipleStartEvent");
-		addToSet(noneStartEvent);
+		add(noneStartEvent);
 	}
 
 	private void buildMessageStartEvent() {
@@ -114,7 +106,7 @@ class EventElements implements ElementsCollection{
 		messageStartEvent.addAdaption("signalStartEvent");
 		messageStartEvent.addAdaption("multipleStartEvent");
 		messageStartEvent.addAdaption("parallelMultipleStartEvent");
-		addToSet(messageStartEvent);
+		add(messageStartEvent);
 	}
 
 	private void buildTimerStartEvent() {
@@ -129,7 +121,7 @@ class EventElements implements ElementsCollection{
 		timerStartEvent.addAdaption("signalStartEvent");
 		timerStartEvent.addAdaption("multipleStartEvent");
 		timerStartEvent.addAdaption("parallelMultipleStartEvent");
-		addToSet(timerStartEvent);
+		add(timerStartEvent);
 	}
 
 	private void buildConditionalStartEvent() {
@@ -143,7 +135,7 @@ class EventElements implements ElementsCollection{
 		conditionalStartEvent.addAdaption("signalStartEvent");
 		conditionalStartEvent.addAdaption("multipleStartEvent");
 		conditionalStartEvent.addAdaption("parallelMultipleStartEvent");
-		addToSet(conditionalStartEvent);
+		add(conditionalStartEvent);
 	}
 
 	private void buildSignalStartEvent() {
@@ -157,7 +149,7 @@ class EventElements implements ElementsCollection{
 		signalStartEvent.addAdaption("conditionalStartEvent");
 		signalStartEvent.addAdaption("multipleStartEvent");
 		signalStartEvent.addAdaption("parallelMultipleStartEvent");
-		addToSet(signalStartEvent);
+		add(signalStartEvent);
 	}
 
 	private void buildMultipleStartEvent() {
@@ -172,7 +164,7 @@ class EventElements implements ElementsCollection{
 		multipleStartEvent.addAdaption("signalStartEvent");
 		multipleStartEvent.addAdaption("timerStartEvent");
 		multipleStartEvent.addAdaption("noneStartEvent");
-		addToSet(multipleStartEvent);
+		add(multipleStartEvent);
 	}
 
 	private void buildMultipleParallelStartEvent() {
@@ -182,7 +174,7 @@ class EventElements implements ElementsCollection{
 		.setLocatorExpression("//*[local-name() = 'startEvent' and @parallelMultiple = 'true' and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
 		multipleParallelStartEvent
 		.addAdaption("A multipleParallelStartEvent cannot be adapted since there is no other way to avoid the instantiation of a process unless multiple conditions are satisfied");
-		addToSet(multipleParallelStartEvent);
+		add(multipleParallelStartEvent);
 	}
 
 	private void buildSubProcessStartEvent() {
@@ -192,7 +184,7 @@ class EventElements implements ElementsCollection{
 		.setLocatorExpression("//*[local-name() = 'subProcess' and not(@triggeredByEvent = 'true')]/*[local-name() = 'startEvent']");
 		subProcessStartEvent
 		.addAdaption("A startEvent of an ordinary subProcess cannot be adapted since it is the only way of starting non-eventSubProcesses");
-		addToSet(subProcessStartEvent);
+		add(subProcessStartEvent);
 	}
 
 	private String buildStartEventXPathExpression(String eventType) {
@@ -233,35 +225,6 @@ class EventElements implements ElementsCollection{
 				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
 				+ eventType
 				+ "EventDefinition']/@id]) and (count(child::*[contains(local-name(),'ventDefinition')]) = 1)]";
-	}
-
-	private void addToSet(AdaptableElement element) {
-		boolean success = elements.add(element);
-		if (!success) {
-			throw new IllegalStateException(element.getName()
-					+ " was tried to be added twice");
-		}
-	}
-
-	@Override
-	public List<String> getElementNames() {
-		List<String> result = new ArrayList<>(elements.size());
-		elements.forEach(element -> result.add(element.getName()));
-		return result;
-	}
-
-	@Override
-	public List<AdaptableElement> getElements() {
-		List<AdaptableElement> result = new ArrayList<>(elements.size());
-		elements.forEach(element -> result.add(element));
-		return result;
-	}
-
-	@Override
-	public Map<String, AdaptableElement> getElementsByName() {
-		HashMap<String, AdaptableElement> result = new HashMap<>();
-		elements.forEach(element -> result.put(element.getName(), element));
-		return result;
 	}
 
 }

@@ -1,18 +1,9 @@
 package pete.metrics.adaptability.elements;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
 
-class ActivityElements implements ElementsCollection{
-
-	private final Collection<AdaptableElement> elements;
+class ActivityElements extends ElementsCollection{
 
 	public ActivityElements() {
-		elements = new HashSet<>();
 		buildOrdinarySubProcess();
 		buildBusinessRuleTask();
 		buildCallActivity();
@@ -49,7 +40,7 @@ class ActivityElements implements ElementsCollection{
 		callActivity.addAdaption("embedScriptTask");
 		callActivity.addAdaption("embedBusinessRuleTask");
 
-		addToSet(callActivity);
+		add(callActivity);
 	}
 
 	private void buildOrdinarySubProcess() {
@@ -63,7 +54,7 @@ class ActivityElements implements ElementsCollection{
 		subProcess.addAdaption("eventSubProcess");
 		subProcess.addAdaption("adHocSubProcess");
 
-		addToSet(subProcess);
+		add(subProcess);
 	}
 
 	private void buildEventSubProcess() {
@@ -77,7 +68,7 @@ class ActivityElements implements ElementsCollection{
 		eventSubProcess.addAdaption("callActiviyAndAdHocSubProcess");
 		eventSubProcess.addAdaption("callActivityAndOrdinarySubProcess");
 
-		addToSet(eventSubProcess);
+		add(eventSubProcess);
 	}
 
 	private void buildTransactionSubProcess() {
@@ -88,7 +79,7 @@ class ActivityElements implements ElementsCollection{
 		transactionSubProcess
 		.setDocumentation("A transactional context cannot be emulated with any other element in BPMN");
 
-		addToSet(transactionSubProcess);
+		add(transactionSubProcess);
 	}
 
 	private void buildAdHocSubprocess() {
@@ -99,7 +90,7 @@ class ActivityElements implements ElementsCollection{
 		adHocSubProcess
 		.setDocumentation("Due to their unstructured nature, no general advice can be given on how to adapt an adHocSubProcess");
 
-		addToSet(adHocSubProcess);
+		add(adHocSubProcess);
 	}
 
 	private void buildSequentialMultInstanceSubProcess() {
@@ -118,7 +109,7 @@ class ActivityElements implements ElementsCollection{
 		sequentialMultiInstanceSubProcess.addAdaption("adHocSubprocess");
 		sequentialMultiInstanceSubProcess.addAdaption("loopSubProcess");
 
-		addToSet(sequentialMultiInstanceSubProcess);
+		add(sequentialMultiInstanceSubProcess);
 	}
 
 	private void buildParallelMultInstanceSubProcess() {
@@ -135,7 +126,7 @@ class ActivityElements implements ElementsCollection{
 		.addAdaption("embeddedfragmentWithComplexGateways");
 		sequentialMultiInstanceSubProcess.addAdaption("adHocSubprocess");
 
-		addToSet(sequentialMultiInstanceSubProcess);
+		add(sequentialMultiInstanceSubProcess);
 	}
 
 	private void buildLoopSubProcess() {
@@ -150,7 +141,7 @@ class ActivityElements implements ElementsCollection{
 		loopSubProcess.addAdaption("eventSubProcess");
 		loopSubProcess.addAdaption("adHocSubprocess");
 
-		addToSet(loopSubProcess);
+		add(loopSubProcess);
 	}
 
 	private void buildGlobalBusinessRuleTask() {
@@ -171,7 +162,7 @@ class ActivityElements implements ElementsCollection{
 		globalBusinessRuleTask.addAdaption("globalUserTask");
 		globalBusinessRuleTask.addAdaption("globalManualTask");
 
-		addToSet(globalBusinessRuleTask);
+		add(globalBusinessRuleTask);
 	}
 
 	private void buildBusinessRuleTask() {
@@ -192,7 +183,7 @@ class ActivityElements implements ElementsCollection{
 		businessRuleTask.addAdaption("globalManualTask");
 		businessRuleTask.addAdaption("globalBusinessRuleTask");
 
-		addToSet(businessRuleTask);
+		add(businessRuleTask);
 	}
 
 	private void buildGlobalManualTask() {
@@ -210,7 +201,7 @@ class ActivityElements implements ElementsCollection{
 		globalManualTask.addAdaption("manualTask");
 		globalManualTask.addAdaption("globalUserTask");
 		globalManualTask.addAdaption("sendTask");
-		addToSet(globalManualTask);
+		add(globalManualTask);
 	}
 
 	private void buildManualTask() {
@@ -226,7 +217,7 @@ class ActivityElements implements ElementsCollection{
 		manualTask.addAdaption("globalManualTask");
 		manualTask.addAdaption("globalUserTask");
 		manualTask.addAdaption("sendTask");
-		addToSet(manualTask);
+		add(manualTask);
 	}
 
 	private void buildReceiveTask() {
@@ -244,7 +235,7 @@ class ActivityElements implements ElementsCollection{
 		receiveTask.addAdaption("globalUserTask");
 		receiveTask.addAdaption("messageEvent");
 
-		addToSet(receiveTask);
+		add(receiveTask);
 	}
 
 	private void buildScriptTask() {
@@ -261,7 +252,7 @@ class ActivityElements implements ElementsCollection{
 		scriptTask.addAdaption("globalManualTask");
 		scriptTask.addAdaption("globalUserTask");
 
-		addToSet(scriptTask);
+		add(scriptTask);
 	}
 
 	private void buildGlobalScriptTask() {
@@ -279,7 +270,7 @@ class ActivityElements implements ElementsCollection{
 		globalScriptTask.addAdaption("globalScriptTask");
 		globalScriptTask.addAdaption("globalManualTask");
 		globalScriptTask.addAdaption("globalUserTask");
-		addToSet(globalScriptTask);
+		add(globalScriptTask);
 	}
 
 	private void buildSendTask() {
@@ -295,7 +286,7 @@ class ActivityElements implements ElementsCollection{
 		sendTask.addAdaption("globalManualTask");
 		sendTask.addAdaption("globalUserTask");
 
-		addToSet(sendTask);
+		add(sendTask);
 	}
 
 	private void buildServiceTask() {
@@ -312,7 +303,7 @@ class ActivityElements implements ElementsCollection{
 		serviceTask.addAdaption("globalManualTask");
 		serviceTask.addAdaption("globalUserTask");
 
-		addToSet(serviceTask);
+		add(serviceTask);
 	}
 
 	private void buildUserTask() {
@@ -327,7 +318,7 @@ class ActivityElements implements ElementsCollection{
 		userTask.addAdaption("globalScriptTask");
 		userTask.addAdaption("globalManualTask");
 		userTask.addAdaption("globalUserTask");
-		addToSet(userTask);
+		add(userTask);
 	}
 
 	private void buildGlobalUserTask() {
@@ -345,7 +336,7 @@ class ActivityElements implements ElementsCollection{
 		globalUserTask.addAdaption("globalScriptTask");
 		globalUserTask.addAdaption("globalManualTask");
 		globalUserTask.addAdaption("userTask");
-		addToSet(globalUserTask);
+		add(globalUserTask);
 	}
 
 	private void buildLoopTask() {
@@ -360,7 +351,7 @@ class ActivityElements implements ElementsCollection{
 		loopTask.addAdaption("loopSubProcess");
 		loopTask.addAdaption("adHocSubProcess");
 		loopTask.addAdaption("eventSubProcess");
-		addToSet(loopTask);
+		add(loopTask);
 	}
 
 	private void buildSequentialMultiInstanceTask() {
@@ -378,7 +369,7 @@ class ActivityElements implements ElementsCollection{
 		multiInstanceTask.addAdaption("multiInstanceSubProcess");
 		multiInstanceTask.addAdaption("adHocSubProcess");
 		multiInstanceTask.addAdaption("eventSubProcess");
-		addToSet(multiInstanceTask);
+		add(multiInstanceTask);
 	}
 
 	private void buildParallelMultiInstanceTask() {
@@ -393,7 +384,7 @@ class ActivityElements implements ElementsCollection{
 		multiInstanceTask.addAdaption("complexGatewaysAndSequenceFlows");
 		multiInstanceTask.addAdaption("multiInstanceSubProcess");
 		multiInstanceTask.addAdaption("adHocSubProcess");
-		addToSet(multiInstanceTask);
+		add(multiInstanceTask);
 	}
 
 	private void buildTask() {
@@ -410,36 +401,7 @@ class ActivityElements implements ElementsCollection{
 		task.addAdaption("globalManualTask");
 		task.addAdaption("globalScriptTask");
 		task.addAdaption("globalBusinessRuleTask");
-		addToSet(task);
-	}
-
-	private void addToSet(AdaptableElement element) {
-		boolean success = elements.add(element);
-		if (!success) {
-			throw new IllegalStateException(element.getName()
-					+ " was tried to be added twice");
-		}
-	}
-
-	@Override
-	public List<String> getElementNames() {
-		List<String> result = new ArrayList<>(elements.size());
-		elements.forEach(element -> result.add(element.getName()));
-		return result;
-	}
-
-	@Override
-	public List<AdaptableElement> getElements() {
-		List<AdaptableElement> result = new ArrayList<>(elements.size());
-		elements.forEach(element -> result.add(element));
-		return result;
-	}
-
-	@Override
-	public Map<String, AdaptableElement> getElementsByName() {
-		HashMap<String, AdaptableElement> result = new HashMap<>();
-		elements.forEach(element -> result.put(element.getName(), element));
-		return result;
+		add(task);
 	}
 
 }
