@@ -378,20 +378,29 @@ public class ElementXPathTests {
 
 	@Test
 	public void nonInterruptingMessageStartEvent() {
-		AdaptableElement eventSubProcess = elements.get("nonInterruptingMesssageStartEvent");
+		AdaptableElement eventSubProcess = elements.get("nonInterruptingMessageStartEvent");
 		assertNoFalsePositives(eventSubProcess,
-				"src/test/resources/adaptability/EventSubProcess.bpmn");
+				"src/test/resources/adaptability/EventSubProcessInterruptingMessageStartEvent.bpmn");
 		assertDetection(eventSubProcess,
 				"src/test/resources/adaptability/EventSubProcessNonInterruptingMessageStartEvent.bpmn");
 	}
 
 	@Test
 	public void interruptingMessageStartEvent() {
-		AdaptableElement eventSubProcess = elements.get("interruptingMesssageStartEvent");
+		AdaptableElement eventSubProcess = elements.get("interruptingMessageStartEvent");
 		assertNoFalsePositives(eventSubProcess,
 				"src/test/resources/adaptability/EventSubProcessNonInterruptingMessageStartEvent.bpmn");
 		assertDetection(eventSubProcess,
 				"src/test/resources/adaptability/EventSubProcessInterruptingMessageStartEvent.bpmn");
+	}
+
+	@Test
+	public void interruptingMultipleStartEvent() {
+		AdaptableElement eventSubProcess = elements.get("interruptingMultipleStartEvent");
+		assertNoFalsePositives(eventSubProcess,
+				"src/test/resources/adaptability/EventSubProcess.bpmn");
+		assertDetection(eventSubProcess,
+				"src/test/resources/adaptability/EventSubProcessInterruptingMultipleStartEvent.bpmn");
 	}
 
 

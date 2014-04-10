@@ -40,7 +40,7 @@ class EventElements extends ElementsCollection {
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
 		AdaptableElement nonInterruptingMessageStartEvent = new AdaptableElement(
-				"nonInterruptingMesssageStartEvent");
+				"nonInterruptingMessageStartEvent");
 		nonInterruptingMessageStartEvent
 		.setLocatorExpression(buildEventSubProcessNonInterruptingStartEventXPathExpression("message"));
 		nonInterruptingMessageStartEvent
@@ -56,7 +56,7 @@ class EventElements extends ElementsCollection {
 
 	private void buildEventSubProcessInterruptingMessageStartEvent() {
 		AdaptableElement interruptingMessageStartEvent = new AdaptableElement(
-				"interruptingMesssageStartEvent");
+				"interruptingMessageStartEvent");
 		interruptingMessageStartEvent
 		.setLocatorExpression(buildEventSubProcessInterruptingStartEventXPathExpression("message"));
 		interruptingMessageStartEvent
@@ -224,7 +224,7 @@ class EventElements extends ElementsCollection {
 		AdaptableElement multipleStartEvent = new AdaptableElement(
 				"interruptingMultipleStartEvent");
 		multipleStartEvent
-		.setLocatorExpression("//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		.setLocatorExpression("//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and (@isInterrupting = 'true') and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
 		multipleStartEvent
 		.addAdaption("A interrupting multipleStartEvent can be reduced to one of the available alternative interrupting start events");
 		multipleStartEvent.addAdaption("messageStartEvent");
@@ -240,7 +240,7 @@ class EventElements extends ElementsCollection {
 		AdaptableElement multipleStartEvent = new AdaptableElement(
 				"nonInterruptingMultipleStartEvent");
 		multipleStartEvent
-		.setLocatorExpression("//*[local-name() = 'subProcess' and not (@triggeredByEvent = 'true')]/*[local-name() = 'startEvent' and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		.setLocatorExpression("//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and not and (@isInterrupting = 'true') and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
 		multipleStartEvent
 		.addAdaption("A non-interrupting multipleStartEvent can be reduced to one of the available alternative non-interrupting start events");
 		multipleStartEvent.addAdaption("messageStartEvent");
@@ -405,7 +405,7 @@ class EventElements extends ElementsCollection {
 
 	private String buildEventSubProcessNonInterruptingStartEventXPathExpression(
 			String eventType) {
-		return "//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and (child::*[local-name() = '"
+		return "//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and not(@isInterrupting = 'true') and (child::*[local-name() = '"
 				+ eventType
 				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
 				+ eventType
