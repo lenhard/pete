@@ -16,14 +16,30 @@ public final class AdaptableElement {
 
 	private volatile int hashCode;
 
+	private final boolean forDetectionOnly;
+
 	public AdaptableElement(String name) {
-		if (name == null) {
-			throw new IllegalArgumentException("name must not be null");
-		}
+		checkName(name);
 
 		this.name = name;
 		adaptions = new ArrayList<>();
 		documentation = "";
+		forDetectionOnly = false;
+	}
+
+	public AdaptableElement(String name, boolean isForDetectionOnly){
+		checkName(name);
+
+		this.name = name;
+		adaptions = new ArrayList<>();
+		documentation = "";
+		forDetectionOnly = isForDetectionOnly;
+	}
+
+	private void checkName(String name) {
+		if (name == null) {
+			throw new IllegalArgumentException("name must not be null");
+		}
 	}
 
 	public void addAdaption(String adaption) {
@@ -68,6 +84,10 @@ public final class AdaptableElement {
 		} else {
 			this.documentation = documentation;
 		}
+	}
+
+	public boolean isForDetectionOnly(){
+		return forDetectionOnly;
 	}
 
 	@Override
