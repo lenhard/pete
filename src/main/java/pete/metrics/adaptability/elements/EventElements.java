@@ -36,6 +36,8 @@ class EventElements extends ElementsCollection {
 		buildEventSubProcessInterruptingSignalStartEvent();
 		buildEventSubProcessNonInterruptingMultipleStartEvent();
 		buildEventSubProcessInterruptingMultipleStartEvent();
+		buildEventSubProcessNonInterruptingParallelMultipleStartEvent();
+		buildEventSubProcessInterruptingParallelMultipleStartEvent();
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
@@ -240,7 +242,7 @@ class EventElements extends ElementsCollection {
 		AdaptableElement multipleStartEvent = new AdaptableElement(
 				"nonInterruptingMultipleStartEvent");
 		multipleStartEvent
-		.setLocatorExpression("//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and not and (@isInterrupting = 'true') and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		.setLocatorExpression("//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and not (@isInterrupting = 'true') and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
 		multipleStartEvent
 		.addAdaption("A non-interrupting multipleStartEvent can be reduced to one of the available alternative non-interrupting start events");
 		multipleStartEvent.addAdaption("messageStartEvent");
@@ -249,6 +251,26 @@ class EventElements extends ElementsCollection {
 		multipleStartEvent.addAdaption("timerStartEvent");
 		multipleStartEvent.addAdaption("escalationStartEvent");
 		add(multipleStartEvent);
+	}
+
+	private void buildEventSubProcessInterruptingParallelMultipleStartEvent() {
+		AdaptableElement parallelMultipleStartEvent = new AdaptableElement(
+				"interruptingParallelMultipleStartEvent");
+		parallelMultipleStartEvent
+		.setLocatorExpression("//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and (@isInterrupting = 'true') and (@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		parallelMultipleStartEvent
+		.addAdaption("A multipleParallelStartEvent cannot be adapted since there is no other way to avoid the instantiation of a process unless multiple conditions are satisfied");
+		add(parallelMultipleStartEvent);
+	}
+
+	private void buildEventSubProcessNonInterruptingParallelMultipleStartEvent() {
+		AdaptableElement parallelMultipleStartEvent = new AdaptableElement(
+				"nonInterruptingParallelMultipleStartEvent");
+		parallelMultipleStartEvent
+		.setLocatorExpression("//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and not (@isInterrupting = 'true') and (@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		parallelMultipleStartEvent
+		.addAdaption("A multipleParallelStartEvent cannot be adapted since there is no other way to avoid the instantiation of a process unless multiple conditions are satisfied");
+		add(parallelMultipleStartEvent);
 	}
 
 
