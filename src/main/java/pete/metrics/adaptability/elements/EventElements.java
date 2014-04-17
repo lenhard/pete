@@ -7,6 +7,7 @@ class EventElements extends ElementsCollection {
 		buildTopLevelStartEvents();
 		buildEventSubProcessStartEvents();
 		buildEndEvents();
+		buildIntermediateEvents();
 	}
 
 	public String buildEventXPathExpression(String event, String eventType) {
@@ -62,6 +63,21 @@ class EventElements extends ElementsCollection {
 		buildMultipleEndEvent();
 	}
 
+	private void buildIntermediateEvents() {
+		buildIntermediateNoneThrowEvent();
+	}
+
+	private void buildIntermediateNoneThrowEvent() {
+		AdaptableElement noneThrowEvent = new AdaptableElement(
+				"intermediateNoneThrowEvent");
+		noneThrowEvent.setLocatorExpression("//*[local-name() = 'intermediateThrowEvent' and not(child::*[contains(local-name(),'ventDefinition')])]");
+		noneThrowEvent.setDocumentation("This event can be adapted to another intermediateThrowEvent used in normal flow");
+		noneThrowEvent.addAdaption("intermediateMessageThrowEvent");
+		noneThrowEvent.addAdaption("intermediateSignalThrowEvent");
+		noneThrowEvent.addAdaption("intermediateMultipleThrowEvent");
+		noneThrowEvent.addAdaption("intermediateParallelMultipleThrowEvent");
+		add(noneThrowEvent);
+	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
 		AdaptableElement nonInterruptingMessageStartEvent = new AdaptableElement(
@@ -78,6 +94,8 @@ class EventElements extends ElementsCollection {
 		.addAdaption("multipleParallelStartEvent");
 		add(nonInterruptingMessageStartEvent);
 	}
+
+
 
 	private void buildEventSubProcessInterruptingMessageStartEvent() {
 		AdaptableElement interruptingMessageStartEvent = new AdaptableElement(

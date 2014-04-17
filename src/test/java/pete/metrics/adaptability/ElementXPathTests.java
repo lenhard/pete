@@ -157,6 +157,14 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void intermediateNoneThrowEvent() {
+		AdaptableElement inclusiveGateway = elements.get("intermediateNoneThrowEvent");
+		assertNoFalsePositives(inclusiveGateway,
+				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
+		assertDetection(inclusiveGateway, "src/test/resources/adaptability/IntermediateNoneThrowEvent.bpmn");
+	}
+
+	@Test
 	public void interruptingMessageStartEvent() {
 		AdaptableElement eventSubProcess = elements.get("interruptingMessageStartEvent");
 		assertNoFalsePositives(eventSubProcess,
