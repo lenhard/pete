@@ -297,7 +297,7 @@ class EventElements extends ElementsCollection {
 	private void buildNoneEndEvent() {
 		AdaptableElement noneEndEvent = new AdaptableElement("noneEndEvent");
 		noneEndEvent
-		.setLocatorExpression("//*[local-name() = 'process' or local-name() = 'subProcess']/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'ventDefinition')])]");
+		.setLocatorExpression("//*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'ventDefinition')])]");
 		noneEndEvent.addAdaption("messageEndEvent");
 		noneEndEvent.addAdaption("signalEndEvent");
 		noneEndEvent.addAdaption("terminateEndEvent");
