@@ -67,6 +67,7 @@ class EventElements extends ElementsCollection {
 		buildIntermediateNoneThrowEvent();
 		buildIntermediateMessageThrowEvent();
 		buildIntermediateMessageCatchEvent();
+		buildIntermediateTimerCatchEvent();
 	}
 
 	private void buildIntermediateNoneThrowEvent() {
@@ -103,6 +104,21 @@ class EventElements extends ElementsCollection {
 		messageThrowEvent.addAdaption("intermediateMultipleCatchEvent");
 		messageThrowEvent.addAdaption("intermediateParallelMultipleCatchEvent");
 		add(messageThrowEvent);
+	}
+
+	private void buildIntermediateTimerCatchEvent() {
+		AdaptableElement timerCatchEvent = new AdaptableElement(
+				"intermediateTimerCatchEvent");
+		timerCatchEvent
+		.setLocatorExpression(buildIntermediateCatchEvents("timer"));
+		timerCatchEvent
+		.addAdaption("A timerStartEvent can be adapted to another catchEvent that is triggered in some fashion, as it is possible to calculate the expiration of the time and trigger the event when it does");
+		timerCatchEvent.addAdaption("conditionalStartEvent");
+		timerCatchEvent.addAdaption("messageStartEvent");
+		timerCatchEvent.addAdaption("signalStartEvent");
+		timerCatchEvent.addAdaption("multipleStartEvent");
+		timerCatchEvent.addAdaption("parallelMultipleStartEvent");
+		add(timerCatchEvent);
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
