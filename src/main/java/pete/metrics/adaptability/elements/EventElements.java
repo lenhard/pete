@@ -8,20 +8,10 @@ class EventElements extends ElementsCollection {
 		buildEventSubProcessStartEvents();
 		buildEndEvents();
 		buildIntermediateEvents();
-	}
-
-	public String buildEventXPathExpression(String event, String eventType) {
-		return "//*[local-name() = '"
-				+ event
-				+ "Event' and (child::*[local-name() = '"
-				+ eventType
-				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
-				+ eventType
-				+ "EventDefinition']/@id]) and (count(child::*[contains(local-name(),'ventDefinition')]) = 1)]";
+		buildBoundaryEvents();
 	}
 
 	private void buildTopLevelStartEvents() {
-		buildErrorBoundaryEvent();
 		buildNoneStartEvent();
 		buildMessageStartEvent();
 		buildTimerStartEvent();
@@ -77,6 +67,54 @@ class EventElements extends ElementsCollection {
 		buildIntermediateMultipleCatchEvent();
 		buildIntermediateMultipleParallelCatchEvent();
 	}
+
+	private void buildBoundaryEvents(){
+		buildInterruptingMessageBoundaryEvent();
+		buildErrorBoundaryEvent();
+		buildNonInterruptingMessageBoundaryEvent();
+	}
+
+	public String buildEventXPathExpression(String event, String eventType) {
+		return "//*[local-name() = '"
+				+ event
+				+ "Event' and (child::*[local-name() = '"
+				+ eventType
+				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
+				+ eventType
+				+ "EventDefinition']/@id]) and (count(child::*[contains(local-name(),'ventDefinition')]) = 1)]";
+	}
+
+	private void buildInterruptingMessageBoundaryEvent() {
+		AdaptableElement interruptingMessageBoundaryEvent = new AdaptableElement(
+				"interruptingMessageBoundaryEvent");
+		interruptingMessageBoundaryEvent
+		.setLocatorExpression(buildInterruptingBoundaryEventXPathExpression("message"));
+		interruptingMessageBoundaryEvent
+		.setDocumentation("An interrupting boundary message event can be adapted to another interrupting boundary event that uses an active trigger");
+		interruptingMessageBoundaryEvent.addAdaption("interruptingEscalationBoundaryEvent");
+		interruptingMessageBoundaryEvent.addAdaption("interruptingErrorBoundaryEvent");
+		interruptingMessageBoundaryEvent.addAdaption("interruptingSignalBoundaryEvent");
+		interruptingMessageBoundaryEvent.addAdaption("interruptingConditionalBoundaryEvent");
+		interruptingMessageBoundaryEvent.addAdaption("interruptingMultipleBoundaryEvent");
+		interruptingMessageBoundaryEvent.addAdaption("interruptingMultipleParallelBoundaryEvent");
+		add(interruptingMessageBoundaryEvent);
+	}
+
+	private void buildNonInterruptingMessageBoundaryEvent() {
+		AdaptableElement nonInterruptingMessageBoundaryEvent = new AdaptableElement(
+				"nonInterruptingMessageBoundaryEvent");
+		nonInterruptingMessageBoundaryEvent
+		.setLocatorExpression(buildNonInterruptingBoundaryEventXPathExpression("message"));
+		nonInterruptingMessageBoundaryEvent
+		.setDocumentation("An non-interrupting boundary message event can be adapted to another non-interrupting boundary event that uses an active trigger");
+		nonInterruptingMessageBoundaryEvent.addAdaption("nonInterruptingEscalationBoundaryEvent");
+		nonInterruptingMessageBoundaryEvent.addAdaption("nonInterruptingSignalBoundaryEvent");
+		nonInterruptingMessageBoundaryEvent.addAdaption("nonInterruptingConditionalBoundaryEvent");
+		nonInterruptingMessageBoundaryEvent.addAdaption("nonInterruptingMultipleBoundaryEvent");
+		nonInterruptingMessageBoundaryEvent.addAdaption("nonInterruptingMultipleParallelBoundaryEvent");
+		add(nonInterruptingMessageBoundaryEvent);
+	}
+
 
 	private void buildIntermediateNoneThrowEvent() {
 		AdaptableElement noneThrowEvent = new AdaptableElement(
@@ -470,7 +508,7 @@ class EventElements extends ElementsCollection {
 		AdaptableElement errorBoundaryEvent = new AdaptableElement(
 				"errorBoundaryEvent");
 		errorBoundaryEvent
-		.setLocatorExpression(buildBoundaryEventXPathExpression("error"));
+		.setLocatorExpression(buildNonInterruptingBoundaryEventXPathExpression("error"));
 		errorBoundaryEvent.addAdaption("messageBoundaryEvent");
 		errorBoundaryEvent.addAdaption("escalationBoundaryEvent");
 		errorBoundaryEvent.addAdaption("conditionalBoundaryEvent");
@@ -682,10 +720,6 @@ class EventElements extends ElementsCollection {
 		return buildEventXPathExpression("end", eventType);
 	}
 
-	private String buildBoundaryEventXPathExpression(String eventType) {
-		return buildEventXPathExpression("boundary", eventType);
-	}
-
 	private String buildIntermediateThrowEventXPathExpression(String eventType){
 		return buildEventXPathExpression("intermediateThrow", eventType);
 	}
@@ -706,6 +740,23 @@ class EventElements extends ElementsCollection {
 	private String buildEventSubProcessInterruptingStartEventXPathExpression(
 			String eventType) {
 		return "//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and @isInterrupting = 'true' and (child::*[local-name() = '"
+				+ eventType
+				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
+				+ eventType
+				+ "EventDefinition']/@id]) and (count(child::*[contains(local-name(),'ventDefinition')]) = 1)]";
+	}
+
+	private String buildNonInterruptingBoundaryEventXPathExpression(
+			String eventType) {
+		return "//*[local-name() = 'boundaryEvent' and not(@isInterrupting = 'true') and (child::*[local-name() = '"
+				+ eventType
+				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
+				+ eventType
+				+ "EventDefinition']/@id]) and (count(child::*[contains(local-name(),'ventDefinition')]) = 1)]";
+	}
+
+	private String buildInterruptingBoundaryEventXPathExpression(String eventType) {
+		return "//*[local-name() = 'boundaryEvent' and @isInterrupting = 'true' and (child::*[local-name() = '"
 				+ eventType
 				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
 				+ eventType
