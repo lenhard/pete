@@ -85,7 +85,7 @@ class EventElements extends ElementsCollection {
 	private void buildIntermediateMessageThrowEvent() {
 		AdaptableElement messageThrowEvent = new AdaptableElement(
 				"intermediateMessageThrowEvent");
-		messageThrowEvent.setLocatorExpression(buildIntermediateThrowEvents("message"));
+		messageThrowEvent.setLocatorExpression(buildIntermediateThrowEventXPathExpression("message"));
 		System.out.println(messageThrowEvent.getLocatorExpression());
 		messageThrowEvent.setDocumentation("This event can be adapted to another intermediateThrowEvent used in normal flow that provides a trigger");
 		messageThrowEvent.addAdaption("intermediateSignalThrowEvent");
@@ -97,7 +97,7 @@ class EventElements extends ElementsCollection {
 	private void buildIntermediateMessageCatchEvent() {
 		AdaptableElement messageThrowEvent = new AdaptableElement(
 				"intermediateMessageCatchEvent");
-		messageThrowEvent.setLocatorExpression(buildIntermediateCatchEvents("message"));
+		messageThrowEvent.setLocatorExpression(buildIntermediateCatchEventXPathExpression("message"));
 		System.out.println(messageThrowEvent.getLocatorExpression());
 		messageThrowEvent.setDocumentation("This event can be adapted to another intermediateCatchEvent used in normal flow that consumes a trigger");
 		messageThrowEvent.addAdaption("intermediateSignalCatchEvent");
@@ -110,7 +110,7 @@ class EventElements extends ElementsCollection {
 		AdaptableElement timerCatchEvent = new AdaptableElement(
 				"intermediateTimerCatchEvent");
 		timerCatchEvent
-		.setLocatorExpression(buildIntermediateCatchEvents("timer"));
+		.setLocatorExpression(buildIntermediateCatchEventXPathExpression("timer"));
 		timerCatchEvent
 		.addAdaption("A timerStartEvent can be adapted to another catchEvent that is triggered in some fashion, as it is possible to calculate the expiration of the time and trigger the event when it does");
 		timerCatchEvent.addAdaption("conditionalStartEvent");
@@ -577,11 +577,11 @@ class EventElements extends ElementsCollection {
 		return buildEventXPathExpression("boundary", eventType);
 	}
 
-	private String buildIntermediateThrowEvents(String eventType){
+	private String buildIntermediateThrowEventXPathExpression(String eventType){
 		return buildEventXPathExpression("intermediateThrow", eventType);
 	}
 
-	private String buildIntermediateCatchEvents(String eventType){
+	private String buildIntermediateCatchEventXPathExpression(String eventType){
 		return buildEventXPathExpression("intermediateCatch", eventType);
 	}
 
