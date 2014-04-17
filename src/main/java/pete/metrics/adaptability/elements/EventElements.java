@@ -4,11 +4,11 @@ package pete.metrics.adaptability.elements;
 class EventElements extends ElementsCollection {
 
 	public EventElements() {
-		buildTopLevelEvents();
-		buildEventSubProcessEvents();
+		buildTopLevelStartEvents();
+		buildEventSubProcessStartEvents();
 	}
 
-	private void buildTopLevelEvents() {
+	private void buildTopLevelStartEvents() {
 		buildNoneEndEvent();
 		buildErrorBoundaryEvent();
 		buildNoneStartEvent();
@@ -21,7 +21,7 @@ class EventElements extends ElementsCollection {
 		buildSubProcessStartEvent();
 	}
 
-	private void buildEventSubProcessEvents() {
+	private void buildEventSubProcessStartEvents() {
 		buildEventSubProcessNonInterruptingMessageStartEvent();
 		buildEventSubProcessInterruptingMessageStartEvent();
 		buildEventSubProcessInterruptingTimerStartEvent();
