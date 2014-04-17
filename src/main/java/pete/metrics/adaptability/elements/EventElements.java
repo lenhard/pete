@@ -9,6 +9,16 @@ class EventElements extends ElementsCollection {
 		buildEndEvents();
 	}
 
+	public String buildEventXPathExpression(String event, String eventType) {
+		return "//*[local-name() = '"
+				+ event
+				+ "Event' and (child::*[local-name() = '"
+				+ eventType
+				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
+				+ eventType
+				+ "EventDefinition']/@id]) and (count(child::*[contains(local-name(),'ventDefinition')]) = 1)]";
+	}
+
 	private void buildTopLevelStartEvents() {
 		buildErrorBoundaryEvent();
 		buildNoneStartEvent();
@@ -505,16 +515,6 @@ class EventElements extends ElementsCollection {
 
 	private String buildBoundaryEventXPathExpression(String eventType) {
 		return buildEventXPathExpression("boundary", eventType);
-	}
-
-	private String buildEventXPathExpression(String event, String eventType) {
-		return "//*[local-name() = '"
-				+ event
-				+ "Event' and (child::*[local-name() = '"
-				+ eventType
-				+ "EventDefinition'] or child::*[local-name() = 'eventDefinitionRef' and text() = //*[local-name() = '"
-				+ eventType
-				+ "EventDefinition']/@id]) and (count(child::*[contains(local-name(),'ventDefinition')]) = 1)]";
 	}
 
 	private String buildEventSubProcessNonInterruptingStartEventXPathExpression(
