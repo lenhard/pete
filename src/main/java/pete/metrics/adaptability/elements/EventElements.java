@@ -43,6 +43,13 @@ class EventElements extends ElementsCollection {
 	private void buildEndEvents() {
 		buildNoneEndEvent();
 		buildMessageEndEvent();
+		buildErrorEndEvent();
+		buildEscalationEndEvent();
+		buildCancelEndEvent();
+		buildCompensationEndEvent();
+		buildSignalEndEvent();
+		buildTerminateEndEvent();
+		buildMultipleEndEvent();
 	}
 
 
@@ -315,6 +322,74 @@ class EventElements extends ElementsCollection {
 		add(messageEndEvent);
 	}
 
+	private void buildErrorEndEvent() {
+		AdaptableElement errorEndEvent = new AdaptableElement("errorEndEvent");
+		errorEndEvent
+		.setLocatorExpression(buildEndEventXPathExpression("error"));
+		errorEndEvent.setDocumentation("There is hardly an equivalent for this end event, since it terminates all active threads and signals a fault. Therefore, only a combination of events can replace this event.");
+		errorEndEvent.addAdaption("multipleEndEvent");
+		add(errorEndEvent);
+	}
+
+	private void buildEscalationEndEvent() {
+		AdaptableElement escalationEndEvent = new AdaptableElement("escalationEndEvent");
+		escalationEndEvent
+		.setLocatorExpression(buildEndEventXPathExpression("escalation"));
+		escalationEndEvent.setDocumentation("There is hardly an equivalent for this end event, since it does not terminate all active threads and signals a problem. Therefore, only a combination of events can replace this event.");
+		escalationEndEvent.addAdaption("multipleEndEvent");
+		add(escalationEndEvent);
+	}
+
+	private void buildCancelEndEvent() {
+		AdaptableElement cancelEndEvent = new AdaptableElement("cancelEndEvent");
+		cancelEndEvent
+		.setLocatorExpression(buildEndEventXPathExpression("cancel"));
+		cancelEndEvent.setDocumentation("Since there is no alternative endEvent with transactional sematics, this event cannot be adapted");
+		add(cancelEndEvent);
+	}
+
+	private void buildCompensationEndEvent() {
+		AdaptableElement compensationEndEvent = new AdaptableElement("compensationEndEvent");
+		compensationEndEvent
+		.setLocatorExpression(buildEndEventXPathExpression("compensation"));
+		compensationEndEvent.setDocumentation("Since there is no alternative endEvent with compensation sematics, this event cannot be adapted");
+		add(compensationEndEvent);
+	}
+
+	private void buildSignalEndEvent() {
+		AdaptableElement signalEndEvent = new AdaptableElement("signalEndEvent");
+		signalEndEvent
+		.setLocatorExpression(buildEndEventXPathExpression("signal"));
+		signalEndEvent.setDocumentation("A signalEndEvent can be adapted to another type of endEvent that can refer to normal termination and produces a trigger");
+		signalEndEvent.addAdaption("messageEndEvent");
+		signalEndEvent.addAdaption("multipleEndEvent");
+		add(signalEndEvent);
+	}
+
+	private void buildTerminateEndEvent() {
+		AdaptableElement terminateEndEvent = new AdaptableElement("terminateEndEvent");
+		terminateEndEvent
+		.setLocatorExpression(buildEndEventXPathExpression("terminate"));
+		terminateEndEvent.setDocumentation("Since there is no alternative endEvent that results in immediate termination without compensation or event handling, this event cannot be adapted");
+		add(terminateEndEvent);
+	}
+
+	private void buildMultipleEndEvent() {
+		AdaptableElement multipleEndEvent = new AdaptableElement("multipleEndEvent");
+		multipleEndEvent
+		.setLocatorExpression(buildEndEventXPathExpression("multiple"));
+		multipleEndEvent.setDocumentation("A multipleEndEvent can be reduced to one of the available alternatives");
+		multipleEndEvent.addAdaption("noneEndEvent");
+		multipleEndEvent.addAdaption("messageEndEvent");
+		multipleEndEvent.addAdaption("errorEndEvent");
+		multipleEndEvent.addAdaption("escalationEndEvent");
+		multipleEndEvent.addAdaption("cancelEndEvent");
+		multipleEndEvent.addAdaption("compensationEndEvent");
+		multipleEndEvent.addAdaption("signalEndEvent");
+		multipleEndEvent.addAdaption("terminateEndEvent");
+		multipleEndEvent.addAdaption("multipleEndEvent");
+		add(multipleEndEvent);
+	}
 
 	private void buildNoneStartEvent() {
 		AdaptableElement noneStartEvent = new AdaptableElement("noneStartEvent");
