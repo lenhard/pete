@@ -517,6 +517,14 @@ class EventElements extends ElementsCollection {
 		return buildEventXPathExpression("boundary", eventType);
 	}
 
+	private String buildIntermediateThrowEvents(String eventType){
+		return buildEventXPathExpression("intermediateThrowEvent", eventType);
+	}
+
+	private String buildIntermediateCatchEvents(String eventType){
+		return buildEventXPathExpression("intermediateCatchEvent", eventType);
+	}
+
 	private String buildEventSubProcessNonInterruptingStartEventXPathExpression(
 			String eventType) {
 		return "//*[local-name() = 'subProcess' and @triggeredByEvent = 'true']/*[local-name() = 'startEvent' and not(@isInterrupting = 'true') and (child::*[local-name() = '"
