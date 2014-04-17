@@ -72,6 +72,8 @@ class EventElements extends ElementsCollection {
 		buildInterruptingMessageBoundaryEvent();
 		buildErrorBoundaryEvent();
 		buildNonInterruptingMessageBoundaryEvent();
+		buildNonInterruptingTimerBoundaryEvent();
+		buildInterruptingTimerBoundaryEvent();
 	}
 
 	public String buildEventXPathExpression(String event, String eventType) {
@@ -115,6 +117,39 @@ class EventElements extends ElementsCollection {
 		add(nonInterruptingMessageBoundaryEvent);
 	}
 
+	private void buildNonInterruptingTimerBoundaryEvent() {
+		AdaptableElement nonInterruptingTimerBoundaryEvent = new AdaptableElement(
+				"nonInterruptingTimerBoundaryEvent");
+		nonInterruptingTimerBoundaryEvent
+		.setLocatorExpression(buildNonInterruptingBoundaryEventXPathExpression("timer"));
+		nonInterruptingTimerBoundaryEvent
+		.addAdaption("A nonInterruptingTimerBoundaryEvent can be adapted to another noninterruptingBoundaryEvent that is triggered in some fashion, as it is possible to calculate the expiration of the time and trigger the event when it does");
+		nonInterruptingTimerBoundaryEvent.addAdaption("noninterruptingSignalBoundaryEvent");
+		nonInterruptingTimerBoundaryEvent.addAdaption("noninterruptingEscalationBoundaryEvent");
+		nonInterruptingTimerBoundaryEvent.addAdaption("noninterruptingConditionalBoundaryEvent");
+		nonInterruptingTimerBoundaryEvent.addAdaption("noninterruptingMessageBoundaryEvent");
+		nonInterruptingTimerBoundaryEvent.addAdaption("noninterruptingSignalBoundaryEvent");
+		nonInterruptingTimerBoundaryEvent.addAdaption("noninterruptingMultipleBoundaryEvent");
+		nonInterruptingTimerBoundaryEvent.addAdaption("noninterruptingParallelMultipleBoundaryEvent");
+		add(nonInterruptingTimerBoundaryEvent);
+	}
+
+	private void buildInterruptingTimerBoundaryEvent() {
+		AdaptableElement interruptingTimerBoundaryEvent = new AdaptableElement(
+				"interruptingTimerBoundaryEvent");
+		interruptingTimerBoundaryEvent
+		.setLocatorExpression(buildInterruptingBoundaryEventXPathExpression("timer"));
+		interruptingTimerBoundaryEvent
+		.addAdaption("An interruptingTimerBoundaryEvent can be adapted to another interruptingBoundaryEvent that is triggered in some fashion, as it is possible to calculate the expiration of the time and trigger the event when it does");
+		interruptingTimerBoundaryEvent.addAdaption("noninterruptingSignalBoundaryEvent");
+		interruptingTimerBoundaryEvent.addAdaption("noninterruptingEscalationBoundaryEvent");
+		interruptingTimerBoundaryEvent.addAdaption("noninterruptingConditionalBoundaryEvent");
+		interruptingTimerBoundaryEvent.addAdaption("noninterruptingMessageBoundaryEvent");
+		interruptingTimerBoundaryEvent.addAdaption("noninterruptingSignalBoundaryEvent");
+		interruptingTimerBoundaryEvent.addAdaption("noninterruptingMultipleBoundaryEvent");
+		interruptingTimerBoundaryEvent.addAdaption("noninterruptingParallelMultipleBoundaryEvent");
+		add(interruptingTimerBoundaryEvent);
+	}
 
 	private void buildIntermediateNoneThrowEvent() {
 		AdaptableElement noneThrowEvent = new AdaptableElement(
@@ -427,7 +462,7 @@ class EventElements extends ElementsCollection {
 		timerStartEvent
 		.addAdaption("A timerStartEvent can be adapted to another startEvent that is triggered in some fashion, as it is possible to calculate the expiration of the time and trigger the event when it does");
 		timerStartEvent.addAdaption("signalStartEvent");
-		timerStartEvent.addAdaption("excalationStartEvent");
+		timerStartEvent.addAdaption("escalationStartEvent");
 		timerStartEvent.addAdaption("messageStartEvent");
 		timerStartEvent.addAdaption("signalStartEvent");
 		timerStartEvent.addAdaption("multipleStartEvent");
