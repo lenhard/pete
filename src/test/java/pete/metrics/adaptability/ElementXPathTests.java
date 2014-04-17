@@ -39,208 +39,12 @@ public class ElementXPathTests {
 	}
 
 	@Test
-	public void exclusiveGateway() {
-		AdaptableElement exclusiveGateway = elements.get("exclusiveGateway");
-		assertNoFalsePositives(exclusiveGateway,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(exclusiveGateway, "src/test/resources/adaptability/ExclusiveGateway.bpmn");
-	}
-
-	@Test
-	public void sequenceFlow() {
-		AdaptableElement exclusiveGateway = elements.get("sequenceFlow");
-		assertDetection(exclusiveGateway, "src/test/resources/adaptability/ExecutableProcess.bpmn");
-	}
-
-	@Test
-	public void inclusiveGateway() {
-		AdaptableElement inclusiveGateway = elements.get("inclusiveGateway");
-		assertNoFalsePositives(inclusiveGateway,
-				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
-		assertDetection(inclusiveGateway, "src/test/resources/adaptability/InclusiveGateway.bpmn");
-	}
-
-	@Test
-	public void parallelGateway() {
-		AdaptableElement parallelGateway = elements.get("parallelGateway");
-		assertNoFalsePositives(parallelGateway,
-				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
-		assertDetection(parallelGateway, "src/test/resources/adaptability/ParallelGateway.bpmn");
-	}
-
-	@Test
-	public void complexGateway() {
-		AdaptableElement complexGateway = elements.get("complexGateway");
-		assertNoFalsePositives(complexGateway,
-				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
-		assertDetection(complexGateway, "src/test/resources/adaptability/ComplexGateway.bpmn");
-	}
-
-	@Test
-	public void eventBasedGateway() {
-		AdaptableElement complexGateway = elements.get("eventBasedGateway");
-		assertNoFalsePositives(complexGateway,
-				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
-		assertDetection(complexGateway, "src/test/resources/adaptability/EventBasedGateway.bpmn");
-	}
-
-
-	@Test
-	public void noneStartEvent() {
-		AdaptableElement noneStartEvent = elements.get("noneStartEvent");
-		assertDetection(noneStartEvent,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-	}
-
-	@Test
-	public void loopTask() {
-		AdaptableElement loopTask = elements.get("loopTask");
-		assertNoFalsePositives(loopTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(loopTask,
-				"src/test/resources/adaptability/LoopTask.bpmn");
-	}
-
-	@Test
-	public void loopSubProcess() {
-		AdaptableElement loopSubProcess = elements.get("loopSubProcess");
-		assertNoFalsePositives(loopSubProcess,
-				"src/test/resources/adaptability/LoopTask.bpmn");
-		assertDetection(loopSubProcess,
-				"src/test/resources/adaptability/LoopSubProcess.bpmn");
-	}
-
-	@Test
-	public void subProcess() {
-		AdaptableElement subProcess = elements.get("subProcess");
-		assertNoFalsePositives(subProcess,
-				"src/test/resources/adaptability/LoopSubProcess.bpmn");
-		assertNoFalsePositives(subProcess,
-				"src/test/resources/adaptability/SequentialMultiInstanceSubProcess.bpmn");
-		assertDetection(subProcess,
-				"src/test/resources/adaptability/SubProcess.bpmn");
-	}
-
-	@Test
-	public void eventSubProcess() {
-		AdaptableElement eventSubProcess = elements.get("eventSubProcess");
-		assertNoFalsePositives(eventSubProcess,
-				"src/test/resources/adaptability/AdHocSubProcess.bpmn");
-		assertDetection(eventSubProcess,
-				"src/test/resources/adaptability/EventSubProcess.bpmn");
-	}
-
-	@Test
 	public void adHocSubProcess() {
 		AdaptableElement loopTask = elements.get("adHocSubProcess");
 		assertNoFalsePositives(loopTask,
 				"src/test/resources/adaptability/ExecutableProcess.bpmn");
 		assertDetection(loopTask,
 				"src/test/resources/adaptability/AdHocSubProcess.bpmn");
-	}
-
-	@Test
-	public void transactionSubProcess() {
-		AdaptableElement loopTask = elements.get("transactionSubProcess");
-		assertNoFalsePositives(loopTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(loopTask,
-				"src/test/resources/adaptability/TransactionSubProcess.bpmn");
-	}
-
-	@Test
-	public void sequentialMultiInstanceTask() {
-		AdaptableElement sequentialMultiInstanceTask = elements
-				.get("sequentialMultiInstanceTask");
-		assertNoFalsePositives(sequentialMultiInstanceTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(sequentialMultiInstanceTask,
-				"src/test/resources/adaptability/SequentialMultiInstanceTask.bpmn");
-	}
-
-	@Test
-	public void parallelMultiInstanceTask() {
-		AdaptableElement parallelMultiInstanceTask = elements
-				.get("parallelMultiInstanceTask");
-		assertNoFalsePositives(parallelMultiInstanceTask,
-				"src/test/resources/adaptability/SequentialMultiInstanceTask.bpmn");
-		assertDetection(parallelMultiInstanceTask,
-				"src/test/resources/adaptability/ParallelMultiInstanceTask.bpmn");
-	}
-
-	@Test
-	public void sequentialMultiInstanceSubProcess() {
-		AdaptableElement sequentialMultiInstanceSubProcess = elements
-				.get("sequentialMultiInstanceSubProcess");
-		assertNoFalsePositives(sequentialMultiInstanceSubProcess,
-				"src/test/resources/adaptability/SequentialMultiInstanceTask.bpmn");
-		assertDetection(sequentialMultiInstanceSubProcess,
-				"src/test/resources/adaptability/SequentialMultiInstanceSubProcess.bpmn");
-	}
-
-	@Test
-	public void parallelMultiInstanceSubProcess() {
-		AdaptableElement parallelMultiInstanceSubProcess = elements
-				.get("parallelMultiInstanceSubProcess");
-		assertNoFalsePositives(parallelMultiInstanceSubProcess,
-				"src/test/resources/adaptability/SequentialMultiInstanceSubProcess.bpmn");
-		assertDetection(parallelMultiInstanceSubProcess,
-				"src/test/resources/adaptability/ParallelMultiInstanceSubProcess.bpmn");
-	}
-
-	@Test
-	public void userTask() {
-		AdaptableElement userTask = elements.get("userTask");
-		assertNoFalsePositives(userTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(userTask,
-				"src/test/resources/adaptability/UserTask.bpmn");
-	}
-
-	@Test
-	public void globalUserTask() {
-		AdaptableElement globalUserTask = elements.get("globalUserTask");
-		assertDetection(globalUserTask,
-				"src/test/resources/adaptability/GlobalUserTask.bpmn");
-		assertNoFalsePositives(globalUserTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-	}
-
-	@Test
-	public void globalScriptTask() {
-		AdaptableElement globalScriptTask = elements.get("globalScriptTask");
-		assertDetection(globalScriptTask,
-				"src/test/resources/adaptability/GlobalScriptTask.bpmn");
-		assertNoFalsePositives(globalScriptTask,
-				"src/test/resources/adaptability/GlobalUserTask.bpmn");
-	}
-
-	@Test
-	public void callActivityTask() {
-		AdaptableElement callActivity = elements.get("callActivity");
-		assertDetection(callActivity,
-				"src/test/resources/adaptability/GlobalScriptTask.bpmn");
-		assertNoFalsePositives(callActivity,
-				"src/test/resources/adaptability/ParallelMultiInstanceSubProcess.bpmn");
-	}
-
-	@Test
-	public void globalBusinessRuleTask() {
-		AdaptableElement globalBusinessRuleTask = elements
-				.get("globalBusinessRuleTask");
-		assertDetection(globalBusinessRuleTask,
-				"src/test/resources/adaptability/GlobalBusinessRuleTask.bpmn");
-		assertNoFalsePositives(globalBusinessRuleTask,
-				"src/test/resources/adaptability/GlobalUserTask.bpmn");
-	}
-
-	@Test
-	public void manualTask() {
-		AdaptableElement userTask = elements.get("manualTask");
-		assertNoFalsePositives(userTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(userTask,
-				"src/test/resources/adaptability/ManualTask.bpmn");
 	}
 
 	@Test
@@ -253,39 +57,30 @@ public class ElementXPathTests {
 	}
 
 	@Test
-	public void serviceTask() {
-		AdaptableElement serviceTask = elements.get("serviceTask");
-		assertDetection(serviceTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertNoFalsePositives(serviceTask,
-				"src/test/resources/adaptability/UserTask.bpmn");
+	public void callActivityTask() {
+		AdaptableElement callActivity = elements.get("callActivity");
+		assertDetection(callActivity,
+				"src/test/resources/adaptability/GlobalScriptTask.bpmn");
+		assertNoFalsePositives(callActivity,
+				"src/test/resources/adaptability/ParallelMultiInstanceSubProcess.bpmn");
 	}
 
 	@Test
-	public void sendTask() {
-		AdaptableElement sendTask = elements.get("sendTask");
-		assertNoFalsePositives(sendTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(sendTask,
-				"src/test/resources/adaptability/SendTask.bpmn");
+	public void complexGateway() {
+		AdaptableElement complexGateway = elements.get("complexGateway");
+		assertNoFalsePositives(complexGateway,
+				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
+		assertDetection(complexGateway, "src/test/resources/adaptability/ComplexGateway.bpmn");
 	}
 
-	@Test
-	public void scriptTask() {
-		AdaptableElement scriptTask = elements.get("scriptTask");
-		assertNoFalsePositives(scriptTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(scriptTask,
-				"src/test/resources/adaptability/ScriptTask.bpmn");
-	}
 
 	@Test
-	public void receiveTask() {
-		AdaptableElement receiveTask = elements.get("receiveTask");
-		assertNoFalsePositives(receiveTask,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(receiveTask,
-				"src/test/resources/adaptability/ReceiveTask.bpmn");
+	public void conditionalStartEvent() {
+		AdaptableElement conditionalStartEvent = elements.get("conditionalStartEvent");
+		assertNoFalsePositives(conditionalStartEvent,
+				"src/test/resources/adaptability/MessageStartEvent.bpmn");
+		assertDetection(conditionalStartEvent,
+				"src/test/resources/adaptability/ConditionalStartEvent.bpmn");
 	}
 
 	@Test
@@ -301,88 +96,64 @@ public class ElementXPathTests {
 	}
 
 	@Test
-	public void noneEndEvent() {
-		AdaptableElement noneStartEvent = elements.get("noneEndEvent");
-		assertNoFalsePositives(noneStartEvent,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(noneStartEvent,
-				"src/test/resources/adaptability/NoneEndEvent.bpmn");
+	public void eventBasedGateway() {
+		AdaptableElement complexGateway = elements.get("eventBasedGateway");
+		assertNoFalsePositives(complexGateway,
+				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
+		assertDetection(complexGateway, "src/test/resources/adaptability/EventBasedGateway.bpmn");
 	}
 
 	@Test
-	public void timerStartEvent() {
-		AdaptableElement timerStartEvent = elements.get("timerStartEvent");
-		assertNoFalsePositives(timerStartEvent,
-				"src/test/resources/adaptability/MessageStartEvent.bpmn");
-		assertDetection(timerStartEvent,
-				"src/test/resources/adaptability/TimerStartEvent.bpmn");
-	}
-
-	@Test
-	public void conditionalStartEvent() {
-		AdaptableElement conditionalStartEvent = elements.get("conditionalStartEvent");
-		assertNoFalsePositives(conditionalStartEvent,
-				"src/test/resources/adaptability/MessageStartEvent.bpmn");
-		assertDetection(conditionalStartEvent,
-				"src/test/resources/adaptability/ConditionalStartEvent.bpmn");
-	}
-
-	@Test
-	public void signalStartEvent() {
-		AdaptableElement signalStartEvent = elements.get("signalStartEvent");
-		assertNoFalsePositives(signalStartEvent,
-				"src/test/resources/adaptability/MessageStartEvent.bpmn");
-		assertNoFalsePositives(signalStartEvent,
-				"src/test/resources/adaptability/MultipleStartEvent.bpmn");
-		assertDetection(signalStartEvent,
-				"src/test/resources/adaptability/SignalStartEvent.bpmn");
-	}
-
-	@Test
-	public void multipleStartEvent() {
-		AdaptableElement multipleStartEvent = elements.get("multipleStartEvent");
-		assertNoFalsePositives(multipleStartEvent,
-				"src/test/resources/adaptability/SignalStartEvent.bpmn");
-		assertDetection(multipleStartEvent,
-				"src/test/resources/adaptability/MultipleStartEvent.bpmn");
-	}
-
-	@Test
-	public void multipleParallelStartEvent() {
-		AdaptableElement multipleParallelStartEvent = elements.get("multipleParallelStartEvent");
-		assertNoFalsePositives(multipleParallelStartEvent,
-				"src/test/resources/adaptability/MultipleStartEvent.bpmn");
-		assertDetection(multipleParallelStartEvent,
-				"src/test/resources/adaptability/MultipleParallelStartEvent.bpmn");
-	}
-
-	@Test
-	public void messageStartEvent() {
-		AdaptableElement messageStartEvent = elements.get("messageStartEvent");
-		assertNoFalsePositives(messageStartEvent,
-				"src/test/resources/adaptability/TimerStartEvent.bpmn");
-		assertDetection(messageStartEvent,
-				"src/test/resources/adaptability/MessageStartEvent.bpmn");
-	}
-
-	@Test
-	public void subProcessStartEvent() {
-		AdaptableElement subProcess = elements.get("subProcessStartEvent");
-		assertNoFalsePositives(subProcess,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(subProcess,
-				"src/test/resources/adaptability/SequentialMultiInstanceSubProcess.bpmn");
-		assertDetection(subProcess,
-				"src/test/resources/adaptability/SubProcess.bpmn");
-	}
-
-	@Test
-	public void nonInterruptingMessageStartEvent() {
-		AdaptableElement eventSubProcess = elements.get("nonInterruptingMessageStartEvent");
+	public void eventSubProcess() {
+		AdaptableElement eventSubProcess = elements.get("eventSubProcess");
 		assertNoFalsePositives(eventSubProcess,
-				"src/test/resources/adaptability/EventSubProcessInterruptingMessageStartEvent.bpmn");
+				"src/test/resources/adaptability/AdHocSubProcess.bpmn");
 		assertDetection(eventSubProcess,
-				"src/test/resources/adaptability/EventSubProcessNonInterruptingMessageStartEvent.bpmn");
+				"src/test/resources/adaptability/EventSubProcess.bpmn");
+	}
+
+	@Test
+	public void exclusiveGateway() {
+		AdaptableElement exclusiveGateway = elements.get("exclusiveGateway");
+		assertNoFalsePositives(exclusiveGateway,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(exclusiveGateway, "src/test/resources/adaptability/ExclusiveGateway.bpmn");
+	}
+
+	@Test
+	public void globalBusinessRuleTask() {
+		AdaptableElement globalBusinessRuleTask = elements
+				.get("globalBusinessRuleTask");
+		assertDetection(globalBusinessRuleTask,
+				"src/test/resources/adaptability/GlobalBusinessRuleTask.bpmn");
+		assertNoFalsePositives(globalBusinessRuleTask,
+				"src/test/resources/adaptability/GlobalUserTask.bpmn");
+	}
+
+	@Test
+	public void globalScriptTask() {
+		AdaptableElement globalScriptTask = elements.get("globalScriptTask");
+		assertDetection(globalScriptTask,
+				"src/test/resources/adaptability/GlobalScriptTask.bpmn");
+		assertNoFalsePositives(globalScriptTask,
+				"src/test/resources/adaptability/GlobalUserTask.bpmn");
+	}
+
+	@Test
+	public void globalUserTask() {
+		AdaptableElement globalUserTask = elements.get("globalUserTask");
+		assertDetection(globalUserTask,
+				"src/test/resources/adaptability/GlobalUserTask.bpmn");
+		assertNoFalsePositives(globalUserTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+	}
+
+	@Test
+	public void inclusiveGateway() {
+		AdaptableElement inclusiveGateway = elements.get("inclusiveGateway");
+		assertNoFalsePositives(inclusiveGateway,
+				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
+		assertDetection(inclusiveGateway, "src/test/resources/adaptability/InclusiveGateway.bpmn");
 	}
 
 	@Test
@@ -403,6 +174,235 @@ public class ElementXPathTests {
 				"src/test/resources/adaptability/EventSubProcessInterruptingMultipleStartEvent.bpmn");
 	}
 
+	@Test
+	public void loopSubProcess() {
+		AdaptableElement loopSubProcess = elements.get("loopSubProcess");
+		assertNoFalsePositives(loopSubProcess,
+				"src/test/resources/adaptability/LoopTask.bpmn");
+		assertDetection(loopSubProcess,
+				"src/test/resources/adaptability/LoopSubProcess.bpmn");
+	}
+
+	@Test
+	public void loopTask() {
+		AdaptableElement loopTask = elements.get("loopTask");
+		assertNoFalsePositives(loopTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(loopTask,
+				"src/test/resources/adaptability/LoopTask.bpmn");
+	}
+
+	@Test
+	public void manualTask() {
+		AdaptableElement userTask = elements.get("manualTask");
+		assertNoFalsePositives(userTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(userTask,
+				"src/test/resources/adaptability/ManualTask.bpmn");
+	}
+
+	@Test
+	public void messageStartEvent() {
+		AdaptableElement messageStartEvent = elements.get("messageStartEvent");
+		assertNoFalsePositives(messageStartEvent,
+				"src/test/resources/adaptability/TimerStartEvent.bpmn");
+		assertDetection(messageStartEvent,
+				"src/test/resources/adaptability/MessageStartEvent.bpmn");
+	}
+
+	@Test
+	public void multipleParallelStartEvent() {
+		AdaptableElement multipleParallelStartEvent = elements.get("multipleParallelStartEvent");
+		assertNoFalsePositives(multipleParallelStartEvent,
+				"src/test/resources/adaptability/MultipleStartEvent.bpmn");
+		assertDetection(multipleParallelStartEvent,
+				"src/test/resources/adaptability/MultipleParallelStartEvent.bpmn");
+	}
+
+	@Test
+	public void multipleStartEvent() {
+		AdaptableElement multipleStartEvent = elements.get("multipleStartEvent");
+		assertNoFalsePositives(multipleStartEvent,
+				"src/test/resources/adaptability/SignalStartEvent.bpmn");
+		assertDetection(multipleStartEvent,
+				"src/test/resources/adaptability/MultipleStartEvent.bpmn");
+	}
+
+	@Test
+	public void noneEndEvent() {
+		AdaptableElement noneStartEvent = elements.get("noneEndEvent");
+		assertNoFalsePositives(noneStartEvent,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(noneStartEvent,
+				"src/test/resources/adaptability/NoneEndEvent.bpmn");
+	}
+
+	@Test
+	public void noneStartEvent() {
+		AdaptableElement noneStartEvent = elements.get("noneStartEvent");
+		assertDetection(noneStartEvent,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+	}
+
+	@Test
+	public void nonInterruptingMessageStartEvent() {
+		AdaptableElement eventSubProcess = elements.get("nonInterruptingMessageStartEvent");
+		assertNoFalsePositives(eventSubProcess,
+				"src/test/resources/adaptability/EventSubProcessInterruptingMessageStartEvent.bpmn");
+		assertDetection(eventSubProcess,
+				"src/test/resources/adaptability/EventSubProcessNonInterruptingMessageStartEvent.bpmn");
+	}
+
+	@Test
+	public void parallelGateway() {
+		AdaptableElement parallelGateway = elements.get("parallelGateway");
+		assertNoFalsePositives(parallelGateway,
+				"src/test/resources/adaptability/ExclusiveGateway.bpmn");
+		assertDetection(parallelGateway, "src/test/resources/adaptability/ParallelGateway.bpmn");
+	}
+
+	@Test
+	public void parallelMultiInstanceSubProcess() {
+		AdaptableElement parallelMultiInstanceSubProcess = elements
+				.get("parallelMultiInstanceSubProcess");
+		assertNoFalsePositives(parallelMultiInstanceSubProcess,
+				"src/test/resources/adaptability/SequentialMultiInstanceSubProcess.bpmn");
+		assertDetection(parallelMultiInstanceSubProcess,
+				"src/test/resources/adaptability/ParallelMultiInstanceSubProcess.bpmn");
+	}
+
+	@Test
+	public void parallelMultiInstanceTask() {
+		AdaptableElement parallelMultiInstanceTask = elements
+				.get("parallelMultiInstanceTask");
+		assertNoFalsePositives(parallelMultiInstanceTask,
+				"src/test/resources/adaptability/SequentialMultiInstanceTask.bpmn");
+		assertDetection(parallelMultiInstanceTask,
+				"src/test/resources/adaptability/ParallelMultiInstanceTask.bpmn");
+	}
+
+	@Test
+	public void receiveTask() {
+		AdaptableElement receiveTask = elements.get("receiveTask");
+		assertNoFalsePositives(receiveTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(receiveTask,
+				"src/test/resources/adaptability/ReceiveTask.bpmn");
+	}
+
+	@Test
+	public void scriptTask() {
+		AdaptableElement scriptTask = elements.get("scriptTask");
+		assertNoFalsePositives(scriptTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(scriptTask,
+				"src/test/resources/adaptability/ScriptTask.bpmn");
+	}
+
+	@Test
+	public void sendTask() {
+		AdaptableElement sendTask = elements.get("sendTask");
+		assertNoFalsePositives(sendTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(sendTask,
+				"src/test/resources/adaptability/SendTask.bpmn");
+	}
+
+	@Test
+	public void sequenceFlow() {
+		AdaptableElement exclusiveGateway = elements.get("sequenceFlow");
+		assertDetection(exclusiveGateway, "src/test/resources/adaptability/ExecutableProcess.bpmn");
+	}
+
+	@Test
+	public void sequentialMultiInstanceSubProcess() {
+		AdaptableElement sequentialMultiInstanceSubProcess = elements
+				.get("sequentialMultiInstanceSubProcess");
+		assertNoFalsePositives(sequentialMultiInstanceSubProcess,
+				"src/test/resources/adaptability/SequentialMultiInstanceTask.bpmn");
+		assertDetection(sequentialMultiInstanceSubProcess,
+				"src/test/resources/adaptability/SequentialMultiInstanceSubProcess.bpmn");
+	}
+
+	@Test
+	public void sequentialMultiInstanceTask() {
+		AdaptableElement sequentialMultiInstanceTask = elements
+				.get("sequentialMultiInstanceTask");
+		assertNoFalsePositives(sequentialMultiInstanceTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(sequentialMultiInstanceTask,
+				"src/test/resources/adaptability/SequentialMultiInstanceTask.bpmn");
+	}
+
+	@Test
+	public void serviceTask() {
+		AdaptableElement serviceTask = elements.get("serviceTask");
+		assertDetection(serviceTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertNoFalsePositives(serviceTask,
+				"src/test/resources/adaptability/UserTask.bpmn");
+	}
+
+	@Test
+	public void signalStartEvent() {
+		AdaptableElement signalStartEvent = elements.get("signalStartEvent");
+		assertNoFalsePositives(signalStartEvent,
+				"src/test/resources/adaptability/MessageStartEvent.bpmn");
+		assertNoFalsePositives(signalStartEvent,
+				"src/test/resources/adaptability/MultipleStartEvent.bpmn");
+		assertDetection(signalStartEvent,
+				"src/test/resources/adaptability/SignalStartEvent.bpmn");
+	}
+
+	@Test
+	public void subProcess() {
+		AdaptableElement subProcess = elements.get("subProcess");
+		assertNoFalsePositives(subProcess,
+				"src/test/resources/adaptability/LoopSubProcess.bpmn");
+		assertNoFalsePositives(subProcess,
+				"src/test/resources/adaptability/SequentialMultiInstanceSubProcess.bpmn");
+		assertDetection(subProcess,
+				"src/test/resources/adaptability/SubProcess.bpmn");
+	}
+
+	@Test
+	public void subProcessStartEvent() {
+		AdaptableElement subProcess = elements.get("subProcessStartEvent");
+		assertNoFalsePositives(subProcess,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(subProcess,
+				"src/test/resources/adaptability/SequentialMultiInstanceSubProcess.bpmn");
+		assertDetection(subProcess,
+				"src/test/resources/adaptability/SubProcess.bpmn");
+	}
+
+
+	@Test
+	public void timerStartEvent() {
+		AdaptableElement timerStartEvent = elements.get("timerStartEvent");
+		assertNoFalsePositives(timerStartEvent,
+				"src/test/resources/adaptability/MessageStartEvent.bpmn");
+		assertDetection(timerStartEvent,
+				"src/test/resources/adaptability/TimerStartEvent.bpmn");
+	}
+
+	@Test
+	public void transactionSubProcess() {
+		AdaptableElement loopTask = elements.get("transactionSubProcess");
+		assertNoFalsePositives(loopTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(loopTask,
+				"src/test/resources/adaptability/TransactionSubProcess.bpmn");
+	}
+
+	@Test
+	public void userTask() {
+		AdaptableElement userTask = elements.get("userTask");
+		assertNoFalsePositives(userTask,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(userTask,
+				"src/test/resources/adaptability/UserTask.bpmn");
+	}
 
 	private void assertDetection(AdaptableElement element, String fileLocation) {
 		assertTrue("Element " + element.getName() + " was not found in "
@@ -443,4 +443,5 @@ public class ElementXPathTests {
 			return false;
 		}
 	}
+
 }
