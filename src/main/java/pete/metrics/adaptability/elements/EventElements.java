@@ -68,6 +68,7 @@ class EventElements extends ElementsCollection {
 		buildIntermediateMessageThrowEvent();
 		buildIntermediateMessageCatchEvent();
 		buildIntermediateTimerCatchEvent();
+		buildIntermediateEscalationThrowEvent();
 	}
 
 	private void buildIntermediateNoneThrowEvent() {
@@ -77,6 +78,7 @@ class EventElements extends ElementsCollection {
 		noneThrowEvent.setDocumentation("This event can be adapted to another intermediateThrowEvent used in normal flow");
 		noneThrowEvent.addAdaption("intermediateMessageThrowEvent");
 		noneThrowEvent.addAdaption("intermediateSignalThrowEvent");
+		noneThrowEvent.addAdaption("intermediateEscalationThrowEvent");
 		noneThrowEvent.addAdaption("intermediateMultipleThrowEvent");
 		noneThrowEvent.addAdaption("intermediateParallelMultipleThrowEvent");
 		add(noneThrowEvent);
@@ -95,15 +97,15 @@ class EventElements extends ElementsCollection {
 	}
 
 	private void buildIntermediateMessageCatchEvent() {
-		AdaptableElement messageThrowEvent = new AdaptableElement(
+		AdaptableElement messageCatchEvent = new AdaptableElement(
 				"intermediateMessageCatchEvent");
-		messageThrowEvent.setLocatorExpression(buildIntermediateCatchEventXPathExpression("message"));
-		System.out.println(messageThrowEvent.getLocatorExpression());
-		messageThrowEvent.setDocumentation("This event can be adapted to another intermediateCatchEvent used in normal flow that consumes a trigger");
-		messageThrowEvent.addAdaption("intermediateSignalCatchEvent");
-		messageThrowEvent.addAdaption("intermediateMultipleCatchEvent");
-		messageThrowEvent.addAdaption("intermediateParallelMultipleCatchEvent");
-		add(messageThrowEvent);
+		messageCatchEvent.setLocatorExpression(buildIntermediateCatchEventXPathExpression("message"));
+		System.out.println(messageCatchEvent.getLocatorExpression());
+		messageCatchEvent.setDocumentation("This event can be adapted to another intermediateCatchEvent used in normal flow that consumes a trigger");
+		messageCatchEvent.addAdaption("intermediateSignalCatchEvent");
+		messageCatchEvent.addAdaption("intermediateMultipleCatchEvent");
+		messageCatchEvent.addAdaption("intermediateParallelMultipleCatchEvent");
+		add(messageCatchEvent);
 	}
 
 	private void buildIntermediateTimerCatchEvent() {
@@ -113,12 +115,113 @@ class EventElements extends ElementsCollection {
 		.setLocatorExpression(buildIntermediateCatchEventXPathExpression("timer"));
 		timerCatchEvent
 		.addAdaption("A timerStartEvent can be adapted to another catchEvent that is triggered in some fashion, as it is possible to calculate the expiration of the time and trigger the event when it does");
-		timerCatchEvent.addAdaption("conditionalStartEvent");
-		timerCatchEvent.addAdaption("messageStartEvent");
-		timerCatchEvent.addAdaption("signalStartEvent");
-		timerCatchEvent.addAdaption("multipleStartEvent");
-		timerCatchEvent.addAdaption("parallelMultipleStartEvent");
+		timerCatchEvent.addAdaption("intermediateConditionalCatchEvent");
+		timerCatchEvent.addAdaption("intermediateMessageCatchEvent");
+		timerCatchEvent.addAdaption("intermediateSignalCatchEvent");
+		timerCatchEvent.addAdaption("intermediateMultipleCatchEvent");
+		timerCatchEvent.addAdaption("intermediateParallelMultipleCatchEvent");
 		add(timerCatchEvent);
+	}
+
+	private void buildIntermediateEscalationThrowEvent() {
+		AdaptableElement escalationThrowEvent = new AdaptableElement(
+				"intermediateEscalationThrowEvent");
+		escalationThrowEvent
+		.setLocatorExpression(buildIntermediateThrowEventXPathExpression("escalation"));
+		escalationThrowEvent
+		.setDocumentation("A intermediate escalation event can be adapted to another intermediate event that uses an active trigger");
+		escalationThrowEvent.addAdaption("intermediateMessageThrowEvent");
+		escalationThrowEvent.addAdaption("intermediateSignalThrowEvent");
+		escalationThrowEvent.addAdaption("intermediateMultipleThrowEvent");
+		escalationThrowEvent
+		.addAdaption("intermediateMultipleParallelThrowEvent");
+		add(escalationThrowEvent);
+	}
+
+	private void buildIntermediateCompensationThrowEvent() {
+		AdaptableElement compensationThrowEvent = new AdaptableElement(
+				"intermediateCompensationThrowEvent");
+		compensationThrowEvent
+		.setLocatorExpression(buildIntermediateThrowEventXPathExpression("compensation"));
+		compensationThrowEvent
+		.setDocumentation("A intermediate compensation event cannot be adapted since there is no other intermediate throwing event with compensation semantics");
+		add(compensationThrowEvent);
+	}
+
+	private void buildIntermediateConditionalCatchEvent() {
+		AdaptableElement conditionalCatchEvent = new AdaptableElement(
+				"intermediateConditionalCatchEvent");
+		conditionalCatchEvent
+		.setLocatorExpression(buildIntermediateCatchEventXPathExpression("conditional"));
+		conditionalCatchEvent
+		.setDocumentation("An intermediate conditional catch event can be adapted to another intermediate catch event that uses an active trigger");
+		conditionalCatchEvent.addAdaption("intermediateSignalCatchEvent");
+		conditionalCatchEvent.addAdaption("intermediateMessageCatchEvent");
+		conditionalCatchEvent.addAdaption("intermediateMultipleCatchEvent");
+		conditionalCatchEvent.addAdaption("intermediateMultipleParallelCatchEvent");
+		add(conditionalCatchEvent);
+	}
+
+	private void buildIntermediateSignalThrowEvent() {
+		AdaptableElement signalThrowEvent = new AdaptableElement(
+				"intermediateSignalThrowEvent");
+		signalThrowEvent
+		.setLocatorExpression(buildIntermediateThrowEventXPathExpression("signal"));
+		signalThrowEvent
+		.addAdaption("A intermediateSignalThrowEvent can be adapted to another intermediateThrowEvent that is triggered in some fashion");
+		signalThrowEvent.addAdaption("intermediateMessageThrowEvent");
+		signalThrowEvent.addAdaption("intermediateMultipleThrowEvent");
+		signalThrowEvent.addAdaption("intermediateParallelMultipleThrowEvent");
+		add(signalThrowEvent);
+	}
+
+	private void buildIntermediateSignalCatchEvent() {
+		AdaptableElement signalCatchEvent = new AdaptableElement(
+				"intermediateSignalCatchEvent");
+		signalCatchEvent
+		.setLocatorExpression(buildIntermediateThrowEventXPathExpression("catch"));
+		signalCatchEvent
+		.addAdaption("A intermediateSignalCatchEvent can be adapted to another intermediateCatchEvent that receives a trigger");
+		signalCatchEvent.addAdaption("intermediateMessageCatchEvent");
+		signalCatchEvent.addAdaption("intermediateConditionalCatchEvent");
+		signalCatchEvent.addAdaption("intermediateMultipleCatchEvent");
+		signalCatchEvent.addAdaption("intermediateParallelMultipleCatchEvent");
+		add(signalCatchEvent);
+	}
+
+	private void buildIntermediateMultipleThrowEvent() {
+		AdaptableElement multipleThrowEvent = new AdaptableElement(
+				"intermediateMultipleThrowEvent");
+		multipleThrowEvent
+		.setLocatorExpression("//*[local-name() = 'intermediateThrowEvent' and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		multipleThrowEvent
+		.addAdaption("An intermediateMultipleThrowEvent can be reduced to  the available alternative throw events surrounded by an exclusiveGateway");
+		multipleThrowEvent.addAdaption("intermediateThrowEventsAndExclusiveGateway");
+		add(multipleThrowEvent);
+	}
+
+	private void buildIntermediateMultipleCatchEvent() {
+		AdaptableElement multipleCatchEvent = new AdaptableElement(
+				"intermediateMultipleCatchEvent");
+		multipleCatchEvent
+		.setLocatorExpression("//*[local-name() = 'intermediateCatchEvent' and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		multipleCatchEvent
+		.addAdaption("An intermediateMultipleCatchEvent can be reduced to the available alternative catch events surrounded by an exclusiveGateway");
+		multipleCatchEvent.addAdaption("intermediateCatchEventsAndExclusiveGateway");
+		add(multipleCatchEvent);
+	}
+
+	private void buildIntermediateMultipleParallelCatchEvent() {
+		AdaptableElement multipleParallelCatchEvent = new AdaptableElement(
+				"intermediateMultipleParallelCatchEvent");
+		multipleParallelCatchEvent
+		.setLocatorExpression("//*[local-name() = 'intermediateCatchEvent' and (@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		multipleParallelCatchEvent
+		.addAdaption("An intermediateMultipleParallelCatchEvent can be reduced to the available alternative catch events surrounded by an gateway that triggers multiple branches");
+		multipleParallelCatchEvent.addAdaption("intermediateCatchEventsAndParallelGateway");
+		multipleParallelCatchEvent.addAdaption("intermediateCatchEventsAndInclusiveGateway");
+		multipleParallelCatchEvent.addAdaption("intermediateCatchEventsAndComplexGateway");
+		add(multipleParallelCatchEvent);
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
@@ -194,7 +297,6 @@ class EventElements extends ElementsCollection {
 		.setLocatorExpression(buildEventSubProcessNonInterruptingStartEventXPathExpression("conditional"));
 		conditionalStartEvent
 		.setDocumentation("A non-interrupting conditional start event can be adapted to another non-interrupting start event that uses an active trigger");
-		conditionalStartEvent.addAdaption("escalationStartEvent");
 		conditionalStartEvent.addAdaption("signalStartEvent");
 		conditionalStartEvent.addAdaption("messageStartEvent");
 		conditionalStartEvent.addAdaption("multipleStartEvent");
