@@ -69,6 +69,13 @@ class EventElements extends ElementsCollection {
 		buildIntermediateMessageCatchEvent();
 		buildIntermediateTimerCatchEvent();
 		buildIntermediateEscalationThrowEvent();
+		buildIntermediateCompensationThrowEvent();
+		buildIntermediateConditionalCatchEvent();
+		buildIntermediateSignalThrowEvent();
+		buildIntermediateSignalCatchEvent();
+		buildIntermediateMultipleThrowEvent();
+		buildIntermediateMultipleCatchEvent();
+		buildIntermediateMultipleParallelCatchEvent();
 	}
 
 	private void buildIntermediateNoneThrowEvent() {
