@@ -418,7 +418,7 @@ class EventElements extends ElementsCollection {
 	private void buildMultipleEndEvent() {
 		AdaptableElement multipleEndEvent = new AdaptableElement("multipleEndEvent");
 		multipleEndEvent
-		.setLocatorExpression(buildEndEventXPathExpression("multiple"));
+		.setLocatorExpression("//*[local-name() = 'endEvent' and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
 		multipleEndEvent.setDocumentation("A multipleEndEvent can be reduced to one of the available alternatives");
 		multipleEndEvent.addAdaption("noneEndEvent");
 		multipleEndEvent.addAdaption("messageEndEvent");
