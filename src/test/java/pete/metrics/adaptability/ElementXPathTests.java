@@ -232,11 +232,20 @@ public class ElementXPathTests {
 	public void noneEndEvent() {
 		AdaptableElement noneEndEvent = elements.get("noneEndEvent");
 		assertNoFalsePositives(noneEndEvent,
-				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+				"src/test/resources/adaptability/LoopTask.bpmn");
 		assertDetection(noneEndEvent,
 				"src/test/resources/adaptability/NoneEndEvent.bpmn");
 		assertDetection(noneEndEvent,
 				"src/test/resources/adaptability/SubProcess.bpmn");
+	}
+
+	@Test
+	public void messageEndEvent() {
+		AdaptableElement messageEndEvent = elements.get("messageEndEvent");
+		assertNoFalsePositives(messageEndEvent,
+				"src/test/resources/adaptability/ExecutableProcess.bpmn");
+		assertDetection(messageEndEvent,
+				"src/test/resources/adaptability/MessageStartEvent.bpmn");
 	}
 
 	@Test

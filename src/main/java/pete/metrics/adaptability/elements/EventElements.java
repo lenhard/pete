@@ -42,7 +42,9 @@ class EventElements extends ElementsCollection {
 
 	private void buildEndEvents() {
 		buildNoneEndEvent();
+		buildMessageEndEvent();
 	}
+
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
 		AdaptableElement nonInterruptingMessageStartEvent = new AdaptableElement(
@@ -302,6 +304,17 @@ class EventElements extends ElementsCollection {
 		noneEndEvent.addAdaption("multipleEndEvent");
 		add(noneEndEvent);
 	}
+
+	private void buildMessageEndEvent() {
+		AdaptableElement messageEndEvent = new AdaptableElement("messageEndEvent");
+		messageEndEvent
+		.setLocatorExpression(buildEndEventXPathExpression("message"));
+		messageEndEvent.setDocumentation("A messageEndEvent can be adapted to another type of endEvent that can refer to normal termination and produces a trigger");
+		messageEndEvent.addAdaption("signalEndEvent");
+		messageEndEvent.addAdaption("multipleEndEvent");
+		add(messageEndEvent);
+	}
+
 
 	private void buildNoneStartEvent() {
 		AdaptableElement noneStartEvent = new AdaptableElement("noneStartEvent");
