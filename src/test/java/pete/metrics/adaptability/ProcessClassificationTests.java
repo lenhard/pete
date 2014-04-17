@@ -60,7 +60,7 @@ public class ProcessClassificationTests {
 				.analyzeFile(
 						Paths.get("src/test/resources/adaptability/ExecutableProcess.bpmn"))
 						.get(0);
-		assertEquals("11", result.getVariableValue("elements"));
+		assertEquals("10", result.getVariableValue("elements"));
 	}
 
 }
