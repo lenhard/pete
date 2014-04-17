@@ -66,6 +66,7 @@ class EventElements extends ElementsCollection {
 	private void buildIntermediateEvents() {
 		buildIntermediateNoneThrowEvent();
 		buildIntermediateMessageThrowEvent();
+		buildIntermediateMessageCatchEvent();
 	}
 
 	private void buildIntermediateNoneThrowEvent() {
@@ -89,6 +90,18 @@ class EventElements extends ElementsCollection {
 		messageThrowEvent.addAdaption("intermediateSignalThrowEvent");
 		messageThrowEvent.addAdaption("intermediateMultipleThrowEvent");
 		messageThrowEvent.addAdaption("intermediateParallelMultipleThrowEvent");
+		add(messageThrowEvent);
+	}
+
+	private void buildIntermediateMessageCatchEvent() {
+		AdaptableElement messageThrowEvent = new AdaptableElement(
+				"intermediateMessageCatchEvent");
+		messageThrowEvent.setLocatorExpression(buildIntermediateCatchEvents("message"));
+		System.out.println(messageThrowEvent.getLocatorExpression());
+		messageThrowEvent.setDocumentation("This event can be adapted to another intermediateCatchEvent used in normal flow that consumes a trigger");
+		messageThrowEvent.addAdaption("intermediateSignalCatchEvent");
+		messageThrowEvent.addAdaption("intermediateMultipleCatchEvent");
+		messageThrowEvent.addAdaption("intermediateParallelMultipleCatchEvent");
 		add(messageThrowEvent);
 	}
 

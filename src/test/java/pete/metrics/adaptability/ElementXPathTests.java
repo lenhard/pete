@@ -157,11 +157,19 @@ public class ElementXPathTests {
 	}
 
 	@Test
+	public void intermediateMessageCatchEvent() {
+		AdaptableElement messageCatchEvent = elements.get("intermediateMessageCatchEvent");
+		assertNoFalsePositives(messageCatchEvent,
+				"src/test/resources/adaptability/IntermediateMessageThrowEvent.bpmn");
+		assertDetection(messageCatchEvent, "src/test/resources/adaptability/IntermediateMessageCatchEvent.bpmn");
+	}
+
+	@Test
 	public void intermediateMessageThrowEvent() {
-		AdaptableElement messageGateway = elements.get("intermediateMessageThrowEvent");
-		assertNoFalsePositives(messageGateway,
+		AdaptableElement messageThrowEvent = elements.get("intermediateMessageThrowEvent");
+		assertNoFalsePositives(messageThrowEvent,
 				"src/test/resources/adaptability/IntermediateNoneThrowEvent.bpmn");
-		assertDetection(messageGateway, "src/test/resources/adaptability/IntermediateMessageThrowEvent.bpmn");
+		assertDetection(messageThrowEvent, "src/test/resources/adaptability/IntermediateMessageThrowEvent.bpmn");
 	}
 
 	@Test
