@@ -65,6 +65,7 @@ class EventElements extends ElementsCollection {
 
 	private void buildIntermediateEvents() {
 		buildIntermediateNoneThrowEvent();
+		buildIntermediateMessageThrowEvent();
 	}
 
 	private void buildIntermediateNoneThrowEvent() {
@@ -77,6 +78,18 @@ class EventElements extends ElementsCollection {
 		noneThrowEvent.addAdaption("intermediateMultipleThrowEvent");
 		noneThrowEvent.addAdaption("intermediateParallelMultipleThrowEvent");
 		add(noneThrowEvent);
+	}
+
+	private void buildIntermediateMessageThrowEvent() {
+		AdaptableElement messageThrowEvent = new AdaptableElement(
+				"intermediateMessageThrowEvent");
+		messageThrowEvent.setLocatorExpression(buildIntermediateThrowEvents("message"));
+		System.out.println(messageThrowEvent.getLocatorExpression());
+		messageThrowEvent.setDocumentation("This event can be adapted to another intermediateThrowEvent used in normal flow that provides a trigger");
+		messageThrowEvent.addAdaption("intermediateSignalThrowEvent");
+		messageThrowEvent.addAdaption("intermediateMultipleThrowEvent");
+		messageThrowEvent.addAdaption("intermediateParallelMultipleThrowEvent");
+		add(messageThrowEvent);
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
@@ -536,11 +549,11 @@ class EventElements extends ElementsCollection {
 	}
 
 	private String buildIntermediateThrowEvents(String eventType){
-		return buildEventXPathExpression("intermediateThrowEvent", eventType);
+		return buildEventXPathExpression("intermediateThrow", eventType);
 	}
 
 	private String buildIntermediateCatchEvents(String eventType){
-		return buildEventXPathExpression("intermediateCatchEvent", eventType);
+		return buildEventXPathExpression("intermediateCatch", eventType);
 	}
 
 	private String buildEventSubProcessNonInterruptingStartEventXPathExpression(
