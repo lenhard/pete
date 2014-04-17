@@ -84,6 +84,7 @@ public final class AdaptableElement {
 		XPathFactory factory = XPathFactory.newInstance();
 		XPath xpath = factory.newXPath();
 		try {
+			@SuppressWarnings("unused")
 			XPathExpression expr = xpath.compile(expression);
 		} catch (XPathExpressionException e) {
 			throw new IllegalArgumentException(e);
