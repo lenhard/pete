@@ -230,11 +230,13 @@ public class ElementXPathTests {
 
 	@Test
 	public void noneEndEvent() {
-		AdaptableElement noneStartEvent = elements.get("noneEndEvent");
-		assertNoFalsePositives(noneStartEvent,
+		AdaptableElement noneEndEvent = elements.get("noneEndEvent");
+		assertNoFalsePositives(noneEndEvent,
 				"src/test/resources/adaptability/ExecutableProcess.bpmn");
-		assertDetection(noneStartEvent,
+		assertDetection(noneEndEvent,
 				"src/test/resources/adaptability/NoneEndEvent.bpmn");
+		assertDetection(noneEndEvent,
+				"src/test/resources/adaptability/SubProcess.bpmn");
 	}
 
 	@Test

@@ -6,10 +6,10 @@ class EventElements extends ElementsCollection {
 	public EventElements() {
 		buildTopLevelStartEvents();
 		buildEventSubProcessStartEvents();
+		buildEndEvents();
 	}
 
 	private void buildTopLevelStartEvents() {
-		buildNoneEndEvent();
 		buildErrorBoundaryEvent();
 		buildNoneStartEvent();
 		buildMessageStartEvent();
@@ -38,6 +38,10 @@ class EventElements extends ElementsCollection {
 		buildEventSubProcessInterruptingMultipleStartEvent();
 		buildEventSubProcessNonInterruptingParallelMultipleStartEvent();
 		buildEventSubProcessInterruptingParallelMultipleStartEvent();
+	}
+
+	private void buildEndEvents() {
+		buildNoneEndEvent();
 	}
 
 	private void buildEventSubProcessNonInterruptingMessageStartEvent() {
@@ -291,7 +295,7 @@ class EventElements extends ElementsCollection {
 	private void buildNoneEndEvent() {
 		AdaptableElement noneEndEvent = new AdaptableElement("noneEndEvent");
 		noneEndEvent
-		.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'ventDefinition')])]");
+		.setLocatorExpression("//*[local-name() = 'process' or local-name() = 'subProcess']/*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'ventDefinition')])]");
 		noneEndEvent.addAdaption("messageEndEvent");
 		noneEndEvent.addAdaption("signalEndEvent");
 		noneEndEvent.addAdaption("terminateEndEvent");
