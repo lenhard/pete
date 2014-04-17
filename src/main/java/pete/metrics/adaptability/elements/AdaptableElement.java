@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+
 public final class AdaptableElement {
 
 	private final String name;
@@ -70,7 +75,18 @@ public final class AdaptableElement {
 
 	public void setLocatorExpression(String locatorExpression) {
 		if (!(locatorExpression == null)) {
+			checkXPathSyntax(locatorExpression);
 			this.locatorExpression += locatorExpression;
+		}
+	}
+
+	private void checkXPathSyntax(String expression){
+		XPathFactory factory = XPathFactory.newInstance();
+		XPath xpath = factory.newXPath();
+		try {
+			XPathExpression expr = xpath.compile(expression);
+		} catch (XPathExpressionException e) {
+			throw new IllegalArgumentException(e);
 		}
 	}
 
