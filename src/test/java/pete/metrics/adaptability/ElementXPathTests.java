@@ -86,7 +86,7 @@ public class ElementXPathTests {
 	@Test
 	public void errorBoundaryEvent() {
 		AdaptableElement errorBoundaryEvent = elements
-				.get("errorBoundaryEvent");
+				.get("interruptingErrorBoundaryEvent");
 		assertNoFalsePositives(errorBoundaryEvent,
 				"src/test/resources/adaptability/ExecutableProcess.bpmn");
 		assertDetection(errorBoundaryEvent,

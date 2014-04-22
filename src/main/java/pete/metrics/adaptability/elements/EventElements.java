@@ -70,10 +70,22 @@ class EventElements extends ElementsCollection {
 
 	private void buildBoundaryEvents(){
 		buildInterruptingMessageBoundaryEvent();
-		buildErrorBoundaryEvent();
 		buildNonInterruptingMessageBoundaryEvent();
 		buildNonInterruptingTimerBoundaryEvent();
 		buildInterruptingTimerBoundaryEvent();
+		buildNonInterruptingEscalationBoundaryEvent();
+		buildInterruptingEscalationBoundaryEvent();
+		buildInterruptingErrorBoundaryEvent();
+		buildInterruptingCancelBoundaryEvent();
+		buildInterruptingCompensationBoundaryEvent();
+		buildNonInterruptingConditionalBoundaryEvent();
+		buildInterruptingConditionalBoundaryEvent();
+		buildNonInterruptingSignalBoundaryEvent();
+		buildInterruptingSignalBoundaryEvent();
+		buildNonInterruptingMultipleBoundaryEvent();
+		buildInterruptingMultipleBoundaryEvent();
+		buildNonInterruptingParallelMultipleBoundaryEvent();
+		buildInterruptingParallelMultipleBoundaryEvent();
 	}
 
 	public String buildEventXPathExpression(String event, String eventType) {
@@ -151,6 +163,179 @@ class EventElements extends ElementsCollection {
 		add(interruptingTimerBoundaryEvent);
 	}
 
+	private void buildNonInterruptingEscalationBoundaryEvent() {
+		AdaptableElement escalationBoundaryEvent = new AdaptableElement(
+				"nonInterruptingEscalationBoundaryEvent");
+		escalationBoundaryEvent
+		.setLocatorExpression(buildNonInterruptingBoundaryEventXPathExpression("escalation"));
+		escalationBoundaryEvent
+		.setDocumentation("A non-interrupting escalation boundary event can be adapted to another non-interrupting boundary event that uses an active trigger");
+		escalationBoundaryEvent.addAdaption("nonInterruptingMessageBoundaryEvent");
+		escalationBoundaryEvent.addAdaption("nonInterruptingSignalBoundaryEvent");
+		escalationBoundaryEvent.addAdaption("nonInterruptingConditionalBoundaryEvent");
+		escalationBoundaryEvent.addAdaption("nonInterruptingMultipleBoundaryEvent");
+		escalationBoundaryEvent
+		.addAdaption("nonInterruptingMultipleParallelBoundaryEvent");
+		add(escalationBoundaryEvent);
+	}
+
+	private void buildInterruptingEscalationBoundaryEvent() {
+		AdaptableElement interruptingEscalationBoundaryEvent = new AdaptableElement(
+				"interruptingEscalationBoundaryEvent");
+		interruptingEscalationBoundaryEvent
+		.setLocatorExpression(buildInterruptingBoundaryEventXPathExpression("escalation"));
+		interruptingEscalationBoundaryEvent
+		.setDocumentation("An interrupting escalation boundary event can be adapted to another interrupting boundary event that uses an active trigger");
+		interruptingEscalationBoundaryEvent.addAdaption("interruptingMessageBoundaryEvent");
+		interruptingEscalationBoundaryEvent.addAdaption("interruptingErrorBoundaryEvent");
+		interruptingEscalationBoundaryEvent.addAdaption("interruptingSignalBoundaryEvent");
+		interruptingEscalationBoundaryEvent.addAdaption("interruptingConditionalBoundaryEvent");
+		interruptingEscalationBoundaryEvent.addAdaption("interruptingMultipleBoundaryEvent");
+		interruptingEscalationBoundaryEvent.addAdaption("interruptingMultipleParallelBoundaryEvent");
+		add(interruptingEscalationBoundaryEvent);
+	}
+
+	private void buildInterruptingErrorBoundaryEvent(){
+		AdaptableElement errorBoundaryEvent = new AdaptableElement("interruptingErrorBoundaryEvent");
+		errorBoundaryEvent.setLocatorExpression(buildInterruptingBoundaryEventXPathExpression("error"));
+		errorBoundaryEvent.setDocumentation("An interrupting error boundary event can be adapted to another interrupting boundary event that uses an active trigger");
+		errorBoundaryEvent.addAdaption("interruptingEscalationBoundaryEvent");
+		errorBoundaryEvent.addAdaption("interruptingMessageBoundaryEvent");
+		errorBoundaryEvent.addAdaption("interruptingSignalBoundaryEvent");
+		errorBoundaryEvent.addAdaption("interruptingConditionalBoundaryEvent");
+		errorBoundaryEvent.addAdaption("interruptingMultipleBoundaryEvent");
+		errorBoundaryEvent.addAdaption("interruptingMultipleParallelBoundaryEvent");
+		add(errorBoundaryEvent);
+	}
+
+	private void buildInterruptingCancelBoundaryEvent(){
+		AdaptableElement cancelBoundaryEvent = new AdaptableElement("interruptingCancelBoundaryEvent");
+		cancelBoundaryEvent.setLocatorExpression(buildInterruptingBoundaryEventXPathExpression("cancel"));
+		cancelBoundaryEvent.setDocumentation("An interrupting cancel boundary event cannot be adapted since its semantics with respect to transactions are unique");
+		add(cancelBoundaryEvent);
+	}
+
+	private void buildInterruptingCompensationBoundaryEvent(){
+		AdaptableElement compensationBoundaryEvent = new AdaptableElement("interruptingCompensationBoundaryEvent");
+		compensationBoundaryEvent.setLocatorExpression(buildInterruptingBoundaryEventXPathExpression("cancel"));
+		compensationBoundaryEvent.setDocumentation("An interrupting compensation boundary event cannot be adapted since its semantics with respect to compensation are unique");
+		add(compensationBoundaryEvent);
+	}
+
+	private void buildNonInterruptingConditionalBoundaryEvent() {
+		AdaptableElement conditionalBoundaryEvent = new AdaptableElement(
+				"nonInterruptingConditionalBoundaryEvent");
+		conditionalBoundaryEvent
+		.setLocatorExpression(buildNonInterruptingBoundaryEventXPathExpression("conditional"));
+		conditionalBoundaryEvent
+		.setDocumentation("A non-interrupting conditional boundary event can be adapted to another non-interrupting boundary event that uses an active trigger");
+		conditionalBoundaryEvent.addAdaption("nonInterruptingSignalBoundaryEvent");
+		conditionalBoundaryEvent.addAdaption("nonInterruptingMessageBoundaryEvent");
+		conditionalBoundaryEvent.addAdaption("nonInterruptingEscalationBoundaryEvent");
+		conditionalBoundaryEvent.addAdaption("nonInterruptingMultipleBoundaryEvent");
+		conditionalBoundaryEvent
+		.addAdaption("nonInterruptingMultipleParallelBoundaryEvent");
+		add(conditionalBoundaryEvent);
+	}
+
+	private void buildInterruptingConditionalBoundaryEvent() {
+		AdaptableElement conditionalBoundaryEvent = new AdaptableElement(
+				"interruptingConditionalBoundaryEvent");
+		conditionalBoundaryEvent
+		.setLocatorExpression(buildInterruptingBoundaryEventXPathExpression("conditional"));
+		conditionalBoundaryEvent
+		.setDocumentation("An interrupting conditional boundary event can be adapted to another interrupting boundary event that uses an active trigger");
+		conditionalBoundaryEvent.addAdaption("interruptingEscalationBoundaryEvent");
+		conditionalBoundaryEvent.addAdaption("interruptingErrorBoundaryEvent");
+		conditionalBoundaryEvent.addAdaption("interruptingSignalBoundaryEvent");
+		conditionalBoundaryEvent.addAdaption("interruptingMessageBoundaryEvent");
+		conditionalBoundaryEvent.addAdaption("interruptingMultipleBoundaryEvent");
+		conditionalBoundaryEvent.addAdaption("interruptingMultipleParallelBoundaryEvent");
+		add(conditionalBoundaryEvent);
+	}
+
+	private void buildNonInterruptingSignalBoundaryEvent() {
+		AdaptableElement signalBoundaryEvent = new AdaptableElement(
+				"nonInterruptingSignalBoundaryEvent");
+		signalBoundaryEvent
+		.setLocatorExpression(buildNonInterruptingBoundaryEventXPathExpression("signal"));
+		signalBoundaryEvent
+		.setDocumentation("A non-interrupting signal boundary event can be adapted to another non-interrupting boundary event that uses an active trigger");
+		signalBoundaryEvent.addAdaption("nonInterruptingEscalationBoundaryEvent");
+		signalBoundaryEvent.addAdaption("nonInterruptingMessageBoundaryEvent");
+		signalBoundaryEvent.addAdaption("nonInterruptingConditionalBoundaryEvent");
+		signalBoundaryEvent.addAdaption("nonInterruptingMultipleBoundaryEvent");
+		signalBoundaryEvent
+		.addAdaption("nonInterruptingMultipleParallelBoundaryEvent");
+		add(signalBoundaryEvent);
+	}
+
+	private void buildInterruptingSignalBoundaryEvent() {
+		AdaptableElement signalBoundaryEvent = new AdaptableElement(
+				"interruptingSignalBoundaryEvent");
+		signalBoundaryEvent
+		.setLocatorExpression(buildInterruptingBoundaryEventXPathExpression("signal"));
+		signalBoundaryEvent
+		.setDocumentation("An interrupting signal boundary event can be adapted to another interrupting boundary event that uses an active trigger");
+		signalBoundaryEvent.addAdaption("interruptingEscalationBoundaryEvent");
+		signalBoundaryEvent.addAdaption("interruptingErrorBoundaryEvent");
+		signalBoundaryEvent.addAdaption("interruptingMessageBoundaryEvent");
+		signalBoundaryEvent.addAdaption("interruptingConditionalBoundaryEvent");
+		signalBoundaryEvent.addAdaption("interruptingMultipleBoundaryEvent");
+		signalBoundaryEvent.addAdaption("interruptingMultipleParallelBoundaryEvent");
+		add(signalBoundaryEvent);
+	}
+
+	private void buildNonInterruptingMultipleBoundaryEvent() {
+		AdaptableElement multipleBoundaryEvent = new AdaptableElement(
+				"nonInterruptingMultipleBoundaryEvent");
+		multipleBoundaryEvent
+		.setLocatorExpression("//*[local-name() = 'boundaryEvent' and not (@isInterrupting = 'true') and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		multipleBoundaryEvent
+		.addAdaption("A non-interrupting multipleBoundaryEvent can be reduced to one of the available alternative non-interrupting boundary events");
+		multipleBoundaryEvent.addAdaption("nonInterruptingMessageBoundaryEvent");
+		multipleBoundaryEvent.addAdaption("nonInterruptingConditionalBoundaryEvent");
+		multipleBoundaryEvent.addAdaption("nonInterruptingSignalBoundaryEvent");
+		multipleBoundaryEvent.addAdaption("nonInterruptingTimerBoundaryEvent");
+		multipleBoundaryEvent.addAdaption("nonInterruptingEscalationBoundaryEvent");
+		add(multipleBoundaryEvent);
+	}
+
+	private void buildInterruptingMultipleBoundaryEvent() {
+		AdaptableElement multipleBoundaryEvent = new AdaptableElement(
+				"interruptingMultipleBoundaryEvent");
+		multipleBoundaryEvent
+		.setLocatorExpression("//*[local-name() = 'boundaryEvent' and (@isInterrupting = 'true') and not(@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		multipleBoundaryEvent
+		.addAdaption("An interrupting multiple boundary event can be reduced to one of the available alternative interrupting boundary events");
+		multipleBoundaryEvent.addAdaption("interruptingMessageBoundaryEvent");
+		multipleBoundaryEvent.addAdaption("interruptingConditionalBoundaryEvent");
+		multipleBoundaryEvent.addAdaption("interruptingSignalBoundaryEvent");
+		multipleBoundaryEvent.addAdaption("interruptingTimerBoundaryEvent");
+		multipleBoundaryEvent.addAdaption("interruptingEscalationBoundaryEvent");
+		add(multipleBoundaryEvent);
+	}
+
+	private void buildNonInterruptingParallelMultipleBoundaryEvent() {
+		AdaptableElement parallelMultipleBoundaryEvent = new AdaptableElement(
+				"nonInterruptingParallelMultipleBoundaryEvent");
+		parallelMultipleBoundaryEvent
+		.setLocatorExpression("//*[local-name() = 'boundaryEvent' and not (@isInterrupting = 'true') and (@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		parallelMultipleBoundaryEvent
+		.addAdaption("A multipleParallelBoundaryEvent cannot be adapted since there is no other way to ensure that multiple events are thrown in paralle in the context of a single activity");
+		add(parallelMultipleBoundaryEvent);
+	}
+
+	private void buildInterruptingParallelMultipleBoundaryEvent() {
+		AdaptableElement parallelMultipleBoundaryEvent = new AdaptableElement(
+				"interruptingParallelMultipleBoundaryEvent");
+		parallelMultipleBoundaryEvent
+		.setLocatorExpression("//*[local-name() = 'boundaryEvent' and (@isInterrupting = 'true') and (@parallelMultiple = 'true') and (count(child::*[contains(local-name(),'ventDefinition')]) > 1)]");
+		parallelMultipleBoundaryEvent
+		.addAdaption("A multipleParallelBoundaryEvent cannot be adapted since there is no other way to ensure that multiple events are thrown in paralle in the context of a single activity");
+		add(parallelMultipleBoundaryEvent);
+	}
+
 	private void buildIntermediateNoneThrowEvent() {
 		AdaptableElement noneThrowEvent = new AdaptableElement(
 				"intermediateNoneThrowEvent");
@@ -168,7 +353,6 @@ class EventElements extends ElementsCollection {
 		AdaptableElement messageThrowEvent = new AdaptableElement(
 				"intermediateMessageThrowEvent");
 		messageThrowEvent.setLocatorExpression(buildIntermediateThrowEventXPathExpression("message"));
-		System.out.println(messageThrowEvent.getLocatorExpression());
 		messageThrowEvent.setDocumentation("This event can be adapted to another intermediateThrowEvent used in normal flow that provides a trigger");
 		messageThrowEvent.addAdaption("intermediateSignalThrowEvent");
 		messageThrowEvent.addAdaption("intermediateMultipleThrowEvent");
@@ -180,7 +364,6 @@ class EventElements extends ElementsCollection {
 		AdaptableElement messageCatchEvent = new AdaptableElement(
 				"intermediateMessageCatchEvent");
 		messageCatchEvent.setLocatorExpression(buildIntermediateCatchEventXPathExpression("message"));
-		System.out.println(messageCatchEvent.getLocatorExpression());
 		messageCatchEvent.setDocumentation("This event can be adapted to another intermediateCatchEvent used in normal flow that consumes a trigger");
 		messageCatchEvent.addAdaption("intermediateSignalCatchEvent");
 		messageCatchEvent.addAdaption("intermediateMultipleCatchEvent");
@@ -380,6 +563,7 @@ class EventElements extends ElementsCollection {
 		conditionalStartEvent.addAdaption("signalStartEvent");
 		conditionalStartEvent.addAdaption("messageStartEvent");
 		conditionalStartEvent.addAdaption("multipleStartEvent");
+		conditionalStartEvent.addAdaption("escalationStartEvent");
 		conditionalStartEvent
 		.addAdaption("multipleParallelStartEvent");
 		add(conditionalStartEvent);
@@ -536,21 +720,6 @@ class EventElements extends ElementsCollection {
 		parallelMultipleStartEvent
 		.addAdaption("A multipleParallelStartEvent cannot be adapted since there is no other way to avoid the instantiation of a process unless multiple conditions are satisfied");
 		add(parallelMultipleStartEvent);
-	}
-
-
-	private void buildErrorBoundaryEvent() {
-		AdaptableElement errorBoundaryEvent = new AdaptableElement(
-				"errorBoundaryEvent");
-		errorBoundaryEvent
-		.setLocatorExpression(buildNonInterruptingBoundaryEventXPathExpression("error"));
-		errorBoundaryEvent.addAdaption("messageBoundaryEvent");
-		errorBoundaryEvent.addAdaption("escalationBoundaryEvent");
-		errorBoundaryEvent.addAdaption("conditionalBoundaryEvent");
-		errorBoundaryEvent.addAdaption("signalBoundaryEvent");
-		errorBoundaryEvent.addAdaption("multipleBoundaryEvent");
-		errorBoundaryEvent.addAdaption("multipleParallelBoundaryEvent");
-		add(errorBoundaryEvent);
 	}
 
 	private void buildNoneEndEvent() {
