@@ -6,6 +6,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -87,7 +88,10 @@ public class XPathNodeCounter implements NodeCounter {
 		try (PrintWriter writer = new PrintWriter(Files.newBufferedWriter(file,
 				Charset.defaultCharset()))) {
 			writer.println("element;number");
-			for (String key : elementNumbers.keySet()) {
+			List<String> sortedKeyList = new LinkedList<>();
+			sortedKeyList.addAll(elementNumbers.keySet());
+			sortedKeyList.sort((e1, e2) -> e1.compareTo(e2));
+			for (String key : sortedKeyList) {
 				AtomicInteger value = elementNumbers.get(key);
 				writer.println(key + ";" + value);
 			}

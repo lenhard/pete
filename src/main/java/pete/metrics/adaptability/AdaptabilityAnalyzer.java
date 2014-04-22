@@ -21,15 +21,12 @@ import org.xml.sax.SAXParseException;
 import pete.executables.AnalysisException;
 import pete.executables.FileAnalyzer;
 import pete.metrics.adaptability.nodecounters.NodeCounter;
-import pete.metrics.adaptability.nodecounters.SimpleNodeCounter;
 import pete.metrics.adaptability.nodecounters.XPathNodeCounter;
 import pete.reporting.ReportEntry;
 
 public class AdaptabilityAnalyzer implements FileAnalyzer {
 
-	private NodeCounter simpleCounter;
-
-	private NodeCounter xpathCounter;
+	private NodeCounter nodeCounter;
 
 	private BpmnInspector inspector;
 
@@ -37,8 +34,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	public AdaptabilityAnalyzer() {
 		// Currently always do strict parsing
-		simpleCounter = new SimpleNodeCounter();
-		xpathCounter = new XPathNodeCounter();
+		nodeCounter = new XPathNodeCounter();
 		inspector = new BpmnInspector();
 		metric = new BinaryAdaptabilityMetric();
 	}
@@ -72,13 +68,12 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 				+ "");
 		entry.addVariable("referencesIssuesFound", inspector.hasReferenceIssues(entry.getFileName()));
 
-		simpleCounter.addToCounts(dom);
-		xpathCounter.addToCounts(dom);
+		nodeCounter.addToCounts(dom);
 		addAdaptability(entry);
 	}
 
 	private void addAdaptability(ReportEntry entry) {
-		double adaptabilityDegree = metric.computeAdaptability(xpathCounter
+		double adaptabilityDegree = metric.computeAdaptability(nodeCounter
 				.getElementNumbers());
 		if (adaptabilityDegree == 0) {
 			entry.addVariable("AD", "NoElementsFound");
@@ -123,6 +118,6 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	@Override
 	public void traversalCompleted() {
-		simpleCounter.writeToCsv(Paths.get("raw.csv"));
+		nodeCounter.writeToCsv(Paths.get("raw.csv"));
 	}
 }
