@@ -24,6 +24,8 @@ public final class AnalysisWorkflow {
 
 	private Report report;
 
+	private long startTime;
+
 	public AnalysisWorkflow(Path root, AnalysisType type) {
 		this.root = root;
 
@@ -47,7 +49,7 @@ public final class AnalysisWorkflow {
 	}
 
 	public void start() {
-		long startTime = System.currentTimeMillis();
+		startWatch();
 
 		if (!Files.isDirectory(root)) {
 			parseFile(root);
@@ -55,13 +57,22 @@ public final class AnalysisWorkflow {
 			parseDirectory(root);
 		}
 
+		stopWatch();
+
+		writeResults();
+
+		purgeTempDir();
+	}
+
+	private void stopWatch() {
 		long duration = System.currentTimeMillis() - startTime;
 		System.out.println("=======================================");
 		System.out.println("Analysis finished; Duration: " + duration
 				+ " millisec; writing results");
-		writeResults();
+	}
 
-		purgeTempDir();
+	private void startWatch() {
+		startTime = System.currentTimeMillis();
 	}
 
 	private void parseFile(Path file) {
