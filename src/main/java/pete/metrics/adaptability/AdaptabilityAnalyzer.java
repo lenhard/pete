@@ -2,7 +2,9 @@ package pete.metrics.adaptability;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -32,11 +34,22 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	private AdaptabilityMetric metric;
 
+	private boolean writeMap;
+
 	public AdaptabilityAnalyzer() {
 		// Currently always do strict parsing
+		setUp(false);
+	}
+
+	public AdaptabilityAnalyzer(boolean writeMap){
+		setUp(writeMap);
+	}
+
+	private void setUp(boolean writeMap) {
 		nodeCounter = new XPathNodeCounter();
 		inspector = new BpmnInspector();
 		metric = new BinaryAdaptabilityMetric();
+		this.writeMap = writeMap;
 	}
 
 	@Override
@@ -119,5 +132,12 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 	@Override
 	public void traversalCompleted() {
 		nodeCounter.writeToCsv(Paths.get("raw.csv"));
+		if(writeMap){
+			try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("raw.obj"))){
+				oos.writeObject(nodeCounter.getElementNumbers());
+			} catch (IOException e) {
+				System.err.println(e.getMessage());
+			}
+		}
 	}
 }

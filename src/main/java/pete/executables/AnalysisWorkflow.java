@@ -39,7 +39,7 @@ public final class AnalysisWorkflow {
 		} else if (AnalysisType.PORTABILITY.equals(type)) {
 			fileAnalyzer = new PortabilityAnalyzer();
 		} else if (AnalysisType.ADAPTABILITY.equals(type)) {
-			fileAnalyzer = new AdaptabilityAnalyzer();
+			fileAnalyzer = new AdaptabilityAnalyzer(true);
 		} else if (AnalysisType.UNKNOWN.equals(type)) {
 			throw new AnalysisException("no valid AnalysisType found");
 		}
