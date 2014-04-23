@@ -1,6 +1,7 @@
 # pete
 
 pete is a tool for computing metrics that characterize the portability of executable service-oriented processes implemented in several process languages. 
+So far, BPMN 2.0 and BPEL 2.0 process definitions are supported.
 
 [![Build Status](https://travis-ci.org/lenhard/pete.png?branch=master)](https://travis-ci.org/lenhard/pete)
 
@@ -8,8 +9,9 @@ pete is a tool for computing metrics that characterize the portability of execut
 Pete aims to support the computation of metrics for four quality characteristics which are aligned to the ISO/IEC Systems and software Quality Requirements and Evaluation (SQuaRE) method. These are:
 * Direct code portability (implemented)
 * Installability and deployability (implemented)
-* Replaceability (ongoing)
 * Adaptability (ongoing)
+* Replaceability (ongoing)
+
 
 ## Software Requirements
 Pete uses the gradle wrapper, so anything besides Java will be downloaded and installed automatically.
@@ -33,12 +35,14 @@ $ gradlew run -Pargs="<ARGS>"
 * `p`: pete computes direct portability metrics, such as weighted elements portability or activity portability, for process files
 * `d`: pete computes deployability metrics, such as deployment descriptor size or effort of package construction, for deployment archives
 * `i`: pete computes installability metrics for process engines, such as average installation time or installation effort
+* `a`: pete computes adaptability metrics for processes
 
 ```bash
 # Examples
 $ gradlew run -Pargs="-p src/test/resources/portability/Invoke-Empty.bpel" # Compute portability metrics for a process from the test directory
 $ gradlew run -Pargs="-i src/test/resources/installability/server" # Compute installability metrics from all files of a specific test directory 
 $ gradlew run -Pargs="-i src/test/resources/installability/deployment" # Compute deployability metrics from all files of a specific test directory 
+$ gradlew run -Pargs="-a src/test/resources/adaptability" # Compute adaptability metrics from all files of a specific test directory 
 ```
 Pete comes with tasks for IntelliJ and Eclipse
 ```bash
