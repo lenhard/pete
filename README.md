@@ -2,7 +2,6 @@
 
 pete is a tool for computing metrics that characterize the portability of executable service-oriented processes implemented in several process languages. 
 
-For reasons unknown, travis-ci fails to download gradle-1.11 with its wrapper at the moment. Even older builds that were fine at the time fail now due to this issue. The problem seems to be between travis-ci and gradle.
 [![Build Status](https://travis-ci.org/lenhard/pete.png?branch=master)](https://travis-ci.org/lenhard/pete)
 
 ## Quality Characteristics
