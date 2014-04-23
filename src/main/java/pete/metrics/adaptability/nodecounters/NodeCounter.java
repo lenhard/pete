@@ -8,10 +8,10 @@ import org.w3c.dom.Document;
 
 public interface NodeCounter {
 
-	void addToCounts(Document document);
+	Map<String, AtomicInteger> addToCounts(Document document);
 
 	void writeToCsv(Path file);
 
-	Map<String, AtomicInteger> getElementNumbers();
+	Map<String, AtomicInteger> getAbsoluteElementNumbers();
 
 }

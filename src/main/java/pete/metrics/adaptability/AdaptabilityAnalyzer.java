@@ -9,6 +9,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -83,13 +85,12 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 				+ "");
 		entry.addVariable("referencesIssuesFound", inspector.hasReferenceIssues(entry.getFileName()));
 
-		nodeCounter.addToCounts(dom);
-		addAdaptability(entry);
+		Map<String, AtomicInteger> documentElements = nodeCounter.addToCounts(dom);
+		addAdaptability(entry, documentElements);
 	}
 
-	private void addAdaptability(ReportEntry entry) {
-		double adaptabilityDegree = metric.computeAdaptability(nodeCounter
-				.getElementNumbers());
+	private void addAdaptability(ReportEntry entry, Map<String, AtomicInteger> documentElements) {
+		double adaptabilityDegree = metric.computeAdaptability(documentElements);
 		if (adaptabilityDegree == 0) {
 			entry.addVariable("AD", "NoElementsFound");
 		} else {
@@ -136,7 +137,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		nodeCounter.writeToCsv(Paths.get("raw.csv"));
 		if(writeMap){
 			try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ELEMENT_OCCURENCES_FILE))){
-				oos.writeObject(nodeCounter.getElementNumbers());
+				oos.writeObject(nodeCounter.getAbsoluteElementNumbers());
 			} catch (IOException e) {
 				System.err.println(e.getMessage());
 			}

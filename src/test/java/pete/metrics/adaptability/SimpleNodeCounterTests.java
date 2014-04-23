@@ -25,7 +25,7 @@ public class SimpleNodeCounterTests {
 		Document testFile = util
 				.getDom("src/test/resources/adaptability/ElementNumbers.bpmn");
 		simpleCounter.addToCounts(testFile);
-		int numberOfElements = simpleCounter.getElementNumbers().keySet()
+		int numberOfElements = simpleCounter.getAbsoluteElementNumbers().keySet()
 				.size();
 		assertEquals(2, numberOfElements);
 	}

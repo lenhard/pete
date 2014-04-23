@@ -113,9 +113,10 @@ public class SimpleNodeCounter implements NodeCounter {
 	}
 
 	@Override
-	public void addToCounts(Document dom) {
+	public Map<String, AtomicInteger> addToCounts(Document dom) {
 		Node process = new BpmnInspector().getProcess(dom);
 		addNodeToCounts(process);
+		return getAbsoluteElementNumbers();
 	}
 
 	private void addNodeToCounts(Node node) {
@@ -174,7 +175,7 @@ public class SimpleNodeCounter implements NodeCounter {
 	}
 
 	@Override
-	public Map<String, AtomicInteger> getElementNumbers() {
+	public Map<String, AtomicInteger> getAbsoluteElementNumbers() {
 		return Collections.unmodifiableMap(elements);
 	}
 }

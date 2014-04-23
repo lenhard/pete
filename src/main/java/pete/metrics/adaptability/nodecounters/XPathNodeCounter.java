@@ -31,14 +31,16 @@ import bpp.domain.BpelNamespaceContext;
 
 public class XPathNodeCounter implements NodeCounter {
 
-	private ConcurrentHashMap<String, AtomicInteger> elementNumbers;
+	private ConcurrentHashMap<String, AtomicInteger> absoluteElementNumbers;
+
+	private ConcurrentHashMap<String, AtomicInteger> documentElementNumbers;
 
 	private List<AdaptableElement> elements;
 
 	private XPathEvaluator xpath;
 
 	public XPathNodeCounter() {
-		elementNumbers = new ConcurrentHashMap<>();
+		absoluteElementNumbers = new ConcurrentHashMap<>();
 		elements = new AdaptableElements().getElements();
 		try {
 			createXPathEvaluator();
@@ -57,8 +59,10 @@ public class XPathNodeCounter implements NodeCounter {
 	}
 
 	@Override
-	public void addToCounts(Document document) {
+	public Map<String,AtomicInteger> addToCounts(Document document) {
+		documentElementNumbers = new ConcurrentHashMap<>();
 		elements.forEach(element -> checkForElement(element, document));
+		return documentElementNumbers;
 	}
 
 	private void checkForElement(AdaptableElement element, Document document) {
@@ -67,17 +71,18 @@ public class XPathNodeCounter implements NodeCounter {
 					.compile(element.getLocatorExpression());
 			NodeList matchedLines = (NodeList) expr.evaluate(document,
 					XPathConstants.NODESET);
-			addOccurences(element.getName(), matchedLines.getLength());
+			addOccurences(element.getName(), matchedLines.getLength(), absoluteElementNumbers);
+			addOccurences(element.getName(), matchedLines.getLength(), documentElementNumbers);
 		} catch (XPathExpressionException e) {
 			throw new AnalysisException("Element " + element.getName() + ": ",
 					e);
 		}
 	}
 
-	private void addOccurences(String elementName, int occurences) {
-		AtomicInteger currentNumber = elementNumbers.get(elementName);
+	private void addOccurences(String elementName, int occurences, ConcurrentHashMap<String,AtomicInteger> mapToAdd) {
+		AtomicInteger currentNumber = mapToAdd.get(elementName);
 		if (currentNumber == null) {
-			elementNumbers.put(elementName, new AtomicInteger(occurences));
+			mapToAdd.put(elementName, new AtomicInteger(occurences));
 		} else {
 			currentNumber.addAndGet(occurences);
 		}
@@ -89,10 +94,10 @@ public class XPathNodeCounter implements NodeCounter {
 				Charset.defaultCharset()))) {
 			writer.println("element;number");
 			List<String> sortedKeyList = new LinkedList<>();
-			sortedKeyList.addAll(elementNumbers.keySet());
+			sortedKeyList.addAll(absoluteElementNumbers.keySet());
 			sortedKeyList.sort((e1, e2) -> e1.compareTo(e2));
 			for (String key : sortedKeyList) {
-				AtomicInteger value = elementNumbers.get(key);
+				AtomicInteger value = absoluteElementNumbers.get(key);
 				writer.println(key + ";" + value);
 			}
 		} catch (IOException e) {
@@ -101,8 +106,8 @@ public class XPathNodeCounter implements NodeCounter {
 	}
 
 	@Override
-	public Map<String, AtomicInteger> getElementNumbers() {
-		return Collections.unmodifiableMap(elementNumbers);
+	public Map<String, AtomicInteger> getAbsoluteElementNumbers() {
+		return Collections.unmodifiableMap(absoluteElementNumbers);
 	}
 
 }
