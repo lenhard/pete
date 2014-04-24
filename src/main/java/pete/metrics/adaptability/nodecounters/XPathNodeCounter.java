@@ -90,14 +90,18 @@ public class XPathNodeCounter implements NodeCounter {
 
 	@Override
 	public void writeToCsv(Path file) {
+		writeRawData(file, absoluteElementNumbers);
+	}
+
+	private void writeRawData(Path file, Map<String,AtomicInteger> elementNumbers) {
 		try (PrintWriter writer = new PrintWriter(Files.newBufferedWriter(file,
 				Charset.defaultCharset()))) {
 			writer.println("element;number");
 			List<String> sortedKeyList = new LinkedList<>();
-			sortedKeyList.addAll(absoluteElementNumbers.keySet());
+			sortedKeyList.addAll(elementNumbers.keySet());
 			sortedKeyList.sort((e1, e2) -> e1.compareTo(e2));
 			for (String key : sortedKeyList) {
-				AtomicInteger value = absoluteElementNumbers.get(key);
+				AtomicInteger value = elementNumbers.get(key);
 				writer.println(key + ";" + value);
 			}
 		} catch (IOException e) {

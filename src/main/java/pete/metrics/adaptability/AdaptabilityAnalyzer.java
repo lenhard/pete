@@ -30,6 +30,8 @@ import pete.reporting.ReportEntry;
 
 public class AdaptabilityAnalyzer implements FileAnalyzer {
 
+	private static final String RAW_DATA_FILE = "raw.csv";
+
 	private static final String ELEMENT_OCCURENCES_FILE = "raw.obj";
 
 	private NodeCounter nodeCounter;
@@ -134,7 +136,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	@Override
 	public void traversalCompleted() {
-		nodeCounter.writeToCsv(Paths.get("raw.csv"));
+		nodeCounter.writeToCsv(Paths.get(RAW_DATA_FILE));
 		if(writeMap){
 			try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ELEMENT_OCCURENCES_FILE))){
 				oos.writeObject(nodeCounter.getAbsoluteElementNumbers());
