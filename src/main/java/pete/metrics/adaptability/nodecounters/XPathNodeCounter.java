@@ -35,12 +35,15 @@ public class XPathNodeCounter implements NodeCounter {
 
 	private ConcurrentHashMap<String, AtomicInteger> documentElementNumbers;
 
+	private ConcurrentHashMap<String, AtomicInteger> processOccurrences;
+
 	private List<AdaptableElement> elements;
 
 	private XPathEvaluator xpath;
 
 	public XPathNodeCounter() {
 		absoluteElementNumbers = new ConcurrentHashMap<>();
+		processOccurrences = new ConcurrentHashMap<>();
 		elements = new AdaptableElements().getElements();
 		try {
 			createXPathEvaluator();
@@ -59,41 +62,58 @@ public class XPathNodeCounter implements NodeCounter {
 	}
 
 	@Override
-	public Map<String,AtomicInteger> addToCounts(Document document) {
+	public Map<String, AtomicInteger> addToCounts(Document document) {
 		documentElementNumbers = new ConcurrentHashMap<>();
 		elements.forEach(element -> checkForElement(element, document));
 		return documentElementNumbers;
 	}
 
 	private void checkForElement(AdaptableElement element, Document document) {
+		String elementName = element.getName();
 		try {
 			XPathExpression expr = xpath
 					.compile(element.getLocatorExpression());
-			NodeList matchedLines = (NodeList) expr.evaluate(document,
-					XPathConstants.NODESET);
-			addOccurences(element.getName(), matchedLines.getLength(), absoluteElementNumbers);
-			addOccurences(element.getName(), matchedLines.getLength(), documentElementNumbers);
+			int occurences = ((NodeList) expr.evaluate(document,
+					XPathConstants.NODESET)).getLength();
+			addOccurences(elementName, occurences, absoluteElementNumbers);
+			addOccurences(elementName, occurences, documentElementNumbers);
+			addProcessOccurences(elementName, occurences);
 		} catch (XPathExpressionException e) {
-			throw new AnalysisException("Element " + element.getName() + ": ",
-					e);
+			throw new AnalysisException("Element " + elementName + ": ", e);
 		}
 	}
 
-	private void addOccurences(String elementName, int occurences, ConcurrentHashMap<String,AtomicInteger> mapToAdd) {
+	private void addProcessOccurences(String elementName, int occurences) {
+		AtomicInteger current = getElementInMap(elementName, processOccurrences);
+		if (occurences > 0) {
+			current.incrementAndGet();
+		}
+	}
+
+	private void addOccurences(String elementName, int occurences,
+			ConcurrentHashMap<String, AtomicInteger> mapToAdd) {
+		AtomicInteger currentNumber = getElementInMap(elementName, mapToAdd);
+		currentNumber.addAndGet(occurences);
+	}
+
+	private AtomicInteger getElementInMap(String elementName,
+			ConcurrentHashMap<String, AtomicInteger> mapToAdd) {
 		AtomicInteger currentNumber = mapToAdd.get(elementName);
 		if (currentNumber == null) {
-			mapToAdd.put(elementName, new AtomicInteger(occurences));
-		} else {
-			currentNumber.addAndGet(occurences);
+			currentNumber = new AtomicInteger(0);
+			mapToAdd.put(elementName, currentNumber);
 		}
+		return currentNumber;
 	}
 
 	@Override
 	public void writeToCsv(Path file) {
-		writeRawData(file, absoluteElementNumbers);
+		// currently write the occurences of elements per process
+		writeRawData(file, processOccurrences);
 	}
 
-	private void writeRawData(Path file, Map<String,AtomicInteger> elementNumbers) {
+	private void writeRawData(Path file,
+			Map<String, AtomicInteger> elementNumbers) {
 		try (PrintWriter writer = new PrintWriter(Files.newBufferedWriter(file,
 				Charset.defaultCharset()))) {
 			writer.println("element;number");
@@ -112,6 +132,11 @@ public class XPathNodeCounter implements NodeCounter {
 	@Override
 	public Map<String, AtomicInteger> getAbsoluteElementNumbers() {
 		return Collections.unmodifiableMap(absoluteElementNumbers);
+	}
+
+	@Override
+	public Map<String, AtomicInteger> getProcessOccurences() {
+		return Collections.unmodifiableMap(processOccurrences);
 	}
 
 }

@@ -153,7 +153,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		if (writeMap) {
 			try (ObjectOutputStream oos = new ObjectOutputStream(
 					new FileOutputStream(ELEMENT_OCCURENCES_FILE))) {
-				oos.writeObject(nodeCounter.getAbsoluteElementNumbers());
+				oos.writeObject(nodeCounter.getProcessOccurences());
 			} catch (IOException e) {
 				System.err.println(e.getMessage());
 			}

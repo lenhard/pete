@@ -14,4 +14,6 @@ public interface NodeCounter {
 
 	Map<String, AtomicInteger> getAbsoluteElementNumbers();
 
+	Map<String, AtomicInteger> getProcessOccurences();
+
 }

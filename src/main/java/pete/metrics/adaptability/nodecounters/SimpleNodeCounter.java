@@ -178,4 +178,9 @@ public class SimpleNodeCounter implements NodeCounter {
 	public Map<String, AtomicInteger> getAbsoluteElementNumbers() {
 		return Collections.unmodifiableMap(elements);
 	}
+
+	@Override
+	public Map<String, AtomicInteger> getProcessOccurences() {
+		throw new IllegalStateException("not implemented");
+	}
 }

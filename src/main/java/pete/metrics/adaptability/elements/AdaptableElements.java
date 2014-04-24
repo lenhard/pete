@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
-public final class AdaptableElements extends ElementsCollection{
+public final class AdaptableElements extends ElementsCollection {
 
 	private final Collection<AdaptableElement> elements;
 
