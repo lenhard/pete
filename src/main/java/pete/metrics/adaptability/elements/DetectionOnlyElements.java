@@ -13,19 +13,19 @@ class DetectionOnlyElements extends ElementsCollection {
 	}
 
 	private void buildSequenceFlow() {
-		AdaptableElement sequenceFlow = new AdaptableElement("sequenceFlow");
+		AdaptableElement sequenceFlow = new AdaptableElement("sequenceFlow", true);
 		sequenceFlow.setLocatorExpression("//*[local-name() = 'sequenceFlow']");
 		add(sequenceFlow);
 	}
 
 	private void buildThrowLinkEvent() {
-		AdaptableElement linkEvent = new AdaptableElement("linkThrowEvent");
+		AdaptableElement linkEvent = new AdaptableElement("linkThrowEvent", true);
 		linkEvent.setLocatorExpression(events.buildEventXPathExpression("intermediateThrowEvent", "link"));
 		add(linkEvent);
 	}
 
 	private void buildCatchLinkEvent() {
-		AdaptableElement linkEvent = new AdaptableElement("linkCatchEvent");
+		AdaptableElement linkEvent = new AdaptableElement("linkCatchEvent", true);
 		linkEvent.setLocatorExpression(events.buildEventXPathExpression("intermediateCatchEvent", "link"));
 		add(linkEvent);
 	}
