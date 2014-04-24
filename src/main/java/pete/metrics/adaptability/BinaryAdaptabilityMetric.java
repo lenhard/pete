@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import pete.metrics.adaptability.elements.AdaptableElement;
 import pete.metrics.adaptability.elements.AdaptableElements;
 
-class BinaryAdaptabilityMetric implements AdaptabilityMetric {
+final class BinaryAdaptabilityMetric implements AdaptabilityMetric {
 
 	private Map<String, AdaptableElement> elements;
 

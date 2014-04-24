@@ -99,8 +99,8 @@ public final class BpmnInspector {
 			if ("import".equals(node.getLocalName())) {
 				NamedNodeMap attributes = node.getAttributes();
 				Node importType = attributes.getNamedItem("importType");
-				if(importType != null){
-					result.append(importType.getNodeValue()+ " ");
+				if (importType != null) {
+					result.append(importType.getNodeValue() + " ");
 				}
 			}
 		}

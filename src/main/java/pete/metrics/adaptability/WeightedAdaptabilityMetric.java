@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import pete.metrics.adaptability.elements.AdaptableElement;
 import pete.metrics.adaptability.elements.AdaptableElements;
 
-public class WeightedAdaptabilityMetric implements AdaptabilityMetric {
+final class WeightedAdaptabilityMetric implements AdaptabilityMetric {
 
 	private Map<String, AdaptableElement> elements;
 
@@ -18,7 +18,8 @@ public class WeightedAdaptabilityMetric implements AdaptabilityMetric {
 
 	public WeightedAdaptabilityMetric() {
 		elements = new AdaptableElements().getElementsByName();
-		referenceScore = elements.values().parallelStream().filter(element -> !element.isForDetectionOnly())
+		referenceScore = elements.values().parallelStream()
+				.filter(element -> !element.isForDetectionOnly())
 				.mapToInt(element -> element.getAdaptabilityScore()).max()
 				.getAsInt();
 	}
@@ -40,7 +41,7 @@ public class WeightedAdaptabilityMetric implements AdaptabilityMetric {
 	private void addElementAdaptability(
 			Map<String, AtomicInteger> processElements, String elementName) {
 		AdaptableElement element = elements.get(elementName);
-		if(element.isForDetectionOnly()){
+		if (element.isForDetectionOnly()) {
 			return;
 		}
 
