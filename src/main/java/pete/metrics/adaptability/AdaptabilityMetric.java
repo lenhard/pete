@@ -7,4 +7,6 @@ interface AdaptabilityMetric {
 
 	public double computeAdaptability(Map<String, AtomicInteger> processElements);
 
+	public String getIdentifier();
+
 }

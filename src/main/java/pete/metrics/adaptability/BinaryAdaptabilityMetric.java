@@ -10,15 +10,19 @@ class BinaryAdaptabilityMetric implements AdaptabilityMetric {
 
 	private Map<String, AdaptableElement> elements;
 
-	private int referenceScore;
+	private final int referenceScore;
 
 	private AtomicInteger sum;
 
 	private AtomicInteger maxDegree;
 
-	public BinaryAdaptabilityMetric() {
+	private final double cutoffValue;
+
+	public BinaryAdaptabilityMetric(double cutoffValue) {
+		this.cutoffValue = cutoffValue;
 		elements = new AdaptableElements().getElementsByName();
-		referenceScore = elements.values().parallelStream().filter(element -> !element.isForDetectionOnly())
+		referenceScore = elements.values().parallelStream()
+				.filter(element -> !element.isForDetectionOnly())
 				.mapToInt(element -> element.getAdaptabilityScore()).max()
 				.getAsInt();
 	}
@@ -31,7 +35,7 @@ class BinaryAdaptabilityMetric implements AdaptabilityMetric {
 				elementName -> addElementAdaptability(processElements,
 						elementName));
 		if (maxDegree.get() == 0) {
-			return 0;
+			return -1;
 		} else {
 			return sum.doubleValue() / maxDegree.doubleValue();
 		}
@@ -40,18 +44,23 @@ class BinaryAdaptabilityMetric implements AdaptabilityMetric {
 	private void addElementAdaptability(
 			Map<String, AtomicInteger> processElements, String elementName) {
 		AdaptableElement element = elements.get(elementName);
-		if(element.isForDetectionOnly()){
+		if (element.isForDetectionOnly()) {
 			return;
 		}
 
 		int number = processElements.get(elementName).get();
 		int elementScore = element.getAdaptabilityScore();
 
-		if(elementScore >= (referenceScore * 0.4)){
+		if (elementScore >= (referenceScore * cutoffValue)) {
 			sum.addAndGet(number);
 		}
 
 		maxDegree.addAndGet(number);
+	}
+
+	@Override
+	public String getIdentifier() {
+		return "AD" + cutoffValue;
 	}
 
 }

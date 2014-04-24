@@ -38,7 +38,7 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	private BpmnInspector inspector;
 
-	private AdaptabilityMetric metric;
+	private List<AdaptabilityMetric> testMetrics;
 
 	private boolean writeMap;
 
@@ -47,14 +47,21 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		setUp(false);
 	}
 
-	public AdaptabilityAnalyzer(boolean writeMap){
+	public AdaptabilityAnalyzer(boolean writeMap) {
 		setUp(writeMap);
 	}
 
 	private void setUp(boolean writeMap) {
 		nodeCounter = new XPathNodeCounter();
 		inspector = new BpmnInspector();
-		metric = new BinaryAdaptabilityMetric();
+
+		testMetrics = new ArrayList<>(5);
+		testMetrics.add(new BinaryAdaptabilityMetric(0.2));
+		testMetrics.add(new BinaryAdaptabilityMetric(0.4));
+		testMetrics.add(new BinaryAdaptabilityMetric(0.6));
+		testMetrics.add(new BinaryAdaptabilityMetric(0.8));
+		testMetrics.add(new WeightedAdaptabilityMetric());
+
 		this.writeMap = writeMap;
 	}
 
@@ -85,18 +92,24 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		entry.addVariable("isExecutable", inspector.isExecutable(process));
 		entry.addVariable("elements", inspector.getNumberOfChildren(process)
 				+ "");
-		entry.addVariable("referencesIssuesFound", inspector.hasReferenceIssues(entry.getFileName()));
+		entry.addVariable("referencesIssuesFound",
+				inspector.hasReferenceIssues(entry.getFileName()));
 
-		Map<String, AtomicInteger> documentElements = nodeCounter.addToCounts(dom);
-		addAdaptability(entry, documentElements);
+		Map<String, AtomicInteger> documentElements = nodeCounter
+				.addToCounts(dom);
+		testMetrics.forEach(metric -> addAdaptability(entry, documentElements,
+				metric));
 	}
 
-	private void addAdaptability(ReportEntry entry, Map<String, AtomicInteger> documentElements) {
-		double adaptabilityDegree = metric.computeAdaptability(documentElements);
-		if (adaptabilityDegree == 0) {
-			entry.addVariable("AD", "NoElementsFound");
+	private void addAdaptability(ReportEntry entry,
+			Map<String, AtomicInteger> documentElements,
+			AdaptabilityMetric metric) {
+		double adaptabilityDegree = metric
+				.computeAdaptability(documentElements);
+		if (adaptabilityDegree == -1) {
+			entry.addVariable(metric.getIdentifier(), "NoElementsFound");
 		} else {
-			entry.addVariable("AD", adaptabilityDegree + "");
+			entry.addVariable(metric.getIdentifier(), adaptabilityDegree + "");
 		}
 	}
 
@@ -137,8 +150,9 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 	@Override
 	public void traversalCompleted() {
 		nodeCounter.writeToCsv(Paths.get(RAW_DATA_FILE));
-		if(writeMap){
-			try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(ELEMENT_OCCURENCES_FILE))){
+		if (writeMap) {
+			try (ObjectOutputStream oos = new ObjectOutputStream(
+					new FileOutputStream(ELEMENT_OCCURENCES_FILE))) {
 				oos.writeObject(nodeCounter.getAbsoluteElementNumbers());
 			} catch (IOException e) {
 				System.err.println(e.getMessage());

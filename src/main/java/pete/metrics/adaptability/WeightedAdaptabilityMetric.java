@@ -49,4 +49,9 @@ public class WeightedAdaptabilityMetric implements AdaptabilityMetric {
 		sum.addAndGet(number * elementScore);
 		maxDegree.addAndGet(number * referenceScore);
 	}
+
+	@Override
+	public String getIdentifier() {
+		return "wAD";
+	}
 }
