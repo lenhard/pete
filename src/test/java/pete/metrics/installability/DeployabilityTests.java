@@ -2,9 +2,13 @@ package pete.metrics.installability;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,6 +25,15 @@ public class DeployabilityTests {
 	@Before
 	public void setUp() {
 		sut = new DeploymentPackageAnalyzer();
+	}
+
+	@AfterClass
+	public static void afterClass() {
+		try {
+			FileUtils.deleteDirectory(new File("tmp"));
+		} catch (IOException e) {
+			// Not critical -> ignore
+		}
 	}
 
 	@Test
