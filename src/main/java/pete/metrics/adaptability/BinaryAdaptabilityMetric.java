@@ -18,7 +18,7 @@ class BinaryAdaptabilityMetric implements AdaptabilityMetric {
 
 	public BinaryAdaptabilityMetric() {
 		elements = new AdaptableElements().getElementsByName();
-		referenceScore = elements.values().parallelStream()
+		referenceScore = elements.values().parallelStream().filter(element -> !element.isForDetectionOnly())
 				.mapToInt(element -> element.getAdaptabilityScore()).max()
 				.getAsInt();
 	}

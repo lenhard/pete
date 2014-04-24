@@ -18,7 +18,7 @@ public class WeightedAdaptabilityMetric implements AdaptabilityMetric {
 
 	public WeightedAdaptabilityMetric() {
 		elements = new AdaptableElements().getElementsByName();
-		referenceScore = elements.values().parallelStream()
+		referenceScore = elements.values().parallelStream().filter(element -> !element.isForDetectionOnly())
 				.mapToInt(element -> element.getAdaptabilityScore()).max()
 				.getAsInt();
 	}

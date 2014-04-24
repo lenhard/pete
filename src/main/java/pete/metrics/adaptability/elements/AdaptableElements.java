@@ -43,4 +43,5 @@ public final class AdaptableElements extends ElementsCollection{
 		elements.forEach(element -> result.put(element.getName(), element));
 		return result;
 	}
+
 }
