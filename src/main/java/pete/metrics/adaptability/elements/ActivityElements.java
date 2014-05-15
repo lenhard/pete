@@ -219,7 +219,7 @@ class ActivityElements extends ElementsCollection {
 		receiveTask.addAdaption("scriptTask");
 		receiveTask.addAdaption("globalScriptTask");
 		receiveTask.addAdaption("globalUserTask");
-		receiveTask.addAdaption("intermediateMessageEvent");
+		receiveTask.addAdaption("intermediateMessageCatchEvent");
 		receiveTask.addAdaption("eventSubprocessWithMessageStartEvent");
 
 		add(receiveTask);
@@ -245,7 +245,6 @@ class ActivityElements extends ElementsCollection {
 				"globalScriptTask");
 		globalScriptTask
 				.setLocatorExpression("//*[local-name() = 'globalScriptTask']");
-		// siehe script task
 		globalScriptTask
 				.setDocumentation("the adaptions can in principle be used to trigger the execution of a script at some entity. "
 						+ "A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
@@ -262,12 +261,14 @@ class ActivityElements extends ElementsCollection {
 		sendTask.setLocatorExpression("//*[local-name() = 'sendTask']");
 
 		sendTask.setDocumentation("the adaptions can in principle be used to trigger the sending of a message. "
-				+ "A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
+				+ "A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific. "
+				+ "Also intermediate message throw events can be used.");
 		sendTask.addAdaption("serviceTask");
 		sendTask.addAdaption("scriptTask");
 		sendTask.addAdaption("userTask");
 		sendTask.addAdaption("globalScriptTask");
 		sendTask.addAdaption("globalUserTask");
+		sendTask.addAdaption("intermediateMessageThrowEvent");
 
 		add(sendTask);
 	}
@@ -278,12 +279,14 @@ class ActivityElements extends ElementsCollection {
 
 		serviceTask
 				.setDocumentation("the adaptions can in principle be used to trigger service execution, possibly combined with a receive task in case of synchronous communication. "
-						+ "A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific");
+						+ "A receiveTask is not suitable as it is passively waiting and a businessRuleTask is too specific."
+						+ " Also intermediate message events can be used.");
 		serviceTask.addAdaption("scriptTask");
 		serviceTask.addAdaption("userTask");
 		serviceTask.addAdaption("sendTask");
 		serviceTask.addAdaption("globalScriptTask");
 		serviceTask.addAdaption("globalUserTask");
+		serviceTask.addAdaption("intermediateMessageThrowAndCatchEvents");
 
 		add(serviceTask);
 	}
