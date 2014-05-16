@@ -46,11 +46,11 @@ class GatewayElements extends ElementsCollection {
 		eventBasedGateway
 				.setLocatorExpression("//*[local-name() = 'eventBasedGateway' and not (@eventGatewayType = 'parallel') and not (@instantiate = 'true')]");
 		eventBasedGateway
-				.setLocatorExpression("intermediateMultipleCatchEventFollowedByExclusiveGateway");
+				.addAdaption("intermediateMultipleCatchEventFollowedByExclusiveGateway");
 		eventBasedGateway
-				.setLocatorExpression("intermediateMultipleCatchEventFollowedByInclusiveGateway");
+				.addAdaption("intermediateMultipleCatchEventFollowedByInclusiveGateway");
 		eventBasedGateway
-				.setLocatorExpression("intermediateMultipleCatchEventFollowedByComplexGateway");
+				.addAdaption("intermediateMultipleCatchEventFollowedByComplexGateway");
 		add(eventBasedGateway);
 	}
 
