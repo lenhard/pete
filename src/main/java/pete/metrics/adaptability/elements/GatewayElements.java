@@ -17,7 +17,8 @@ class GatewayElements extends ElementsCollection {
 		AdaptableElement eventBasedGateway = new AdaptableElement(
 				"parallelEventBasedGateway");
 		eventBasedGateway
-				.setDocumentation("A parallel eventBasedGateway can be adapted to a solution where the events are processed through tasks before the gateway and conditions set to be evaluated by the gateway");
+				.setDocumentation("A parallel eventBasedGateway can be adapted to a solution where the events are processed through "
+						+ "catch events before the gateway");
 		eventBasedGateway
 				.setLocatorExpression("//*[local-name() = 'eventBasedGateway' and (@eventGatewayType = 'parallel') and not (@instantiate = 'true')]");
 		eventBasedGateway.addAdaption("inclusiveGateway");
@@ -29,11 +30,10 @@ class GatewayElements extends ElementsCollection {
 		AdaptableElement eventBasedGateway = new AdaptableElement(
 				"instantiatingParallelEventBasedGateway");
 		eventBasedGateway
-				.setDocumentation("An instantiating parallel eventBasedGateway that initiates a process cannot be adapted since there is no way to avoid the instantiation of the process until multiple events have been received");
+				.setDocumentation("An instantiating parallel eventBasedGateway cannot be adapted since there is no way to avoid "
+						+ "the instantiation of the process until multiple events have been received");
 		eventBasedGateway
 				.setLocatorExpression("//*[local-name() = 'eventBasedGateway' and (@eventGatewayType = 'parallel') and (@instantiate = 'true')]");
-		eventBasedGateway.addAdaption("inclusiveGateway");
-		eventBasedGateway.addAdaption("complexGateway");
 		add(eventBasedGateway);
 	}
 
@@ -41,12 +41,16 @@ class GatewayElements extends ElementsCollection {
 		AdaptableElement eventBasedGateway = new AdaptableElement(
 				"eventBasedGateway");
 		eventBasedGateway
-				.setDocumentation("An eventBasedGateway can be adapted to a solution where the events are processed through tasks before the gateway and conditions set accordingly that are then evaluated by the gateway");
+				.setDocumentation("An eventBasedGateway can be adapted to a solution where an intermediate multipleCatchEvent waits for the occurence of one among a set of events "
+						+ "and a different control-flow path is taken by a following gateway depending on the type of event");
 		eventBasedGateway
 				.setLocatorExpression("//*[local-name() = 'eventBasedGateway' and not (@eventGatewayType = 'parallel') and not (@instantiate = 'true')]");
-		eventBasedGateway.addAdaption("inclusiveGateway");
-		eventBasedGateway.addAdaption("complexGateway");
-		eventBasedGateway.addAdaption("exclusiveGateway");
+		eventBasedGateway
+				.setLocatorExpression("intermediateMultipleCatchEventFollowedByExclusiveGateway");
+		eventBasedGateway
+				.setLocatorExpression("intermediateMultipleCatchEventFollowedByInclusiveGateway");
+		eventBasedGateway
+				.setLocatorExpression("intermediateMultipleCatchEventFollowedByComplexGateway");
 		add(eventBasedGateway);
 	}
 
@@ -54,7 +58,8 @@ class GatewayElements extends ElementsCollection {
 		AdaptableElement eventBasedGateway = new AdaptableElement(
 				"instantiatingEventBasedGateway");
 		eventBasedGateway
-				.setDocumentation("An instantiating eventBasedGateway can be adapted to a solution where the multiple startEvents are merged by an exclusiveGateway");
+				.setDocumentation("An instantiating eventBasedGateway can be adapted to a solution where the multiple startEvents "
+						+ "are merged by an exclusiveGateway");
 		eventBasedGateway
 				.setLocatorExpression("//*[local-name() = 'eventBasedGateway' and not (@eventGatewayType = 'parallel') and (@instantiate = 'true')]");
 		eventBasedGateway.addAdaption("startEventsFollowedByExclusiveGateway");
@@ -76,7 +81,8 @@ class GatewayElements extends ElementsCollection {
 		parallelGateway
 				.setLocatorExpression("//*[local-name() = 'parallelGateway']");
 		parallelGateway
-				.setDocumentation("A parallelGateway can be replaced by other gateways that allow for parallelism, given the conditions of these gateways are set to trigger all branches");
+				.setDocumentation("A parallelGateway can be replaced by other gateways that allow for parallelism, given the "
+						+ "conditions of these gateways are set to trigger all branches");
 		parallelGateway.addAdaption("inclusiveGateway");
 		parallelGateway.addAdaption("complexGateway");
 		add(parallelGateway);
@@ -99,7 +105,8 @@ class GatewayElements extends ElementsCollection {
 		exclusiveGateway
 				.setLocatorExpression("//*[local-name() = 'exclusiveGateway']");
 		exclusiveGateway
-				.setDocumentation("an exclusiveGateway can be adapted to any other gateway that allows for the triggering of one among a set of branches");
+				.setDocumentation("an exclusiveGateway can be adapted to any other gateway that allows for the triggering of "
+						+ "one among a set of branches");
 		exclusiveGateway.addAdaption("eventBasedGateway");
 		exclusiveGateway.addAdaption("complexGateway");
 		exclusiveGateway.addAdaption("inclusiveGateway");
