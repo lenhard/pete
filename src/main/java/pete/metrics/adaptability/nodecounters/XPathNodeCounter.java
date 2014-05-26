@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -110,6 +111,8 @@ public class XPathNodeCounter implements NodeCounter {
 	public void writeToCsv(Path file) {
 		// currently write the occurences of elements per process
 		writeRawData(file, processOccurrences, ",");
+		writeRawData(Paths.get("Excel-" + file.getFileName()),
+				processOccurrences, ";");
 	}
 
 	private void writeRawData(Path file,

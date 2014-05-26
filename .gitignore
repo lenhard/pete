@@ -6,8 +6,7 @@ bin/
 .settings/
 tmp/
 results.csv
-raw.csv
-raw.obj
+*raw.*
 test.zip
 /test
 r-results.csv
