@@ -11,7 +11,6 @@ class EventElements extends ElementsCollection {
 	}
 
 	private void buildTopLevelStartEvents() {
-		buildNoneStartEvent();
 		buildMessageStartEvent();
 		buildTimerStartEvent();
 		buildConditionalStartEvent();
@@ -41,7 +40,6 @@ class EventElements extends ElementsCollection {
 	}
 
 	private void buildEndEvents() {
-		buildNoneEndEvent();
 		buildMessageEndEvent();
 		buildErrorEndEvent();
 		buildEscalationEndEvent();
@@ -754,18 +752,6 @@ class EventElements extends ElementsCollection {
 		add(parallelMultipleStartEvent);
 	}
 
-	private void buildNoneEndEvent() {
-		AdaptableElement noneEndEvent = new AdaptableElement("noneEndEvent");
-		noneEndEvent
-				.setLocatorExpression("//*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'ventDefinition')])]");
-		noneEndEvent
-				.setDocumentation("A nonEndEvent can be adapted to any other endEvent that represents normal termination");
-		noneEndEvent.addAdaption("messageEndEvent");
-		noneEndEvent.addAdaption("signalEndEvent");
-		noneEndEvent.addAdaption("multipleEndEvent");
-		add(noneEndEvent);
-	}
-
 	private void buildMessageEndEvent() {
 		AdaptableElement messageEndEvent = new AdaptableElement(
 				"messageEndEvent");
@@ -848,21 +834,6 @@ class EventElements extends ElementsCollection {
 				.addAdaption("multipleIntermediateEventsFollowedbyNoneEndEvent");
 
 		add(multipleEndEvent);
-	}
-
-	private void buildNoneStartEvent() {
-		AdaptableElement noneStartEvent = new AdaptableElement("noneStartEvent");
-		noneStartEvent
-				.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'ventDefinition')])]");
-		noneStartEvent
-				.setDocumentation("A noneStartEvent can be adapted to another start event that represents normal start");
-
-		noneStartEvent.addAdaption("messageStartEvent");
-		noneStartEvent.addAdaption("conditionalStartEvent");
-		noneStartEvent.addAdaption("signalStartEvent");
-		noneStartEvent.addAdaption("multipleStartEvent");
-		noneStartEvent.addAdaption("parallelMultipleStartEvent");
-		add(noneStartEvent);
 	}
 
 	private void buildMessageStartEvent() {

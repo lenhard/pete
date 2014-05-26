@@ -10,6 +10,8 @@ class DetectionOnlyElements extends ElementsCollection {
 		buildThrowLinkEvent();
 		buildCatchLinkEvent();
 		buildTask();
+		buildNoneEndEvent();
+		buildNoneStartEvent();
 	}
 
 	private void buildSequenceFlow() {
@@ -40,6 +42,33 @@ class DetectionOnlyElements extends ElementsCollection {
 		task.setLocatorExpression("//*[local-name() = 'task' or local-name() = 'globalTask']");
 		task.setDocumentation("A plain task is a kind of wildcard element for an unspecified task an irrelevant to process execution");
 		add(task);
+	}
+
+	private void buildNoneEndEvent() {
+		AdaptableElement noneEndEvent = new AdaptableElement("noneEndEvent");
+		noneEndEvent
+				.setLocatorExpression("//*[local-name() = 'endEvent' and not(child::*[contains(local-name(),'ventDefinition')])]");
+		noneEndEvent
+				.setDocumentation("A nonEndEvent can be adapted to any other endEvent that represents normal termination");
+		noneEndEvent.addAdaption("messageEndEvent");
+		noneEndEvent.addAdaption("signalEndEvent");
+		noneEndEvent.addAdaption("multipleEndEvent");
+		add(noneEndEvent);
+	}
+
+	private void buildNoneStartEvent() {
+		AdaptableElement noneStartEvent = new AdaptableElement("noneStartEvent");
+		noneStartEvent
+				.setLocatorExpression("/*[local-name() = 'process']/*[local-name() = 'startEvent' and not(/*[contains(local-name(),'ventDefinition')])]");
+		noneStartEvent
+				.setDocumentation("A noneStartEvent can be adapted to another start event that represents normal start");
+
+		noneStartEvent.addAdaption("messageStartEvent");
+		noneStartEvent.addAdaption("conditionalStartEvent");
+		noneStartEvent.addAdaption("signalStartEvent");
+		noneStartEvent.addAdaption("multipleStartEvent");
+		noneStartEvent.addAdaption("parallelMultipleStartEvent");
+		add(noneStartEvent);
 	}
 
 }
