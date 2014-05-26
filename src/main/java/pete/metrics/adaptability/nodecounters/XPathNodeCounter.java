@@ -109,20 +109,20 @@ public class XPathNodeCounter implements NodeCounter {
 	@Override
 	public void writeToCsv(Path file) {
 		// currently write the occurences of elements per process
-		writeRawData(file, processOccurrences);
+		writeRawData(file, processOccurrences, ",");
 	}
 
 	private void writeRawData(Path file,
-			Map<String, AtomicInteger> elementNumbers) {
+			Map<String, AtomicInteger> elementNumbers, String delimiter) {
 		try (PrintWriter writer = new PrintWriter(Files.newBufferedWriter(file,
 				Charset.defaultCharset()))) {
-			writer.println("element;number");
+			writer.println("element" + delimiter + "number");
 			List<String> sortedKeyList = new LinkedList<>();
 			sortedKeyList.addAll(elementNumbers.keySet());
 			sortedKeyList.sort((e1, e2) -> e1.compareTo(e2));
 			for (String key : sortedKeyList) {
 				AtomicInteger value = elementNumbers.get(key);
-				writer.println(key + "," + value);
+				writer.println(key + delimiter + value);
 			}
 		} catch (IOException e) {
 			System.err.println(e.getMessage());
