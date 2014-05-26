@@ -107,7 +107,8 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		double adaptabilityDegree = metric
 				.computeAdaptability(documentElements);
 		if (adaptabilityDegree == -1) {
-			entry.addVariable(metric.getIdentifier(), "NoElementsFound");
+			entry.addVariable(metric.getIdentifier(), "NA");
+			// throw new AnalysisException("No elements found");
 		} else {
 			entry.addVariable(metric.getIdentifier(), adaptabilityDegree + "");
 		}
