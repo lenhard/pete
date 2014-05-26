@@ -122,7 +122,7 @@ public class XPathNodeCounter implements NodeCounter {
 			sortedKeyList.sort((e1, e2) -> e1.compareTo(e2));
 			for (String key : sortedKeyList) {
 				AtomicInteger value = elementNumbers.get(key);
-				writer.println(key + ";" + value);
+				writer.println(key + "," + value);
 			}
 		} catch (IOException e) {
 			System.err.println(e.getMessage());
