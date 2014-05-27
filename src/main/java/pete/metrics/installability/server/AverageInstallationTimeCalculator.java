@@ -18,6 +18,8 @@ import pete.reporting.ReportEntry;
 
 public class AverageInstallationTimeCalculator implements FileAnalyzer {
 
+	private static final String DELIMITER = ";";
+
 	private static final String RAW_FILE = "raw.csv";
 
 	private static final String ACTIVE_BPEL_NAME = "active-bpel";
@@ -74,7 +76,7 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 	}
 
 	private void scanLog(Path filePath) throws IOException,
-	FileNotFoundException {
+			FileNotFoundException {
 		System.out.println("Analysing file " + filePath.toString()
 				+ " for installability");
 		Scanner scanner = new Scanner(filePath);
@@ -92,7 +94,7 @@ public class AverageInstallationTimeCalculator implements FileAnalyzer {
 
 				entries.get(engineName).add(sec);
 
-				fullLog.add(engineName + "," + sec);
+				fullLog.add(engineName + DELIMITER + sec);
 
 			} else if (line
 					.contains("SOAP BC Installation failed - shutdown, reinstall and start petalsesb again")) {
