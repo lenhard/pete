@@ -1,5 +1,5 @@
 #load metric data
-ds = read.csv("c:/workspaces/git/pete/r-results.csv")
+ds = read.csv2("c:/workspaces/git/pete/results.csv")
 library(Rcmdr)
 
 # sanity checks
@@ -9,7 +9,7 @@ prop.table(summary(ds$referencesIssuesFound))
 prop.table(summary(ds$isExecutable))
 
 # plot element occurences
-constructs = read.csv("c:/workspaces/git/pete/raw.csv")
+constructs = read.csv2("c:/workspaces/git/pete/raw.csv")
 constructsSorted = constructs[order(constructs$number),]
 constructsRemoved = constructsSorted[(constructsSorted$number > 150),]
 constructsRemoved$number <- (constructsRemoved$number / 2995) * 100
@@ -66,17 +66,17 @@ wilcox.test(exec$AD0.8, nonExec$AD0.8, alternative="greater")
 wilcox.test(exec$wAD, nonExec$wAD, alternative="greater")
 
 # compute amount of unique values
-unique(exec$AD0.2)
-unique(exec$AD0.4)
-unique(exec$AD0.6)
-unique(exec$AD0.8)
-unique(exec$wAD)
+length(unique(exec$AD0.2)) / nrow(exec)
+length(unique(exec$AD0.4)) / nrow(exec)
+length(unique(exec$AD0.6)) / nrow(exec)
+length(unique(exec$AD0.8)) / nrow(exec)
+length(unique(exec$wAD)) / nrow(exec)
 
-unique(nonExec$AD0.2)
-unique(nonExec$AD0.4)
-unique(nonExec$AD0.6)
-unique(nonExec$AD0.8)
-unique(nonExec$wAD)
+length(unique(nonExec$AD0.2)) / nrow(nonExec)
+length(unique(nonExec$AD0.4)) / nrow(nonExec)
+length(unique(nonExec$AD0.6)) / nrow(nonExec)
+length(unique(nonExec$AD0.8)) / nrow(nonExec)
+length(unique(nonExec$wAD)) / nrow(nonExec)
 
 # correlation between wAD and AD0.6
 summary(lm(exec$AD0.6 ~ exec$wAD))
