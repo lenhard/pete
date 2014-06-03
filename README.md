@@ -63,11 +63,17 @@ Pete produces three different files that are written to the root directory and c
 
 ## Project Structure
 
-    src/main/java # the main source code
-    src/main/r # scripts written in R that consume the CSV file produced by pete and perform several simple analyses of the data
-    src/test/java # JUnit tests for pete
-    src/test/resources # files that are analyzed during the unit tests
-
+| Package     | Purpose          | 
+| ------------- |-------------| 
+| `src/main/java `     | the main source code| 
+| `src/main/java/pete/executables`     | classes that implement the main workflow, such as traversing a directory structure and triggering the metrics computation and reporting | 
+| `src/main/java/pete/metrics/adaptability`     | classes for computing adaptability metrics| 
+| `src/main/java/pete/metrics/installability`     | classes for computing installability metrics| 
+| `src/main/java/pete/metrics/portability`     | classes for computing portability metrics| 
+| `src/main/java/pete/reporting`     | classes for writing reports and result files to the file system| 
+| `src/main/r`     | scripts written in R that consume the CSV file produced by pete and perform several simple analyses of the data| 
+| `src/test/java`     | JUnit tests for pete| 
+| `src/test/resources`     | files that are analyzed during the unit tests| 
 
 ## Authors 
 
