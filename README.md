@@ -79,6 +79,3 @@ Contribution is appreciated! Feel free to open issues. Apart from that, the norm
 
 - Fork
 - Send Pull Request
-
-## Current State
-So far, portability and installability metrics and their computation for BPEL processes is supported. Support for the remaining quality characteristics and the process languages Windows Workflow and BPMN 2.0 is planned.
