@@ -57,8 +57,7 @@ $ gradlew deleteTmpDir # purge temporary files manually
 ## Output
 
 Pete produces three different files that are written to the root directory and can be analyzed by statistical tooling:
-- `results.csv`: A list of all metrics of the selected type and their values for the files analyzed. Values are separated with a semicolon, as preferred by MS Office.
-- `r-results.csv`: A list of all metrics of the selected type and their values for the files analyzed. Values are separated with a comma, as preferred by R.
+- `results.csv`: A list of all metrics of the selected type and their values for the files analyzed. Values are separated with a semicolon.
 - `raw.csv`: A list of raw data from which several metrics of the above metrics can be computed. Values are separated with a semicolon.
 
 ## Project Structure
