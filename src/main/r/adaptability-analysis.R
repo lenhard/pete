@@ -14,7 +14,7 @@ constructsSorted = constructs[order(constructs$number),]
 constructsRemoved = constructsSorted[(constructsSorted$number > 150),]
 constructsRemoved$number <- (constructsRemoved$number / 2995) * 100
 par(mar=c(6, 12, 4, 2) + 0.1)
-barplot(constructsRemoved$number, horiz=TRUE,names.arg=constructsRemoved$element, las=1,cex.names=0.8)
+barplot(constructsRemoved$number, horiz=TRUE,names.arg=constructsRemoved$element, las=1,cex.names=0.8, xlab="Percentage of Processes", ylab="", mtext("BPMN Elements", side=2, line=10))
 
 #group in executable and non-executable
 exec <- subset(ds, ds$isExecutable=='true')
