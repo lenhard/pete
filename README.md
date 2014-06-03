@@ -36,7 +36,7 @@ $ gradlew run -Pargs="<ARGS>"
 * `p`: pete computes direct portability metrics, such as weighted elements portability or activity portability, for process files
 * `d`: pete computes deployability metrics, such as deployment descriptor size or effort of package construction, for deployment archives
 * `i`: pete computes installability metrics for process engines, such as average installation time or installation effort
-* `a`: pete computes adaptability metrics for processes
+* `a`: pete computes adaptability metrics for processes, such as binary or weighted adaptability
 
 ```bash
 # Examples
