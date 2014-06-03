@@ -6,12 +6,14 @@ So far, BPMN 2.0 and BPEL 2.0 process definitions are supported.
 [![Build Status](https://travis-ci.org/lenhard/pete.png?branch=master)](https://travis-ci.org/lenhard/pete)
 
 ## Quality Characteristics
-Pete aims to support the computation of metrics for four quality characteristics which are aligned to the ISO/IEC Systems and software Quality Requirements and Evaluation (SQuaRE) method. These are:
-* Direct code portability (implemented)
-* Installability and deployability (implemented)
-* Adaptability (implemented)
-* Replaceability (ongoing)
+Pete aims to support the computation of metrics for four quality characteristics which are aligned to the ISO/IEC 25010 Systems and software Quality Requirements and Evaluation (SQuaRE) method. These are:
 
+| Quality Characteristic     | Status           | 
+| ------------- |:-------------:| 
+| Direct code portability      | implemented | 
+| Installability     | implemented | 
+| Adaptability      | implemented | 
+| Replaceability      | ongoing | |
 
 ## Software Requirements
 Pete uses the gradle wrapper, so anything besides Java will be downloaded and installed automatically.
