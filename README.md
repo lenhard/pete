@@ -9,7 +9,7 @@ So far, BPMN 2.0 and BPEL 2.0 process definitions are supported.
 Pete aims to support the computation of metrics for four quality characteristics which are aligned to the ISO/IEC Systems and software Quality Requirements and Evaluation (SQuaRE) method. These are:
 * Direct code portability (implemented)
 * Installability and deployability (implemented)
-* Adaptability (ongoing)
+* Adaptability (implemented)
 * Replaceability (ongoing)
 
 
