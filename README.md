@@ -8,11 +8,11 @@ So far, BPMN 2.0 and BPEL 2.0 process definitions are supported.
 ## Quality Characteristics
 Pete aims to support the computation of metrics for four quality characteristics which are aligned to the ISO/IEC 25010 Systems and software Quality Requirements and Evaluation (SQuaRE) method. These are:
 
-| Quality Characteristic     | Status           | 
+| Quality Characteristic     | Status (package)          | 
 | ------------- |:-------------:| 
-| Direct code portability      | implemented | 
-| Installability     | implemented | 
-| Adaptability      | implemented | 
+| Direct code portability      | implemented (`pete.metrics.portability`)| 
+| Installability     | implemented (`pete.metrics.installability`) | 
+| Adaptability      | implemented (`pete.metrics.adaptability`)| 
 | Replaceability      | ongoing | |
 
 ## Software Requirements
