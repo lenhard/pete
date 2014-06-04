@@ -2,10 +2,6 @@ package pete.metrics.adaptability.elements;
 
 class ActivityElements extends ElementsCollection {
 
-	// Matthias: Manual Task komplett rauswerfen, da keine sinnvolle Adaption.
-	// Letztlich kann man alles manuell machen, dann wird aber nichts mehr von
-	// der engine verwaltet
-
 	public ActivityElements() {
 		buildOrdinarySubProcess();
 		buildBusinessRuleTask();
