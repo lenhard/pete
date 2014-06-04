@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -18,6 +17,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import pete.metrics.adaptability.BpmnInspector;
+import pete.metrics.adaptability.elements.AdaptableElements;
 
 /**
  * Counts occurences of XML elements in a BPMN process, sorted by the name of
@@ -43,73 +43,7 @@ public class SimpleNodeCounter implements NodeCounter {
 	private void setUp(boolean isStrict) {
 		elements = new HashMap<String, AtomicInteger>();
 		this.isStrict = isStrict;
-		relevantElements = new ArrayList<>();
-		relevantElements.add("activity");
-		relevantElements.add("adHocSubProcess");
-		relevantElements.add("boundaryEvent");
-		relevantElements.add("businessRuleTask");
-		relevantElements.add("callActivity");
-		relevantElements.add("cancelEventDefinition");
-		relevantElements.add("catchEvent");
-		relevantElements.add("compensateEventDefinition");
-		relevantElements.add("complexGateway");
-		relevantElements.add("conditionalEventDefinition");
-		relevantElements.add("dataAssociation");
-		relevantElements.add("dataInput");
-		relevantElements.add("dataInputAssociation");
-		relevantElements.add("dataObject");
-		relevantElements.add("dataOutput");
-		relevantElements.add("dataOutputAssociation");
-		relevantElements.add("dataStore");
-		relevantElements.add("endEvent");
-		relevantElements.add("error");
-		relevantElements.add("errorBoundaryEvent");
-		relevantElements.add("errorEventDefinition");
-		relevantElements.add("escalation");
-		relevantElements.add("escalationEventDefinition");
-		relevantElements.add("event");
-		relevantElements.add("eventBasedGateway");
-		relevantElements.add("extension");
-		relevantElements.add("extensionElements");
-		relevantElements.add("formalExpression");
-		relevantElements.add("gateway");
-		relevantElements.add("globalBusinessRuleTask");
-		relevantElements.add("globalManualTask");
-		relevantElements.add("globalScriptTask");
-		relevantElements.add("globalUserTask");
-		relevantElements.add("globalTask");
-		relevantElements.add("implicitThrowEvent");
-		relevantElements.add("inclusiveGateway");
-		relevantElements.add("inputSet");
-		relevantElements.add("intermediateCatchEvent");
-		relevantElements.add("intermediateThrowEvent");
-		relevantElements.add("lane");
-		relevantElements.add("manualTask");
-		relevantElements.add("message");
-		relevantElements.add("messageEventDefinition");
-		relevantElements.add("messageFlow");
-		relevantElements.add("messageFlowAssociation");
-		relevantElements.add("loopCharacteristics");
-		relevantElements.add("multiInstanceLoopCharacteristics");
-		relevantElements.add("process");
-		relevantElements.add("receiveTask");
-		relevantElements.add("scripTask");
-		relevantElements.add("script");
-		relevantElements.add("sendTask");
-		relevantElements.add("sequenceFlow");
-		relevantElements.add("serviceTask");
-		relevantElements.add("signal");
-		relevantElements.add("signalEventDefinition");
-		relevantElements.add("standardLoopCharacteristics");
-		relevantElements.add("endEvent");
-		relevantElements.add("subProcess");
-		relevantElements.add("task");
-		relevantElements.add("terminateEventDefinition");
-		relevantElements.add("throwEvent");
-		relevantElements.add("timerEventDefinition");
-		relevantElements.add("transaction");
-		relevantElements.add("userTask");
-		relevantElements.add("isForCompensation");
+		relevantElements = new AdaptableElements().getElementNames();
 	}
 
 	@Override
