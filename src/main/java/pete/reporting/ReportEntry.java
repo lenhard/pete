@@ -34,17 +34,22 @@ public final class ReportEntry {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder(fileName + "\t");
-		for (String variable : variables.keySet()) {
-			builder.append(variable + ":" + variables.get(variable));
-		}
+
+		variables.keySet().forEach(
+				variable -> builder.append(variable + ":"
+						+ variables.get(variable)));
+
 		return builder.toString();
 	}
 
 	public String toStringWithSeparator(String separator) {
 		StringBuilder builder = new StringBuilder(fileName);
-		for (String variable : variables.keySet()) {
-			builder.append(separator + variables.get(variable));
-		}
+
+		variables.keySet()
+				.forEach(
+						variable -> builder.append(separator
+								+ variables.get(variable)));
+
 		return builder.toString();
 	}
 

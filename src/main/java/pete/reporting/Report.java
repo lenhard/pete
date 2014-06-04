@@ -31,11 +31,11 @@ public final class Report implements Iterable<ReportEntry> {
 	}
 
 	public int getSummedVariable(String name) {
-		int sum = 0;
-		for (ReportEntry entry : entries) {
-			sum += Integer.parseInt(entry.getVariableValue(name));
-		}
-		return sum;
+		return entries
+				.stream()
+				.mapToInt(
+						entry -> Integer.parseInt(entry.getVariableValue(name)))
+				.sum();
 	}
 
 }
