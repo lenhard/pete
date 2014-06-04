@@ -2,9 +2,7 @@ package pete.metrics.adaptability;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -32,26 +30,13 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 
 	private static final String RAW_DATA_FILE = "raw.csv";
 
-	private static final String ELEMENT_OCCURENCES_FILE = "raw.obj";
-
 	private NodeCounter nodeCounter;
 
 	private BpmnInspector inspector;
 
 	private List<AdaptabilityMetric> testMetrics;
 
-	private boolean writeMap;
-
 	public AdaptabilityAnalyzer() {
-		// Currently always do strict parsing
-		setUp(false);
-	}
-
-	public AdaptabilityAnalyzer(boolean writeMap) {
-		setUp(writeMap);
-	}
-
-	private void setUp(boolean writeMap) {
 		nodeCounter = new XPathNodeCounter();
 		inspector = new BpmnInspector();
 
@@ -61,8 +46,6 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 		testMetrics.add(new BinaryAdaptabilityMetric(0.6));
 		testMetrics.add(new BinaryAdaptabilityMetric(0.8));
 		testMetrics.add(new WeightedAdaptabilityMetric());
-
-		this.writeMap = writeMap;
 	}
 
 	@Override
@@ -151,13 +134,5 @@ public class AdaptabilityAnalyzer implements FileAnalyzer {
 	@Override
 	public void traversalCompleted() {
 		nodeCounter.writeToCsv(Paths.get(RAW_DATA_FILE));
-		if (writeMap) {
-			try (ObjectOutputStream oos = new ObjectOutputStream(
-					new FileOutputStream(ELEMENT_OCCURENCES_FILE))) {
-				oos.writeObject(nodeCounter.getProcessOccurences());
-			} catch (IOException e) {
-				System.err.println(e.getMessage());
-			}
-		}
 	}
 }
