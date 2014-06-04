@@ -120,10 +120,8 @@ public class XPathNodeCounter implements NodeCounter {
 			List<String> sortedKeyList = new LinkedList<>();
 			sortedKeyList.addAll(elementNumbers.keySet());
 			sortedKeyList.sort((e1, e2) -> e1.compareTo(e2));
-			for (String key : sortedKeyList) {
-				AtomicInteger value = elementNumbers.get(key);
-				writer.println(key + delimiter + value);
-			}
+			sortedKeyList.forEach(key -> writer.println(key + delimiter
+					+ elementNumbers.get(key)));
 		} catch (IOException e) {
 			System.err.println(e.getMessage());
 		}
