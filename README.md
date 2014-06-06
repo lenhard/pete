@@ -1,6 +1,8 @@
 # pete
 [![Build Status](https://travis-ci.org/lenhard/pete.png?branch=master)](https://travis-ci.org/lenhard/pete)
 
+**DISCLAIMER: pete has been renamed and moved to** [prope](https://github.com/uniba-dsg/prope)
+
 pete is a tool for computing metrics that characterize the portability of executable service-oriented processes implemented in several process languages. 
 So far, BPMN 2.0 and BPEL 2.0 process definitions are supported.
 
